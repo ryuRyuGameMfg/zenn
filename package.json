@@ -1,0 +1,9 @@
+{
+  "name": "zenn",
+  "version": "1.0.0",
+  "description": "Zenn記事・本の管理リポジトリ",
+  "license": "ISC",
+  "dependencies": {
+    "zenn-cli": "^0.4.5"
+  }
+}
