@@ -4,6 +4,7 @@ emoji: "📐"
 type: "tech"
 topics: ["claudecode", "claude", "ai", "llm", "prompt-engineering"]
 published: true
+published_at: 2026-02-27 17:00
 ---
 
 ## はじめに
