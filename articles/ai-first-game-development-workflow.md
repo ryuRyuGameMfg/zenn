@@ -178,3 +178,4 @@ AI-first開発は「コーダー」から「ディレクター」への役割転
 https://coconala.com/services/3327092
 
 https://coconala.com/services/2610064
+
