@@ -4,7 +4,7 @@ emoji: "🔌"
 type: "tech"
 topics: ["unity", "mcp", "claude", "cursor", "ai"]
 published: true
-published_at: 2026-03-02 18:00
+published_at: 2026-03-08 17:00
 ---
 
 ## はじめに
