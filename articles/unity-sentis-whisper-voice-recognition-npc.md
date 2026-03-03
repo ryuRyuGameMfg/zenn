@@ -4,7 +4,7 @@ emoji: "🎤"
 type: "tech"
 topics: ["unity", "sentis", "whisper", "ai", "npc"]
 published: true
-published_at: 2026-03-03 18:00
+published_at: 2026-03-13 17:00
 ---
 
 ## はじめに
