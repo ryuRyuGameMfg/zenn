@@ -4,7 +4,7 @@ emoji: "📋"
 type: "tech"
 topics: ["claude", "cli", "カスタマイズ", "productivity", "automation"]
 published: true
-published_at: 2026-03-05 18:00
+published_at: 2026-03-15 17:00
 ---
 
 ## はじめに
