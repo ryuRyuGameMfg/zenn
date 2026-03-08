@@ -4,7 +4,7 @@ emoji: "🎭"
 type: "tech"
 topics: ["nvidia", "audio2face", "unity", "unrealengine", "ai"]
 published: true
-published_at: 2026-03-09 18:00
+published_at: 2026-03-22 17:00
 ---
 
 ## はじめに
