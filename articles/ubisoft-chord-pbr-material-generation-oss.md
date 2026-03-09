@@ -4,7 +4,7 @@ emoji: "🎨"
 type: "tech"
 topics: ["ubisoft", "pbr", "comfyui", "ai", "gamedev"]
 published: true
-published_at: 2026-03-12 18:00
+published_at: 2026-03-27 17:00
 ---
 
 ## はじめに
