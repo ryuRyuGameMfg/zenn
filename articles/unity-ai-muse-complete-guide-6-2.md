@@ -4,7 +4,7 @@ emoji: "✨"
 type: "tech"
 topics: ["unity", "ai", "muse", "gamedev", "unity6"]
 published: true
-published_at: 2026-03-18 18:00
+published_at: 2026-04-05 17:00
 ---
 
 ## はじめに
