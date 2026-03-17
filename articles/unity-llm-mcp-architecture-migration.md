@@ -4,7 +4,7 @@ emoji: "🔄"
 type: "tech"
 topics: ["unity", "llm", "mcp", "ai", "gamedev"]
 published: true
-published_at: 2026-03-21 18:00
+published_at: 2026-04-12 17:00
 ---
 
 ## はじめに
