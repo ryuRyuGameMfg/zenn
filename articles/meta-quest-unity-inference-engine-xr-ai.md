@@ -4,7 +4,7 @@ emoji: "🥽"
 type: "tech"
 topics: ["unity", "metaquest", "xr", "sentis", "ai"]
 published: true
-published_at: 2026-03-24 18:00
+published_at: 2026-04-19 17:00
 ---
 
 ## はじめに
