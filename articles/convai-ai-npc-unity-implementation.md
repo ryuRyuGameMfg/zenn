@@ -4,7 +4,7 @@ emoji: "🤖"
 type: "tech"
 topics: ["unity", "convai", "npc", "ai", "gamedev"]
 published: true
-published_at: 2026-02-27 18:00
+published_at: 2026-03-01 17:00
 ---
 
 ## はじめに

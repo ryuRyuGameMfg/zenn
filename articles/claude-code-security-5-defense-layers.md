@@ -4,7 +4,7 @@ emoji: "🛡"
 type: "tech"
 topics: ["claudecode", "security", "hooks", "bash", "devtools"]
 published: true
-published_at: 2026-02-28 18:00
+published_at: 2026-03-06 17:00
 ---
 
 ## はじめに

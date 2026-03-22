@@ -4,7 +4,7 @@ emoji: "🔇"
 type: "tech"
 topics: ["unity", "llm", "whisper", "tts", "ai"]
 published: true
-published_at: 2026-03-01 18:00
+published_at: 2026-03-07 17:00
 ---
 
 ## はじめに
