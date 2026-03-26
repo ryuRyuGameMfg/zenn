@@ -1,3 +1,62 @@
+[2026-03-26T14:58:53] [INFO] Executor: Mode create 開始 (iter=0)
+[2026-03-26T14:58:53] [INFO] Plan策定完了
+━━━ Plan Iter0 Mode:create Start ━━━
+# Plan - Mode:create Iter0
+日時: 2026-03-26 14:58
+
+## STRATEGY OKR との整合
+
+テーマ優先順位1位「Unity × Claude Code」を選定。差別化・検索流入の観点でOKR達成に最も貢献する。
+
+## 目標
+
+**スラッグ候補**: `unity-claude-code-auto-test-generation`
+**タイトル候補**: `Unity × Claude Code で自動テスト生成を実装する方法`
+
+## 実行内容
+
+```
+Phase 1: 重複チェック
+  └─ articles/ 既存67本のスラッグ・タイトルを走査
+     → "claude-code" / "auto-test" 含む記事の有無を確認
+
+Phase 2: 記事作成
+  ├─ frontmatter 設定
+  │   ├─ published: true
+  │   ├─ type: "tech"
+  │   └─ topics: ["Unity", "ClaudeCode", "テスト", "AI", "自動化"]
+  ├─ 構成（2,000〜4,000字 / 見出し3つ以上）
+  │   ├─ ## 課題: Unity のテスト記述は手間がかかる
+  │   ├─ ## 解決策: Claude Code に NUnit テストを生成させる
+  │   ├─ ## 実装手順（コードサンプル必須）
+  │   └─ ## まとめと次のステップ
+  └─ コードサンプル: C# NUnit テストコード（Claude Code プロンプト例含む）
+
+Phase 3: git push
+  └─ コミットメッセージ: zenn: iter01_create unity-claude-code-auto-test-generation
+
+Phase 4: state.json 更新
+  ├─ mode: "analyze"
+  ├─ history に今回の記事を追加
+  └─ current_article をリセット
+```
+
+## ユーザー指示への対応
+
+input.md に指示なし。STRATEGY.md の優先順位1位「Unity × Claude Code」をそのまま採用。
+
+## リスク・注意点
+
+| リスク | 対策 |
+|-------|------|
+| 既存記事との重複 | Phase 1 で slug/タイトル照合を必ず実施 |
+| metrics.json 未収集 | create モードなので影響なし（analyze で収集） |
+| コードサンプルが動作未確認 | 実際に試した手順のみ記載、推測禁止（SOUL原則） |
+
+---
+
+計画承認後、`content-cycle` スキルの実行エージェントに引き渡します。
+━━━ Plan Iter0 Mode:create End ━━━
 [2026-03-26T14:58:31] [INFO] Reviewer: Mode create 成果確認
 [2026-03-26T14:58:31] [INFO] Executor: Mode create 完了 (DRY-RUN)
 ━━━ Mode create Iter0 Start ━━━
