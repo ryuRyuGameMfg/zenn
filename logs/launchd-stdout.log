@@ -1,0 +1,11 @@
+[2026-03-26T14:58:10] [INFO] === zenn-engine.sh 起動 (dry_run=false) ===
+[2026-03-26T14:58:10] [INFO] 作業ディレクトリ: /Users/okamotoryuya/repository/zenn-engine
+[2026-03-26T14:58:10] [INFO] タイムアウトコマンド: timeout (3600秒)
+[2026-03-26T14:58:10] [INFO] ━━━ Iter 0 / Mode: create 開始 ━━━
+[2026-03-26T14:58:10] [INFO] Patrol: HEARTBEAT.md チェック開始
+[2026-03-26T14:58:10] [INFO] Patrol: HEARTBEAT.md 読み込み完了
+[2026-03-26T14:58:10] [INFO] Patrol: チェック完了 (uncommitted=13, log=1MB)
+[2026-03-26T14:58:10] [INFO] Housekeeping: 定期メンテナンス開始
+[2026-03-26T14:58:10] [INFO] Housekeeping: 完了
+[2026-03-26T14:58:10] [INFO] Steering初期化完了 (timestamp=2026-03-26_1458)
+[2026-03-26T14:58:10] [INFO] Check開始: 現状分析...
