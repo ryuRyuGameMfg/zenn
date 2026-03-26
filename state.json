@@ -1,7 +1,7 @@
 {
-  "mode": "create",
+  "mode": "analyze",
   "iteration": 0,
-  "status": "reviewing",
+  "status": "idle",
   "last_run": "2026-03-26T05:58:28Z",
   "current_article": {
     "slug": "",
@@ -9,5 +9,14 @@
     "topic": ""
   },
   "consecutive_errors": 0,
-  "history": []
+  "history": [
+    {
+      "iteration": 0,
+      "mode": "create",
+      "slug": "2026-03-26-unity-claude-code-auto-test-generation",
+      "title": "Unity × Claude Code で自動テスト生成を実装する方法",
+      "topic": "Unity × Claude Code 自動テスト生成",
+      "date": "2026-03-26"
+    }
+  ]
 }
