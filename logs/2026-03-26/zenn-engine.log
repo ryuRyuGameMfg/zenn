@@ -1,3 +1,25 @@
+[2026-03-26T16:02:48] [INFO] 本日(曜日=4)は実行対象外です
+[2026-03-26T16:02:48] [INFO] 本日の曜日: 4 (5=金, 6=土)
+[2026-03-26T16:02:48] [INFO] タイムアウトコマンド: timeout (3600秒)
+[2026-03-26T16:02:48] [INFO] 作業ディレクトリ: /Users/okamotoryuya/repository/zenn-engine
+[2026-03-26T16:02:48] [INFO] === zenn-engine.sh 起動 (dry_run=true) ===
+[2026-03-26T15:32:48] [INFO] 本日(曜日=4)は実行対象外です
+[2026-03-26T15:32:48] [INFO] 本日の曜日: 4 (5=金, 6=土)
+[2026-03-26T15:32:48] [INFO] タイムアウトコマンド: timeout (3600秒)
+[2026-03-26T15:32:48] [INFO] 作業ディレクトリ: /Users/okamotoryuya/repository/zenn-engine
+[2026-03-26T15:32:48] [INFO] === zenn-engine.sh 起動 (dry_run=true) ===
+[2026-03-26T15:32:29] [INFO] 本日の曜日: 4 (5=金, 6=土)
+[2026-03-26T15:32:29] [INFO] タイムアウトコマンド: timeout (3600秒)
+[2026-03-26T15:32:29] [INFO] 作業ディレクトリ: /Users/okamotoryuya/repository/zenn-engine
+[2026-03-26T15:32:29] [INFO] === zenn-engine.sh 起動 (dry_run=true) ===
+[2026-03-26T15:32:24] [INFO] 本日の曜日: 4 (5=金, 6=土)
+[2026-03-26T15:32:23] [INFO] タイムアウトコマンド: timeout (3600秒)
+[2026-03-26T15:32:23] [INFO] 作業ディレクトリ: /Users/okamotoryuya/repository/zenn-engine
+[2026-03-26T15:32:23] [INFO] === zenn-engine.sh 起動 (dry_run=true) ===
+[2026-03-26T15:01:27] [INFO] クールダウン 86400秒（24時間）...
+[2026-03-26T15:01:27] [INFO] Transition: create → analyze
+[2026-03-26T15:01:27] [INFO] Reviewer: 完了
+[2026-03-26T15:01:27] [INFO] 自動コミット+プッシュ完了: zenn: iter00_create
 [2026-03-26T15:01:26] [INFO] Reviewer: Mode create 成果確認
 [2026-03-26T15:01:26] [INFO] Executor: Mode create 完了
 ━━━ Mode create Iter0 Start ━━━

@@ -2,7 +2,7 @@
 # zenn-engine.sh - Zenn 自律コンテンツエンジン
 # Usage: ./zenn-engine.sh [--dry-run]
 # Architecture: Patrol -> Steering -> Executor -> Reviewer -> Transition
-# Mode Cycle: create -> analyze -> improve -> rewrite -> create (loop)
+# Schedule: 金曜 17:00 = create、土曜 17:00 = analyze -> improve -> rewrite
 
 # NOTE: -e は意図的に省略。エラーはコマンド単位で明示的に処理する。
 set -uo pipefail
@@ -25,9 +25,8 @@ AGENT_FILE="$WORK_DIR/AGENT.md"
 MEMORY_DIR="$WORK_DIR/memory"
 DAILY_DIR="$MEMORY_DIR/daily"
 
-COOLDOWN_SECONDS=86400       # 24時間（モード完了後のクールダウン）
 ERROR_RETRY_SECONDS=1800     # 30分（エラー後リトライ待機）
-CYCLE_INTERVAL_SECONDS=86400 # 24時間（全モード完了後のクールダウン）
+SHORT_PAUSE=300              # 5分（モード間の短い待機）
 MAX_MODES=4                  # create / analyze / improve / rewrite
 MODE_TIMEOUT=3600            # 60分（claude -p 呼び出しタイムアウト）
 MAX_CONSECUTIVE_ERRORS=3
@@ -61,9 +60,7 @@ fi
 SHUTDOWN=false
 
 cleanup() {
-  log "INFO" "シャットダウンシグナルを受信しました。安全に停止します..."
   SHUTDOWN=true
-  update_state_status "idle" || true
 }
 
 trap cleanup SIGTERM SIGINT
@@ -443,7 +440,7 @@ CRITICAL: 絶対に Write/Edit/Bash ツールを使わないこと。マーク�
   if [[ "$DRY_RUN" == "true" ]]; then
     CURRENT_CHECK="[DRY-RUN] Check - Mode:${mode} Iter${iteration}"
   else
-    CURRENT_CHECK=$(echo "$check_prompt" | claude -p --allowedTools "Read,Glob,Grep" 2>/dev/null) || CURRENT_CHECK=""
+    CURRENT_CHECK=$("$TIMEOUT_CMD" 1800 bash -c 'echo "$1" | claude -p --allowedTools "Read,Glob,Grep"' _ "$check_prompt" 2>/dev/null) || CURRENT_CHECK=""
   fi
 
   if [[ -z "$CURRENT_CHECK" ]]; then
@@ -503,7 +500,7 @@ $(if [[ -n "$input_content" ]]; then echo "$input_content"; else echo "なし（
   if [[ "$DRY_RUN" == "true" ]]; then
     CURRENT_PLAN="[DRY-RUN] Plan - Mode:${mode} Iter${iteration}"
   else
-    CURRENT_PLAN=$(echo "$plan_prompt" | claude -p --allowedTools "Read,Glob,Grep" 2>/dev/null) || CURRENT_PLAN=""
+    CURRENT_PLAN=$("$TIMEOUT_CMD" 1800 bash -c 'echo "$1" | claude -p --allowedTools "Read,Glob,Grep"' _ "$plan_prompt" 2>/dev/null) || CURRENT_PLAN=""
   fi
 
   if [[ -z "$CURRENT_PLAN" ]]; then
@@ -688,40 +685,34 @@ CLEAR_EOF
 }
 
 # ---------------------------------------------------------------------------
-# Transition: 次モードへ遷移
-# Returns: 0 = フルイテレーション完了 (rewrite→create), 1 = まだモードが残る
+# run_single_mode: 単一モードの実行（Patrol -> Steering -> Executor -> Reviewer）
 # ---------------------------------------------------------------------------
-transition() {
+run_single_mode() {
   local mode="$1"
   local iteration="$2"
 
-  local next
-  next=$(next_mode "$mode")
+  log "INFO" "━━━ Mode: $mode (iter=$iteration) 開始 ━━━"
+  update_last_run
 
-  if [[ "$mode" == "rewrite" ]]; then
-    # サイクル完了: iteration をインクリメントして create に戻る
-    local next_iteration=$((iteration + 1))
-    log "INFO" "Transition: 全モード完了。Iter $iteration → Iter $next_iteration (rewrite→create)"
-    update_state_str "mode" "create"
-    update_state "iteration" "$next_iteration"
-    # current_article をリセット
-    local tmp
-    tmp=$(mktemp)
-    if jq '.current_article = {"slug": "", "title": "", "topic": ""}' "$STATE_FILE" > "$tmp" 2>/dev/null; then
-      mv "$tmp" "$STATE_FILE"
-    else
-      rm -f "$tmp"
-    fi
-    return 0  # フルイテレーション完了
+  patrol || { log "WARN" "Patrol失敗。スキップ"; return 1; }
+  housekeeping "$mode" "$iteration"
+  steering_init
+  steering_check "$mode" "$iteration"
+  steering_make_plan "$mode" "$iteration"
+
+  if executor "$mode" "$iteration"; then
+    reviewer "$mode" "$iteration"
+    update_state_str "mode" "$mode"  # 完了したモードを記録
+    log "INFO" "Mode $mode 完了"
   else
-    log "INFO" "Transition: $mode → $next"
-    update_state_str "mode" "$next"
-    return 1  # まだモードが残る
+    log "ERROR" "Mode $mode 失敗"
+    git_commit_and_push "$mode" "$iteration" || true
+    return 1
   fi
 }
 
 # ---------------------------------------------------------------------------
-# メインループ
+# メイン: 曜日判定付き単発実行
 # ---------------------------------------------------------------------------
 main() {
   log "INFO" "=== zenn-engine.sh 起動 (dry_run=$DRY_RUN) ==="
@@ -733,7 +724,7 @@ main() {
     log "WARN" "タイムアウトコマンドが見つかりません。'brew install coreutils' でgtimeoutをインストール推奨"
   fi
 
-  # ディレクトリ検証
+  # ディレクトリ・state.json の検証
   if [[ ! -d "$WORK_DIR" ]]; then
     log "ERROR" "作業ディレクトリが存在しません: $WORK_DIR"
     exit 1
@@ -743,96 +734,41 @@ main() {
     exit 1
   fi
 
-  mkdir -p "$LOG_DIR" "$DAILY_DIR" "$MEMORY_DIR/long-term"
+  mkdir -p "$LOG_DIR"
 
-  CONSECUTIVE_ERRORS=0
+  # 曜日判定（1=月, 2=火, 3=水, 4=木, 5=金, 6=土, 7=日）
+  local dow
+  dow=$(date +%u)
+  log "INFO" "本日の曜日: $dow (5=金, 6=土)"
 
-  while [[ "$SHUTDOWN" == "false" ]]; do
-    local mode iteration
-    mode=$(get_state "mode")
-    iteration=$(get_state "iteration")
+  local iteration
+  iteration=$(get_state "iteration")
 
-    if [[ -z "$mode" || -z "$iteration" ]]; then
-      log "ERROR" "state.jsonからmode/iterationを読み取れません"
-      sleep "$ERROR_RETRY_SECONDS"
-      continue
-    fi
+  case "$dow" in
+    5)  # 金曜: create
+      log "INFO" "=== 金曜モード: create ==="
+      run_single_mode "create" "$iteration"
+      ;;
+    6)  # 土曜: analyze -> improve -> rewrite
+      log "INFO" "=== 土曜モード: analyze -> improve -> rewrite ==="
+      run_single_mode "analyze" "$iteration"
+      [[ "$SHUTDOWN" == "false" ]] && sleep "$SHORT_PAUSE"
+      run_single_mode "improve" "$iteration"
+      [[ "$SHUTDOWN" == "false" ]] && sleep "$SHORT_PAUSE"
+      run_single_mode "rewrite" "$iteration"
+      # 土曜完了 = 1週間サイクル完了 -> iteration インクリメント
+      local next_iter=$(( $(get_state "iteration") + 1 ))
+      update_state "iteration" "$next_iter"
+      update_state_str "mode" "create"
+      log "INFO" "週次サイクル完了。Iteration $next_iter へ"
+      ;;
+    *)
+      log "INFO" "本日(曜日=$dow)は実行対象外です"
+      exit 0
+      ;;
+  esac
 
-    log "INFO" "━━━ Iter $iteration / Mode: $mode 開始 ━━━"
-    update_last_run
-
-    # 1. Patrol - 健全性チェック
-    if ! patrol; then
-      log "WARN" "Patrol失敗。${ERROR_RETRY_SECONDS}秒後にリトライ"
-      sleep "$ERROR_RETRY_SECONDS"
-      continue
-    fi
-
-    # 1.5. Housekeeping (create モードのみ)
-    housekeeping "$mode" "$iteration"
-
-    # 2. Steering - Check + Plan
-    steering_init
-    steering_check "$mode" "$iteration"
-    steering_make_plan "$mode" "$iteration"
-
-    # 3. Executor - モード実行
-    if executor "$mode" "$iteration"; then
-      # 4. Reviewer - 成果確認 + コミット
-      reviewer "$mode" "$iteration"
-
-      # 4.5. Input Lifecycle (rewrite モードのみ)
-      input_lifecycle "$mode" "$iteration"
-
-      # 5. Transition - 次モードへ
-      if transition "$mode" "$iteration"; then
-        # フルイテレーション完了 - 長めのクールダウン
-        if [[ "$SHUTDOWN" == "false" ]]; then
-          log "INFO" "サイクル完了。次サイクルまで ${CYCLE_INTERVAL_SECONDS}秒（$(( CYCLE_INTERVAL_SECONDS / 3600 ))時間）休憩します..."
-          sleep "$CYCLE_INTERVAL_SECONDS"
-        fi
-      else
-        # モード完了、続きあり - クールダウン
-        if [[ "$SHUTDOWN" == "false" ]]; then
-          log "INFO" "クールダウン ${COOLDOWN_SECONDS}秒（$(( COOLDOWN_SECONDS / 3600 ))時間）..."
-          sleep "$COOLDOWN_SECONDS"
-        fi
-      fi
-
-      update_state_status "idle"
-    else
-      # エラーハンドリング（エラーバジェット方式）
-      CONSECUTIVE_ERRORS=$((CONSECUTIVE_ERRORS + 1))
-      log "WARN" "Mode $mode 失敗 (連続エラー: $CONSECUTIVE_ERRORS/$MAX_CONSECUTIVE_ERRORS)"
-
-      if [[ "$CONSECUTIVE_ERRORS" -ge "$MAX_CONSECUTIVE_ERRORS" ]]; then
-        log "WARN" "エラー上限到達。Mode $mode をスキップして次へ進みます"
-        CONSECUTIVE_ERRORS=0
-        git_commit_and_push "$mode" "$iteration" || true
-
-        # 強制遷移
-        if transition "$mode" "$iteration"; then
-          if [[ "$SHUTDOWN" == "false" ]]; then
-            sleep "$CYCLE_INTERVAL_SECONDS"
-          fi
-        else
-          if [[ "$SHUTDOWN" == "false" ]]; then
-            sleep "$COOLDOWN_SECONDS"
-          fi
-        fi
-      else
-        git_commit_and_push "$mode" "$iteration" || true
-        if [[ "$SHUTDOWN" == "false" ]]; then
-          log "INFO" "エラーリトライ待機 ${ERROR_RETRY_SECONDS}秒..."
-          sleep "$ERROR_RETRY_SECONDS"
-        fi
-      fi
-
-      update_state_status "idle"
-    fi
-  done
-
-  log "INFO" "=== zenn-engine.sh 停止完了 ==="
+  log "INFO" "=== zenn-engine.sh 完了 ==="
 }
 
 # ---------------------------------------------------------------------------
