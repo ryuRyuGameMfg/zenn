@@ -1,4 +1,82 @@
 {
-  "last_updated": "",
+  "last_updated": "2026-03-27",
+  "collected_at": "2026-03-27T08:00:00Z",
+  "profile": {
+    "username": "ryuryu_game",
+    "follower_count": 37,
+    "following_count": 0,
+    "articles_count": 29,
+    "books_count": 1,
+    "total_liked_count": 350,
+    "note": "published articles on Zenn（local articles/ に68ファイルあるが未公開分含む）"
+  },
+  "okr_snapshot": {
+    "o1_followers": {
+      "target": 1000,
+      "current": 37,
+      "progress_pct": 3.7
+    },
+    "o2_monthly_pv": {
+      "target": 10000,
+      "current": null,
+      "note": "Zenn API では PV非公開のため未取得"
+    },
+    "o3_like_rate": {
+      "target_pct": 5.0,
+      "total_likes": 350,
+      "published_articles": 29,
+      "avg_likes_per_article": 12.1,
+      "note": "PV未取得のためスキ率計算不可。平均スキ数/記事は12.1"
+    }
+  },
+  "competitor_trends": {
+    "collected_at": "2026-03-27",
+    "top_themes": [
+      {
+        "theme": "AI x Unity Vibe Coding（Claude/Gemini MCP連携）",
+        "avg_likes": 22,
+        "trend": "急増中（2025年3月〜）",
+        "notes": "自然言語でUnity操作、実験記録フォーマットが高評価"
+      },
+      {
+        "theme": "Unity 6.x 新機能解説",
+        "avg_likes": 18,
+        "trend": "安定",
+        "notes": "公式情報まとめ系。LTSロードマップ・DOTS推奨"
+      },
+      {
+        "theme": "非エンジニア向け AI 参入体験記",
+        "avg_likes": 15,
+        "trend": "上昇",
+        "notes": "再現性高い体験談は拡散されやすい"
+      }
+    ],
+    "notable_articles": [
+      {
+        "title": "uLoopMCP x Claude Code Unity自走検証",
+        "likes": 26,
+        "date": "2026-02",
+        "url": "https://zenn.dev/unsoluble_sugar/articles/cd8d59be7b8f85"
+      },
+      {
+        "title": "Geminiだけでカードゲームを作った話",
+        "likes": 33,
+        "date": "2025-12",
+        "url": "https://zenn.dev/tomotomobile/articles/b5cf31891b77e2"
+      },
+      {
+        "title": "Unite 2025 ロードマップまとめ",
+        "likes": 18,
+        "date": "2025-11",
+        "url": "https://zenn.dev/m_hatayama/articles/ba4990c542a47c"
+      },
+      {
+        "title": "Unity+MCP(Claude) Vibeコーディング",
+        "likes": 18,
+        "date": "2025-03",
+        "url": "https://zenn.dev/bamboohouse/articles/d8df41a995f818"
+      }
+    ]
+  },
   "articles": []
 }

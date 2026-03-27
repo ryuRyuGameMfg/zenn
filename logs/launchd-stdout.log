@@ -35,3 +35,7 @@
 [2026-03-27T17:00:03] [INFO] Housekeeping: 完了
 [2026-03-27T17:00:03] [INFO] Steering初期化完了 (timestamp=2026-03-27_1700)
 [2026-03-27T17:00:03] [INFO] Check開始: 現状分析...
+[2026-03-27T17:00:21] [INFO] Check完了
+[2026-03-27T17:00:21] [INFO] Plan策定開始...
+[2026-03-27T17:00:43] [INFO] Plan策定完了
+[2026-03-27T17:00:43] [INFO] Executor: Mode create 開始 (iter=0)
