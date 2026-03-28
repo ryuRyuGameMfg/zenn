@@ -1,8 +1,8 @@
 {
-  "mode": "analyze",
+  "mode": "rewrite",
   "iteration": 0,
   "status": "idle",
-  "last_run": "2026-03-28T08:11:12Z",
+  "last_run": "2026-03-28T17:20:00Z",
   "current_article": {
     "slug": "",
     "title": "",

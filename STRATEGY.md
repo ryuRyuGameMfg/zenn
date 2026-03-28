@@ -32,7 +32,12 @@
 
 ## 直近の改善フォーカス
 
-（analyze モードで更新）
+Iter0 時点（2026-03-28）:
+- AI x Unity MCP連携記事が高スキ帯（26〜33）のため、uLoopMCP + Claude Code をキュー上位に配置
+- Unity パフォーマンス系（Memory Profiler, GPU Instancing）は競合が入門記事のみ → 実践ワークフロー記事で差別化
+- Unity 6.3 Platform Toolkit は Zenn 記事がほぼ空白 → 早期投稿で検索優位性を確保
+- ECS × キャラクター実装は「理論記事は多いが実ゲームへの適用例が皆無」という Gap を埋める
+- テーマキューを1件 → 6件に補充完了。次サイクルで消費を開始する
 
 ## 記事フォーマット方針
 

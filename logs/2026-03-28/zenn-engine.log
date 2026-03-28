@@ -1,3 +1,112 @@
+[2026-03-28T17:12:00] [INFO] Executor: Mode improve 開始 (iter=0)
+[2026-03-28T17:12:00] [INFO] Plan策定完了
+━━━ Plan Iter0 Mode:improve Start ━━━
+# Plan - Mode:improve Iter0
+日時: 2026-03-28 17:11
+
+## STRATEGY OKR との整合
+
+| OKR | 今回の貢献 |
+|-----|-----------|
+| O1: フォロワー1000人 | テーマキュー補充で投稿頻度を維持 → フォロワー増加の基盤 |
+| O2: 月間PV 10,000 | 高需要テーマを選定することで検索流入増加を狙う |
+| O3: スキ率 5% 以上 | AI x Unity MCP連携など高スキパターンを優先選定 |
+
+## 目標
+
+- テーマキューを **5件以上** に補充（現在1件 → 6件以上）
+- state.json を `improve → rewrite` に遷移
+- MEMORY.md のテーマキュー欄を最新状態に更新
+
+## 実行内容
+
+```
+Phase 1: トレンド調査【2並列】
+  ├─ Phase1-1: WebSearch（Unity/AI 最新動向調査）
+  └─ Phase1-2: WebSearch（Zenn 人気記事 Gap 分析）
+
+Phase 2: テーマ選定・重複チェック【順次】
+  └─ Phase2-1: articles/ 既存スラッグと照合してユニーク5件を確定
+
+Phase 3: ファイル更新【3並列】
+  ├─ Phase3-1: memory/long-term/topics.md にテーマ5件を追記
+  ├─ Phase3-2: state.json の mode を rewrite に遷移・last_run 更新
+  └─ Phase3-3: MEMORY.md のテーマキュー欄を更新
+
+Phase 4: 日次記録
+  └─ Phase4-1: memory/daily/2026-03-28.md に improve 実行結果を追記
+```
+
+## テーマ候補方針（調査前の仮説）
+
+STRATEGY.md の優先順位と競合高スキパターンに基づく探索方向:
+
+| 優先度 | テーマ方向 | 根拠 |
+|--------|-----------|------|
+| 高 | Unity × MCP連携（Cursor/Claude以外） | 高スキパターン。競合は uLoopMCP のみ |
+| 高 | Unity 6.x 新機能（未カバー部分） | 安定検索ボリューム・スキ18前後 |
+| 中 | AI ゲーム開発自動化（CI/CD × Unity） | GitHub Actions 記事の延長線 |
+| 中 | VRM/VTuber 系（UniVRM 以外） | 直近記事との連続性 |
+| 低 | Unity パフォーマンス最適化 新トピック | STRATEGY.md 優先度2 |
+
+## ユーザー指示への対応
+
+input.md に指示なし → STRATEGY.md の方針（Unity × Claude Code 優先）を継続。
+
+## リスク・注意点
+
+- **state.json の現在 mode が "analyze"**: Phase3-2 で `analyze → rewrite` ではなく `analyze → rewrite` に直接上書き（improve は今回の実行で完了扱い）
+- **重複チェック必須**: `articles/` スラッグ一覧と照合してから topics.md に追記
+- **既存 topics.md の済みマーク**: UniVRM 2.0 に「済み」マークを付ける
+━━━ Plan Iter0 Mode:improve End ━━━
+[2026-03-28T17:11:34] [INFO] Plan策定開始...
+[2026-03-28T17:11:34] [INFO] Check完了
+━━━ Check Iter0 Mode:improve Start ━━━
+# Check - Mode:improve Iter0
+日時: 2026-03-28 17:11
+
+## STRATEGY OKR進捗
+
+| OKR | 目標 | 現状 | 進捗 |
+|-----|------|------|------|
+| O1: フォロワー1000人 | 1000 | 37 | 3.7% |
+| O2: 月間PV 10,000 | 10,000 | 未取得（Zenn非公開） | - |
+| O3: スキ率 5% 以上 | 5% | PV未取得 / 平均スキ12.1/記事 | - |
+
+## 現在の状態
+
+- **mode**: analyze（state.json 上）※ improve のはずだが未遷移の可能性あり
+- **iteration**: 0
+- **status**: idle
+- **last_run**: 2026-03-28T08:11:12Z
+- **consecutive_errors**: 0
+
+## テーマキュー残数
+
+- **残り: 1件**
+- 残テーマ: Zenn × GitHub Actions 自動デプロイの設定方法
+- 済み: 2件（create モードで消費済み）
+
+## 前回の成果
+
+| 日付 | 記事 | モード |
+|------|------|--------|
+| 2026-03-26 | Unity × Claude Code で自動テスト生成を実装する方法 | create |
+| 2026-03-28 | UniVRM 2.0 で口パク（リップシンク）を実装する方法【VRM 1.0対応】 | create |
+
+## 問題点・課題
+
+1. **state.json が analyze のまま** - improve モードへの遷移が未完了
+2. **テーマキューが残り1件** - AGENT.md の基準（5件以上）を大きく下回る
+3. **improve モードがスキップされた可能性** - 前サイクルの daily メモでも同様の懸念あり
+
+## 次にやるべきこと
+
+1. **テーマキューを最低5件補充**（WebSearch で Unity/AI トレンドを調査）
+   - 優先テーマ: Unity × Claude Code 系、Unity 6.x 新機能、AI ゲーム開発自動化
+2. **state.json の mode を improve → rewrite に遷移**（improve 完了後）
+3. **MEMORY.md のテーマキュー欄を更新**（補充後に反映）
+━━━ Check Iter0 Mode:improve End ━━━
 [2026-03-28T17:11:12] [INFO] Check開始: 現状分析...
 [2026-03-28T17:11:12] [INFO] Steering初期化完了 (timestamp=2026-03-28_1711)
 [2026-03-28T17:11:12] [INFO] Patrol: チェック完了 (uncommitted=3, log=1MB)

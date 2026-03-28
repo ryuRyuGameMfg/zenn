@@ -22,6 +22,7 @@
 
 | 日付 | スラッグ | タイトル | モード |
 |------|---------|--------|--------|
+| 2026-03-28 | 2026-03-28-univrm-lipsync-implementation | UniVRM 2.0 で口パク（リップシンク）を実装する方法【VRM 1.0対応】 | create |
 | 2026-03-26 | 2026-03-26-unity-claude-code-auto-test-generation | Unity × Claude Code で自動テスト生成を実装する方法 | create |
 
 ## 高PVパターン（競合分析 2026-03-27）
@@ -32,16 +33,18 @@
 | Unity 6.x 新機能解説 | 2件 | スキ18前後。公式情報まとめ系 |
 | 非エンジニア体験記 + AI | 2件 | スキ5〜26。再現性高いほど拡散 |
 
-## テーマキュー（上位2件）
+## テーマキュー（上位3件）
 
-1. UniVRM 2.0 の口パク・リップシンク実装
-2. Zenn × GitHub Actions 自動デプロイの設定方法
+1. Zenn × GitHub Actions 自動デプロイの設定方法
+2. uLoopMCP + Claude Code で Unity 自律開発サイクルを実現する方法
+3. Unity Memory Profiler 実践ワークフロー：GC Alloc 撲滅からメモリリーク根絶まで
 
 ## 避けるべきトピック
 
 | トピック | 理由 |
 |---------|------|
 | Unity × Claude Code 自動テスト生成 | 2026-03-26 に作成済み |
+| UniVRM 2.0 リップシンク実装 | 2026-03-28 に作成済み |
 
 ## 学んだパターン
 
