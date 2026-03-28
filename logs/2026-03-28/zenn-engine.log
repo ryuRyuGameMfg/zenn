@@ -1,3 +1,34 @@
+[2026-03-28T17:16:27] [INFO] Reviewer: Mode improve 成果確認
+[2026-03-28T17:16:27] [INFO] Executor: Mode improve 完了
+━━━ Mode improve Iter0 Start ━━━
+完了チェックリストを確認します。
+
+- [x] STRATEGY.md の「直近の改善フォーカス」が更新された
+- [x] topics.md のキューが 6 件になった（3件以上）
+- [x] MEMORY.md の「テーマキュー」が最新の状態になった（上位3件更新）
+- [x] memory/daily/ に記録された
+- [x] state.json が `rewrite` モードに遷移・status を `idle` に更新
+
+---
+
+**improve モード完了。**
+
+```text
+実行サマリー
+├─ テーマキュー: 1件 → 6件に補充
+│   1. Zenn × GitHub Actions 自動デプロイ（既存）
+│   2. uLoopMCP + Claude Code（新規 / 高スキ期待）
+│   3. Unity Memory Profiler 実践（新規）
+│   4. Unity GPU Instancing 完全実装（新規）
+│   5. Unity ECS × キャラクター実装（新規）
+│   6. Unity 6.3 Platform Toolkit（新規）
+│
+├─ STRATEGY.md: 直近改善フォーカスを更新
+├─ MEMORY.md: テーマキュー・投稿記録を更新
+├─ state.json: analyze → rewrite に遷移
+└─ 次モード: rewrite（metrics.json空のため新規記事作成）
+```
+━━━ Mode improve Iter0 End ━━━
 [2026-03-28T17:12:00] [INFO] Executor: Mode improve 開始 (iter=0)
 [2026-03-28T17:12:00] [INFO] Plan策定完了
 ━━━ Plan Iter0 Mode:improve Start ━━━

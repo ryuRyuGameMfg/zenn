@@ -81,3 +81,5 @@
 [2026-03-28T17:11:34] [INFO] Plan策定開始...
 [2026-03-28T17:12:00] [INFO] Plan策定完了
 [2026-03-28T17:12:00] [INFO] Executor: Mode improve 開始 (iter=0)
+[2026-03-28T17:16:27] [INFO] Executor: Mode improve 完了
+[2026-03-28T17:16:27] [INFO] Reviewer: Mode improve 成果確認
