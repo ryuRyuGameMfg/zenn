@@ -1,8 +1,8 @@
 {
-  "mode": "create",
+  "mode": "analyze",
   "iteration": 0,
-  "status": "idle",
-  "last_run": "2026-03-28T08:00:05Z",
+  "status": "completed",
+  "last_run": "2026-03-28T17:00:00Z",
   "current_article": {
     "slug": "",
     "title": "",
@@ -17,6 +17,14 @@
       "title": "Unity × Claude Code で自動テスト生成を実装する方法",
       "topic": "Unity × Claude Code 自動テスト生成",
       "date": "2026-03-26"
+    },
+    {
+      "iteration": 0,
+      "mode": "create",
+      "slug": "2026-03-28-univrm-lipsync-implementation",
+      "title": "UniVRM 2.0 で口パク（リップシンク）を実装する方法【VRM 1.0対応】",
+      "topic": "UniVRM 2.0 の口パク・リップシンク実装",
+      "date": "2026-03-28"
     }
   ]
 }
