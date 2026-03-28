@@ -4,11 +4,11 @@
 
 ## プロジェクト状態
 
-- **初期化**: zenn-engine 初期化済み（Iter0）
-- **稼働状況**: 4日ローテーション稼働開始
+- **初期化**: zenn-engine 初期化済み（Iter0 完了、Iter1 開始）
+- **稼働状況**: 4日ローテーション稼働中
 - **モードサイクル**: create → analyze → improve → rewrite → create（ループ）
 - **リポジトリ**: ~/repository/zenn-engine/
-- **記事数**: ローカル articles/ に 68本（うち Zenn 公開済 29本）
+- **記事数**: ローカル articles/ に 69本（うち Zenn 公開済 32本相当）
 
 ## OKR 現状（2026-03-27 初回計測）
 
@@ -22,6 +22,7 @@
 
 | 日付 | スラッグ | タイトル | モード |
 |------|---------|--------|--------|
+| 2026-03-28 | 2026-03-28-zenn-github-actions-auto-deploy | Zenn × GitHub Actions で自動デプロイを設定する方法 | rewrite |
 | 2026-03-28 | 2026-03-28-univrm-lipsync-implementation | UniVRM 2.0 で口パク（リップシンク）を実装する方法【VRM 1.0対応】 | create |
 | 2026-03-26 | 2026-03-26-unity-claude-code-auto-test-generation | Unity × Claude Code で自動テスト生成を実装する方法 | create |
 
@@ -35,9 +36,9 @@
 
 ## テーマキュー（上位3件）
 
-1. Zenn × GitHub Actions 自動デプロイの設定方法
-2. uLoopMCP + Claude Code で Unity 自律開発サイクルを実現する方法
-3. Unity Memory Profiler 実践ワークフロー：GC Alloc 撲滅からメモリリーク根絶まで
+1. uLoopMCP + Claude Code で Unity 自律開発サイクルを実現する方法
+2. Unity Memory Profiler 実践ワークフロー：GC Alloc 撲滅からメモリリーク根絶まで
+3. Unity GPU Instancing 完全実装：DrawMeshInstanced から RenderMeshIndirect まで段階的に理解する
 
 ## 避けるべきトピック
 
@@ -45,10 +46,11 @@
 |---------|------|
 | Unity × Claude Code 自動テスト生成 | 2026-03-26 に作成済み |
 | UniVRM 2.0 リップシンク実装 | 2026-03-28 に作成済み |
+| Zenn × GitHub Actions 自動デプロイ | 2026-03-28 に作成済み |
 
-## 学んだパターン
-
-（iterate モードで蓄積）
+## 学んだパターン（Iter0 総括）
 
 - **AI x Unity MCP連携記事**が競合で最も高スキ（26〜33）。実験記録・限界検証フォーマットが有効。
 - Zenn 公開記事 29本で累計スキ 350（平均12.1/記事）は堅調。
+- **rewrite モードでの metrics.json 空の場合**: リライトスキップ → キュー先頭で新規作成が安定した代替フロー。Iter1 以降は analyze でアーティクル別データ収集の仕組みを検討する。
+- **textlint + GitHub Actions の組み合わせ記事**は検索ボリューム安定。CI/CD 系は実装コードが具体的なほどスキが取れる傾向あり。

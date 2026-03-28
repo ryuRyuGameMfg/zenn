@@ -1,8 +1,8 @@
 {
-  "mode": "improve",
-  "iteration": 0,
+  "mode": "create",
+  "iteration": 1,
   "status": "idle",
-  "last_run": "2026-03-28T08:21:29Z",
+  "last_run": "2026-03-28T17:21:00Z",
   "current_article": {
     "slug": "",
     "title": "",
@@ -24,6 +24,14 @@
       "slug": "2026-03-28-univrm-lipsync-implementation",
       "title": "UniVRM 2.0 で口パク（リップシンク）を実装する方法【VRM 1.0対応】",
       "topic": "UniVRM 2.0 の口パク・リップシンク実装",
+      "date": "2026-03-28"
+    },
+    {
+      "iteration": 0,
+      "mode": "rewrite",
+      "slug": "2026-03-28-zenn-github-actions-auto-deploy",
+      "title": "Zenn × GitHub Actions で自動デプロイを設定する方法【textlint + PR プレビュー対応】",
+      "topic": "Zenn × GitHub Actions 自動デプロイ",
       "date": "2026-03-28"
     }
   ]
