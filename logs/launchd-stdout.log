@@ -99,3 +99,5 @@
 [2026-03-28T17:21:52] [INFO] Plan策定開始...
 [2026-03-28T17:22:13] [INFO] Plan策定完了
 [2026-03-28T17:22:13] [INFO] Executor: Mode rewrite 開始 (iter=0)
+[2026-03-28T17:24:52] [INFO] Executor: Mode rewrite 完了
+[2026-03-28T17:24:52] [INFO] Reviewer: Mode rewrite 成果確認

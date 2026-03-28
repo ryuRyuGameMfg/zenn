@@ -1,3 +1,29 @@
+[2026-03-28T17:24:52] [INFO] Reviewer: Mode rewrite 成果確認
+[2026-03-28T17:24:52] [INFO] Executor: Mode rewrite 完了
+━━━ Mode rewrite Iter0 Start ━━━
+Iter0 rewrite 完了。
+
+---
+
+```text
+rewrite モード実行結果
+├─ リライト: スキップ（metrics.json にアーティクル別データなし）
+├─ 新規記事: 作成・公開
+│    slug: 2026-03-28-zenn-github-actions-auto-deploy
+│    title: Zenn × GitHub Actions で自動デプロイを設定する方法
+│           【textlint + PR プレビュー対応】
+│    差別化: textlint校正 + PRプレビューコメント自動投稿まで含む実践構成
+├─ topics.md: キュー1番消費 → 残り5件
+├─ MEMORY.md: iterate処理完了（昇格2件、55行以内を維持）
+├─ state.json: mode=create, iteration=1 に遷移
+└─ git push: 完了
+```
+
+**Iter0 総括**
+- 3本作成（テスト生成・リップシンク・GitHub Actions）
+- Iter1 の課題: analyze で記事別 PV データ収集の仕組みを整備する（現状 metrics.json に articles[] データがないためリライト判定不能）
+- 次の create は「uLoopMCP + Claude Code で Unity 自律開発サイクルを実現する方法」から着手
+━━━ Mode rewrite Iter0 End ━━━
 [2026-03-28T17:22:13] [INFO] Executor: Mode rewrite 開始 (iter=0)
 [2026-03-28T17:22:13] [INFO] Plan策定完了
 ━━━ Plan Iter0 Mode:rewrite Start ━━━
