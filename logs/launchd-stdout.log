@@ -59,3 +59,7 @@
 [2026-03-28T17:00:05] [INFO] Patrol: チェック完了 (uncommitted=3, log=1MB)
 [2026-03-28T17:00:05] [INFO] Steering初期化完了 (timestamp=2026-03-28_1700)
 [2026-03-28T17:00:05] [INFO] Check開始: 現状分析...
+[2026-03-28T17:00:26] [INFO] Check完了
+[2026-03-28T17:00:26] [INFO] Plan策定開始...
+[2026-03-28T17:00:44] [INFO] Plan策定完了
+[2026-03-28T17:00:44] [INFO] Executor: Mode analyze 開始 (iter=0)
