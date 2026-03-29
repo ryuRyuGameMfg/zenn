@@ -3,3 +3,6 @@
 [2026-03-29T19:31:11] Launching telegram-react.sh
 [2026-03-29T20:05:42] Message received: 直近の記事について内容を教えて
 [2026-03-29T20:05:42] Launching telegram-react.sh
+[2026-03-30T01:05:09] WARN: Empty response from Telegram API. Retrying in 5s.
+[2026-03-30T01:38:25] Message received: 次投稿する記事は決まってる？ネタとか？
+[2026-03-30T01:38:25] Launching telegram-react.sh

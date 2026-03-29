@@ -1,32 +1,30 @@
-# MEMORY.md - 常時コンテキスト
+# MEMORY - 常時コンテキスト
 
-> 約100行を目標。iterate モード（rewrite→create 遷移時）で昇格/降格を管理する。
+**管理方針: iterate モードで昇格/降格。100行以下を維持。**
+**3層構造: hot（毎回参照）/ warm（数週間有効）/ cold（アーカイブ）**
 
-## プロジェクト状態
+---
 
-- **初期化**: zenn-engine 初期化済み（Iter0 完了、Iter1 開始）
-- **稼働状況**: 4日ローテーション稼働中
-- **モードサイクル**: create → analyze → improve → rewrite → create（ループ）
-- **リポジトリ**: ~/repository/zenn-engine/
-- **記事数**: ローカル articles/ に 69本（うち Zenn 公開済 32本相当）
+## [HOT] 直近の状態（常時参照）
 
-## OKR 現状（2026-03-27 初回計測）
+- **モード**: create → analyze → improve → rewrite → create（ループ）稼働中
+- **稼働状況**: 4日ローテーション稼働中（Iter0 完了、Iter1 開始）
+- **フォロワー**: 37（目標 1000、進捗 3.7%）
+- **直近投稿**:
+  - 2026-03-28 `2026-03-28-zenn-github-actions-auto-deploy`（rewrite）
+  - 2026-03-28 `2026-03-28-univrm-lipsync-implementation`（create）
+  - 2026-03-26 `2026-03-26-unity-claude-code-auto-test-generation`（create）
 
-| OKR | 目標 | 現状 | 進捗 |
-|-----|------|------|------|
-| O1: フォロワー1000人 | 1000 | 37 | 3.7% |
-| O2: 月間PV 10,000 | 10,000 | 未取得（Zenn非公開） | - |
-| O3: スキ率 5% 以上 | 5% | PV未取得 / 平均スキ12.1/記事 | - |
+---
 
-## 直近の投稿記録
+## [WARM] 有効な戦略情報（数週間スパン）
 
-| 日付 | スラッグ | タイトル | モード |
-|------|---------|--------|--------|
-| 2026-03-28 | 2026-03-28-zenn-github-actions-auto-deploy | Zenn × GitHub Actions で自動デプロイを設定する方法 | rewrite |
-| 2026-03-28 | 2026-03-28-univrm-lipsync-implementation | UniVRM 2.0 で口パク（リップシンク）を実装する方法【VRM 1.0対応】 | create |
-| 2026-03-26 | 2026-03-26-unity-claude-code-auto-test-generation | Unity × Claude Code で自動テスト生成を実装する方法 | create |
+**テーマキュー（上位3件）**:
+1. uLoopMCP + Claude Code で Unity 自律開発サイクルを実現する方法
+2. Unity Memory Profiler 実践ワークフロー：GC Alloc 撲滅からメモリリーク根絶まで
+3. Unity GPU Instancing 完全実装：DrawMeshInstanced から RenderMeshIndirect まで段階的に理解する
 
-## 高PVパターン（競合分析 2026-03-27）
+**高PVパターン（競合分析 2026-03-27）**:
 
 | パターン | 観察回数 | 備考 |
 |---------|---------|------|
@@ -34,13 +32,23 @@
 | Unity 6.x 新機能解説 | 2件 | スキ18前後。公式情報まとめ系 |
 | 非エンジニア体験記 + AI | 2件 | スキ5〜26。再現性高いほど拡散 |
 
-## テーマキュー（上位3件）
+---
 
-1. uLoopMCP + Claude Code で Unity 自律開発サイクルを実現する方法
-2. Unity Memory Profiler 実践ワークフロー：GC Alloc 撲滅からメモリリーク根絶まで
-3. Unity GPU Instancing 完全実装：DrawMeshInstanced から RenderMeshIndirect まで段階的に理解する
+## [WARM] 記事 DB 状態
 
-## 避けるべきトピック
+- **ローカル記事数**: 69本（うち Zenn 公開済 32本相当）
+- **リポジトリ**: ~/repository/zenn-engine/
+- **累計スキ**: 350（平均 12.1/記事、公開 29本ベース）
+- **OKR**:
+  - O1 フォロワー 1000人: 37/1000（3.7%）
+  - O2 月間 PV 10,000: 未取得（Zenn 非公開）
+  - O3 スキ率 5%以上: PV 未取得 / 平均スキ 12.1/記事
+
+---
+
+## [COLD] 避けるべきトピック・学んだパターン
+
+**重複回避リスト**:
 
 | トピック | 理由 |
 |---------|------|
@@ -48,9 +56,18 @@
 | UniVRM 2.0 リップシンク実装 | 2026-03-28 に作成済み |
 | Zenn × GitHub Actions 自動デプロイ | 2026-03-28 に作成済み |
 
-## 学んだパターン（Iter0 総括）
+**長期有効な知見**:
+- AI x Unity MCP 連携記事が競合で最高スキ（26〜33）。実験記録・限界検証フォーマットが有効。
+- rewrite モードで metrics.json 空の場合：リライトスキップ → キュー先頭で新規作成が安定した代替フロー。
+- textlint + GitHub Actions 組み合わせ記事は検索ボリューム安定。CI/CD 系は実装コードが具体的なほどスキが取れる。
 
-- **AI x Unity MCP連携記事**が競合で最も高スキ（26〜33）。実験記録・限界検証フォーマットが有効。
-- Zenn 公開記事 29本で累計スキ 350（平均12.1/記事）は堅調。
-- **rewrite モードでの metrics.json 空の場合**: リライトスキップ → キュー先頭で新規作成が安定した代替フロー。Iter1 以降は analyze でアーティクル別データ収集の仕組みを検討する。
-- **textlint + GitHub Actions の組み合わせ記事**は検索ボリューム安定。CI/CD 系は実装コードが具体的なほどスキが取れる傾向あり。
+---
+
+## 昇格/降格ルール
+
+| 判定 | 処理 |
+|------|------|
+| 30日以上価値がある情報 | HOT/WARM に昇格 |
+| 2週間参照されない HOT 情報 | WARM に降格 |
+| 1ヶ月参照されない WARM 情報 | COLD または削除 |
+| 100行超過時 | COLD を memory/long-term/ に移動 |

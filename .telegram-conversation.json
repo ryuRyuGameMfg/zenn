@@ -1,7 +1,7 @@
 {
   "status": "processing",
   "target_article": "/Users/okamotoryuya/repository/zenn-engine/articles/2026-03-28-zenn-github-actions-auto-deploy.md",
-  "last_updated": "2026-03-29T20:05:42",
+  "last_updated": "2026-03-30T01:38:25",
   "thread": [
     {
       "role": "user",
@@ -17,6 +17,16 @@
       "role": "user",
       "text": "直近の記事について内容を教えて\n",
       "ts": "2026-03-29 20:05"
+    },
+    {
+      "role": "assistant",
+      "text": "直近の記事の内容をお伝えします。\n\n---\n\n**記事タイトル**\n「Zenn × GitHub Actions で自動デプロイを設定する方法【textlint + PR プレビュー対応】」\n\n**作成日**: 2026-03-28（rewrite モードで作成）\n**スラッグ**: `2026-03-28-zenn-github-actions-auto-deploy`\n**公開状態**: published: true\n\n---\n\n**記事の概要**\n\nZenn の標準 GitHub 連携（push → 自動デプロイ）では「誤字・表記ゆれがそのまま公開される」「PR プレビューが見えない」という課題があります。\n\nこの記事では以下の3段階構成を実装する方法を解説しています：\n\n1. **textlint による日本語校正チェック**（PR 作成時に自動実行）\n2. **main ブランチへのマージで Zenn に自動デプロイ**\n3. **PR ごとに記事プレビュー URL をコメント投稿**（オプション）\n\n---\n\n**構成（見出し）**\n\n- はじめに：Zenn CLI × GitHub の標準構成を超える\n- 前提条件\n- Step 1：textlint の導入\n- Step 2：GitHub Actions ワークフローの作成\n  - PR 時の textlint チェック（textlint.yml）\n  - main マージ後のデプロイ確認（notify-deploy.yml）\n- Step 3：PR プレビュー URL の自動コメント（オプション）\n- 完成後の運用フロー\n- まとめ\n\n---\n\n**コードサンプル**\n- `npm install` による textlint インストールコマンド\n- `.textlintrc` の設定 JSON\n- textlint 実行コマンド\n- 3つの GitHub Actions YAML（textlint.yml / notify-deploy.yml / pr-preview-comment.yml）\n\n**文字数**: 約 2,000字以上（品質基準クリア）\n\n何か修正や追加でお手伝いできることはありますか？\n",
+      "ts": "2026-03-29 20:06"
+    },
+    {
+      "role": "user",
+      "text": "次投稿する記事は決まってる？ネタとか？\n",
+      "ts": "2026-03-30 01:38"
     }
   ],
   "summary": ""

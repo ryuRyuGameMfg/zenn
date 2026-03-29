@@ -101,9 +101,9 @@ build_thread_str() {
   local summary
   summary=$(jq -r '.summary // ""' "$CONV_FILE" 2>/dev/null || echo "")
   local recent
-  recent=$(jq -r '.thread[-20:] | map("[\(.role)] \(.text)") | join("\n")' "$CONV_FILE" 2>/dev/null || echo "(会話履歴なし)")
+  recent=$(jq -r '.thread[-10:] | map("[\(.role)] \(.text)") | join("\n")' "$CONV_FILE" 2>/dev/null || echo "(会話履歴なし)")
   if [[ -n "$summary" ]]; then
-    printf '=== 過去の会話まとめ ===\n%s\n=== 直近20件 ===\n%s' "$summary" "$recent"
+    printf '=== 過去の会話まとめ ===\n%s\n=== 直近10件 ===\n%s' "$summary" "$recent"
   else
     echo "$recent"
   fi
@@ -184,14 +184,26 @@ fi
 
 # 9. スレッドが25件超えたらサマリー生成・トリム
 THREAD_LEN=$(jq '.thread | length' "$CONV_FILE" 2>/dev/null || echo "0")
-if [[ "$THREAD_LEN" -gt 25 ]]; then
+if [[ "$THREAD_LEN" -gt 15 ]]; then
   log_sum() { echo "[$(date '+%Y-%m-%dT%H:%M:%S')] [SUMMARY] $1" >> "$LOG_FILE"; }
   log_sum "スレッド${THREAD_LEN}件 → サマリー生成開始"
-  OLD_MESSAGES=$(jq -r '.thread[:-20] | map("[\(.role)] \(.text)") | join("\n")' "$CONV_FILE" 2>/dev/null || echo "")
+  OLD_MESSAGES=$(jq -r '.thread[:-10] | map("[\(.role)] \(.text)") | join("\n")' "$CONV_FILE" 2>/dev/null || echo "")
   EXISTING_SUMMARY=$(jq -r '.summary // ""' "$CONV_FILE" 2>/dev/null || echo "")
-  SUMMARY_PROMPT="以下の会話履歴を5文以内で日本語にまとめてください。既存のまとめがある場合は統合してください。出力はまとめ文のみ。
+  SUMMARY_PROMPT="以下の会話履歴を構造化してまとめてください。出力はまとめ文のみ（マーカーや前置き不要）。
 
-既存のまとめ:
+## まとめフォーマット（以下の3セクションのみ出力）
+
+【決定事項】
+- 確定した方針・設定・選択肢（箇条書き、最大3件）
+
+【作業状態】
+- 現在進行中・完了した作業（箇条書き、最大3件）
+
+【継続コンテキスト】
+- 次回以降も参照が必要な重要情報（1〜2文）
+
+---
+既存のまとめ（統合すること）:
 ${EXISTING_SUMMARY}
 
 新しい会話履歴:
@@ -199,8 +211,8 @@ ${OLD_MESSAGES}"
   NEW_SUMMARY=$(echo "$SUMMARY_PROMPT" | "$CLAUDE_PATH" -p 2>>"$LOG_FILE" || echo "")
   if [[ -n "$NEW_SUMMARY" ]]; then
     TMP_CONV=$(mktemp)
-    jq --arg s "$NEW_SUMMARY" '.summary = $s | .thread = .thread[-20:]' "$CONV_FILE" > "$TMP_CONV" 2>/dev/null && mv "$TMP_CONV" "$CONV_FILE" || rm -f "$TMP_CONV"
-    log_sum "サマリー更新完了。thread を20件にトリム"
+    jq --arg s "$NEW_SUMMARY" '.summary = $s | .thread = .thread[-10:]' "$CONV_FILE" > "$TMP_CONV" 2>/dev/null && mv "$TMP_CONV" "$CONV_FILE" || rm -f "$TMP_CONV"
+    log_sum "サマリー更新完了。thread を10件にトリム"
   fi
 fi
 

@@ -33,6 +33,9 @@ MAX_CONSECUTIVE_ERRORS=3
 
 ALLOWED_TOOLS="Read,Write,Edit,Bash,Glob,Grep,WebSearch,WebFetch,Agent,Task"
 
+TELEGRAM_CONF="$WORK_DIR/.telegram.conf"
+TELEGRAM_NOTIFY="$WORK_DIR/scripts/telegram-notify.sh"
+
 DRY_RUN=false
 if [[ "${1:-}" == "--dry-run" ]]; then
   DRY_RUN=true
@@ -68,6 +71,13 @@ trap cleanup SIGTERM SIGINT
 # ---------------------------------------------------------------------------
 # ユーティリティ
 # ---------------------------------------------------------------------------
+telegram_notify() {
+  local message="$1"
+  if [[ -f "$TELEGRAM_NOTIFY" && -f "$TELEGRAM_CONF" ]]; then
+    bash "$TELEGRAM_NOTIFY" "$message" || true
+  fi
+}
+
 log() {
   local level="$1"
   local message="$2"
@@ -704,8 +714,10 @@ run_single_mode() {
     reviewer "$mode" "$iteration"
     update_state_str "mode" "$mode"  # 完了したモードを記録
     log "INFO" "Mode $mode 完了"
+    telegram_notify "✅ *zenn-engine ${mode} 完了* Iter${iteration}"
   else
     log "ERROR" "Mode $mode 失敗"
+    telegram_notify "[ERROR] zenn-engine: mode ${mode} 失敗 Iter${iteration}"
     git_commit_and_push "$mode" "$iteration" || true
     return 1
   fi
@@ -761,6 +773,7 @@ main() {
       update_state "iteration" "$next_iter"
       update_state_str "mode" "create"
       log "INFO" "週次サイクル完了。Iteration $next_iter へ"
+      telegram_notify "🎉 *zenn-engine 週次サイクル完了* Iter${next_iter} へ移行"
       ;;
     *)
       log "INFO" "本日(曜日=$dow)は実行対象外です"
