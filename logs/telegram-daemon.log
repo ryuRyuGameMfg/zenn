@@ -1,3 +1,5 @@
 [2026-03-29T19:31:10] Daemon started. PID=48222, NEXT_OFFSET=0
 [2026-03-29T19:31:11] Message received: /start
 [2026-03-29T19:31:11] Launching telegram-react.sh
+[2026-03-29T20:05:42] Message received: 直近の記事について内容を教えて
+[2026-03-29T20:05:42] Launching telegram-react.sh
