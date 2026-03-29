@@ -1,11 +1,16 @@
 {
-  "status": "processing",
-  "target_article": "",
+  "status": "idle",
+  "target_article": "/Users/okamotoryuya/repository/zenn-engine/articles/2026-03-28-zenn-github-actions-auto-deploy.md",
   "last_updated": "2026-03-29T19:31:11",
   "thread": [
     {
       "role": "user",
       "text": "/start\n",
+      "ts": "2026-03-29 19:31"
+    },
+    {
+      "role": "assistant",
+      "text": "zenn-engine リアクティブアシスタントが起動しました。\n\n現在の状態:\n- モード: 確認中\n- 記事数: articles/ に 69本\n\n利用可能なコマンド例:\n- 「最新記事を見せて」\n- 「create モードで記事を作成して」\n- 「state.json の状態を確認して」\n- 「〇〇の記事を修正して」\n\n何を実行しますか？\n",
       "ts": "2026-03-29 19:31"
     }
   ]

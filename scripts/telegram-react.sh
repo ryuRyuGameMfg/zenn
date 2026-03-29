@@ -98,7 +98,7 @@ build_context() {
 
 # ---- スレッド文字列生成 ----
 build_thread_str() {
-  jq -r '.thread[-10:] | map("[\(.role)] \(.text)") | join("\n")' "$CONV_FILE" 2>/dev/null || echo "(会話履歴なし)"
+  jq -r '.thread[-20:] | map("[\(.role)] \(.text)") | join("\n")' "$CONV_FILE" 2>/dev/null || echo "(会話履歴なし)"
 }
 
 # ---- メイン ----
