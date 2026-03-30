@@ -143,6 +143,7 @@ print(json.dumps(output, ensure_ascii=False))
       LAST_MESSAGE=$(echo "$MESSAGES_JSON" | tail -1)
       if [[ -n "$LAST_MESSAGE" ]]; then
         log "Launching telegram-react.sh"
+        bash "$WORK_DIR/scripts/telegram-notify.sh" "思考中..." || true
         /bin/bash "$REACT_SCRIPT" "$LAST_MESSAGE" &
       fi
     fi
