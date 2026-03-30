@@ -9,6 +9,11 @@
     "topic": ""
   },
   "consecutive_errors": 0,
+  "scheduled_publish": {
+    "slug": "2026-03-30-claude-code-launchd-autonomous-agent",
+    "scheduled_date": "2026-04-04T17:00:00+09:00",
+    "status": "scheduled"
+  },
   "history": [
     {
       "iteration": 0,
