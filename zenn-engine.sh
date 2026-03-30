@@ -14,7 +14,7 @@ WORK_DIR="$HOME/repository/zenn-engine"
 STATE_FILE="$WORK_DIR/state.json"
 LOG_DIR="$WORK_DIR/logs"
 PROMPT_DIR="$WORK_DIR/prompts"
-INPUT_FILE="$WORK_DIR/input.md"
+INPUT_FILE="$WORK_DIR/INPUT.md"
 
 # Workspace files (OpenClaw-inspired)
 SOUL_FILE="$WORK_DIR/SOUL.md"
@@ -398,7 +398,7 @@ housekeeping() {
 # Steering: Check -> Plan
 # ---------------------------------------------------------------------------
 
-# 初期化: input.md を読み込み、グローバル変数を準備
+# 初期化: INPUT.md を読み込み、グローバル変数を準備
 steering_init() {
   mkdir -p "$DAILY_DIR" "$MEMORY_DIR/long-term"
 
@@ -464,7 +464,7 @@ CRITICAL: 絶対に Write/Edit/Bash ツールを使わないこと。マーク�
   log "INFO" "Check完了"
 }
 
-# Plan: check 結果 + input.md を元に計画を立てて CURRENT_PLAN 変数に格納
+# Plan: check 結果 + INPUT.md を元に計画を立てて CURRENT_PLAN 変数に格納
 steering_make_plan() {
   local mode="$1"
   local iteration="$2"
@@ -491,7 +491,7 @@ CRITICAL: 絶対に Write/Edit/Bash ツールを使わないこと。
 ## Check結果
 ${CURRENT_CHECK}
 
-## ユーザーからの方針指示 (input.md)
+## ユーザーからの方針指示 (INPUT.md)
 $(if [[ -n "$input_content" ]]; then echo "$input_content"; else echo "なし（STRATEGY.md の方針を継続）"; fi)
 
 ## 出力フォーマット
@@ -631,7 +631,7 @@ reviewer() {
 }
 
 # ---------------------------------------------------------------------------
-# Input Lifecycle: input.md の指示対応状況を追跡・クリア（rewrite モードのみ）
+# Input Lifecycle: INPUT.md の指示対応状況を追跡・クリア（rewrite モードのみ）
 # ---------------------------------------------------------------------------
 input_lifecycle() {
   local mode="$1"
@@ -643,7 +643,7 @@ input_lifecycle() {
 
   log "INFO" "InputLifecycle: rewrite モード - 振り返りと自己改善"
 
-  # input.md のアクティブな指示を確認
+  # INPUT.md のアクティブな指示を確認
   if [[ -f "$INPUT_FILE" ]] && grep -q "^[0-9]" "$INPUT_FILE" 2>/dev/null; then
     if [[ "$DRY_RUN" == "true" ]]; then
       log "INFO" "[DRY-RUN] InputLifecycle: 評価スキップ"
@@ -652,7 +652,7 @@ input_lifecycle() {
       eval_prompt="$(build_context)
 あなたは Zenn コンテンツエンジンのインプット管理担当です。
 
-以下のユーザー指示(input.md)の各項目が対応されているかを評価してください。
+以下のユーザー指示(INPUT.md)の各項目が対応されているかを評価してください。
 作業ディレクトリ: ${WORK_DIR}
 
 ## ユーザー指示
@@ -667,7 +667,7 @@ CRITICAL: Write/Edit/Bash ツールを使わないこと。
 |---|---------|------|------|
 
 ## 全指示完了判定
-(全てdoneなら「YES - input.mdをクリア可能」、そうでなければ「NO - 残タスクあり」)"
+(全てdoneなら「YES - INPUT.mdをクリア可能」、そうでなければ「NO - 残タスクあり」)"
 
       local status_content=""
       if [[ -n "$TIMEOUT_CMD" ]]; then
@@ -677,7 +677,7 @@ CRITICAL: Write/Edit/Bash ツールを使わないこと。
       fi
 
       if [[ -n "$status_content" ]] && echo "$status_content" | grep -q "YES.*クリア可能" 2>/dev/null; then
-        log "INFO" "InputLifecycle: 全指示完了。input.md をクリア"
+        log "INFO" "InputLifecycle: 全指示完了。INPUT.md をクリア"
         cat > "$INPUT_FILE" <<'CLEAR_EOF'
 # User Input - 方針指示
 
