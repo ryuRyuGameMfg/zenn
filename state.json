@@ -1,12 +1,12 @@
 {
   "mode": "create",
   "iteration": 2,
-  "status": "reviewing",
-  "last_run": "2026-03-28T17:21:00Z",
+  "status": "completed",
+  "last_run": "2026-03-31T14:30:00Z",
   "current_article": {
-    "slug": "",
-    "title": "",
-    "topic": ""
+    "slug": "2026-03-31-why-humans-dislike-ai-design",
+    "title": "なぜ人間はAIデザインを嫌うのか：バイアスと実質的傾向の2方向分析【Unity UI実装例付き】",
+    "topic": "AIデザイン心理学・Unity UI実装"
   },
   "consecutive_errors": 0,
   "scheduled_publish": {
