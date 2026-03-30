@@ -9,11 +9,18 @@
     "topic": "AIデザイン心理学・Unity UI実装"
   },
   "consecutive_errors": 0,
-  "scheduled_publish": {
-    "slug": "2026-03-30-claude-code-launchd-autonomous-agent",
-    "scheduled_date": "2026-04-04T17:00:00+09:00",
-    "status": "scheduled"
-  },
+  "scheduled_publish": [
+    {
+      "slug": "2026-03-30-claude-code-launchd-autonomous-agent",
+      "scheduled_date": "2026-04-04T17:00:00+09:00",
+      "status": "scheduled"
+    },
+    {
+      "slug": "2026-03-31-why-humans-dislike-ai-design",
+      "scheduled_date": "2026-04-11T17:00:00+09:00",
+      "status": "scheduled"
+    }
+  ],
   "history": [
     {
       "iteration": 0,

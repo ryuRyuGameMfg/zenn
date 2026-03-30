@@ -733,47 +733,65 @@ run_single_mode() {
 # 予約公開チェック: scheduled_publish を確認して published: true に変更
 # ---------------------------------------------------------------------------
 check_scheduled_publish() {
-  local scheduled_slug
-  local scheduled_date
-  local scheduled_status
+  # 予約公開配列を取得（配列または単一オブジェクトに対応）
+  local scheduled_json
+  scheduled_json=$(jq -r '.scheduled_publish' "$STATE_FILE" 2>/dev/null)
 
-  scheduled_slug=$(get_state "scheduled_publish.slug")
-  scheduled_date=$(get_state "scheduled_publish.scheduled_date")
-  scheduled_status=$(get_state "scheduled_publish.status")
-
-  if [[ -z "$scheduled_slug" || "$scheduled_status" != "scheduled" ]]; then
-    return 0
+  # scheduled_publish が配列でない場合は配列化
+  if echo "$scheduled_json" | jq -e 'type != "array"' > /dev/null 2>&1; then
+    if echo "$scheduled_json" | jq -e 'has("slug")' > /dev/null 2>&1; then
+      # 単一オブジェクトの場合は配列化
+      scheduled_json="[$scheduled_json]"
+    else
+      # 空または無効な場合はスキップ
+      return 0
+    fi
   fi
 
-  # 現在時刻と予約時刻を比較
   local current_time
   current_time=$(date -u '+%Y-%m-%dT%H:%M:%S')
 
-  # 予約時刻をUTC基準で比較（日本時間の17:00 = UTC 08:00）
-  if [[ "$current_time" > "$scheduled_date" ]] || [[ "$current_time" == "$scheduled_date" ]]; then
-    log "INFO" "予約公開時刻到達: $scheduled_slug"
+  local published_slugs=()
 
-    # 記事ファイルを探す
-    local article_file="$WORK_DIR/articles/${scheduled_slug}.md"
+  # 配列をループ処理
+  local count
+  count=$(echo "$scheduled_json" | jq 'length')
 
-    if [[ -f "$article_file" ]]; then
-      # published: false を published: true に変更
-      if grep -q "published: false" "$article_file"; then
-        sed -i '' 's/published: false/published: true/g' "$article_file"
-        log "INFO" "予約公開実行: $scheduled_slug -> published: true"
+  for ((i=0; i<count; i++)); do
+    local scheduled_slug
+    local scheduled_date
+    local scheduled_status
 
-        # git commit + push
-        cd "$WORK_DIR" || return 1
-        git add "$article_file"
-        git commit -m "zenn: 予約公開 $scheduled_slug"
-        git push origin main || git push origin master
+    scheduled_slug=$(echo "$scheduled_json" | jq -r ".[$i].slug")
+    scheduled_date=$(echo "$scheduled_json" | jq -r ".[$i].scheduled_date")
+    scheduled_status=$(echo "$scheduled_json" | jq -r ".[$i].status")
 
-        # state.json の scheduled_publish をクリア
-        local tmp
-        tmp=$(mktemp)
-        jq '.scheduled_publish = {}' "$STATE_FILE" > "$tmp" && mv "$tmp" "$STATE_FILE"
+    if [[ -z "$scheduled_slug" || "$scheduled_status" != "scheduled" ]]; then
+      continue
+    fi
 
-        telegram_notify "zenn-engine GMです。
+    # 予約時刻をUTC基準で比較（日本時間の17:00 = UTC 08:00）
+    if [[ "$current_time" > "$scheduled_date" ]] || [[ "$current_time" == "$scheduled_date" ]]; then
+      log "INFO" "予約公開時刻到達: $scheduled_slug"
+
+      # 記事ファイルを探す
+      local article_file="$WORK_DIR/articles/${scheduled_slug}.md"
+
+      if [[ -f "$article_file" ]]; then
+        # published: false を published: true に変更
+        if grep -q "published: false" "$article_file"; then
+          sed -i '' 's/published: false/published: true/g' "$article_file"
+          log "INFO" "予約公開実行: $scheduled_slug -> published: true"
+
+          # git commit + push
+          cd "$WORK_DIR" || return 1
+          git add "$article_file"
+          git commit -m "zenn: 予約公開 $scheduled_slug"
+          git push origin main || git push origin master
+
+          published_slugs+=("$scheduled_slug")
+
+          telegram_notify "zenn-engine GMです。
 
 <b>予約公開が完了しました</b>
 
@@ -785,15 +803,33 @@ $(date -j -f '%Y-%m-%dT%H:%M:%S' "${scheduled_date%%+*}" '+%Y年%m月%d日 %H:%M
 
 記事が公開されました。"
 
-        log "INFO" "予約公開完了: $scheduled_slug"
+          log "INFO" "予約公開完了: $scheduled_slug"
+        else
+          log "WARN" "記事がすでに公開済み: $scheduled_slug"
+          published_slugs+=("$scheduled_slug")
+        fi
       else
-        log "WARN" "記事がすでに公開済み: $scheduled_slug"
+        log "ERROR" "予約公開対象の記事が見つかりません: $article_file"
       fi
     else
-      log "ERROR" "予約公開対象の記事が見つかりません: $article_file"
+      log "INFO" "予約公開はまだ先です: $scheduled_slug -> $scheduled_date (現在: $current_time)"
     fi
-  else
-    log "INFO" "予約公開はまだ先です: $scheduled_date (現在: $current_time)"
+  done
+
+  # 公開完了した予約をstate.jsonから削除
+  if [[ ${#published_slugs[@]} -gt 0 ]]; then
+    local tmp
+    tmp=$(mktemp)
+    local filter_expr=""
+    for slug in "${published_slugs[@]}"; do
+      if [[ -z "$filter_expr" ]]; then
+        filter_expr=".slug != \"$slug\""
+      else
+        filter_expr="$filter_expr and .slug != \"$slug\""
+      fi
+    done
+    jq ".scheduled_publish = [.scheduled_publish[] | select($filter_expr)]" "$STATE_FILE" > "$tmp" && mv "$tmp" "$STATE_FILE"
+    log "INFO" "公開完了した予約を削除: ${published_slugs[*]}"
   fi
 }
 
