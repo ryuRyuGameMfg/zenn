@@ -20,7 +20,7 @@ OpenRouter の仕組みについては、こちらの記事が参考になりま
 
 https://ai-tsu-ru.com/openrouter-complete-guide/
 
-「もっとシンプルに、月額固定で、自分の MacBook で動かせないか？」
+「もっとシンプルに、**Claude Code のサブスクリプション（月額固定）** だけで自分の MacBook で動かせないか？」
 
 そう思って作ったのが本記事で紹介するシステムです。実際にこの記事自体が、そのシステム（zenn-engine）によって自律生成・管理されています。
 
