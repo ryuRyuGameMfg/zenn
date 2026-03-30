@@ -14,6 +14,12 @@ OpenClaw を導入してみた。Mac mini を買った。いざ動かしてみ�
 - 自動化すればするほど課金が積み上がる
 - ローカル LLM に切り替えようとしたら、M3 Max クラスのマシンが必要と知る
 
+OpenClaw や OpenRouter は優れたツールです。ただし、AIタスクを自動化・ループ実行するほどAPIコストが線形に増えていく構造は避けられません。
+
+OpenRouter の仕組みについては、こちらの記事が参考になります：
+
+https://ai-tsu-ru.com/openrouter-complete-guide/
+
 「もっとシンプルに、月額固定で、自分の MacBook で動かせないか？」
 
 そう思って作ったのが本記事で紹介するシステムです。実際にこの記事自体が、そのシステム（zenn-engine）によって自律生成・管理されています。
@@ -63,6 +69,10 @@ OpenClaw を導入してみた。Mac mini を買った。いざ動かしてみ�
 
 API 従量課金がないため、自動化が活発になるほどコスパが改善するのが最大の特徴です。
 
+Claude Code の料金・プランの詳細はこちら（公式日本語ドキュメント）：
+
+https://platform.claude.com/docs/ja/about-claude/pricing
+
 ---
 
 ## 仕組みの解説
@@ -95,7 +105,9 @@ cp com.ryuryu.zenn-engine.plist ~/Library/LaunchAgents/
 launchctl load ~/Library/LaunchAgents/com.ryuryu.zenn-engine.plist
 ```
 
-n8n や Make.com などの外部ワークフローツールは一切不要です。
+n8n や Make.com などの外部ワークフローツールは一切不要です。launchd の設定方法・plist の書き方について詳しくはこちら：
+
+https://zenn.dev/arsaga/articles/4d1a2de87d428a
 
 ### Claude Code ヘッドレスモード（`-p` フラグ）
 
@@ -117,6 +129,14 @@ echo "$prompt" | claude -p --allowedTools "Read,Write,Edit,Bash,Glob,Grep"
 - articles/ 内の既存ファイルは削除禁止
 - git push は articles/ への変更がある場合のみ実行
 ```
+
+ヘッドレスモードの詳細・出力形式オプションは公式日本語ドキュメントで解説されています：
+
+https://code.claude.com/docs/ja/headless
+
+実際の活用パターン（CI自動化・コードレビュー等）については、こちらのZenn記事が参考になります：
+
+https://zenn.dev/sora_biz/articles/claude-code-headless-mode
 
 ---
 
@@ -153,7 +173,7 @@ OpenRouter などの外部 API を経由する場合、プロンプト内容が�
 - **ツールの制限**: `--allowedTools` で使用可能なツールをホワイトリスト管理
 - **Telegram 通知**: エンドツーエンド暗号化のチャネル経由。完了通知のみ送信し、機密データは外部に出ない
 
-OpenClaw の思想は優れていますが、「第三者 API を経由したくない」場合にこのアプローチは有効です。
+OpenClaw の思想は優れていますが、「第三者 API を経由したくない」「自分のマシン内だけで完結させたい」という場合、このアプローチは有効な選択肢になります。
 
 ---
 
@@ -171,7 +191,15 @@ curl -s -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
   -d "text=${1}" > /dev/null
 ```
 
-セットアップは Telegram の BotFather でボットを作成し、トークンを取得するだけです。外出中でもスマホで実行結果を確認できます。
+セットアップは Telegram の BotFather でボットを作成し、トークンを取得するだけです。外出中でもスマホで実行結果を確認できます。Telegram は E2E 暗号化に対応しており、通知チャネルとしてセキュリティ的にも優れています。
+
+BotFather を使ったボット作成・トークン取得の手順はこちら：
+
+https://apidog.com/jp/blog/beginners-guide-to-telegram-bot-api-jp/
+
+Bash から curl でメッセージを送る実装例はこちら：
+
+https://zenn.dev/rescuenow/articles/7940e89422253d
 
 ---
 
