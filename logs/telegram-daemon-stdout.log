@@ -56,3 +56,7 @@ Args: {'audio': ['/tmp/tg-voice-33443.ogg'], 'model': 'mlx-community/whisper-lar
 [01:01.660 --> 01:02.640] それを突き止めたいし
 [01:02.640 --> 01:04.900] その2方向でちょっと議論したいんだよね
 [01:04.900 --> 01:07.040] でその調査もお願い
+Args: {'audio': ['/tmp/tg-voice-53222.ogg'], 'model': 'mlx-community/whisper-large-v3-mlx', 'output_name': None, 'output_dir': '/tmp', 'output_format': 'txt', 'verbose': True, 'task': 'transcribe', 'language': 'ja', 'temperature': 0, 'best_of': 5, 'patience': None, 'length_penalty': None, 'suppress_tokens': '-1', 'initial_prompt': None, 'condition_on_previous_text': True, 'fp16': True, 'compression_ratio_threshold': 2.4, 'logprob_threshold': -1.0, 'no_speech_threshold': 0.6, 'word_timestamps': False, 'prepend_punctuations': '"\'“¿([{-', 'append_punctuations': '"\'.。,，!！?？:：”)]}、', 'highlight_words': False, 'max_line_width': None, 'max_line_count': None, 'max_words_per_line': None, 'hallucination_silence_threshold': None, 'clip_timestamps': '0'}
+[00:00.000 --> 00:01.900] よし、じゃあその方向で書こうか。
+[00:02.740 --> 00:07.480] 実質的健康の検証はもうよく書いた方がいいと思うね。
+[00:08.420 --> 00:08.780] お願いします。
