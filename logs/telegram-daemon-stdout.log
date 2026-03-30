@@ -17,3 +17,13 @@ Args: {'audio': ['/tmp/tg-voice-74017.ogg'], 'model': 'mlx-community/whisper-lar
 Args: {'audio': ['/tmp/tg-voice-6448.ogg'], 'model': 'mlx-community/whisper-large-v3-mlx', 'output_name': None, 'output_dir': '/tmp', 'output_format': 'txt', 'verbose': True, 'task': 'transcribe', 'language': 'ja', 'temperature': 0, 'best_of': 5, 'patience': None, 'length_penalty': None, 'suppress_tokens': '-1', 'initial_prompt': None, 'condition_on_previous_text': True, 'fp16': True, 'compression_ratio_threshold': 2.4, 'logprob_threshold': -1.0, 'no_speech_threshold': 0.6, 'word_timestamps': False, 'prepend_punctuations': '"\'“¿([{-', 'append_punctuations': '"\'.。,，!！?？:：”)]}、', 'highlight_words': False, 'max_line_width': None, 'max_line_count': None, 'max_words_per_line': None, 'hallucination_silence_threshold': None, 'clip_timestamps': '0'}
 [00:00.000 --> 00:01.700] 次の投稿について議論したいです
 [00:01.700 --> 00:03.140] ネタの元になるものある?
+Args: {'audio': ['/tmp/tg-voice-28472.ogg'], 'model': 'mlx-community/whisper-large-v3-mlx', 'output_name': None, 'output_dir': '/tmp', 'output_format': 'txt', 'verbose': True, 'task': 'transcribe', 'language': 'ja', 'temperature': 0, 'best_of': 5, 'patience': None, 'length_penalty': None, 'suppress_tokens': '-1', 'initial_prompt': None, 'condition_on_previous_text': True, 'fp16': True, 'compression_ratio_threshold': 2.4, 'logprob_threshold': -1.0, 'no_speech_threshold': 0.6, 'word_timestamps': False, 'prepend_punctuations': '"\'“¿([{-', 'append_punctuations': '"\'.。,，!！?？:：”)]}、', 'highlight_words': False, 'max_line_width': None, 'max_line_count': None, 'max_words_per_line': None, 'hallucination_silence_threshold': None, 'clip_timestamps': '0'}
+[00:00.000 --> 00:02.160] ノートの記事の方でも書いてるんだけど
+[00:02.160 --> 00:07.600] AIのデザインをなぜ人間は
+[00:07.600 --> 00:11.100] 嫌いなのかとか
+[00:11.100 --> 00:20.300] とかっていうようなテーマで書きたいんだよね
+[00:20.300 --> 00:22.980] 心理学的なところとか
+[00:22.980 --> 00:25.560] 実際に人間がどう思っているかっていうのを
+[00:25.560 --> 00:27.540] SNSとかでたくさん投稿とか見て
+[00:27.540 --> 00:29.460] どういう傾向があるかとかも調べたいんだよね
+[00:29.460 --> 00:30.240] どう思いますか

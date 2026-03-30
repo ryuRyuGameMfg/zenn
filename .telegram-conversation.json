@@ -1,7 +1,7 @@
 {
   "status": "processing",
   "target_article": "/Users/okamotoryuya/repository/zenn-engine/articles/2026-03-28-zenn-github-actions-auto-deploy.md",
-  "last_updated": "2026-03-31T03:04:19",
+  "last_updated": "2026-03-31T03:18:09",
   "thread": [
     {
       "role": "user",
@@ -57,6 +57,16 @@
       "role": "user",
       "text": "次の投稿について議論したいですネタの元になるものある?\n",
       "ts": "2026-03-31 03:04"
+    },
+    {
+      "role": "assistant",
+      "text": "<b>zenn-engine GMです。</b>\n\n<b>次の投稿ネタの議論を開始します</b>\n\n―――――――――――――――――\n\n<b>現在のテーマキュー（上位3件）</b>\n\n1. uLoopMCP + Claude Code で Unity 自律開発サイクルを実現する方法\n2. Unity Memory Profiler 実践ワークフロー：GC Alloc 撲滅からメモリリーク根絶まで\n3. Unity GPU Instancing 完全実装：DrawMeshInstanced から RenderMeshIndirect まで段階的に理解する\n\n―――――――――――――――――\n\n<b>高PVパターン（競合分析結果）</b>\n\n・AI x Unity MCP連携（実験記録形式）: スキ18〜33\n・Unity 6.x 新機能解説: スキ18前後\n・非エンジニア体験記 + AI: スキ5〜26\n\n―――――――――――――――――\n\n<b>ネタの元になるもの</b>\n\n<b>1. uLoopMCP + Claude Code</b>\n・OpenClaw記事との差別化: Unity特化\n・実験記録形式で書けば競合の高スキ帯を狙える\n・Claude Code で Unity プロジェクトを自律管理する実例\n\n<b>2. Unity Memory Profiler 実践</b>\n・競合が入門記事のみ\n・実ゲームでのワークフロー解説で差別化\n・コードサンプル + スクリーンショット豊富に用意可能\n\n<b>3. Unity GPU Instancing</b>\n・段階的解説が競合に少ない\n・DrawMeshInstanced から RenderMeshIndirect まで\n・パフォーマンス系は検索安定\n\n―――――――――――――――――\n\n<b>GM からの推奨</b>\n\n<blockquote>uLoopMCP + Claude Code を次の投稿にすることを推奨します</blockquote>\n\n<b>理由</b>\n\n・OpenClaw記事で「外部API依存ゼロ」を訴求したので、Unity特化版で差別化できる\n・AI × Unity MCP連携は競合で最高スキ帯（26〜33）\n・実験記録形式で書けば拡散が期待できる\n・Claude Code の Unity 活用事例として読者価値が高い\n\n―――――――――――――――――\n\n<b>質問</b>\n\n1. uLoopMCP + Claude Code で進めますか？\n2. それとも Memory Profiler / GPU Instancing のほうが良いですか？\n3. 別のテーマを追加しますか？\n\nどれにしますか？\n",
+      "ts": "2026-03-31 03:04"
+    },
+    {
+      "role": "user",
+      "text": "ノートの記事の方でも書いてるんだけどAIのデザインをなぜ人間は嫌いなのかとかとかっていうようなテーマで書きたいんだよね心理学的なところとか実際に人間がどう思っているかっていうのをSNSとかでたくさん投稿とか見てどういう傾向があるかとかも調べたいんだよねどう思いますか\n",
+      "ts": "2026-03-31 03:18"
     }
   ],
   "summary": "以下の3セクションのみ出力します。\n\n---\n\n【決定事項】\n- 記事スラッグ「2026-03-30-claude-code-launchd-autonomous-agent」で全文完成（7箇所にURL埋め込み済み・全てカード表示形式）\n- セクション直後にURLを単独行配置（末尾まとめ形式は不採用）\n- CTA末尾のご相談窓口URLのみプレースホルダー（ココナラ等のURL確認待ち）\n\n【作業状態】\n- 記事全文出力完了（OpenRouter/料金/launchd/ヘッドレス/Telegram解説URL全て実在確認済み）\n- git push未実行（CTAリンク差し替え後に公開可能な状態）\n\n【継続コンテキスト】\nユーザーがCTAセクションのサービスURLを提供次第、即座に差し替えてgit pushで公開完了となる。記事構成・URL配置は全て完了済み。"
