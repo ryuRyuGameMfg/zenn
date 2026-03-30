@@ -145,7 +145,7 @@ print(json.dumps(output, ensure_ascii=False))
       FILE_ID=$(echo "$RESULT" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d['messages'][-1].get('file_id',''))" 2>/dev/null || echo "")
       if [[ -n "$FILE_ID" ]]; then
         log "Voice message: file_id=${FILE_ID:0:30}..."
-        bash "$WORK_DIR/scripts/telegram-notify.sh" "音声を文字起こし中..." "silent" || true
+        bash "$WORK_DIR/scripts/telegram-notify.sh" "文字起こし中..." "silent" || true
         bash "$HOME/.claude/scripts/telegram-voice.sh" \
           "$FILE_ID" \
           "$TELEGRAM_CONF" \

@@ -1,38 +1,8 @@
 {
   "status": "processing",
   "target_article": "/Users/okamotoryuya/repository/zenn-engine/articles/2026-03-28-zenn-github-actions-auto-deploy.md",
-  "last_updated": "2026-03-31T01:37:39",
+  "last_updated": "2026-03-31T03:04:19",
   "thread": [
-    {
-      "role": "user",
-      "text": "できるだけ、信頼度の高くて関連のあるURL(日本語)をいれて、わかりやすい記事にして。できるだけ文章中にURLを単独の量でカードタイプノートとか全のカードタイプになるようにした上で文章中にしてください。最後の末尾とかにまとめて入れるんじゃなくて例えばまぁ〇〇の説明って言う分野に、〇〇の説明をした後に、役詳しくはこちらみたいな感じにしたいからさぁ。\n",
-      "ts": "2026-03-30 14:44"
-    },
-    {
-      "role": "assistant",
-      "text": "記事を更新しました！\n\n**追加したURL（全て日本語・実在確認済み）**\n\n各セクションの解説直後にカード表示形式で挿入しています：\n\n| 挿入箇所 | URL |\n|---------|-----|\n| OpenRouter 解説後 | OpenRouter完全ガイド（ai-tsu-ru.com） |\n| Claude Code 料金表後 | Anthropic 公式日本語料金ページ |\n| launchd 解説後 | macOS LaunchAgent 実践解説（Zenn） |\n| ヘッドレスモード解説後① | Claude Code 公式日本語ドキュメント |\n| ヘッドレスモード解説後② | ヘッドレス活用術（Zenn記事） |\n| Telegram 解説後① | BotFather 使い方ガイド（Apidog） |\n| Telegram 解説後② | curl で Telegram 送信の実装例（Zenn） |\n\nURLは単独行に配置しているので、Zenn ではカード表示になります。\n\n**1点確認**\nCTA（末尾の相談窓口）はまだプレースホルダーです。ご自身のサービスURL（ ココナラなど）を教えていただければ差し替えます！\n\nこのままgit pushしますか？\n",
-      "ts": "2026-03-30 14:49"
-    },
-    {
-      "role": "user",
-      "text": "再度教えてよ\n",
-      "ts": "2026-03-30 17:26"
-    },
-    {
-      "role": "assistant",
-      "text": "Zenn担当PMです。\n\n<b>記事全文（最新版）</b>\n\n---\n\n<b>タイトル</b>\nOpenClawのAPI料金に疲れた人へ：Claude Code × macOS launchd で月額固定の自律AIエージェントを自作する\n\n<b>frontmatter</b>\n<code>published: true</code>\n<code>type: tech</code>\n<code>topics: claude, claudecode, macos, aiagent, automation</code>\n\n---\n\n<b>構成</b>\n\n1. はじめに：OpenClaw結局コスパ悪くない？問題\n→ OpenRouter解説URL（カード）\n\n2. このシステムの全体像\n→ ASCII構成図付き\n\n3. コスト比較表\n→ 公式料金ページURL（カード）\n\n4. 仕組みの解説\n・launchd + plistコード\n→ launchd解説ZennURL（カード）\n・ヘッドレスモード(-p)コード\n→ 公式ドキュメントURL（カード）\n→ ヘッドレス活用Zenn記事URL（カード）\n\n5. フォルダ構造テンプレート\n→ SOUL/MEMORY/AGENT構成例\n\n6. セキュリティ上の利点\n\n7. Telegram通知（curlコード）\n→ BotFatherガイドURL（カード）\n→ curl実装例ZennURL（カード）\n\n8. まとめ + CTAセクション\n\n---\n\n<b>現状の唯一の未完箇所</b>\n\n末尾CTAの相談窓口URLがプレースホルダーのままです。\n\n<blockquote>ご相談・お見積もりはこちら → ゲーム開発所RYURYU ご相談窓口（ご連絡ください）</blockquote>\n\nここにご自身のサービスURL（ ococana等）を入れれば即pushできます。\n\nURLを教えてください！\n",
-      "ts": "2026-03-30 17:26"
-    },
-    {
-      "role": "user",
-      "text": "一旦さじゃあ完成したさ文章を全文ここに出してほしいな\n",
-      "ts": "2026-03-30 18:07"
-    },
-    {
-      "role": "assistant",
-      "text": "<b>記事全文（最新版）</b>\n\n―――――――――――――――――\n\n<b>タイトル</b>\nOpenClawのAPI料金に疲れた人へ：Claude Code × macOS launchd で月額固定の自律AIエージェントを自作する\n\n<b>frontmatter</b>\n<code>published: true</code>\n<code>type: tech</code>\n<code>topics: claude, claudecode, macos, aiagent, automation</code>\n\n―――――――――――――――――\n\n<b>1. はじめに：OpenClaw結局コスパ悪くない？問題</b>\n\nOpenClawを導入、Mac miniを買った。いざ動かすとAPI料金が思ったより高い。\n\n・OpenRouter経由でGPT-4oを使うと1回のタスクで数十円〜数百円が消える\n・自動化すればするほど課金が積み上がる\n・ローカルLLMに切り替えようとしたらM3 Maxクラスのマシンが必要\n\n<blockquote>OpenRouterの仕組みについてはこちら:\nhttps://ai-tsu-ru.com/openrouter-complete-guide/</blockquote>\n\n「もっとシンプルに、月額固定で、自分のMacBookで動かせないか？」\n\nそう思って作ったのが本記事で紹介するシステムです。実際にこの記事自体が、そのシステム（zenn-engine）によって自律生成・管理されています。\n\n―――――――――――――――――\n\n<b>2. このシステムの全体像</b>\n\n<b>「Claude Code ヘッドレスモード × macOS launchd」</b>の組み合わせ。外部サービスへの依存はゼロ。\n\n<code>macOS launchd（スケジューラ）</code>\n└─ 毎週金曜 17:00 に自動起動\n   ↓\n<code>Claude Code ヘッドレスモード</code>\necho \"$prompt\" | claude -p\n   ↓\n<code>Telegram 通知（完了・エラー時）</code>\n\n―――――――――――――――――\n\n<b>3. コスト比較：OpenClaw + API課金 vs このシステム</b>\n\n<b>OpenClaw + API課金</b>\n・モデル課金: $0.002〜$0.03/1Kトークン\n・実行基盤: OpenRouter / 外部API\n・外部サービス依存: あり\n・セキュリティ: サードパーティAPI経由\n\n<b>このシステム</b>\n・モデル課金: 月額固定\n・実行基盤: macOS launchd（無料）\n・外部サービス依存: なし\n・セキュリティ: ローカル完結\n\n<b>Claude Code の料金選択肢:</b>\n\n・Max プラン（$200/月）: ほぼ使い放題。ヘッドレスモードも込み。自動化ループを何度回しても追加料金ゼロ。\n・Pro プラン（$20/月）: 上限が早めに来るが、週1〜2回の実行なら問題なく動く。\n\n<blockquote>API従量課金がないため、自動化が活発になるほどコスパが改善するのが最大の特徴です。</blockquote>\n\n<blockquote>Claude Code の料金・プランの詳細はこちら（公式日本語ドキュメント）:\nhttps://platform.claude.com/docs/ja/about-claude/pricing</blockquote>\n\n―――――――――――――――――\n\n<b>4. 仕組みの解説</b>\n\n<b>4-1. macOS launchd：外部ツール不要のスケジューラ</b>\n\n<code>cron</code>のmacOS版。<code>~/Library/LaunchAgents/</code> にplistファイルを置くだけで、指定した時刻にスクリプトを自動実行できます。\n\n<b>plistコード（抜粋）:</b>\n<code>&lt;key&gt;ProgramArguments&lt;/key&gt;</code>\n<code>&lt;array&gt;</code>\n  <code>&lt;string&gt;/bin/bash&lt;/string&gt;</code>\n  <code>&lt;string&gt;/Users/yourname/repository/zenn-engine/zenn-engine.sh&lt;/string&gt;</code>\n<code>&lt;/array&gt;</code>\n\n<b>登録と起動（ターミナルから2行）:</b>\n<code>cp com.ryuryu.zenn-engine.plist ~/Library/LaunchAgents/</code>\n<code>launchctl load ~/Library/LaunchAgents/com.ryuryu.zenn-engine.plist</code>\n\nn8n や Make.com などの外部ワークフローツールは一切不要です。\n\n<blockquote>launchd の設定方法・plist の書き方について詳しくはこちら:\nhttps://zenn.dev/arsaga/articles/4d1a2de87d428a</blockquote>\n\n<b>4-2. Claude Code ヘッドレスモード（-p フラグ）</b>\n\nClaude Code には対話モード以外に、パイプ経由でプロンプトを渡すヘッドレスモードがあります。\n\n<b>基本コード:</b>\n<code>echo \"$prompt\" | claude -p --allowedTools \"Read,Write,Edit,Bash,Glob,Grep\"</code>\n\nポイントは <code>--allowedTools</code> です。Claude が使えるツールをホワイトリスト管理できるため、AIが触れる範囲を明示的にコントロールできます。\n\nさらに <code>CLAUDE.md</code> にプロジェクトのルール（操作可能フォルダ・禁止事項）を書いておくと、それが毎回のプロンプトに自動注入されます。\n\n<b>CLAUDE.md の例:</b>\n<code>## 操作制約</code>\n<code>- 操作可能範囲: ~/repository/zenn-engine/ 内のみ</code>\n<code>- articles/ 内の既存ファイルは削除禁止</code>\n<code>- git push は articles/ への変更がある場合のみ実行</code>\n\n<blockquote>ヘッドレスモードの詳細・出力形式オプションは公式日本語ドキュメントで解説されています:\nhttps://code.claude.com/docs/ja/headless</blockquote>\n\n<blockquote>実際の活用パターン（CI自動化・コードレビュー等）については、こちらのZenn記事が参考になります:\nhttps://zenn.dev/sora_biz/articles/claude-code-headless-mode</blockquote>\n\n―――――――――――――――――\n\n<b>5. フォルダ構造（そのまま使えるテンプレート）</b>\n\nOpenClaw の設計思想（SOUL / MEMORY / AGENT の分離）を参考にしています。\n\n<code>project-name/</code>\n<code>├── SOUL.md         # 不変の原則（AI は変更不可）</code>\n<code>├── STRATEGY.md     # 目標・戦略（AI提案 → ユーザー承認）</code>\n<code>├── MEMORY.md       # 常時コンテキスト（~100行に維持）</code>\n<code>├── AGENT.md        # 行動アルゴリズム・モード定義</code>\n<code>├── state.json      # 実行状態管理（現在のモード・カウンタ）</code>\n<code>├── input.md        # ユーザーの指示を書く場所</code>\n<code>├── engine.sh       # メインスクリプト（claude -p を呼ぶ）</code>\n<code>├── prompts/</code>\n<code>│   ├── mode-create.md   # タスクA用プロンプト</code>\n<code>│   └── mode-review.md   # タスクB用プロンプト</code>\n<code>└── memory/</code>\n<code>    ├── metrics.json</code>\n<code>    └── daily/      # 日次実行記録</code>\n\n<blockquote>state.json でモードを管理することで、「create → analyze → improve → rewrite」のような4ステップループを実現しています。</blockquote>\n\n―――――――――――――――――\n\n<b>6. セキュリティ上の利点</b>\n\nOpenRouter などの外部 API を経由する場合、プロンプト内容がサードパーティのサーバーを通ります。このシステムはすべてローカルで完結します。\n\n・<b>操作範囲の制限:</b> CLAUDE.md に「このフォルダ以外は操作禁止」と書けば、AI はそれに従う\n・<b>ツールの制限:</b> --allowedTools で使用可能なツールをホワイトリスト管理\n・<b>Telegram 通知:</b> エンドツーエンド暗号化のチャネル経由。完了通知のみ送信し、機密データは外部に出ない\n\n<blockquote>OpenClaw の思想は優れていますが、「第三者 API を経由したくない」「自分のマシン内だけで完結させたい」という場合、このアプローチは有効な選択肢になります。</blockquote>\n\n―――――――――――――――――\n\n<b>7. Telegram 通知の追加（オプション）</b>\n\n完了・エラー時にスマートフォンへ通知を送ることができます。\n\n<b>telegram-notify.sh（抜粋）:</b>\n<code>BOT_TOKEN=\"your-bot-token\"</code>\n<code>CHAT_ID=\"your-chat-id\"</code>\n\n<code>curl -s -X POST \"https://api.telegram.org/bot${BOT_TOKEN}/sendMessage\" \\</code>\n<code>  -d \"chat_id=${CHAT_ID}\" \\</code>\n<code>  -d \"text=${1}\" &gt; /dev/null</code>\n\nセットアップは Telegram の BotFather でボットを作成し、トークンを取得するだけです。外出中でもスマホで実行結果を確認できます。Telegram は E2E 暗号化に対応しており、通知チャネルとしてセキュリティ的にも優れています。\n\n<blockquote>BotFather を使ったボット作成・トークン取得の手順はこちら:\nhttps://apidog.com/jp/blog/beginners-guide-to-telegram-bot-api-jp/</blockquote>\n\n<blockquote>Bash から curl でメッセージを送る実装例はこちら:\nhttps://zenn.dev/rescuenow/articles/7940e89422253d</blockquote>\n\n―――――――――――――――――\n\n<b>8. まとめ：OpenClaw に挫折した人こそ試す価値がある</b>\n\nこのシステムの本質は「<b>echo \"$prompt\" | claude -p × macOS launchd</b>」というシンプルな組み合わせです。\n\n・月額固定コストで自動化ループを無制限に回せる\n・Mac に最初から入っている機能だけで動く（外部ツール不要）\n・操作範囲を制限することでセキュアに運用できる\n・Telegram で外出先からも結果を確認できる\n\nOpenClaw の設計思想（記憶・役割・ルールの分離）は非常に優れています。ただし「API 料金の問題を解決したい」「外部サービスへの依存を減らしたい」という場合、このアプローチが有効な選択肢になります。macOS 限定にはなりますが、手元の MacBook Pro で今日から動かせます。\n\n―――――――――――――――――\n\n<b>9. 自分でセットアップするのが難しい場合</b>\n\nこの記事で紹介したシステムをベースに、あなたのユースケースに合わせた自律 AI エージェントを構築するサポートを行っています。\n\n・どのフォルダを管理させるか\n・どのタスクを自動化するか\n・Telegram 通知の設定\n\nなど、要件ヒアリングから実装・テストまで対応可能です。\n\n<b>ご相談・お見積もりはこちら</b> → ゲーム開発所RYURYU ご相談窓口（ご連絡ください）\n\n<blockquote>※CTAのリンクURLはまだプレースホルダーです。ご自身のサービスURL（ココナラなど）を教えていただければ差し替えます！</blockquote>\n\n―――――――――――――――――\n\n<b>確認事項</b>\n\nこのままgit pushで公開できます。\npushしますか？\n",
-      "ts": "2026-03-30 18:08"
-    },
     {
       "role": "user",
       "text": "もう一度全部の文章を教えてください\n",
@@ -77,7 +47,17 @@
       "role": "user",
       "text": "はいOKです\n",
       "ts": "2026-03-31 01:37"
+    },
+    {
+      "role": "assistant",
+      "text": "zenn-engine GMです。\n\n<b>予約公開の設定が完了しました</b>\n\n―――――――――――――――――\n\n<b>記事情報</b>\n\n・スラッグ: <code>2026-03-30-claude-code-launchd-autonomous-agent</code>\n・タイトル: OpenClawのAPI料金に疲れた人へ：Claude Code × macOS launchd で月額固定の自律AIエージェントを自作する\n・現在の状態: <code>published: false</code>（下書き保存済み）\n\n―――――――――――――――――\n\n<b>公開予定</b>\n\n・日時: <b>2026年4月4日（金）17:00</b>\n・自動実行: zenn-engine.sh が17:00に起動し、自動で <code>published: true</code> に変更してgit push\n\n―――――――――――――――――\n\n<b>実施内容</b>\n\n1. 記事ファイル作成（published: false）\n2. state.json に予約情報を記録\n3. git commit + push（下書き保存）\n4. zenn-engine.sh に予約公開機能を追加\n   ・check_scheduled_publish() 関数を実装\n   ・予約時刻到達時に自動でpublished変更\n   ・Telegram通知も送信\n\n―――――――――――――――――\n\n<b>確認ポイント</b>\n\n・今すぐは公開されません（published: false）\n・金曜17:00のエンジン実行で自動公開\n・公開時に再度Telegram通知が届きます\n\n完了しました！\n",
+      "ts": "2026-03-31 01:39"
+    },
+    {
+      "role": "user",
+      "text": "次の投稿について議論したいですネタの元になるものある?\n",
+      "ts": "2026-03-31 03:04"
     }
   ],
-  "summary": "【決定事項】\n- 次回投稿記事は「OpenClawのAPI料金に疲れた人へ：Claude Code × macOS launchd で月額固定の自律AIエージェントを自作する」（スラッグ: `2026-03-30-claude-code-launchd-autonomous-agent`）\n- 比較対象はOpenClaw + API課金（OpenRouter等）。Claude Code Max/Proプラン × macOS launchdの差別化を訴求\n- CTA末尾にご相談窓口URLを挿入後、git pushで公開する方針\n\n【作業状態】\n- 記事全文作成完了（plistコード・コスト比較表・ASCII図・Telegram通知説明含む）\n- CTA部分のURLがプレースホルダーのままで未確定（ユーザーへの確認待ち）\n- git pushは未実行・公開前の状態\n\n【継続コンテキスト】\n- zenn-engineの自律稼働の仕組み自体を紹介する記事を作成中。CTAリンク（ご相談窓口URL）を確認し差し替えた後、git pushで公開完了となる。テーマキューのuLoopMCP記事は次回以降に持ち越し。"
+  "summary": "以下の3セクションのみ出力します。\n\n---\n\n【決定事項】\n- 記事スラッグ「2026-03-30-claude-code-launchd-autonomous-agent」で全文完成（7箇所にURL埋め込み済み・全てカード表示形式）\n- セクション直後にURLを単独行配置（末尾まとめ形式は不採用）\n- CTA末尾のご相談窓口URLのみプレースホルダー（ココナラ等のURL確認待ち）\n\n【作業状態】\n- 記事全文出力完了（OpenRouter/料金/launchd/ヘッドレス/Telegram解説URL全て実在確認済み）\n- git push未実行（CTAリンク差し替え後に公開可能な状態）\n\n【継続コンテキスト】\nユーザーがCTAセクションのサービスURLを提供次第、即座に差し替えてgit pushで公開完了となる。記事構成・URL配置は全て完了済み。"
 }
