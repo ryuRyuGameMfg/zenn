@@ -11,9 +11,9 @@
 - **稼働状況**: 4日ローテーション稼働中（Iter0 完了、Iter1 開始）
 - **フォロワー**: 37（目標 1000、進捗 3.7%）
 - **直近投稿**:
+  - 2026-03-31 `2026-03-31-why-humans-dislike-ai-design`（create）
   - 2026-03-28 `2026-03-28-zenn-github-actions-auto-deploy`（rewrite）
   - 2026-03-28 `2026-03-28-univrm-lipsync-implementation`（create）
-  - 2026-03-26 `2026-03-26-unity-claude-code-auto-test-generation`（create）
 
 ---
 
@@ -23,6 +23,9 @@
 1. uLoopMCP + Claude Code で Unity 自律開発サイクルを実現する方法
 2. Unity Memory Profiler 実践ワークフロー：GC Alloc 撲滅からメモリリーク根絶まで
 3. Unity GPU Instancing 完全実装：DrawMeshInstanced から RenderMeshIndirect まで段階的に理解する
+
+**直近の高注目テーマ（2026-03-31追加）**:
+- AIデザイン心理学 × Unity UI実装：バイアスと実質的傾向の2方向分析が競合に存在せず、差別化に成功
 
 **高PVパターン（競合分析 2026-03-27）**:
 
@@ -55,6 +58,7 @@
 | Unity × Claude Code 自動テスト生成 | 2026-03-26 に作成済み |
 | UniVRM 2.0 リップシンク実装 | 2026-03-28 に作成済み |
 | Zenn × GitHub Actions 自動デプロイ | 2026-03-28 に作成済み |
+| AIデザイン心理学 × Unity UI実装 | 2026-03-31 に作成済み |
 
 **長期有効な知見**:
 - AI x Unity MCP 連携記事が競合で最高スキ（26〜33）。実験記録・限界検証フォーマットが有効。
