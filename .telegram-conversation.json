@@ -1,7 +1,7 @@
 {
-  "status": "idle",
+  "status": "processing",
   "target_article": "/Users/okamotoryuya/repository/zenn-engine/articles/2026-03-28-zenn-github-actions-auto-deploy.md",
-  "last_updated": "2026-03-30T17:26:20",
+  "last_updated": "2026-03-30T18:07:46",
   "thread": [
     {
       "role": "user",
@@ -52,6 +52,11 @@
       "role": "assistant",
       "text": "Zenn担当PMです。\n\n<b>記事全文（最新版）</b>\n\n---\n\n<b>タイトル</b>\nOpenClawのAPI料金に疲れた人へ：Claude Code × macOS launchd で月額固定の自律AIエージェントを自作する\n\n<b>frontmatter</b>\n<code>published: true</code>\n<code>type: tech</code>\n<code>topics: claude, claudecode, macos, aiagent, automation</code>\n\n---\n\n<b>構成</b>\n\n1. はじめに：OpenClaw結局コスパ悪くない？問題\n→ OpenRouter解説URL（カード）\n\n2. このシステムの全体像\n→ ASCII構成図付き\n\n3. コスト比較表\n→ 公式料金ページURL（カード）\n\n4. 仕組みの解説\n・launchd + plistコード\n→ launchd解説ZennURL（カード）\n・ヘッドレスモード(-p)コード\n→ 公式ドキュメントURL（カード）\n→ ヘッドレス活用Zenn記事URL（カード）\n\n5. フォルダ構造テンプレート\n→ SOUL/MEMORY/AGENT構成例\n\n6. セキュリティ上の利点\n\n7. Telegram通知（curlコード）\n→ BotFatherガイドURL（カード）\n→ curl実装例ZennURL（カード）\n\n8. まとめ + CTAセクション\n\n---\n\n<b>現状の唯一の未完箇所</b>\n\n末尾CTAの相談窓口URLがプレースホルダーのままです。\n\n<blockquote>ご相談・お見積もりはこちら → ゲーム開発所RYURYU ご相談窓口（ご連絡ください）</blockquote>\n\nここにご自身のサービスURL（ ococana等）を入れれば即pushできます。\n\nURLを教えてください！\n",
       "ts": "2026-03-30 17:26"
+    },
+    {
+      "role": "user",
+      "text": "一旦さじゃあ完成したさ文章を全文ここに出してほしいな\n",
+      "ts": "2026-03-30 18:07"
     }
   ],
   "summary": "【決定事項】\n- 次回投稿記事は「uLoopMCP + Claude Code で Unity 自律開発サイクルを実現する方法」（キュー1番・最優先）\n- 現在のモードは `create`（次回実行でキュー1番のテーマを使用）\n- AI x Unity MCP 連携ジャンルを戦略的優先テーマとして維持\n\n【作業状態】\n- 直近記事「Zenn × GitHub Actions で自動デプロイを設定する方法」を2026-03-28に rewrite モードで作成・公開済み\n- Iteration 2、直近3本の投稿完了済み\n- テーマキューに5本ストック済み（uLoopMCP / Memory Profiler / GPU Instancing / ECS / Platform Toolkit）\n\n【継続コンテキスト】\n- zenn-engine は4日ローテーション（create/analyze/improve/rewrite）で自律稼働中。次のcreateモード実行時にキュー1番の記事が生成される。"
