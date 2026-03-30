@@ -730,6 +730,74 @@ run_single_mode() {
 }
 
 # ---------------------------------------------------------------------------
+# 予約公開チェック: scheduled_publish を確認して published: true に変更
+# ---------------------------------------------------------------------------
+check_scheduled_publish() {
+  local scheduled_slug
+  local scheduled_date
+  local scheduled_status
+
+  scheduled_slug=$(get_state "scheduled_publish.slug")
+  scheduled_date=$(get_state "scheduled_publish.scheduled_date")
+  scheduled_status=$(get_state "scheduled_publish.status")
+
+  if [[ -z "$scheduled_slug" || "$scheduled_status" != "scheduled" ]]; then
+    return 0
+  fi
+
+  # 現在時刻と予約時刻を比較
+  local current_time
+  current_time=$(date -u '+%Y-%m-%dT%H:%M:%S')
+
+  # 予約時刻をUTC基準で比較（日本時間の17:00 = UTC 08:00）
+  if [[ "$current_time" > "$scheduled_date" ]] || [[ "$current_time" == "$scheduled_date" ]]; then
+    log "INFO" "予約公開時刻到達: $scheduled_slug"
+
+    # 記事ファイルを探す
+    local article_file="$WORK_DIR/articles/${scheduled_slug}.md"
+
+    if [[ -f "$article_file" ]]; then
+      # published: false を published: true に変更
+      if grep -q "published: false" "$article_file"; then
+        sed -i '' 's/published: false/published: true/g' "$article_file"
+        log "INFO" "予約公開実行: $scheduled_slug -> published: true"
+
+        # git commit + push
+        cd "$WORK_DIR" || return 1
+        git add "$article_file"
+        git commit -m "zenn: 予約公開 $scheduled_slug"
+        git push origin main || git push origin master
+
+        # state.json の scheduled_publish をクリア
+        local tmp
+        tmp=$(mktemp)
+        jq '.scheduled_publish = {}' "$STATE_FILE" > "$tmp" && mv "$tmp" "$STATE_FILE"
+
+        telegram_notify "zenn-engine GMです。
+
+<b>予約公開が完了しました</b>
+
+<b>記事</b>
+<code>$scheduled_slug</code>
+
+<b>予定時刻</b>
+$(date -j -f '%Y-%m-%dT%H:%M:%S' "${scheduled_date%%+*}" '+%Y年%m月%d日 %H:%M' 2>/dev/null || echo "$scheduled_date")
+
+記事が公開されました。"
+
+        log "INFO" "予約公開完了: $scheduled_slug"
+      else
+        log "WARN" "記事がすでに公開済み: $scheduled_slug"
+      fi
+    else
+      log "ERROR" "予約公開対象の記事が見つかりません: $article_file"
+    fi
+  else
+    log "INFO" "予約公開はまだ先です: $scheduled_date (現在: $current_time)"
+  fi
+}
+
+# ---------------------------------------------------------------------------
 # メイン: 曜日判定付き単発実行
 # ---------------------------------------------------------------------------
 main() {
@@ -753,6 +821,9 @@ main() {
   fi
 
   mkdir -p "$LOG_DIR"
+
+  # 予約公開チェック（毎回実行）
+  check_scheduled_publish
 
   # 曜日判定（1=月, 2=火, 3=水, 4=木, 5=金, 6=土, 7=日）
   local dow
