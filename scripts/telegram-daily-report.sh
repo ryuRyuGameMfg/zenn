@@ -10,7 +10,8 @@ NOTIFY_SCRIPT="$WORK_DIR/scripts/telegram-notify.sh"
 
 # 進捗通知モード
 if [[ "${1:-}" == "--progress" ]]; then
-  MSG="⚡ *zenn-engine 進捗*
+  MSG="<b>zenn-engine</b> 進捗
+
 ${2:-}"
   bash "$NOTIFY_SCRIPT" "$MSG"
   exit 0

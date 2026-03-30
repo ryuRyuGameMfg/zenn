@@ -1,38 +1,8 @@
 {
-  "status": "processing",
+  "status": "idle",
   "target_article": "/Users/okamotoryuya/repository/zenn-engine/articles/2026-03-28-zenn-github-actions-auto-deploy.md",
   "last_updated": "2026-03-30T17:26:20",
   "thread": [
-    {
-      "role": "user",
-      "text": "/start\n",
-      "ts": "2026-03-29 19:31"
-    },
-    {
-      "role": "assistant",
-      "text": "zenn-engine リアクティブアシスタントが起動しました。\n\n現在の状態:\n- モード: 確認中\n- 記事数: articles/ に 69本\n\n利用可能なコマンド例:\n- 「最新記事を見せて」\n- 「create モードで記事を作成して」\n- 「state.json の状態を確認して」\n- 「〇〇の記事を修正して」\n\n何を実行しますか？\n",
-      "ts": "2026-03-29 19:31"
-    },
-    {
-      "role": "user",
-      "text": "直近の記事について内容を教えて\n",
-      "ts": "2026-03-29 20:05"
-    },
-    {
-      "role": "assistant",
-      "text": "直近の記事の内容をお伝えします。\n\n---\n\n**記事タイトル**\n「Zenn × GitHub Actions で自動デプロイを設定する方法【textlint + PR プレビュー対応】」\n\n**作成日**: 2026-03-28（rewrite モードで作成）\n**スラッグ**: `2026-03-28-zenn-github-actions-auto-deploy`\n**公開状態**: published: true\n\n---\n\n**記事の概要**\n\nZenn の標準 GitHub 連携（push → 自動デプロイ）では「誤字・表記ゆれがそのまま公開される」「PR プレビューが見えない」という課題があります。\n\nこの記事では以下の3段階構成を実装する方法を解説しています：\n\n1. **textlint による日本語校正チェック**（PR 作成時に自動実行）\n2. **main ブランチへのマージで Zenn に自動デプロイ**\n3. **PR ごとに記事プレビュー URL をコメント投稿**（オプション）\n\n---\n\n**構成（見出し）**\n\n- はじめに：Zenn CLI × GitHub の標準構成を超える\n- 前提条件\n- Step 1：textlint の導入\n- Step 2：GitHub Actions ワークフローの作成\n  - PR 時の textlint チェック（textlint.yml）\n  - main マージ後のデプロイ確認（notify-deploy.yml）\n- Step 3：PR プレビュー URL の自動コメント（オプション）\n- 完成後の運用フロー\n- まとめ\n\n---\n\n**コードサンプル**\n- `npm install` による textlint インストールコマンド\n- `.textlintrc` の設定 JSON\n- textlint 実行コマンド\n- 3つの GitHub Actions YAML（textlint.yml / notify-deploy.yml / pr-preview-comment.yml）\n\n**文字数**: 約 2,000字以上（品質基準クリア）\n\n何か修正や追加でお手伝いできることはありますか？\n",
-      "ts": "2026-03-29 20:06"
-    },
-    {
-      "role": "user",
-      "text": "次投稿する記事は決まってる？ネタとか？\n",
-      "ts": "2026-03-30 01:38"
-    },
-    {
-      "role": "assistant",
-      "text": "次の記事ネタは決まってます！テーマキューに5本ストックされています。\n\n**次に投稿予定（キュー1番）**\n📌 **uLoopMCP + Claude Code で Unity 自律開発サイクルを実現する方法**\n\nこれが最優先です。理由は STRATEGY.md にも書いてあって、「AI x Unity MCP 連携」ジャンルが競合で最高スキ（26〜33）を獲得しているパターンだから。差別化しやすい上に伸びが期待できます。\n\n---\n\n**キュー全体（優先順）**\n\n1. uLoopMCP + Claude Code で Unity 自律開発サイクルを実現する方法\n2. Unity Memory Profiler 実践ワークフロー：GC Alloc 撲滅からメモリリーク根絶まで\n3. Unity GPU Instancing 完全実装：DrawMeshInstanced から RenderMeshIndirect まで段階的に理解する\n4. Unity ECS × ゲームキャラクター実装：OOP 設計からの段階移行実践ガイド\n5. Unity 6.3 Platform Toolkit でマルチプラットフォーム対応を1コードベースで実現する\n\n---\n\n**現在の状態**\n- モード: `create`（次回実行で1番のテーマを使用）\n- Iteration: 2\n- 直近3本の投稿完了済み\n\n順番を変えたいとか、別のネタを入れたい場合は言ってください！\n",
-      "ts": "2026-03-30 01:38"
-    },
     {
       "role": "user",
       "text": "一旦そゆループMC Pじゃなくてさぁなんか私がさぁ自立自作したさぁこのエンジンにもさぁ使われている仕組みを紹介したいんだけどそれはどうかなぁ。このエンジンに使われてんのオープンルーターオープンクローって言うその既存のAIエージェントをなんていうのよ。すぐにサンプルにして、それを真似て作って、何が違うかって言うと、MacOSのローンチとClaudeコードのヘッドレスモードで動くことによってAPI料金の上限がない。API料金からの解放とMacOSの純粋な機能を使うことによってオープンフローを入れることなく、セキュリティー的にも安全。まぁ自分がこういう制御したいフォルダーだけAIにいじってもらえるから安全だし、その定期実行回数も自由にいじれるしみたいな感じでセキュリティー的に安全だし、かなり自分でカスタマイズできるしって言う。その良さもあるでテレグラムに送信もできるでテレグラムも結構セキュリティーが高いやつらしいから結構良くてなんだろ。どういう層に刺したいかって言うとオープンクロウ使った大金払ってMac mini買ってオープンクロ使いましたけど、結局API料金めっちゃかかるやんとかもしくはローカルLL M使わなきゃだけどもそしたらめっちゃ高いパソコン必要やんなんだ結局オープングローって全然使えないじゃんて言う層に対して不満を持ってるそうに対していやもうこんな簡単な仕組みとシステムがあるんだよ。これやってみてよって言うのに使ってみたいのでそういうまぁ説得まず導入作って説得してほんとにやってみたいって思う。人に対してじゃあこういうローンチってこういう仕組みです。じゃあこのフォルダってこういう仕組みです。これこのなんていうのプロンプトとかこれ同位に作ったらできます。でCTAにつなげるでもしセットアップせずにもう自分カスタマイズしながら自分なりにやりたいって言う人が私にご連絡ください。もうセットアップからサポートまで全部やります。下のサービスからご相談ください。お見積もりいたしますみたいな形につなげて欲しいな。ちょっとまずあなたの理解とか調査とかも全部お願い\n",
@@ -77,7 +47,12 @@
       "role": "user",
       "text": "再度教えてよ\n",
       "ts": "2026-03-30 17:26"
+    },
+    {
+      "role": "assistant",
+      "text": "Zenn担当PMです。\n\n<b>記事全文（最新版）</b>\n\n---\n\n<b>タイトル</b>\nOpenClawのAPI料金に疲れた人へ：Claude Code × macOS launchd で月額固定の自律AIエージェントを自作する\n\n<b>frontmatter</b>\n<code>published: true</code>\n<code>type: tech</code>\n<code>topics: claude, claudecode, macos, aiagent, automation</code>\n\n---\n\n<b>構成</b>\n\n1. はじめに：OpenClaw結局コスパ悪くない？問題\n→ OpenRouter解説URL（カード）\n\n2. このシステムの全体像\n→ ASCII構成図付き\n\n3. コスト比較表\n→ 公式料金ページURL（カード）\n\n4. 仕組みの解説\n・launchd + plistコード\n→ launchd解説ZennURL（カード）\n・ヘッドレスモード(-p)コード\n→ 公式ドキュメントURL（カード）\n→ ヘッドレス活用Zenn記事URL（カード）\n\n5. フォルダ構造テンプレート\n→ SOUL/MEMORY/AGENT構成例\n\n6. セキュリティ上の利点\n\n7. Telegram通知（curlコード）\n→ BotFatherガイドURL（カード）\n→ curl実装例ZennURL（カード）\n\n8. まとめ + CTAセクション\n\n---\n\n<b>現状の唯一の未完箇所</b>\n\n末尾CTAの相談窓口URLがプレースホルダーのままです。\n\n<blockquote>ご相談・お見積もりはこちら → ゲーム開発所RYURYU ご相談窓口（ご連絡ください）</blockquote>\n\nここにご自身のサービスURL（ ococana等）を入れれば即pushできます。\n\nURLを教えてください！\n",
+      "ts": "2026-03-30 17:26"
     }
   ],
-  "summary": ""
+  "summary": "【決定事項】\n- 次回投稿記事は「uLoopMCP + Claude Code で Unity 自律開発サイクルを実現する方法」（キュー1番・最優先）\n- 現在のモードは `create`（次回実行でキュー1番のテーマを使用）\n- AI x Unity MCP 連携ジャンルを戦略的優先テーマとして維持\n\n【作業状態】\n- 直近記事「Zenn × GitHub Actions で自動デプロイを設定する方法」を2026-03-28に rewrite モードで作成・公開済み\n- Iteration 2、直近3本の投稿完了済み\n- テーマキューに5本ストック済み（uLoopMCP / Memory Profiler / GPU Instancing / ECS / Platform Toolkit）\n\n【継続コンテキスト】\n- zenn-engine は4日ローテーション（create/analyze/improve/rewrite）で自律稼働中。次のcreateモード実行時にキュー1番の記事が生成される。"
 }
