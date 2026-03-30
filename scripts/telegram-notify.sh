@@ -18,10 +18,16 @@ if [[ -z "$MESSAGE" ]]; then
   exit 0
 fi
 
+# サイレント送信（通知バッジ・音なし）: bash notify.sh "msg" "silent"
+SILENT="${2:-}"
+DISABLE_NOTIF=""
+[[ "$SILENT" == "silent" ]] && DISABLE_NOTIF="-d disable_notification=true"
+
 RESPONSE=$(curl -s -X POST \
   "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
   -d "chat_id=${TELEGRAM_CHAT_ID}" \
   -d "parse_mode=HTML" \
+  ${DISABLE_NOTIF} \
   --data-urlencode "text=${MESSAGE}" 2>/dev/null) || true
 
 OK=$(echo "$RESPONSE" | grep -o '"ok":true' 2>/dev/null || echo "")

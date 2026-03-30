@@ -7,3 +7,8 @@ Args: {'audio': ['/tmp/tg-voice-29889.ogg'], 'model': 'mlx-community/whisper-lar
 [00:00.000 --> 00:07.000] いいね 一つだけ懸念点があって 最初のほうで月額固定で動かせないかみたいな問題提起があるけど
 [00:07.000 --> 00:12.840] ここを月額固定っていう言葉も入れつつ クロードコードのサブスクリプション
 [00:12.840 --> 00:15.980] 月額固定みたいな形にして分かりやすくしてほしいな
+Args: {'audio': ['/tmp/tg-voice-66809.ogg'], 'model': 'mlx-community/whisper-large-v3-mlx', 'output_name': None, 'output_dir': '/tmp', 'output_format': 'txt', 'verbose': True, 'task': 'transcribe', 'language': 'ja', 'temperature': 0, 'best_of': 5, 'patience': None, 'length_penalty': None, 'suppress_tokens': '-1', 'initial_prompt': None, 'condition_on_previous_text': True, 'fp16': True, 'compression_ratio_threshold': 2.4, 'logprob_threshold': -1.0, 'no_speech_threshold': 0.6, 'word_timestamps': False, 'prepend_punctuations': '"\'“¿([{-', 'append_punctuations': '"\'.。,，!！?？:：”)]}、', 'highlight_words': False, 'max_line_width': None, 'max_line_count': None, 'max_words_per_line': None, 'hallucination_silence_threshold': None, 'clip_timestamps': '0'}
+[00:00.000 --> 00:04.340] いいねそれこのままギットプッシュして公開までやっちゃおう
+[00:04.340 --> 00:09.300] 公開する日時だけど今は深夜で公開してもビューが伸びないから
+[00:09.300 --> 00:14.580] 金曜日の17時次のだから投稿に差し込んでほしいけどできますか
+[00:14.580 --> 00:18.440] 今すぐ投稿しないように最新の注意を払ってほしいです
