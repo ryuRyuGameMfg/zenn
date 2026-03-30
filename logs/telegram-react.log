@@ -25,3 +25,6 @@
 [2026-03-30T17:26:58] [SUMMARY] サマリー更新完了。thread を10件にトリム
 [2026-03-30T17:26:58] END: telegram-react.sh completed
 [2026-03-30T18:07:46] START: claude execution
+[2026-03-30T18:08:47] OK: claude execution completed
+[2026-03-30T18:08:48] END: telegram-react.sh completed
+[2026-03-30T18:17:22] START: claude execution
