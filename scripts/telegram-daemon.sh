@@ -82,7 +82,7 @@ except:
     continue
   fi
 
-  # アップデート処理
+  # アップデート処理（テキスト・音声の両方を抽出）
   RESULT=$(echo "$RESPONSE" | python3 -c "
 import sys, json
 data = json.load(sys.stdin)
@@ -95,8 +95,13 @@ for update in results:
         new_offset = update_id
     msg = update.get('message', {})
     text = msg.get('text', '')
+    voice = msg.get('voice', {})
     if text:
-        messages.append(text)
+        messages.append({'type': 'text', 'content': text})
+    elif voice:
+        file_id = voice.get('file_id', '')
+        if file_id:
+            messages.append({'type': 'voice', 'file_id': file_id})
 output = {'new_offset': new_offset, 'messages': messages}
 print(json.dumps(output, ensure_ascii=False))
 " 2>/dev/null
@@ -109,7 +114,7 @@ print(json.dumps(output, ensure_ascii=False))
   fi
 
   NEW_OFFSET=$(echo "$RESULT" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('new_offset',''))" 2>/dev/null || echo "")
-  MESSAGES_JSON=$(echo "$RESULT" | python3 -c "import sys,json; d=json.load(sys.stdin); [print(m) for m in d.get('messages',[])]" 2>/dev/null || echo "")
+  MSG_COUNT=$(echo "$RESULT" | python3 -c "import sys,json; d=json.load(sys.stdin); print(len(d.get('messages',[])))" 2>/dev/null || echo "0")
 
   # offset 更新
   if [[ -n "$NEW_OFFSET" && "$NEW_OFFSET" =~ ^[0-9]+$ ]]; then
@@ -117,34 +122,36 @@ print(json.dumps(output, ensure_ascii=False))
     NEXT_OFFSET=$((NEW_OFFSET + 1))
   fi
 
-  # メッセージがある場合は処理
-  if [[ -n "$MESSAGES_JSON" ]]; then
-    # input.md への追記
-    TIMESTAMP=$(date '+%H:%M')
-    LINES_TO_PREPEND=""
-    while IFS= read -r MSG_LINE; do
-      if [[ -n "$MSG_LINE" ]]; then
-        log "Message received: ${MSG_LINE:0:80}"
-        LINES_TO_PREPEND="${LINES_TO_PREPEND}[${TIMESTAMP}] ${MSG_LINE}"$'\n'
-      fi
-    done <<< "$MESSAGES_JSON"
+  # メッセージがある場合は処理（最後の1件）
+  if [[ "$MSG_COUNT" -gt "0" ]]; then
+    MSG_TYPE=$(echo "$RESULT" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d['messages'][-1].get('type',''))" 2>/dev/null || echo "")
 
-    if [[ -n "$LINES_TO_PREPEND" ]]; then
-      EXISTING=""
-      if [[ -f "$INPUT_FILE" ]]; then
-        EXISTING=$(cat "$INPUT_FILE" 2>/dev/null || echo "")
-      fi
-      printf '%s%s' "$LINES_TO_PREPEND" "$EXISTING" > "$INPUT_FILE"
-    fi
-
-    # 最後のメッセージを telegram-react.sh に渡す
-    REACT_SCRIPT="$WORK_DIR/scripts/telegram-react.sh"
-    if [[ -f "$REACT_SCRIPT" ]]; then
-      LAST_MESSAGE=$(echo "$MESSAGES_JSON" | tail -1)
+    if [[ "$MSG_TYPE" == "text" ]]; then
+      LAST_MESSAGE=$(echo "$RESULT" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d['messages'][-1].get('content',''))" 2>/dev/null || echo "")
       if [[ -n "$LAST_MESSAGE" ]]; then
+        TIMESTAMP=$(date '+%H:%M')
+        EXISTING=""
+        if [[ -f "$INPUT_FILE" ]]; then
+          EXISTING=$(cat "$INPUT_FILE" 2>/dev/null || echo "")
+        fi
+        printf '[%s] %s\n%s' "$TIMESTAMP" "$LAST_MESSAGE" "$EXISTING" > "$INPUT_FILE"
+        log "Text message: ${LAST_MESSAGE:0:80}"
         log "Launching telegram-react.sh"
         bash "$WORK_DIR/scripts/telegram-notify.sh" "思考中..." || true
-        /bin/bash "$REACT_SCRIPT" "$LAST_MESSAGE" &
+        /bin/bash "$WORK_DIR/scripts/telegram-react.sh" "$LAST_MESSAGE" &
+      fi
+
+    elif [[ "$MSG_TYPE" == "voice" ]]; then
+      FILE_ID=$(echo "$RESULT" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d['messages'][-1].get('file_id',''))" 2>/dev/null || echo "")
+      if [[ -n "$FILE_ID" ]]; then
+        log "Voice message: file_id=${FILE_ID:0:30}..."
+        bash "$WORK_DIR/scripts/telegram-notify.sh" "音声を文字起こし中..." || true
+        bash "$HOME/.claude/scripts/telegram-voice.sh" \
+          "$FILE_ID" \
+          "$TELEGRAM_CONF" \
+          "$WORK_DIR/scripts/telegram-notify.sh" \
+          "$WORK_DIR/scripts/telegram-react.sh" \
+          "$INPUT_FILE" &
       fi
     fi
   fi

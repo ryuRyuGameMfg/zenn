@@ -154,7 +154,9 @@ if [[ -z "$CLAUDE_OUTPUT" ]]; then
   EXEC_END=$(date '+%Y-%m-%dT%H:%M:%S')
   echo "[${EXEC_END}] ERROR: claude returned empty output (exit code: ${CLAUDE_RESULT:-unknown})" >> "$LOG_FILE"
   CLAUDE_OUTPUT="TELEGRAM_REPLY_START
-処理中にエラーが発生しました（タイムアウト or claude実行エラー）。もう一度お試しください。
+Zenn担当PMです。
+処理中に問題が発生しました。
+少し時間をおいてから再度お試しください。
 TELEGRAM_REPLY_END"
 else
   echo "[$(date '+%Y-%m-%dT%H:%M:%S')] OK: claude execution completed" >> "$LOG_FILE"

@@ -27,13 +27,26 @@ LAST_ARTICLE_DATE=$(jq -r '.history[-1].date // ""' "$STATE_FILE" 2>/dev/null ||
 DATE=$(date '+%Y-%m-%d')
 TIME=$(date '+%H:%M')
 
-MSG="📗 *zenn-engine 日次レポート* ${DATE} ${TIME}
+# STATUSをPM言語に変換
+case "${STATUS}" in
+  "idle"|"waiting")    STATUS_JP="次のサイクルの開始を待機中";;
+  "running"|"active")  STATUS_JP="現在サイクル実行中";;
+  "error")             STATUS_JP="エラーが発生しています（要確認）";;
+  *)                   STATUS_JP="${STATUS}";;
+esac
 
-*ステータス*: ${MODE} mode / Iter${ITER} / ${STATUS}
-*最終実行*: ${LAST_RUN}
-*直近記事*: ${LAST_ARTICLE} (${LAST_ARTICLE_DATE})
+MSG="Zenn担当PMです。${DATE} ${TIME}の定期報告です。
 
-*次のアクション*: ${MODE} mode 実行待機中"
+【現在の状況】
+${STATUS_JP}です。これまでに合計${ITER}サイクルを完了しました。
+
+【直近の成果】
+直近で扱った記事: ${LAST_ARTICLE}
+
+【次のアクション】
+次サイクルで新たな記事の作成または既存記事の改善を予定しています。
+
+特別な連絡事項があればいつでもメッセージください。"
 
 bash "$NOTIFY_SCRIPT" "$MSG"
 exit 0

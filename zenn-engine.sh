@@ -714,10 +714,16 @@ run_single_mode() {
     reviewer "$mode" "$iteration"
     update_state_str "mode" "$mode"  # 完了したモードを記録
     log "INFO" "Mode $mode 完了"
-    telegram_notify "✅ *zenn-engine ${mode} 完了* Iter${iteration}"
+    local _mode_jp; _mode_jp=$(case "$mode" in create) echo "新規記事作成";; analyze) echo "記事分析";; improve) echo "記事改善";; rewrite) echo "記事リライト";; *) echo "${mode}";; esac)
+    telegram_notify "Zenn担当PMです。
+第${iteration}サイクルの${_mode_jp}が完了しました。
+次のサイクルに移行します。"
   else
     log "ERROR" "Mode $mode 失敗"
-    telegram_notify "[ERROR] zenn-engine: mode ${mode} 失敗 Iter${iteration}"
+    local _mode_jp; _mode_jp=$(case "$mode" in create) echo "新規記事作成";; analyze) echo "記事分析";; improve) echo "記事改善";; rewrite) echo "記事リライト";; *) echo "${mode}";; esac)
+    telegram_notify "Zenn担当PMです。
+第${iteration}サイクルの${_mode_jp}で問題が発生しました。
+ご確認ください。"
     git_commit_and_push "$mode" "$iteration" || true
     return 1
   fi
@@ -773,7 +779,9 @@ main() {
       update_state "iteration" "$next_iter"
       update_state_str "mode" "create"
       log "INFO" "週次サイクル完了。Iteration $next_iter へ"
-      telegram_notify "🎉 *zenn-engine 週次サイクル完了* Iter${next_iter} へ移行"
+      telegram_notify "Zenn担当PMです。
+今週の全サイクルが完了しました。
+来週は第${next_iter}サイクルから再開します。お疲れ様でした。"
       ;;
     *)
       log "INFO" "本日(曜日=$dow)は実行対象外です"

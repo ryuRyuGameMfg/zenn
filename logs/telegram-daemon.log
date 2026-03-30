@@ -17,3 +17,11 @@
 [2026-03-30T14:44:28] Message received: ファクトチェックや参照URのチェックを一応して。
 [2026-03-30T14:44:28] Message received: できるだけ、信頼度の高くて関連のあるURL(日本語)をいれて
 [2026-03-30T14:44:28] Launching telegram-react.sh
+[2026-03-30T16:31:48] WARN: Empty response from Telegram API. Retrying in 5s.
+[2026-03-30T17:25:07] Daemon started. PID=93523, NEXT_OFFSET=104714342
+[2026-03-30T17:25:59] SIGTERM/SIGINT received. Shutting down.
+[2026-03-30T17:25:59] Daemon started. PID=95243, NEXT_OFFSET=104714342
+[2026-03-30T17:26:18] SIGTERM/SIGINT received. Shutting down.
+[2026-03-30T17:26:18] Daemon started. PID=96904, NEXT_OFFSET=104714342
+[2026-03-30T17:26:19] Text message: 再度教えてよ
+[2026-03-30T17:26:19] Launching telegram-react.sh
