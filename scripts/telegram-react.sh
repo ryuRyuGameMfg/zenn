@@ -143,24 +143,20 @@ CLAUDE_OUTPUT=""
 EXEC_START=$(date '+%Y-%m-%dT%H:%M:%S')
 echo "[${EXEC_START}] START: claude execution" >> "$LOG_FILE"
 
-CLAUDE_OUTPUT=$(\
-  echo "$PROMPT" | \
-  "$TIMEOUT_CMD" 300 "$CLAUDE_PATH" -p \
-  --allowedTools "Read,Write,Edit,Glob,Grep,Bash" \
-  2>>"$LOG_FILE" \
-) || CLAUDE_RESULT=$?
+# 共通ランナーで実行（監視・サイレント経過通知・エラー検知）
+CLAUDE_TMP=$(mktemp /tmp/zenn-engine-claude-output.XXXXXX)
+export CLAUDE_PATH BOT_NAME="zenn-engine GM" LOG_FILE NOTIFY_SCRIPT ALLOWED_TOOLS="Read,Write,Edit,Glob,Grep,Bash"
+echo "$PROMPT" | bash ~/.claude/scripts/telegram-claude-runner.sh "$CLAUDE_TMP"
+RUNNER_EXIT=$?
+CLAUDE_OUTPUT=$(cat "$CLAUDE_TMP" 2>/dev/null || echo "")
+rm -f "$CLAUDE_TMP"
 
-if [[ -z "$CLAUDE_OUTPUT" ]]; then
-  EXEC_END=$(date '+%Y-%m-%dT%H:%M:%S')
-  echo "[${EXEC_END}] ERROR: claude returned empty output (exit code: ${CLAUDE_RESULT:-unknown})" >> "$LOG_FILE"
-  CLAUDE_OUTPUT="TELEGRAM_REPLY_START
-Zenn担当PMです。
-処理中に問題が発生しました。
-少し時間をおいてから再度お試しください。
-TELEGRAM_REPLY_END"
-else
-  echo "[$(date '+%Y-%m-%dT%H:%M:%S')] OK: claude execution completed" >> "$LOG_FILE"
+if [[ $RUNNER_EXIT -ne 0 ]]; then
+  update_conv_str "status" "idle"
+  exit 0
 fi
+
+echo "[$(date '+%Y-%m-%dT%H:%M:%S')] OK: claude execution completed" >> "$LOG_FILE"
 
 # 5. TELEGRAM_REPLY抽出
 TELEGRAM_REPLY=$(echo "$CLAUDE_OUTPUT" | \
