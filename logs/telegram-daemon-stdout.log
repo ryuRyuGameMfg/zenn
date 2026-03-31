@@ -30,3 +30,5 @@ Args: {'audio': ['/tmp/telegram-voice.XXXXXX.wav'], 'model': 'mlx-community/whis
 [00:16.440 --> 00:23.100] あとはUBIソフトのOSSとかは実際自分は体験しないけど
 [00:23.100 --> 00:27.100] 海外の記事の翻訳とかキュレーションで一本記事書きそうだなと思いました
 [00:27.100 --> 00:32.900] 他にリライトしてもう一回リリースできそうなやつおすすめある?
+Args: {'audio': ['/tmp/telegram-voice.XXXXXX.wav'], 'model': 'mlx-community/whisper-large-v3-mlx', 'output_name': None, 'output_dir': '/tmp/whisper-out.vQ3Tyf', 'output_format': 'txt', 'verbose': True, 'task': 'transcribe', 'language': 'ja', 'temperature': 0, 'best_of': 5, 'patience': None, 'length_penalty': None, 'suppress_tokens': '-1', 'initial_prompt': None, 'condition_on_previous_text': True, 'fp16': True, 'compression_ratio_threshold': 2.4, 'logprob_threshold': -1.0, 'no_speech_threshold': 0.6, 'word_timestamps': False, 'prepend_punctuations': '"\'“¿([{-', 'append_punctuations': '"\'.。,，!！?？:：”)]}、', 'highlight_words': False, 'max_line_width': None, 'max_line_count': None, 'max_words_per_line': None, 'hallucination_silence_threshold': None, 'clip_timestamps': '0'}
+[00:00.000 --> 00:05.600] ちょっとさっきの音声データをもう一度文字起こしして再度お願いします
