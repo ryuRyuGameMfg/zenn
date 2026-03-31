@@ -23,7 +23,7 @@ import { execSync } from 'child_process';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT_DIR = join(__dirname, '..');
-const QUEUE_FILE = join(ROOT_DIR, 'queue.json');
+const QUEUE_FILE = join(ROOT_DIR, 'data', 'queue.json');
 const CHECK_INTERVAL = 60 * 1000; // 60秒
 
 // リトライ設定
@@ -234,7 +234,7 @@ function gitCommitQueue(entry, success, dryRun = false) {
   if (dryRun) return;
 
   try {
-    execSync('git add queue.json', { cwd: ROOT_DIR, stdio: 'inherit' });
+    execSync('git add data/queue.json', { cwd: ROOT_DIR, stdio: 'inherit' });
 
     const status = success ? 'published' : 'failed';
     const message = `zenn: auto-publish ${status} - ${entry.filename}`;

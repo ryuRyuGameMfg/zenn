@@ -17,7 +17,7 @@ import { execSync } from 'child_process';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT_DIR = join(__dirname, '..');
-const QUEUE_FILE = join(ROOT_DIR, 'queue.json');
+const QUEUE_FILE = join(ROOT_DIR, 'data', 'queue.json');
 const ARTICLES_DIR = join(ROOT_DIR, 'articles');
 
 // === ユーティリティ ========================================
@@ -258,7 +258,7 @@ function gitCommit(addedCount, dryRun = false) {
   if (addedCount === 0 || dryRun) return;
 
   try {
-    execSync('git add queue.json', { cwd: ROOT_DIR, stdio: 'inherit' });
+    execSync('git add data/queue.json', { cwd: ROOT_DIR, stdio: 'inherit' });
 
     const message = `zenn: auto-queue added ${addedCount} article${addedCount > 1 ? 's' : ''} to publish queue`;
     execSync(`git commit -m "${message}"`, { cwd: ROOT_DIR, stdio: 'inherit' });

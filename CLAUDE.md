@@ -14,7 +14,7 @@ heartbeat (~/repository/heartbeat/) と同じ OpenClaw ワークスペース設�
 | MEMORY.md | 常時コンテキスト（~100行） | AI（rewriteモードで管理） |
 | HEARTBEAT.md | チェックリスト | AI自己更新 |
 | AGENT.md | 行動アルゴリズム | AI自己更新 |
-| state.json | 実行状態 | zenn-engine.sh が管理 |
+| data/state.json | 実行状態 | zenn-engine.sh が管理 |
 
 ## 4日ローテーション
 
@@ -36,7 +36,9 @@ zenn-engine/
 ├── MEMORY.md           # 常時コンテキスト（~100行）
 ├── HEARTBEAT.md        # 自律チェックリスト
 ├── AGENT.md            # 行動アルゴリズム
-├── state.json          # 実行状態管理
+├── data/               # ランタイムデータ（queue.json, state.json）
+│   ├── queue.json      # 公開キュー
+│   └── state.json      # 実行状態管理
 ├── input.md            # ユーザー方針指示
 ├── zenn-engine.sh      # デーモンスクリプト
 ├── com.ryuryu.zenn-engine.plist  # launchd 設定

@@ -11,7 +11,7 @@ set -uo pipefail
 # 定数・設定
 # ---------------------------------------------------------------------------
 WORK_DIR="$HOME/repository/zenn-engine"
-STATE_FILE="$WORK_DIR/state.json"
+STATE_FILE="$WORK_DIR/data/state.json"
 LOG_DIR="$WORK_DIR/logs"
 PROMPT_DIR="$WORK_DIR/prompts"
 INPUT_FILE="$WORK_DIR/INPUT.md"

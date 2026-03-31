@@ -5,7 +5,7 @@
 WORK_DIR="$HOME/repository/zenn-engine"
 source "$WORK_DIR/.telegram.conf" 2>/dev/null || exit 0
 
-STATE_FILE="$WORK_DIR/state.json"
+STATE_FILE="$WORK_DIR/data/state.json"
 NOTIFY_SCRIPT="$WORK_DIR/scripts/telegram-notify.sh"
 
 # 進捗通知モード

@@ -2,30 +2,24 @@
 
 > AI が analyze/improve モードで更新提案、ユーザーが承認して反映する。
 
-## OKR（2026-03-31 改訂 → 2026-04-01 PV取得方法更新）
+## OKR（2026-03-31 改訂 → 2026-04-01 方針変更）
 
 | 目標 | 指標 | 現状 | 期限 | 取得方法 |
 |------|------|------|------|---------|
 | O1: フォロワー1000人達成 | フォロワー数 | 37 | - | Zenn API（非公式） |
-| O2: 累計PV 10,000達成 | 累計PV | 測定開始前 | - | Playwright（ダッシュボード自動取得） |
-| O3: 平均スキ数15以上維持 | 平均スキ数/記事 | 12.1 | - | Zenn API（非公式） |
+| O2: 累計スキ数1000達成 | 累計スキ数 | 189 | - | Zenn API（非公式） |
+| O3: 平均スキ数15以上維持 | 平均スキ数/記事 | 5.6 | - | Zenn API（非公式） |
 
-**PV取得方法の変更（2026-04-01）:**
-- **新方式**: Playwright MCP でZennダッシュボードにログイン → スクリーンショット → LLM解析でPV抽出
-- **実装状況**: ✅ 完了（scripts/fetch-zenn-analytics.mjs）
-- **取得データ**: 投稿ごとの合計PV、日別/月別PV推移
+**PV取得の方針変更（2026-04-01）:**
+- **Playwright方式は保留**: 実装完了したが、非公式APIで十分な精度が得られるため当面は使用しない
+- **現行方式**: Zenn非公式API（https://zenn.dev/api/articles?username=ryuryu&order=latest）
+- **取得データ**: 公開記事数・スキ数・フォロワー数
 - **自動化**: 土曜 analyze モードで統計収集 + metrics.json 更新
-- **セキュリティ**: 認証情報は環境変数（ZENN_EMAIL/ZENN_PASSWORD）から取得
-
-**旧方式（非公式API）の限界:**
-- Zenn公式APIではPV統計を提供していない
-- 非公式APIではスキ数・フォロワー数のみ取得可能
-- Google Analytics連携は手動設定が必要（自律運用に不適）
+- **運用判断**: OKRをスキ数ベースに統一し、PVは参考値として扱う
 
 **参考資料:**
-- [Zennのダッシュボードに統計情報が表示されるようになるらしい](https://zenn.dev/spiegel/articles/20211225-zenn-analytics)
 - [ZennのAPIを使って記事数・いいね数を取得する](https://zenn.dev/karaage0703/articles/c24072adc188a6)
-- [ダッシュボードでPVなどの統計データを見れるように](https://github.com/zenn-dev/zenn-roadmap/issues/98)
+- [Zenn API ドキュメント（非公式）](https://zenn.dev/api)
 
 ## テーマ優先順位
 

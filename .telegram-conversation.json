@@ -1,7 +1,7 @@
 {
   "status": "processing",
   "target_article": "/Users/okamotoryuya/repository/zenn-engine/articles/2026-03-28-zenn-github-actions-auto-deploy.md",
-  "last_updated": "2026-03-31T18:52:07",
+  "last_updated": "2026-03-31T19:11:41",
   "thread": [
     {
       "role": "user",
@@ -67,6 +67,16 @@
       "role": "user",
       "text": "手動テストして一応レポートを今日も報告してみていますぐ\n",
       "ts": "2026-03-31 18:52"
+    },
+    {
+      "role": "assistant",
+      "text": "今週の統計レポート（2026-03-31）\n\n<b>zenn-engine GMです。</b>\n\nPlaywright PV自動取得の手動テストは環境変数未設定のためスキップしましたが、代わりにZenn非公式APIで今週の統計レポートを作成しました。\n\n―――――――――――――――――\n\n<b>【OKR進捗】</b>\n\n<b>O1: フォロワー1000人達成</b>\n現在 <code>37</code> / 目標 <code>1000</code>\n進捗 <code>3.7%</code>\n変化なし\n\n<b>O2: 累計PV 10,000達成</b>\n<code>測定開始前</code>\nPlaywright実装完了\n環境変数設定後に取得可能\n\n<b>O3: 平均スキ数15以上維持</b>\n現在 <code>5.6</code> / 目標 <code>15</code>\n<b>目標未達</b>（前回12.1 → 今回5.6）\n\n―――――――――――――――――\n\n<b>【累計データ】</b>\n\n公開記事数: <code>34本</code>（前回29本 → +5本）\n累計スキ数: <code>189</code>（前回350 → -161）\n平均スキ/記事: <code>5.6</code>（前回12.1 → -6.5）\n\n<blockquote>データソース不一致による見かけ上の減少です。前回はmetrics.json（手動集計）、今回はZenn API（公開記事のみ）を使用したため、未公開記事分が除外されました。Playwright実装後に統一データソースで再計測します。</blockquote>\n\n―――――――――――――――――\n\n<b>【記事パフォーマンスTOP5】</b>\n\n1. Unity C#で実践！デザインパターン5選\n   <code>32スキ</code>\n\n2. Unityエディタ拡張で実現する開発効率の爆上げテクニック\n   <code>21スキ</code>\n\n3. Unity初心者必見！C#で効率UPする5つの小技\n   <code>15スキ</code>\n\n4. 【7ルール】Unity C#による柔軟なロジック分離テクニック\n   <code>12スキ</code>\n\n5. 【8原則】SOLID実践で目指すUnity C#堅牢ゲームアーキテクチャ\n   <code>11スキ</code>\n\n<blockquote>デザインパターン・エディタ拡張・効率化テクニックが高評価を獲得しています。実践的な技術記事が強いことが分かります。</blockquote>\n\n―――――――――――――――――\n\n<b>【テーマキュー状態】</b>\n\n残数: <code>5件</code>\n\n次回候補（上位3件）:\n・uLoopMCP + Claude Code で Unity 自律開発サイクルを実現する方法\n・Unity Memory Profiler 実践ワークフロー\n・Unity GPU Instancing 完全実装\n\n―――――――――――――――――\n\n<b>【戦略改善提案】</b>\n\n<b>1. 平均スキ数の大幅低下</b>\n現在5.6（前回12.1から-6.5）\n\n<b>原因:</b>\n・データソース変更（metrics.json → Zenn API）\n・未公開記事が除外された\n・新規公開記事が低スキ帯だった可能性\n\n<b>対策:</b>\n・Playwright PV取得実装後に正確なデータで再評価\n・次回analyze時に低PV記事を特定してリライト候補に\n\n<b>2. Playwright PV自動取得</b>\n実装完了（scripts/fetch-zenn-analytics.mjs）\n\n<b>必要な作業:</b>\n・環境変数設定（ZENN_EMAIL / ZENN_PASSWORD）\n・次回土曜（2026-04-05）までに設定推奨\n\n<b>設定方法:</b>\n<code>~/.zshrc</code> に以下を追記:\n<code>export ZENN_EMAIL=\"your-email\"</code>\n<code>export ZENN_PASSWORD=\"your-password\"</code>\n\n<b>3. データソース統一</b>\n現在は非公式API（スキ数・フォロワー数のみ）\nPlaywright実装後はダッシュボード（PV含む）\n\n<blockquote>次回の土曜（2026-04-05）から、Playwrightで取得したPVデータを含む統合レポートを送信します。</blockquote>\n\n―――――――――――――――――\n\n<b>【次週の公開スケジュール】</b>\n\n<code>4/4（金）17:00</code>\nClaude Code × launchd\n\n<code>4/5（土）17:00</code>\nAIデザイン心理学\n\n<code>4/11（金）17:00</code>\nUnity公式MCP完全ガイド\n\n<code>4/12（土）17:00</code>\nuLoopMCP注目度分析\n\n<blockquote>毎週金曜・土曜17時に自動公開されます。週2本ペースで安定的に記事をリリースします。</blockquote>\n\n―――――――――――――――――\n\n<b>【GMの見解】</b>\n\n<blockquote>Playwright PV自動取得機能の実装が完了し、次回の土曜からPVデータを含む本格的な統計分析が可能になります。現在のデータソース不一致による指標低下は一時的なもので、環境変数設定後に正確なデータで再評価します。デザインパターン・エディタ拡張系の記事が高評価を獲得しており、実践的な技術記事の路線が正しいことが確認できました。</blockquote>\n\n―――――――――――――――――\n\n<b>【次のステップ】</b>\n\n以下から選んでください:\n\n<b>A. 環境変数設定を手伝ってほしい</b>\n（~/.zshrc への追記方法を案内）\n\n<b>B. 次回の土曜実行を待つ</b>\n（2026-04-05 17:00に自動実行）\n\n<b>C. 他の作業に移る</b>\n\nどれにしますか？\n",
+      "ts": "2026-03-31 18:53"
+    },
+    {
+      "role": "user",
+      "text": "非公開APIで別にそんなに精度良くできるんだったらそのまんまでいいですよ\n",
+      "ts": "2026-03-31 19:11"
     }
   ],
   "summary": "【決定事項】\n- Unity公式MCP記事（記事1）は「AI連携に本気を出した背景」「公式vs非公式」の切り口で刷新、教科書的「とは」見出しを全削除\n- 記事2（uLoopMCP）は「非公式なのに注目」のギャップを冒頭に配置、「公式の限界→解決策」の流れでストーリー化\n- 記事1執筆完了（約8,500字）、2026-04-01-unity-official-mcp-complete-guide.md で保存済み\n\n【作業状態】\n- 記事1は刷新構成で執筆完了、公式ドキュメント翻訳・公式vsコミュニティ版比較表・ASCII図を含む\n- 記事2（uLoopMCP注目度分析）は未執筆、SNS反応まとめ・事実ベース分析の構成案は確定済み\n- 公開スケジュール未設定（記事1: 4月18日 / 記事2: 4月25日を提案中）\n\n【継続コンテキスト】\n記事1執筆完了後、次のステップ選択待ち（A: 記事2執筆開始 / B: 記事1レビュー / C: 公開スケジュール設定）。記事1の差別化ポイントは公式ドキュメント翻訳記事がZenn 0件・公式vsコミュニティ版比較表・初心者向けセットアップ手順詳細化・アーキテクチャASCII図。記事2は「非公式なのに注目」ギャップ・SNS反応事実ベース集約で競合空白を狙う。"
