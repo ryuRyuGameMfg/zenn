@@ -2,7 +2,7 @@
 # zenn-engine.sh - Zenn 自律コンテンツエンジン
 # Usage: ./zenn-engine.sh [--dry-run]
 # Architecture: Patrol -> Steering -> Executor -> Reviewer -> Transition
-# Schedule: 金曜 17:00 = create、土曜 17:00 = analyze -> improve -> rewrite
+# Schedule: 金曜 17:00 = create、土曜 17:00 = analyze -> improve -> report
 
 # NOTE: -e は意図的に省略。エラーはコマンド単位で明示的に処理する。
 set -uo pipefail
@@ -730,6 +730,98 @@ run_single_mode() {
 }
 
 # ---------------------------------------------------------------------------
+# 土曜レポート生成: analyze+improve結果をTelegramに送信
+# ---------------------------------------------------------------------------
+generate_saturday_report() {
+  local iteration="$1"
+  log "INFO" "土曜レポート生成中..."
+
+  local context
+  context=$(build_context)
+
+  local report_prompt="${context}
+あなたは zenn-engine の General Manager です。社長（岡本竜哉）に今週の統計分析・戦略改善の結果をTelegramで報告します。
+
+CRITICAL: 以下のルールを厳守すること:
+1. システム内部用語（Step数・Cycle数・status値）は使わない
+2. 「何をやっていて、どういう状態か、次は何か」を人間の言葉で伝える
+3. 成果・進捗・課題・次のアクションの4点を自然な文章で伝える
+4. 技術的正確さだけでなく、読者価値・エンジニアコミュニティへの貢献観点も含める
+5. 冒頭に役職・名前を名乗ることは禁止
+
+## 報告内容
+
+memory/saturday-report-template.md のフォーマットに従って、以下のデータを使って報告書を作成してください:
+
+- metrics.json: 最新の統計データ
+- state.json: 実行状態
+- STRATEGY.md: OKR定義
+- memory/long-term/topics.md: テーマキュー
+
+## 出力フォーマット（必須）
+
+Telegram HTML形式で出力すること:
+- 1行目: タイトル（プレーンテキスト、HTMLタグなし）
+- 2行目以降: HTMLタグで装飾（<b>, <code>, <blockquote>のみ使用）
+- 1行30〜40文字以内
+- テーブル禁止（スマホで崩れる）
+
+出力は以下のマーカーで囲むこと:
+
+TELEGRAM_REPLY_START
+（1行目: プレーンテキストのタイトル）
+（2行目以降: HTMLタグで装飾した本文）
+TELEGRAM_REPLY_END
+
+CRITICAL: Write/Edit/Bash ツールを使わないこと。テキスト出力のみ。"
+
+  if [[ "$DRY_RUN" == "true" ]]; then
+    log "INFO" "[DRY-RUN] 土曜レポート生成スキップ"
+    return 0
+  fi
+
+  local report_output=""
+  if [[ -n "$TIMEOUT_CMD" ]]; then
+    report_output=$("$TIMEOUT_CMD" 600 bash -c 'echo "$1" | claude -p --allowedTools "Read,Glob,Grep"' _ "$report_prompt" 2>/dev/null) || report_output=""
+  else
+    report_output=$(echo "$report_prompt" | claude -p --allowedTools "Read,Glob,Grep" 2>/dev/null) || report_output=""
+  fi
+
+  if [[ -z "$report_output" ]]; then
+    log "WARN" "土曜レポート生成失敗"
+    telegram_notify "zenn-engine GMです。
+
+<b>今週の分析・改善が完了しました</b>
+
+レポート生成に失敗しました。
+memory/metrics.json を手動確認してください。"
+    return 1
+  fi
+
+  # TELEGRAM_REPLY_START/END マーカーを抽出
+  local telegram_message=""
+  if echo "$report_output" | grep -q "TELEGRAM_REPLY_START"; then
+    telegram_message=$(echo "$report_output" | sed -n '/TELEGRAM_REPLY_START/,/TELEGRAM_REPLY_END/p' | sed '1d;$d')
+  else
+    # マーカーがない場合は全文を使用
+    telegram_message="$report_output"
+  fi
+
+  if [[ -n "$telegram_message" ]]; then
+    # Telegram HTML形式でそのまま送信
+    if [[ -f "$TELEGRAM_NOTIFY" && -f "$TELEGRAM_CONF" ]]; then
+      echo "$telegram_message" | bash "$TELEGRAM_NOTIFY" - || log "WARN" "Telegram送信失敗"
+    fi
+    log_section "Saturday Report Iter${iteration}" "$telegram_message"
+    log "INFO" "土曜レポート送信完了"
+  else
+    log "WARN" "レポート内容が空"
+  fi
+
+  return 0
+}
+
+# ---------------------------------------------------------------------------
 # 予約公開チェック: scheduled_publish を確認して published: true に変更
 # ---------------------------------------------------------------------------
 check_scheduled_publish() {
@@ -874,21 +966,22 @@ main() {
       log "INFO" "=== 金曜モード: create ==="
       run_single_mode "create" "$iteration"
       ;;
-    6)  # 土曜: analyze -> improve -> rewrite
-      log "INFO" "=== 土曜モード: analyze -> improve -> rewrite ==="
+    6)  # 土曜: analyze -> improve -> report
+      log "INFO" "=== 土曜モード: analyze -> improve -> report ==="
       run_single_mode "analyze" "$iteration"
       [[ "$SHUTDOWN" == "false" ]] && sleep "$SHORT_PAUSE"
       run_single_mode "improve" "$iteration"
       [[ "$SHUTDOWN" == "false" ]] && sleep "$SHORT_PAUSE"
-      run_single_mode "rewrite" "$iteration"
+
+      # 土曜レポート生成（Telegram送信）
+      log "INFO" "土曜レポート生成開始"
+      generate_saturday_report "$iteration"
+
       # 土曜完了 = 1週間サイクル完了 -> iteration インクリメント
       local next_iter=$(( $(get_state "iteration") + 1 ))
       update_state "iteration" "$next_iter"
       update_state_str "mode" "create"
       log "INFO" "週次サイクル完了。Iteration $next_iter へ"
-      telegram_notify "Zenn担当PMです。
-今週の全サイクルが完了しました。
-来週は第${next_iter}サイクルから再開します。お疲れ様でした。"
       ;;
     *)
       log "INFO" "本日(曜日=$dow)は実行対象外です"
