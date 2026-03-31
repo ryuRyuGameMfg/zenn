@@ -10,7 +10,7 @@ NOTIFY_SCRIPT="$WORK_DIR/scripts/telegram-notify.sh"
 
 # 進捗通知モード
 if [[ "${1:-}" == "--progress" ]]; then
-  MSG="<b>zenn-engine</b> 進捗
+  MSG="進捗
 
 ${2:-}"
   bash "$NOTIFY_SCRIPT" "$MSG"
@@ -36,7 +36,7 @@ case "${STATUS}" in
   *)                   STATUS_JP="${STATUS}";;
 esac
 
-MSG="Zenn担当PMです。${DATE} ${TIME}の定期報告です。
+MSG="日次レポート ${DATE}
 
 【現在の状況】
 ${STATUS_JP}です。これまでに合計${ITER}サイクルを完了しました。

@@ -1,38 +1,8 @@
 {
   "status": "processing",
   "target_article": "/Users/okamotoryuya/repository/zenn-engine/articles/2026-03-28-zenn-github-actions-auto-deploy.md",
-  "last_updated": "2026-03-31T15:10:36",
+  "last_updated": "2026-03-31T16:32:57",
   "thread": [
-    {
-      "role": "user",
-      "text": "いいねそれこのままギットプッシュして公開までやっちゃおう公開する日時だけど今は深夜で公開してもビューが伸びないから金曜日の17時次のだから投稿に差し込んでほしいけどできますか今すぐ投稿しないように最新の注意を払ってほしいです\n",
-      "ts": "2026-03-31 01:34"
-    },
-    {
-      "role": "assistant",
-      "text": "zenn-engine GMです。\n\n<b>確認事項</b>\n\n<blockquote>今すぐ公開しない・金曜17時に自動公開</blockquote>\n\n以下の手順で進めます:\n\n1. <code>published: false</code> で記事作成\n2. git push（下書き保存）\n3. 予約ファイルに「金曜17時公開」を記録\n4. 次回エンジン実行時（金曜17時）に自動で <code>published: true</code> に変更\n\n<b>重要な確認</b>\n\n・今すぐは公開されません\n・金曜17時のエンジン実行で自動公開\n・手動操作は不要\n\nこの方式でOKですか？\n",
-      "ts": "2026-03-31 01:34"
-    },
-    {
-      "role": "user",
-      "text": "はいOKです\n",
-      "ts": "2026-03-31 01:37"
-    },
-    {
-      "role": "assistant",
-      "text": "zenn-engine GMです。\n\n<b>予約公開の設定が完了しました</b>\n\n―――――――――――――――――\n\n<b>記事情報</b>\n\n・スラッグ: <code>2026-03-30-claude-code-launchd-autonomous-agent</code>\n・タイトル: OpenClawのAPI料金に疲れた人へ：Claude Code × macOS launchd で月額固定の自律AIエージェントを自作する\n・現在の状態: <code>published: false</code>（下書き保存済み）\n\n―――――――――――――――――\n\n<b>公開予定</b>\n\n・日時: <b>2026年4月4日（金）17:00</b>\n・自動実行: zenn-engine.sh が17:00に起動し、自動で <code>published: true</code> に変更してgit push\n\n―――――――――――――――――\n\n<b>実施内容</b>\n\n1. 記事ファイル作成（published: false）\n2. state.json に予約情報を記録\n3. git commit + push（下書き保存）\n4. zenn-engine.sh に予約公開機能を追加\n   ・check_scheduled_publish() 関数を実装\n   ・予約時刻到達時に自動でpublished変更\n   ・Telegram通知も送信\n\n―――――――――――――――――\n\n<b>確認ポイント</b>\n\n・今すぐは公開されません（published: false）\n・金曜17:00のエンジン実行で自動公開\n・公開時に再度Telegram通知が届きます\n\n完了しました！\n",
-      "ts": "2026-03-31 01:39"
-    },
-    {
-      "role": "user",
-      "text": "次の投稿について議論したいですネタの元になるものある?\n",
-      "ts": "2026-03-31 03:04"
-    },
-    {
-      "role": "assistant",
-      "text": "<b>zenn-engine GMです。</b>\n\n<b>次の投稿ネタの議論を開始します</b>\n\n―――――――――――――――――\n\n<b>現在のテーマキュー（上位3件）</b>\n\n1. uLoopMCP + Claude Code で Unity 自律開発サイクルを実現する方法\n2. Unity Memory Profiler 実践ワークフロー：GC Alloc 撲滅からメモリリーク根絶まで\n3. Unity GPU Instancing 完全実装：DrawMeshInstanced から RenderMeshIndirect まで段階的に理解する\n\n―――――――――――――――――\n\n<b>高PVパターン（競合分析結果）</b>\n\n・AI x Unity MCP連携（実験記録形式）: スキ18〜33\n・Unity 6.x 新機能解説: スキ18前後\n・非エンジニア体験記 + AI: スキ5〜26\n\n―――――――――――――――――\n\n<b>ネタの元になるもの</b>\n\n<b>1. uLoopMCP + Claude Code</b>\n・OpenClaw記事との差別化: Unity特化\n・実験記録形式で書けば競合の高スキ帯を狙える\n・Claude Code で Unity プロジェクトを自律管理する実例\n\n<b>2. Unity Memory Profiler 実践</b>\n・競合が入門記事のみ\n・実ゲームでのワークフロー解説で差別化\n・コードサンプル + スクリーンショット豊富に用意可能\n\n<b>3. Unity GPU Instancing</b>\n・段階的解説が競合に少ない\n・DrawMeshInstanced から RenderMeshIndirect まで\n・パフォーマンス系は検索安定\n\n―――――――――――――――――\n\n<b>GM からの推奨</b>\n\n<blockquote>uLoopMCP + Claude Code を次の投稿にすることを推奨します</blockquote>\n\n<b>理由</b>\n\n・OpenClaw記事で「外部API依存ゼロ」を訴求したので、Unity特化版で差別化できる\n・AI × Unity MCP連携は競合で最高スキ帯（26〜33）\n・実験記録形式で書けば拡散が期待できる\n・Claude Code の Unity 活用事例として読者価値が高い\n\n―――――――――――――――――\n\n<b>質問</b>\n\n1. uLoopMCP + Claude Code で進めますか？\n2. それとも Memory Profiler / GPU Instancing のほうが良いですか？\n3. 別のテーマを追加しますか？\n\nどれにしますか？\n",
-      "ts": "2026-03-31 03:04"
-    },
     {
       "role": "user",
       "text": "ノートの記事の方でも書いてるんだけどAIのデザインをなぜ人間は嫌いなのかとかとかっていうようなテーマで書きたいんだよね心理学的なところとか実際に人間がどう思っているかっていうのをSNSとかでたくさん投稿とか見てどういう傾向があるかとかも調べたいんだよねどう思いますか\n",
@@ -77,7 +47,17 @@
       "role": "user",
       "text": "今のところにストックされて自動更新される自動でパブリッシュされる予定の記事を教えてください\n",
       "ts": "2026-03-31 15:10"
+    },
+    {
+      "role": "assistant",
+      "text": "<b>zenn-engine GMです。</b>\n\n<b>予約公開記事一覧（2件）</b>\n\n―――――――――――――――――\n\n<b>1件目</b>\n\n・タイトル: OpenClawのAPI料金に疲れた人へ：Claude Code × macOS launchd で月額固定の自律AIエージェントを自作する\n・スラッグ: <code>2026-03-30-claude-code-launchd-autonomous-agent</code>\n・公開予定: <b>2026年4月4日（金）17:00</b>\n・状態: <code>published: false</code>（下書き保存済み）\n\n―――――――――――――――――\n\n<b>2件目</b>\n\n・タイトル: なぜ人間はAIデザインを嫌うのか：バイアスと実質的傾向の2方向分析【Unity UI実装例付き】\n・スラッグ: <code>2026-03-31-why-humans-dislike-ai-design</code>\n・公開予定: <b>2026年4月11日（金）17:00</b>\n・状態: <code>published: false</code>（下書き保存済み）\n\n―――――――――――――――――\n\n<b>自動公開の仕組み</b>\n\n・zenn-engine.sh が毎週金曜17:00に起動\n・予約日時に達した記事を自動で <code>published: true</code> に変更\n・git commit + push で Zenn に公開\n・公開完了後にTelegram通知\n・予約キューから自動削除\n\n―――――――――――――――――\n\n<b>次の公開</b>\n\n<blockquote>2026年4月4日（金）17:00\nClaude Code × launchd の記事が自動公開されます</blockquote>\n\n完了です！\n",
+      "ts": "2026-03-31 15:11"
+    },
+    {
+      "role": "user",
+      "text": "あ、いいね。じゃあ4月11日以降はまだ記事がないよね。新しく記事のネタ考えて投稿したいから、まずネタ集めとか私に提案して。\n",
+      "ts": "2026-03-31 16:32"
     }
   ],
-  "summary": "zenn-engine GMです。\n\n以下、記事全文の最新版をお届けします。\n\n―――――――――――――――――\n\n**ファイル名**\n```\n2026-03-30-claude-code-launchd-autonomous-agent.md\n```\n\n**frontmatter**\n```yaml\n---\ntitle: OpenClawのAPI料金に疲れた人へ：Claude Code × macOS launchd で月額固定の自律AIエージェントを自作する\nemoji: ⚙️\ntype: tech\ntopics: [\"claude\", \"claudecode\", \"macos\", \"aiagent\", \"automation\"]\npublished: true\n---\n```\n\n―――――――――――――――――\n\n## はじめに：「OpenClaw、結局コスパ悪くない?」問題\n\nOpenClaw を導入してみた。Mac mini を買った。いざ動かしてみると、API 料金が思ったより高い。\n\n・OpenRouter 経由で GPT-4o を使うと、1回のタスクで数十円〜数百円が消える\n・自動化すればするほど課金が積み上がる\n・ローカル LLM に切り替えようとしたら、M3 Max クラスのマシンが必要と知る\n\nOpenClaw や OpenRouter は優れたツールです。ただし、AIタスクを自動化・ループ実行するほどAPIコストが線形に増えていく構造は避けられません。\n\nhttps://ai-tsu-ru.com/openrouter-complete-guide/\n\n**「もっとシンプルに、Claude Code のサブスクリプション(月額固定)だけで自分の MacBook で動かせないか?」**\n\nそう思って作ったのが本記事で紹介するシステムです。実際にこの記事自体が、そのシステム(zenn-engine)によって自律生成・管理されています。\n\n―――――――――――――――――\n\n## このシステムの全体像\n\n「Claude Code ヘッドレスモード(-p) × macOS launchd」の組み合わせ。外部サービスへの依存はゼロ。\n\n```text\nmacOS launchd(スケジューラ)\n    ↓\n毎週金曜 17:00 に自動起動\n    ↓\nClaude Code ヘッドレスモード\necho \"$prompt\" | claude -p\n    ↓\nTelegram 通知(完了・エラー時)\n```\n\n―――――――――――――――――\n\n## コスト比較：OpenClaw + API課金 vs このシステム\n\n| 項目 | OpenClaw + API課金 | このシステム |\n|------|-------------------|-------------|\n| モデル課金 | $0.002〜$0.03/1Kトークン | 月額固定 |\n| 実行基盤 | OpenRouter / 外部API | macOS launchd(無料) |\n| 外部依存 | あり | なし |\n| セキュリティ | サードパーティAPI経由 | ローカル完結 |\n\n**Claude Code 料金選択肢**\n・Max プラン($200/月): ほぼ使い放題。自動化ループ何度回しても追加料金ゼロ。\n・Pro プラン($20/月): 週1〜2回の実行なら問題なく動く。\n\nAPI従量課金がないため、自動化が活発になるほどコスパが改善するのが最大の特徴です。\n\nhttps://platform.claude.com/docs/ja/about-claude/pricing\n\n―――――――――――――――――\n\n## 仕組みの解説\n\n### macOS launchd：外部ツール不要のスケジューラ\n\ncron の macOS 版。`~/Library/LaunchAgents/` に plist ファイルを置くだけで指定時刻にスクリプトを自動実行できます。\n\n```xml\n<key>ProgramArguments</key>\n<array>\n  <string>/bin/bash</string>\n  <string>/Users/yourname/repository/zenn-engine/zenn-engine.sh</string>\n</array>\n```\n\n登録と起動はターミナルから2行で完了。\n\n```bash\ncp com.ryuryu.zenn-engine.plist ~/Library/LaunchAgents/\nlaunchctl load ~/Library/LaunchAgents/com.ryuryu.zenn-engine.plist\n```\n\nn8n や Make.com などの外部ワークフローツールは一切不要です。\n\nhttps://zenn.dev/arsaga/articles/4d1a2de87d428a\n\n### Claude Code ヘッドレスモード(-p フラグ)\n\nClaude Code には対話モード以外に、パイプ経由でプロンプトを渡すヘッドレスモードがあります。\n\n```bash\necho \"$prompt\" | claude -p --allowedTools \"Read,Write,Edit,Bash,Glob,Grep\"\n```\n\nポイントは `--allowedTools` です。Claude が使えるツールをホワイトリスト管理できるため、AIが触れる範囲を明示的にコントロールできます。\n\nさらに `CLAUDE.md` にプロジェクトのルール(操作可能フォルダ・禁止事項)を書いておくと、それが毎回のプロンプトに自動注入されます。\n\n```markdown\n## 操作制約\n- 操作可能範囲: ~/repository/zenn-engine/ 内のみ\n- articles/ 内の既存ファイルは削除禁止\n- git push は articles/ への変更がある場合のみ実行\n```\n\nhttps://code.claude.com/docs/ja/headless\n\nhttps://zenn.dev/sora_biz/articles/claude-code-headless-mode\n\n―――――――――――――――――\n\n## フォルダ構造テンプレート\n\nOpenClaw の設計思想(SOUL / MEMORY / AGENT の分離)を参考にしています。\n\n```text\nproject-name/\n├── SOUL.md            # 不変の原則(AI は変更不可)\n├── STRATEGY.md        # 目標・戦略(AI提案 → ユーザー承認)\n├── MEMORY.md          # 常時コンテキスト(~100行に維持)\n├── AGENT.md           # 行動アルゴリズム・モード定義\n├── state.json         # 実行状態管理(現在のモード・カウンタ)\n├── input.md           # ユーザーの指示を書く場所\n├── engine.sh          # メインスクリプト(claude -p を呼ぶ)\n├── prompts/\n│   ├── mode-create.md # タスクA用プロンプト\n│   └── mode-review.md # タスクB用プロンプト\n└── memory/\n    ├── metrics.json   # パフォーマンスデータ\n    └── daily/         # 日次実行記録\n```\n\n`state.json` でモードを管理することで、「create → analyze → improve → rewrite」のような4ステップループを実現しています。\n\n―――――――――――――――――\n\n## セキュリティ上の利点\n\nOpenRouter などの外部 API を経由する場合、プロンプト内容がサードパーティのサーバーを通ります。このシステムはすべてローカルで完結します。\n\n・**操作範囲の制限** CLAUDE.md に「このフォルダ以外は操作禁止」と書けば、AI はそれに従う\n・**ツールの制限** --allowedTools で使用可能なツールをホワイトリスト管理\n・**Telegram 通知** エンドツーエンド暗号化のチャネル経由。完了通知のみ送信し、機密データは外部に出ない\n\nOpenClaw の思想は優れていますが、「第三者 API を経由したくない」「自分のマシン内だけで完結させたい」という場合、このアプローチは有効な選択肢になります。\n\n―――――――――――――――――\n\n## Telegram 通知の追加(オプション)\n\n完了・エラー時にスマートフォンへ通知を送ることができます。\n\n```bash\nBOT_TOKEN=\"your-bot-token\"\nCHAT_ID=\"your-chat-id\"\n\ncurl -s -X POST \"https://api.telegram.org/bot${BOT_TOKEN}/sendMessage\" \\\n  -d \"chat_id=${CHAT_ID}\" \\\n  -d \"text=${1}\" > /dev/null\n```\n\nセットアップは Telegram の BotFather でボットを作成し、トークンを取得するだけです。外出中でもスマホで実行結果を確認できます。Telegram は E2E 暗号化に対応しており、通知チャネルとしてセキュリティ的にも優れています。\n\nhttps://apidog.com/jp/blog/beginners-guide-to-telegram-bot-api-jp/\n\nhttps://zenn.dev/rescuenow/articles/7940e89422253d\n\n―――――――――――――――――\n\n## まとめ\n\nこのシステムの本質は「**echo \"$prompt\" | claude -p × macOS launchd**」というシンプルな組み合わせです。\n\n・月額固定コストで自動化ループを無制限に回せる\n・Mac に最初から入っている機能だけで動く(外部ツール不要)\n・操作範囲を制限することでセキュアに運用できる\n・Telegram で外出先からも結果を確認できる\n\nOpenClaw の設計思想(記憶・役割・ルールの分離)は非常に優れています。ただし「API 料金の問題を解決したい」「外部サービスへの依存を減らしたい」という場合、このアプローチが有効な選択肢になります。macOS 限定にはなりますが、手元の MacBook Pro で今日から動かせます。\n\n―――――――――――――――――\n\n## 自分でセットアップするのが難しい場合\n\nこの記事で紹介したシステムをベースに、あなたのユースケースに合わせた自律 AI エージェントを構築するサポートを行っています。\n\n・どのフォルダを管理させるか\n・どのタスクを自動化するか\n・Telegram 通知の設定\n\nなど、要件ヒアリングから実装・テストまで対応可能です。\n\n**ご相談・お見積もりはこちら** → ゲーム開発所RYURYU ご相談窓口(ご連絡ください)\n\n> ※CTAのリンクURLはまだプレースホルダーです。ご自身のサービスURL(ココナラなど)を教えていただければ差し替えます!\n\n―――――――――――――――――\n\n**次のアクション**\n\ngit push で公開しますか?"
+  "summary": "【決定事項】\n- 記事「OpenClawのAPI料金に疲れた人へ：Claude Code × macOS launchd で月額固定の自律AIエージェントを自作する」を2026年4月4日（金）17:00に予約公開設定完了\n- 現在は`published: false`で下書き保存済み、zenn-engine.shが自動で公開処理を実行する仕組みを実装\n- 次回投稿候補として「uLoopMCP + Claude Code で Unity 自律開発サイクルを実現する方法」を推奨（AI × Unity MCP連携・実験記録形式・競合分析で高スキ帯を確認）\n\n【作業状態】\n- git commit + push完了（下書き保存）\n- state.jsonに予約公開情報を記録済み\n- zenn-engine.shにcheck_scheduled_publish()関数を追加し、予約時刻到達時の自動published変更・Telegram通知機能を実装\n\n【継続コンテキスト】\n次回投稿のテーマ選定待ち。uLoopMCP + Claude Code（Unity特化・OpenClaw記事との差別化）、Unity Memory Profiler実践ワークフロー、Unity GPU Instancing完全実装の3候補から選択、または別テーマ追加の方針確認が必要。"
 }

@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "queue": [],
+  "schedule": {
+    "weekday": [
+      5,
+      6
+    ],
+    "time": "17:00",
+    "timezone": "Asia/Tokyo"
+  },
+  "last_scan": null,
+  "last_publish": null
+}
