@@ -4,9 +4,9 @@
   "status": "completed",
   "last_run": "2026-03-31T14:30:00Z",
   "current_article": {
-    "slug": "2026-03-31-why-humans-dislike-ai-design",
-    "title": "なぜ人間はAIデザインを嫌うのか：バイアスと実質的傾向の2方向分析【Unity UI実装例付き】",
-    "topic": "AIデザイン心理学・Unity UI実装"
+    "slug": "2026-04-01-claude-md-ascii-diagram-output",
+    "title": "Claude Codeの出力が読めない問題をCLAUDE.mdのASCII図ルールで解決した",
+    "topic": "CLAUDE.md ASCII図解出力"
   },
   "consecutive_errors": 0,
   "scheduled_publish": [
