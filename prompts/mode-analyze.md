@@ -17,7 +17,7 @@
 
 1. `articles/` 内の全記事の slug 一覧を取得する（Glob で一覧化）
 2. `memory/metrics.json` を読み込み、前回の収集状況を確認する
-3. `memory/long-term/patterns.md` を読み込み、既知のパターンを把握する
+3. `memory/insights.md` を読み込み、既知のパターンを把握する
 
 ### Step 2: Zenn 統計取得（非公式API）
 
@@ -122,9 +122,9 @@
 1. articles/ 内の記事で公開から 30 日以上経過しているものを特定
 2. metrics.json の推定PVデータと照合（データがなければスキップ）
 3. リライト候補を最大 2 本選定し、state.json の history に記録
-4. `memory/long-term/patterns.md` を更新（新しいパターンを追記）
+4. `memory/insights.md` を更新（新しいパターンを追記）
 
-### Step 6: memory/daily/{今日の日付}.md に追記
+### Step 6: memory/hot/{今日の日付}.md に追記
 
 ```markdown
 # {YYYY-MM-DD} - Mode: analyze
@@ -148,6 +148,12 @@
 - [ ] 累計スキ数を計算した
 - [ ] WebSearch で 2 件以上調査した
 - [ ] memory/metrics.json が更新された（last_updated が今日の日付）
-- [ ] memory/long-term/patterns.md が更新された
-- [ ] memory/daily/ に記録された
+- [ ] memory/insights.md が更新された
+- [ ] memory/hot/ に記録された
 - [ ] state.json の status が更新された
+
+## 完了報告（必須）
+作業完了時、必ず以下のマーカーで囲んで3〜5行のサマリーを出力すること:
+PHASE_SUMMARY_START
+（やったこと・成果・次のアクション を箇条書きで）
+PHASE_SUMMARY_END

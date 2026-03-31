@@ -15,7 +15,7 @@
 
 ### Step 1: テーマ選定
 
-1. `memory/long-term/topics.md` を読む
+1. `memory/insights.md` を読む
 2. キューの先頭テーマを選択（なければ WebSearch で Unity/AI 最新トレンドを調査して選定）
 3. `articles/` 内の既存記事の slug 一覧を確認して重複がないことを確認
 4. state.json の `current_article.topic` に選定テーマを記録
@@ -58,7 +58,7 @@ published: true
 }
 ```
 
-### Step 4: memory/daily/{今日の日付}.md に追記
+### Step 4: memory/hot/{今日の日付}.md に追記
 
 ```markdown
 # {YYYY-MM-DD} - Mode: create
@@ -74,7 +74,7 @@ published: true
 
 ### Step 5: テーマキュー更新
 
-`memory/long-term/topics.md` から使用したテーマを削除（または「済み」マーク付与）。
+`memory/insights.md` から使用したテーマを削除（または「済み」マーク付与）。
 済みトピック一覧に追記する。
 
 ## 完了チェックリスト
@@ -86,5 +86,11 @@ published: true
 - [ ] 文字数が 2,000字以上ある
 - [ ] 見出しが 3つ以上ある
 - [ ] state.json の current_article が更新された
-- [ ] memory/daily/ に記録された
-- [ ] topics.md のキューが更新された
+- [ ] memory/hot/ に記録された
+- [ ] insights.md のキューが更新された
+
+## 完了報告（必須）
+作業完了時、必ず以下のマーカーで囲んで3〜5行のサマリーを出力すること:
+PHASE_SUMMARY_START
+（やったこと・成果・次のアクション を箇条書きで）
+PHASE_SUMMARY_END

@@ -12,4 +12,4 @@ exec ~/.claude/scripts/telegram-daemon-core.sh \
   "$WORK_DIR/.telegram-offset" \
   "$WORK_DIR/.telegram-daemon.pid" \
   "$WORK_DIR/logs/telegram-daemon.log" \
-  "$WORK_DIR/input.md"
+  "$WORK_DIR"

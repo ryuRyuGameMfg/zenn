@@ -1,2 +1,0 @@
-[2026-03-30T18:08:48] [WARN] Telegram送信失敗: {"ok":false,"error_code":400,"description":"Bad Request: message is too long"}
-[2026-03-30T18:18:54] [WARN] Telegram送信失敗: {"ok":false,"error_code":400,"description":"Bad Request: message is too long"}

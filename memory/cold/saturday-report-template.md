@@ -117,4 +117,4 @@
 - metrics.json: 統計データ
 - state.json: 実行状態
 - STRATEGY.md: OKR定義
-- memory/long-term/topics.md: テーマキュー
+- memory/insights.md: テーマキュー

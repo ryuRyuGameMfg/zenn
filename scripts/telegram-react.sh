@@ -171,6 +171,16 @@ fi
 # 6. Telegramに返信
 bash "$NOTIFY_SCRIPT" "$TELEGRAM_REPLY" 2>>"$LOG_FILE" || echo "[$(date '+%Y-%m-%dT%H:%M:%S')] WARN: telegram-notify.sh failed" >> "$LOG_FILE"
 
+# AI応答をhot/に記録
+HOT_DIR="$WORK_DIR/memory/hot"
+HOT_FILE="$HOT_DIR/$(date '+%Y-%m-%d').md"
+mkdir -p "$HOT_DIR"
+if [[ ! -f "$HOT_FILE" ]]; then
+  printf '# Daily Log - %s\n\n' "$(date '+%Y-%m-%d')" > "$HOT_FILE"
+fi
+PLAIN_REPLY=$(echo "$TELEGRAM_REPLY" | sed 's/<[^>]*>//g')
+printf '[%s] [ai] %s\n' "$(date '+%H:%M')" "$PLAIN_REPLY" >> "$HOT_FILE"
+
 # 7. アシスタント返信をスレッドに追加
 append_thread "assistant" "$TELEGRAM_REPLY" || echo "[$(date '+%Y-%m-%dT%H:%M:%S')] WARN: append_thread failed" >> "$LOG_FILE"
 update_conv_str "status" "idle"

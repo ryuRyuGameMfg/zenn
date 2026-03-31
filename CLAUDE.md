@@ -29,7 +29,7 @@ heartbeat (~/repository/heartbeat/) と同じ OpenClaw ワークスペース設�
 
 ```
 zenn-engine/
-├── articles/           # Zenn 記事本体（既存67本 + 自律生成分）
+├── articles/           # Zenn 記事本体（既存76本 + 自律生成分）
 ├── books/              # Zenn 本（既存）
 ├── SOUL.md             # 不変原則
 ├── STRATEGY.md         # 記事戦略・OKR
@@ -39,7 +39,6 @@ zenn-engine/
 ├── data/               # ランタイムデータ（queue.json, state.json）
 │   ├── queue.json      # 公開キュー
 │   └── state.json      # 実行状態管理
-├── input.md            # ユーザー方針指示
 ├── zenn-engine.sh      # デーモンスクリプト
 ├── com.ryuryu.zenn-engine.plist  # launchd 設定
 ├── prompts/
@@ -49,10 +48,9 @@ zenn-engine/
 │   └── mode-rewrite.md # リライトプロンプト
 ├── memory/
 │   ├── metrics.json    # 記事パフォーマンスデータ
-│   ├── daily/          # 日次実行記録（YYYY-MM-DD.md）
-│   └── long-term/
-│       ├── topics.md   # テーマキュー
-│       └── patterns.md # 高PVパターン
+│   ├── insights.md     # テーマキュー・高PVパターン（統合）
+│   ├── hot/            # 日次実行記録（YYYY-MM-DD.md）
+│   └── cold/           # 長期保存データ
 └── logs/               # 実行ログ（日付別フォルダ）
 ```
 
@@ -83,18 +81,11 @@ launchctl load ~/Library/LaunchAgents/com.ryuryu.zenn-engine.plist
 
 ### 方針指示を出す
 
-`input.md` に自由記述で指示を追加する。次のモード実行時に反映される。
-
-```markdown
-# User Input - 方針指示
-
-1. 次はパフォーマンス系の記事を書いて
-2. UniVRM の記事を優先して
-```
+`memory/hot/` に `[user]` タグ付きで指示を記録する。次のモード実行時に反映される。
 
 ### テーマを手動追加する
 
-`memory/long-term/topics.md` のキューに直接追記する。
+`memory/insights.md` のキューに直接追記する。
 
 ### 戦略を変更する
 

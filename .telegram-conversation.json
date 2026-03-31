@@ -1,7 +1,7 @@
 {
   "status": "processing",
   "target_article": "/Users/okamotoryuya/repository/zenn-engine/articles/2026-03-28-zenn-github-actions-auto-deploy.md",
-  "last_updated": "2026-03-31T20:13:14",
+  "last_updated": "2026-04-01T00:11:10",
   "thread": [
     {
       "role": "user",
@@ -57,6 +57,16 @@
       "role": "user",
       "text": "次の記事のネタ決まりましたそれ何かっていうと私の.cloudの隠しフォルダを見てみてくださいそのフォルダのcloud.mind.mdマークダウンファイルつまりクロードへの指示ファイルを見てみてくださいこれには何が重要かっていうとASCII図でできるだけ回答してくださいっていうことが書いてあってこのASCII図で回答してくれることによってターミナルでもめちゃくちゃ視認性のいい出力を出すことができます文字をたくさんグワーッと並べるんじゃなくてASCII図でものすごくデザイン性のあって見やすいフォーマットが送られてくるのでAIがたくさん情報を出力しすぎてAIがやってることが理解できない理解不採や技術不採が積み重なっていかないっていうのがすごくメリットなのでおすすめですこういったテーマで記事を書きたいまずは調査をして\n",
       "ts": "2026-03-31 20:13"
+    },
+    {
+      "role": "assistant",
+      "text": "CLAUDE.md ASCII図解記事テーマの調査結果\n\n<b>zenn-engine GMです。</b>\n\n<b>調査完了しました。重要な発見があります。</b>\n\n---\n\n<b>【重複チェック結果】</b>\n\n<b>既に類似記事が2本公開済みです</b>\n\n<b>1. 2026-02-27公開</b>\n<code>CLAUDE.mdでASCII図ルールを定義したらAI出力が劇的に変わった</code>\n\nカバー範囲:\n・Before/After比較\n・Mermaid vs ASCII図の比較\n・7種類のASCII図テンプレート\n・CLAUDE.mdへの設定方法\n・描画ルール（罫線文字・80文字幅）\n\n<b>2. 2026-02-28公開</b>\n<code>CLAUDE.mdで失敗しまくった7つのパターンと解決策</code>\n\nカバー範囲:\n・Mermaid図の視認性問題\n・CLAUDE.md肥大化の問題\n・段階的開示（Progressive Disclosure）\n\n<blockquote>SOUL.mdの原則「重複禁止：既存記事と同じトピックは絶対に書かない」に該当します。</blockquote>\n\n---\n\n<b>【競合調査サマリー】</b>\n\nZenn/Qiita/noteで「CLAUDE.md」関連記事は<b>非常に多い</b>（激戦区）\n\n一方で、以下は<b>未開拓</b>:\n・ASCII図解出力に特化した記事はほぼゼロ\n・ターミナル視認性改善の具体策は少ない\n\nただし、<b>あなたの既存記事が既にその空白を埋めています。</b>\n\n---\n\n<b>【差別化の方向性（3案）】</b>\n\n既存記事と重複しない切り口で書くなら:\n\n<b>案A: 「CLAUDE.md実践運用1ヶ月」</b>\n・ASCII図解運用の実データ公開\n・トークン消費量の実測\n・遵守率の変化\n・1ヶ月使った改善記録\n\n<b>案B: 「チーム開発でのCLAUDE.md共有戦略」</b>\n・個人 vs チームでのCLAUDE.md設計\n・階層構造の使い分け\n・チーム全員の出力品質を統一する方法\n\n<b>案C: 「CLAUDE.md + スキル/エージェント設計」</b>\n・2階層アーキテクチャの実践\n・スキル→エージェントの自動呼び出し\n・並列実行で生産性を上げる方法\n\n<blockquote>いずれも既存2本と重複せず、かつ「CLAUDE.md活用」の延長線上にあるテーマです。</blockquote>\n\n---\n\n<b>【GMの提案】</b>\n\n<blockquote>「ASCII図解をCLAUDE.mdで指示する」テーマは2本の既存記事で十分カバーされています。同じテーマで3本目を書くのはSOUL.mdの重複禁止原則に抵触します。\n\n差別化案A〜Cのいずれか、またはテーマキューの上位3件（uLoopMCP / Memory Profiler / GPU Instancing）から選ぶことを推奨します。\n\nもし「ASCII図解の記事を深掘りしたい」場合は、既存記事のリライト（内容拡充）として対応するのが適切です。</blockquote>\n\n---\n\n<b>【判断をお願いします】</b>\n\n<b>A. 差別化案Aで新規記事作成</b>\n（CLAUDE.md運用1ヶ月の実データ記事）\n\n<b>B. 差別化案B or Cで新規記事作成</b>\n（チーム開発 or スキル設計テーマ）\n\n<b>C. 既存ASCII図解記事をリライト</b>\n（内容拡充・深掘り）\n\n<b>D. テーマキューから別テーマを選択</b>\n（uLoopMCP / Memory Profiler等）\n\n<b>E. 別のテーマを指定する</b>\n\nどれにしますか？\n",
+      "ts": "2026-03-31 20:15"
+    },
+    {
+      "role": "user",
+      "text": "そのアスキーズでクロードのマークダウンに支持するっていう記事を書き直して\nまた新たにリリースするっていう話はどうなった?\n",
+      "ts": "2026-04-01 00:11"
     }
   ],
   "summary": "【決定事項】\n- 記事公開を週2本ペース（金・土17:00）に変更、ストックから順次公開する方式に切り替え\n- 土曜日はanalyze + improve実行後、OKR進捗・テーマキュー・高PV記事・戦略改善提案をTelegramレポート送信\n- rewrite自動実行を無効化、手動指示のみで実行する方式に変更\n\n【作業状態】\n- Unity MCP記事2本執筆完了（公式MCP 8,100字/uLoopMCP 6,300字）、現在4件の記事が金曜17時予約公開キューに登録済み\n- 現行設定は金曜create・土曜analyze→improve→rewrite順次実行、Telegramレポート機能は未実装\n- 提案内容（queue.json設定・zenn-engine.sh修正・Telegramレポート追加）の実装承認待ち\n\n【継続コンテキスト】\n現在の予約公開は金曜のみ4件登録（4/4, 4/11, 4/18, 4/25）。週2本ペースに変更するため土曜17時の公開予約を追加し、土曜日のrewrite処理をanalyze + improveのみに変更、レポート生成・Telegram通知機能を新規実装する必要がある。レポート形式はOKR進捗・テーマキュー残数・高PV TOP5・次週候補・戦略改善提案を含む。"

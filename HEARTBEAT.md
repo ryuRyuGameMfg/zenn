@@ -12,7 +12,7 @@
 
 ## 戦略チェック
 
-- [ ] テーマキュー（memory/long-term/topics.md）は 3 件以上残っているか
+- [ ] テーマキュー（memory/insights.md）は 3 件以上残っているか
   - 3件未満の場合: improve モードで補充
 - [ ] STRATEGY.md の OKR 進捗を確認（フォロワー数・PV・スキ率）
 - [ ] 前回の analyze で更新した metrics.json は 7 日以内か
@@ -28,5 +28,5 @@
 ## データチェック
 
 - [ ] memory/metrics.json は最新か（7 日以内）
-- [ ] memory/long-term/topics.md は 3 件以上あるか
-- [ ] memory/daily/ に今日の記録があるか（前回モード実行後に作成されているはず）
+- [ ] memory/insights.md は 3 件以上あるか
+- [ ] memory/hot/ に今日の記録があるか（前回モード実行後に作成されているはず）

@@ -15,10 +15,10 @@ state.json の `mode` フィールド（文字列）で判定する。
 
 ## テーマ選定基準
 
-1. `memory/long-term/topics.md` のキュー先頭から順に消費する
+1. `memory/insights.md` のキュー先頭から順に消費する
 2. キューが空（0件）になった場合: WebSearch で Unity/AI 最新トレンドを調査して 5 件追加
 3. キュー選定後、`articles/` 既存記事の slug 一覧と照合して重複がないことを確認
-4. 重複があればキューの次のテーマへ（スキップして topics.md に「済み」マークを付ける）
+4. 重複があればキューの次のテーマへ（スキップして insights.md に「済み」マークを付ける）
 
 ## リライト対象選定
 
@@ -65,7 +65,7 @@ create → analyze → improve → rewrite → create（ループ）
 - エラー後のクールダウン: 1800秒（30分）
 - エラーリセット: モード成功後に `consecutive_errors` を 0 にリセット
 
-## memory/daily/ の記録形式
+## memory/hot/ の記録形式
 
 ```markdown
 # {YYYY-MM-DD} - Mode: {mode}

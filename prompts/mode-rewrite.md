@@ -41,9 +41,9 @@
 
 mode-create.md と同じ手順で新規記事を 1 本作成する。
 
-1. `memory/long-term/topics.md` からキューの先頭テーマを選択
+1. `memory/insights.md` からキューの先頭テーマを選択
 2. 記事を作成して `articles/` に保存
-3. topics.md のキューを更新
+3. insights.md のキューを更新
 
 ### Step 4: state.json 更新
 
@@ -59,7 +59,7 @@ rewrite モードはサイクルの最終モード。MEMORY.md を見直す:
 3. 「直近の投稿記録」テーブルを最新化（上位 5 件を残す）
 4. HEARTBEAT.md のチェックリストで不要になった項目を整理
 
-### Step 6: memory/daily/{今日の日付}.md に追記
+### Step 6: memory/hot/{今日の日付}.md に追記
 
 ```markdown
 # {YYYY-MM-DD} - Mode: rewrite
@@ -87,5 +87,11 @@ rewrite モードはサイクルの最終モード。MEMORY.md を見直す:
 - [ ] 新規記事が 1 本作成された（articles/ に存在）
 - [ ] state.json の current_article が更新された
 - [ ] MEMORY.md が 100 行以下になった
-- [ ] memory/daily/ に記録された
-- [ ] topics.md のキューが更新された
+- [ ] memory/hot/ に記録された
+- [ ] insights.md のキューが更新された
+
+## 完了報告（必須）
+作業完了時、必ず以下のマーカーで囲んで3〜5行のサマリーを出力すること:
+PHASE_SUMMARY_START
+（やったこと・成果・次のアクション を箇条書きで）
+PHASE_SUMMARY_END

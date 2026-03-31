@@ -14,8 +14,6 @@ WORK_DIR="$HOME/repository/zenn-engine"
 STATE_FILE="$WORK_DIR/data/state.json"
 LOG_DIR="$WORK_DIR/logs"
 PROMPT_DIR="$WORK_DIR/prompts"
-INPUT_FILE="$WORK_DIR/INPUT.md"
-
 # Workspace files (OpenClaw-inspired)
 SOUL_FILE="$WORK_DIR/SOUL.md"
 STRATEGY_FILE="$WORK_DIR/STRATEGY.md"
@@ -76,6 +74,14 @@ telegram_notify() {
   if [[ -f "$TELEGRAM_NOTIFY" && -f "$TELEGRAM_CONF" ]]; then
     bash "$TELEGRAM_NOTIFY" "$message" || true
   fi
+}
+
+# Claude出力からサマリーを抽出
+extract_summary() {
+  local output="$1"
+  local summary=""
+  summary=$(echo "$output" | sed -n '/PHASE_SUMMARY_START/,/PHASE_SUMMARY_END/p' | sed '1d;$d')
+  echo "$summary"
 }
 
 log() {
@@ -398,12 +404,9 @@ housekeeping() {
 # Steering: Check -> Plan
 # ---------------------------------------------------------------------------
 
-# 初期化: INPUT.md を読み込み、グローバル変数を準備
+# 初期化: グローバル変数を準備
 steering_init() {
   mkdir -p "$DAILY_DIR" "$MEMORY_DIR/long-term"
-
-  PREV_INPUT=""
-  [[ -f "$INPUT_FILE" ]] && PREV_INPUT=$(cat "$INPUT_FILE") || true
 
   STEERING_TIMESTAMP=$(date '+%Y-%m-%d_%H%M')
   log "INFO" "Steering初期化完了 (timestamp=$STEERING_TIMESTAMP)"
@@ -432,7 +435,7 @@ CRITICAL: 絶対に Write/Edit/Bash ツールを使わないこと。マーク�
 ## やること
 1. state.json を読んで現在の状態を確認
 2. STRATEGY.md の OKR 進捗を確認
-3. memory/long-term/topics.md のキュー残数を確認
+3. memory/insights.md のキュー残数を確認
 4. 以下の形式で出力:
 
 # Check - Mode:${mode} Iter${iteration}
@@ -464,7 +467,7 @@ CRITICAL: 絶対に Write/Edit/Bash ツールを使わないこと。マーク�
   log "INFO" "Check完了"
 }
 
-# Plan: check 結果 + INPUT.md を元に計画を立てて CURRENT_PLAN 変数に格納
+# Plan: check結果を元に計画を立ててCURRENT_PLAN変数に格納
 steering_make_plan() {
   local mode="$1"
   local iteration="$2"
@@ -473,11 +476,6 @@ steering_make_plan() {
 
   local context
   context=$(build_context)
-
-  local input_content=""
-  if [[ -n "$PREV_INPUT" && "$PREV_INPUT" != *"<!-- 全ての指示が完了した"* && "$PREV_INPUT" != *"<!-- 新しい指示を"* ]]; then
-    input_content="$PREV_INPUT"
-  fi
 
   local plan_prompt="${context}
 あなたは Zenn コンテンツエンジンの計画担当です。
@@ -491,8 +489,8 @@ CRITICAL: 絶対に Write/Edit/Bash ツールを使わないこと。
 ## Check結果
 ${CURRENT_CHECK}
 
-## ユーザーからの方針指示 (INPUT.md)
-$(if [[ -n "$input_content" ]]; then echo "$input_content"; else echo "なし（STRATEGY.md の方針を継続）"; fi)
+## 直近のユーザー指示
+（memory/hot/ の直近ファイルを読み込むこと。[user] [voice] 行がユーザーからの指示。）
 
 ## 出力フォーマット
 
@@ -571,7 +569,7 @@ ${prompt}"
 
 ---
 # モード完了時の必須作業
-1. memory/daily/$(date '+%Y-%m-%d').md に今回のモードの観察・成果・課題を追記すること
+1. memory/hot/$(date '+%Y-%m-%d').md に今回のモードの観察・成果・課題を追記すること
 2. state.json の status を更新すること
 $(if [[ "$is_last_mode" == "true" ]]; then
 echo "3. rewrite モード完了: MEMORY.md の昇格/降格を検討し、100行以下を維持すること"
@@ -599,6 +597,9 @@ fi)"
   if [[ -n "$mode_output" ]]; then
     log_section "Mode $mode Iter$iteration" "$mode_output"
   fi
+
+  # グローバル変数に格納（run_single_mode からサマリー抽出に使用）
+  LAST_MODE_OUTPUT="$mode_output"
 
   if [[ $exit_code -ne 0 ]]; then
     if [[ $exit_code -eq 124 ]]; then
@@ -631,70 +632,6 @@ reviewer() {
 }
 
 # ---------------------------------------------------------------------------
-# Input Lifecycle: INPUT.md の指示対応状況を追跡・クリア（rewrite モードのみ）
-# ---------------------------------------------------------------------------
-input_lifecycle() {
-  local mode="$1"
-  local iteration="$2"
-
-  if [[ "$mode" != "rewrite" ]]; then
-    return 0
-  fi
-
-  log "INFO" "InputLifecycle: rewrite モード - 振り返りと自己改善"
-
-  # INPUT.md のアクティブな指示を確認
-  if [[ -f "$INPUT_FILE" ]] && grep -q "^[0-9]" "$INPUT_FILE" 2>/dev/null; then
-    if [[ "$DRY_RUN" == "true" ]]; then
-      log "INFO" "[DRY-RUN] InputLifecycle: 評価スキップ"
-    else
-      local eval_prompt
-      eval_prompt="$(build_context)
-あなたは Zenn コンテンツエンジンのインプット管理担当です。
-
-以下のユーザー指示(INPUT.md)の各項目が対応されているかを評価してください。
-作業ディレクトリ: ${WORK_DIR}
-
-## ユーザー指示
-$(cat "$INPUT_FILE")
-
-## 出力フォーマット
-CRITICAL: Write/Edit/Bash ツールを使わないこと。
-
-# Input Status - Iter${iteration}
-
-| # | 指示内容 | 状態 | 備考 |
-|---|---------|------|------|
-
-## 全指示完了判定
-(全てdoneなら「YES - INPUT.mdをクリア可能」、そうでなければ「NO - 残タスクあり」)"
-
-      local status_content=""
-      if [[ -n "$TIMEOUT_CMD" ]]; then
-        status_content=$("$TIMEOUT_CMD" 300 bash -c 'echo "$1" | claude -p --allowedTools "Read,Glob,Grep"' _ "$eval_prompt" 2>/dev/null) || true
-      else
-        status_content=$(echo "$eval_prompt" | claude -p --allowedTools "Read,Glob,Grep" 2>/dev/null) || true
-      fi
-
-      if [[ -n "$status_content" ]] && echo "$status_content" | grep -q "YES.*クリア可能" 2>/dev/null; then
-        log "INFO" "InputLifecycle: 全指示完了。INPUT.md をクリア"
-        cat > "$INPUT_FILE" <<'CLEAR_EOF'
-# User Input - 方針指示
-
-<!-- 全ての指示が完了したため、自動クリアされました -->
-<!-- 新しい指示を記入してください -->
-
-CLEAR_EOF
-      fi
-    fi
-  else
-    log "INFO" "InputLifecycle: アクティブな指示なし"
-  fi
-
-  return 0
-}
-
-# ---------------------------------------------------------------------------
 # run_single_mode: 単一モードの実行（Patrol -> Steering -> Executor -> Reviewer）
 # ---------------------------------------------------------------------------
 run_single_mode() {
@@ -714,15 +651,30 @@ run_single_mode() {
     reviewer "$mode" "$iteration"
     update_state_str "mode" "$mode"  # 完了したモードを記録
     log "INFO" "Mode $mode 完了"
-    local _mode_jp; _mode_jp=$(case "$mode" in create) echo "新規記事作成";; analyze) echo "記事分析";; improve) echo "記事改善";; rewrite) echo "記事リライト";; *) echo "${mode}";; esac)
-    telegram_notify "Zenn担当PMです。
-第${iteration}サイクルの${_mode_jp}が完了しました。
-次のサイクルに移行します。"
+    local _mode_jp
+    case "$mode" in
+      create)  _mode_jp="新規記事作成";;
+      analyze) _mode_jp="記事分析";;
+      improve) _mode_jp="記事改善";;
+      rewrite) _mode_jp="記事リライト";;
+      *)       _mode_jp="${mode}";;
+    esac
+    local _summary; _summary=$(extract_summary "$LAST_MODE_OUTPUT")
+    telegram_notify "第${iteration}サイクル・${_mode_jp} 完了
+
+${_summary:-詳細なし}"
   else
     log "ERROR" "Mode $mode 失敗"
-    local _mode_jp; _mode_jp=$(case "$mode" in create) echo "新規記事作成";; analyze) echo "記事分析";; improve) echo "記事改善";; rewrite) echo "記事リライト";; *) echo "${mode}";; esac)
-    telegram_notify "Zenn担当PMです。
-第${iteration}サイクルの${_mode_jp}で問題が発生しました。
+    local _mode_jp
+    case "$mode" in
+      create)  _mode_jp="新規記事作成";;
+      analyze) _mode_jp="記事分析";;
+      improve) _mode_jp="記事改善";;
+      rewrite) _mode_jp="記事リライト";;
+      *)       _mode_jp="${mode}";;
+    esac
+    telegram_notify "第${iteration}サイクル・${_mode_jp} エラー
+
 ご確認ください。"
     git_commit_and_push "$mode" "$iteration" || true
     return 1
@@ -756,7 +708,7 @@ memory/saturday-report-template.md のフォーマットに従って、以下の
 - metrics.json: 最新の統計データ
 - state.json: 実行状態
 - STRATEGY.md: OKR定義
-- memory/long-term/topics.md: テーマキュー
+- memory/insights.md: テーマキュー
 
 ## 出力フォーマット（必須）
 
@@ -789,9 +741,7 @@ CRITICAL: Write/Edit/Bash ツールを使わないこと。テキスト出力の
 
   if [[ -z "$report_output" ]]; then
     log "WARN" "土曜レポート生成失敗"
-    telegram_notify "zenn-engine GMです。
-
-<b>今週の分析・改善が完了しました</b>
+    telegram_notify "<b>今週の分析・改善が完了しました</b>
 
 レポート生成に失敗しました。
 memory/metrics.json を手動確認してください。"
@@ -883,9 +833,7 @@ check_scheduled_publish() {
 
           published_slugs+=("$scheduled_slug")
 
-          telegram_notify "zenn-engine GMです。
-
-<b>予約公開が完了しました</b>
+          telegram_notify "<b>予約公開が完了しました</b>
 
 <b>記事</b>
 <code>$scheduled_slug</code>

@@ -17,8 +17,8 @@
 
 1. `memory/metrics.json` を読み込む（analyze モードで更新済みのはず）
 2. `STRATEGY.md` の OKR と現状を照合する
-3. `memory/long-term/patterns.md` を読み込み、高PVパターンを確認する
-4. `memory/long-term/topics.md` のキュー残数を確認する（3件未満なら補充必須）
+3. `memory/insights.md` を読み込み、高PVパターンを確認する
+4. `memory/insights.md` のキュー残数を確認する（3件未満なら補充必須）
 
 ### Step 2: STRATEGY.md 更新提案の生成
 
@@ -41,7 +41,7 @@ Iter{{ITERATION}} 時点（{今日の日付}）:
 
 ### Step 3: テーマキュー補充
 
-`memory/long-term/topics.md` のキューが 3 件未満の場合、WebSearch で新テーマを調査して補充する。
+`memory/insights.md` のキューが 3 件未満の場合、WebSearch で新テーマを調査して補充する。
 
 **調査クエリ例:**
 - `Zenn Unity 最新 人気記事 {今月}` - 最新トレンドから選定
@@ -54,13 +54,13 @@ Iter{{ITERATION}} 時点（{今日の日付}）:
 3. SOUL.md の「実装経験に基づく」原則に合致すること（推測記事はNG）
 4. STRATEGY.md のテーマ優先順位に沿っていること
 
-`memory/long-term/topics.md` のキューに追加する（合計 5 件以上を目標）。
+`memory/insights.md` のキューに追加する（合計 5 件以上を目標）。
 
 ### Step 4: MEMORY.md の見直し
 
 MEMORY.md の「テーマキュー（上位3件）」セクションを現在のキューの先頭 3 件に更新する。
 
-### Step 5: memory/daily/{今日の日付}.md に追記
+### Step 5: memory/hot/{今日の日付}.md に追記
 
 ```markdown
 # {YYYY-MM-DD} - Mode: improve
@@ -80,6 +80,12 @@ MEMORY.md の「テーマキュー（上位3件）」セクションを現在の
 ## 完了チェックリスト
 
 - [ ] STRATEGY.md の「直近の改善フォーカス」が更新された
-- [ ] topics.md のキューが 3 件以上になった
+- [ ] insights.md のキューが 3 件以上になった
 - [ ] MEMORY.md の「テーマキュー」が最新の状態になった
-- [ ] memory/daily/ に記録された
+- [ ] memory/hot/ に記録された
+
+## 完了報告（必須）
+作業完了時、必ず以下のマーカーで囲んで3〜5行のサマリーを出力すること:
+PHASE_SUMMARY_START
+（やったこと・成果・次のアクション を箇条書きで）
+PHASE_SUMMARY_END
