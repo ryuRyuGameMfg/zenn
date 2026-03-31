@@ -29,6 +29,11 @@
       "slug": "2026-04-02-uloopmcp-community-attention",
       "scheduled_date": "2026-04-12T17:00:00+09:00",
       "status": "scheduled"
+    },
+    {
+      "slug": "2026-04-01-claude-md-ascii-diagram-output",
+      "scheduled_date": "2026-04-18T17:00:00+09:00",
+      "status": "scheduled"
     }
   ],
   "history": [

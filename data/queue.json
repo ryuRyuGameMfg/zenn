@@ -18,6 +18,15 @@
       "status": "queued",
       "queued_at": "2026-03-31T07:36:37.895Z",
       "priority": 2
+    },
+    {
+      "filepath": "articles/2026-04-01-claude-md-ascii-diagram-output.md",
+      "filename": "2026-04-01-claude-md-ascii-diagram-output.md",
+      "title": "Claude Codeの出力が読めない問題をCLAUDE.mdのASCII図ルールで解決した",
+      "scheduled_at": "2026-04-18T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-01T08:00:00.000Z",
+      "priority": 5
     }
   ],
   "schedule": {
