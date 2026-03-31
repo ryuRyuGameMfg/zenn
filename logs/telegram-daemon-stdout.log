@@ -101,3 +101,20 @@ Args: {'audio': ['/tmp/tg-voice-3079.ogg'], 'model': 'mlx-community/whisper-larg
 [00:00.000 --> 00:03.740] 毎週金曜日と土曜日に自動スタックされる予定なんだけどさ、
 [00:03.820 --> 00:05.280] これだと金曜日だけになってないかな。
 [00:05.960 --> 00:08.020] ちょっと一回プロジェクトの内容確認して。
+Args: {'audio': ['/tmp/tg-voice-6526.ogg'], 'model': 'mlx-community/whisper-large-v3-mlx', 'output_name': None, 'output_dir': '/tmp', 'output_format': 'txt', 'verbose': True, 'task': 'transcribe', 'language': 'ja', 'temperature': 0, 'best_of': 5, 'patience': None, 'length_penalty': None, 'suppress_tokens': '-1', 'initial_prompt': None, 'condition_on_previous_text': True, 'fp16': True, 'compression_ratio_threshold': 2.4, 'logprob_threshold': -1.0, 'no_speech_threshold': 0.6, 'word_timestamps': False, 'prepend_punctuations': '"\'“¿([{-', 'append_punctuations': '"\'.。,，!！?？:：”)]}、', 'highlight_words': False, 'max_line_width': None, 'max_line_count': None, 'max_words_per_line': None, 'hallucination_silence_threshold': None, 'clip_timestamps': '0'}
+[00:00.000 --> 00:02.120] あそうだねストック下げていったやつから
+[00:02.120 --> 00:04.880] 毎週金曜日と土曜日の17時に公開
+[00:04.880 --> 00:06.520] 新規記事を公開にします
+[00:06.520 --> 00:08.560] で土曜日
+[00:08.560 --> 00:10.620] リライトとかは
+[00:10.620 --> 00:13.600] 常にやる感じがいいと思っているので
+[00:13.600 --> 00:15.540] うーんとね
+[00:15.540 --> 00:18.320] 毎週じゃあ土曜日は
+[00:18.320 --> 00:20.300] 分析と改善して
+[00:20.300 --> 00:22.280] そのレポートを私にテレグラムで
+[00:22.280 --> 00:23.380] 報告するようにしよう
+[00:23.380 --> 00:27.060] でリライトは私から直接指示するので
+[00:27.060 --> 00:28.960] 自動的に行わなくていいです
+[00:28.960 --> 00:30.860] ちょっと私の解釈を
+[00:30.860 --> 00:31.960] 噛み砕いた上で
+[00:31.960 --> 00:33.160] もう一度あなたの意見をください
