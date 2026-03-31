@@ -1,7 +1,7 @@
 {
-  "status": "idle",
+  "status": "processing",
   "target_article": "/Users/okamotoryuya/repository/zenn-engine/articles/2026-03-28-zenn-github-actions-auto-deploy.md",
-  "last_updated": "2026-03-31T16:32:57",
+  "last_updated": "2026-03-31T16:47:22",
   "thread": [
     {
       "role": "user",
@@ -62,6 +62,11 @@
       "role": "assistant",
       "text": "記事ネタ調査完了\n\n<b>zenn-engine GMです。</b>\n\n<b>4月11日以降の記事ネタ提案</b>\n\n―――――――――――――――――\n\n<b>【調査完了】</b>\n\n・Unity 2026最新トレンド調査\n・Zenn競合記事分析（3方向）\n・現在のキュー実力評価\n\n―――――――――――――――――\n\n<b>【2026年トレンド発見】</b>\n\n<b>1. Unity AI Beta 2026（2026年1月リリース）</b>\n\n・Agentモード（指示 → 自動実行）\n・3Dアセット・UI Toolkit生成\n・Zenn記事がほぼ空白（1件のみ）\n\n<b>2. Surface Cache GI（Unity 6.7 LTS）</b>\n\n・新しい動的グローバルイルミネーション\n・品質とコストのバランス改善\n・Zenn記事ゼロ\n\n<b>3. CoreClr デスクトッププレイヤー（Unity 6.7）</b>\n\n・Mono廃止の方向性\n・.NET 10 / C# 14対応\n・Zenn記事ゼロ\n\n―――――――――――――――――\n\n<b>【現在のキュー評価】</b>\n\n<b>キュー1位: uLoopMCP + Claude Code</b>\n\n・<b>強さ: ★★★★★</b>\n・競合: 1件のみ（2026年2月）\n・差別化: OpenClawと違い、uLoopMCPは実用的\n・スキ期待: 18〜33（AI × Unity MCP帯）\n\n<b>キュー3位: Unity Memory Profiler</b>\n\n・<b>強さ: ★★★☆☆</b>\n・競合: 入門記事は多い（実践少ない）\n・差別化: 実ワークフロー記事で勝負\n・スキ期待: 10〜18\n\n<b>キュー4位: GPU Instancing</b>\n\n・<b>強さ: ★★★☆☆</b>\n・競合: 草生成・基礎実装は多い\n・差別化: DrawMeshInstanced → RenderMeshIndirect段階実装\n・スキ期待: 10〜18\n\n―――――――――――――――――\n\n<b>【新規テーマ提案（3件）】</b>\n\n<b>提案1: Unity AI Beta 2026 完全ガイド</b>\n\n・ターゲット: Unity 6.3以上ユーザー\n・内容:\n  ├─ Agentモードの実装例\n  ├─ 3Dアセット生成ワークフロー\n  ├─ UI Toolkit自動生成\n  └─ Unity AIのコスト分析（β無料→GA有料）\n・差別化: <b>Zenn記事ほぼ空白（1件のみ）</b>\n・競合優位性: 最も高い\n・スキ期待: 18〜26\n\n<b>提案2: Unity 6.7 Surface Cache GI 実装ガイド</b>\n\n・ターゲット: URP開発者（品質とコスト両立）\n・内容:\n  ├─ 従来GI（Screen Space GI）との比較\n  ├─ Surface Cache GIの実装手順\n  ├─ パフォーマンス検証（FPS比較）\n  └─ ベイクGIとの使い分け\n・差別化: <b>Zenn記事ゼロ（完全空白）</b>\n・競合優位性: 最も高い\n・スキ期待: 18〜26\n\n<b>提案3: Unity 6.7 CoreClr移行ガイド</b>\n\n・ターゲット: .NET/C# 最新機能を使いたい開発者\n・内容:\n  ├─ Mono廃止のスケジュール\n  ├─ CoreClr移行の具体手順\n  ├─ .NET 10 / C# 14の新機能活用例\n  └─ 既存プロジェクトの移行チェックリスト\n・差別化: <b>Zenn記事ゼロ（完全空白）</b>\n・競合優位性: 最も高い\n・スキ期待: 18〜26\n\n―――――――――――――――――\n\n<b>【推奨優先順位（最終提案）】</b>\n\n<b>1位: Unity AI Beta 2026 完全ガイド</b>\n理由: 最もホット（2026年1月リリース）、競合ほぼ空白、AI × Unity連携は高スキ帯\n\n<b>2位: uLoopMCP + Claude Code（既存キュー1位）</b>\n理由: 競合1件、実用的、AI × Unity MCP連携で高スキ実績\n\n<b>3位: Surface Cache GI（新規）</b>\n理由: Unity 6.7 LTSで正式採用、競合ゼロ、URP開発者の実ニーズ\n\n―――――――――――――――――\n\n<b>【GMの見解】</b>\n\n<blockquote>Unity AI Beta 2026の記事を最優先推奨します。理由:\n1. Zenn記事がほぼ空白（1件のみ）\n2. 2026年1月リリースで最もホット\n3. AI × Unity連携は高スキ帯（18〜33実績）\n4. Unity 6.3以上で誰でも試せる\n5. β無料 → GA有料の移行期で需要高</blockquote>\n\n―――――――――――――――――\n\n<b>【次のステップ】</b>\n\n以下から選んでください:\n\n<b>A. Unity AI Beta 2026を4月11日以降の投稿にする</b>\n<b>B. uLoopMCPを優先する（既存キュー1位）</b>\n<b>C. Surface Cache GIを投稿する</b>\n<b>D. 別のテーマを提案してほしい</b>\n\nどれにしますか？\n\n<b>参考文献:</b>\n・<a href=\"https://gamemakers.jp/article/2026_01_15_128490/\">Unity AI Beta 2026提供開始</a>\n・<a href=\"https://note.com/a_orange/n/nee507a226cc6\">GDC 2026 Unity最新アップデート</a>\n・<a href=\"https://zenn.dev/omori432/articles/open-claw-unity-hackathon-2026\">OpenClaw Unity自律開発</a>\n・<a href=\"https://zenn.dev/unsoluble_sugar/articles/cd8d59be7b8f85\">uLoopMCP × Claude Code</a>\n",
       "ts": "2026-03-31 16:34"
+    },
+    {
+      "role": "user",
+      "text": "えーとさ、Uループと9134位に関してはそれはまだ下書きとしてスタックしてないよねもうストックしてあんのかな\n",
+      "ts": "2026-03-31 16:47"
     }
   ],
   "summary": "【決定事項】\n- 記事「OpenClawのAPI料金に疲れた人へ：Claude Code × macOS launchd で月額固定の自律AIエージェントを自作する」を2026年4月4日（金）17:00に予約公開設定完了\n- 現在は`published: false`で下書き保存済み、zenn-engine.shが自動で公開処理を実行する仕組みを実装\n- 次回投稿候補として「uLoopMCP + Claude Code で Unity 自律開発サイクルを実現する方法」を推奨（AI × Unity MCP連携・実験記録形式・競合分析で高スキ帯を確認）\n\n【作業状態】\n- git commit + push完了（下書き保存）\n- state.jsonに予約公開情報を記録済み\n- zenn-engine.shにcheck_scheduled_publish()関数を追加し、予約時刻到達時の自動published変更・Telegram通知機能を実装\n\n【継続コンテキスト】\n次回投稿のテーマ選定待ち。uLoopMCP + Claude Code（Unity特化・OpenClaw記事との差別化）、Unity Memory Profiler実践ワークフロー、Unity GPU Instancing完全実装の3候補から選択、または別テーマ追加の方針確認が必要。"
