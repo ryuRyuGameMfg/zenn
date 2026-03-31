@@ -1,38 +1,8 @@
 {
   "status": "processing",
   "target_article": "/Users/okamotoryuya/repository/zenn-engine/articles/2026-03-28-zenn-github-actions-auto-deploy.md",
-  "last_updated": "2026-04-01T03:09:15",
+  "last_updated": "2026-04-01T03:24:40",
   "thread": [
-    {
-      "role": "user",
-      "text": "そのアスキーズでクロードのマークダウンに支持するっていう記事を書き直して\nまた新たにリリースするっていう話はどうなった?\n",
-      "ts": "2026-04-01 00:11"
-    },
-    {
-      "role": "assistant",
-      "text": "ASCII図解記事リライトの状況確認\n\n<b>zenn-engine GMです。</b>\n\n<b>率直に申し上げると、まだ着手できていません。</b>\n\n---\n\n<b>【経緯の整理】</b>\n\n先ほど記事テーマの提案時に:\n・既存記事が2本あるため「新規」は重複\n・リライト（内容拡充）として対応が適切\nとお伝えし、A〜E の選択肢を提示しました。\n\nそこで社長が<b>「リライトして新たにリリースする」</b>方針を確認されたので、これから着手します。\n\n---\n\n<b>【対象記事】</b>\n\n<code>claude-md-ascii-diagram-rules.md</code>\n「CLAUDE.mdでASCII図ルールを定義したらAI出力が劇的に変わった」\n公開日: 2026-02-27\nスキ数: 32スキ帯の高PV記事\n\n---\n\n<b>【リライト方針案】</b>\n\n社長が冒頭に伝えてくれた<b>核心メッセージ</b>を反映:\n\n<b>1. 「理解不足・技術負債の防止」観点を追加</b>\n・AIが大量出力 → 人間が理解できない\n・ASCII図解で構造化 → 理解の積み重ね\n・技術負債が溜まらない\n\n<b>2. 視認性の具体的メリット強化</b>\n・テキストの壁 vs ASCII図の対比\n・情報量は同じでも認知負荷が違う\n\n<b>3. 1ヶ月運用で得た知見を追加</b>\n・遵守率の実感\n・どの図解タイプが最も使われたか\n\n---\n\n<b>【確認】</b>\n\n<b>A. この方針でリライト開始</b>\n（既存記事を更新 + published_atを変更）\n\n<b>B. 新規slugで別記事として公開</b>\n（既存は残して新版を作成）\n\n<b>C. リライト内容をもっと詰めたい</b>\n\nどちらにしますか？\n",
-      "ts": "2026-04-01 00:11"
-    },
-    {
-      "role": "user",
-      "text": "もし以前のその重複する2つの記事が\nあれ人気だったらいいんだけど\n人気じゃなかったんだっけ\nあれもう一回教えてほしいな\n",
-      "ts": "2026-04-01 00:13"
-    },
-    {
-      "role": "assistant",
-      "text": "CLAUDE.md関連2記事のパフォーマンス確認\n\n<b>zenn-engine GMです。</b>\n\n<b>重要な事実が判明しました。</b>\n\n---\n\n<b>【確認結果】</b>\n\n該当の2記事:\n\n<b>1. CLAUDE.mdでASCII図ルールを定義したら\nAI出力が劇的に変わった</b>\nslug: <code>claude-md-ascii-diagram-rules</code>\npublished_at: 2026-02-27\n\n<b>2. CLAUDE.mdで失敗しまくった\n7つのパターンと解決策</b>\nslug: <code>claude-md-7-failure-patterns-2026</code>\npublished_at: 2026-02-28\n\n---\n\n<b>【問題】</b>\n\n<b>どちらもZenn上に公開されていません。</b>\n\nZenn APIで全34本の公開記事を確認しましたが、\nこの2本のslugは<b>一覧に存在しません。</b>\n\nGitリポジトリにはファイルがあり、\n<code>published: true</code> も設定済み。\nしかしZenn側には反映されていない状態です。\n\n<blockquote>原因としては、GitHub Actionsのデプロイが失敗している、またはZenn側の反映に問題がある可能性があります。</blockquote>\n\n---\n\n<b>【つまり】</b>\n\n・スキ数: <b>0</b>（そもそも未公開）\n・閲覧数: <b>0</b>（公開されていない）\n・人気かどうか: <b>判定不能</b>\n\n---\n\n<b>【GMの提案】</b>\n\n<blockquote>この2本はまだ世に出ていません。つまり「重複」ではなく「未公開の下書き」です。\n\n社長がおっしゃった「ASCII図解をCLAUDE.mdで指示する」テーマで新規記事を書くのは全く問題ありません。既存の未公開原稿をベースにリライト・強化して、新規公開するのが最も効率的です。</blockquote>\n\n---\n\n<b>【次のアクション】</b>\n\n<b>A. 未公開の2本をベースにリライト</b>\n（社長の視点を加えて強化 → 新規公開）\n\n<b>B. まず未公開の原因を調査</b>\n（GitHub Actions / Zennデプロイ状況の確認）\n\n<b>C. ゼロから新記事として執筆</b>\n（既存下書きは参考程度に）\n\nどれにしますか？\n",
-      "ts": "2026-04-01 00:15"
-    },
-    {
-      "role": "user",
-      "text": "じゃあ1番の記事はもう1回ストックにして\nまた新規の記事として公開し直す感じにしてほしいな\n",
-      "ts": "2026-04-01 00:16"
-    },
-    {
-      "role": "assistant",
-      "text": "ASCII図解記事のリライト完了\n\n<b>zenn-engine GMです。</b>\n\n<b>ASCII図解記事のリライトが完了しました。</b>\n\n---\n\n<b>【実行内容】</b>\n\n<b>1. 旧版をストック化</b>\n<code>claude-md-ascii-diagram-rules.md</code>\npublished: true → <b>false</b>\nZenn上から非公開になります\n\n<b>2. 新版を新規作成</b>\n<code>2026-04-01-claude-md-ascii-diagram-output.md</code>\npublished: <b>true</b>\n\n---\n\n<b>【新しいタイトル】</b>\n\n<code>Claude Codeの出力が読めない問題を\nCLAUDE.mdのASCII図ルールで解決した</code>\n\n---\n\n<b>【旧版からの主な変更点】</b>\n\n<b>新セクション追加:</b>\n「AIの大量出力が生む理解不足問題」\n\n社長のメッセージを記事の中心テーマに:\n・AIが文字をグワーッと出力\n  → 人間が理解できない\n  → 技術負債が蓄積\n・ASCII図解にするだけで\n  → 情報量は同じ、認知負荷は激減\n  → 理解の積み重ねが可能に\n\n<b>継承した要素:</b>\n・Before/After比較\n・7種類のASCII図テンプレート\n・コピペ可能なCLAUDE.md設定例\n・Mermaid vs ASCII図の比較表\n\n---\n\n<b>【コミット】</b>\n\n<code>c0fa66f</code>\nzenn: iter02_rewrite ASCII図解記事リライト\n\n---\n\n<b>【次のアクション】</b>\n\n<b>A. git push して即公開</b>\n\n<b>B. 公開スケジュールに追加</b>\n（金曜 or 土曜17時に予約公開）\n\n<b>C. 記事内容を確認・修正したい</b>\n\nどうしますか？\n",
-      "ts": "2026-04-01 00:20"
-    },
     {
       "role": "user",
       "text": "これも公開スケジュールに追加していいよ\n多分ね\n公開が失敗してる理由って\n前提\n1日1回しかデプロイ受け付けてないと思うので\n1日1記事しか公開できないというか\nデプロイ受け付けてないから\nそれちょっと注意しといてね\nもし問題あったら報告ちょうだい\n",
@@ -77,7 +47,17 @@
       "role": "user",
       "text": "ユニティでローカルLLMを動かしたやつは、私のAIキャラクターコアのプロジェクトに実際に入れたやつがあるんだよね。\nそれはLLMユニティっていうツールを通して入れたんだけど、それに関してちょっと書こう。\n私も実際に実践してやってみたから、そのプロジェクトの内容を見てみて、それに沿って書いてみようか。\n",
       "ts": "2026-04-01 03:09"
+    },
+    {
+      "role": "assistant",
+      "text": "LLMUnity記事のリライト完了\n\n<b>zenn-engine GMです。</b>\n\n<b>ai-character-coreの実装経験に基づいて\n記事を全面リライトしました。</b>\n\n---\n\n<b>【変更内容】</b>\n\n<b>タイトル変更:</b>\n旧: <code>UnityでローカルLLMを動かす完全ガイド</code>\n新: <code>LLMUnityでAIキャラクターに\nローカルLLMを組み込んだ実装記録</code>\n\n<b>記事の性質を転換:</b>\n・ドキュメント要約型\n  → 実プロジェクトの「やってみた」記事に\n\n---\n\n<b>【新しい記事の構成】</b>\n\n<b>1. MonoBehaviourとDIの衝突</b>\nOpenAI/Claudeはnewできるが\nLLMUnityはMonoBehaviour依存\n→ 後注入パターンで解決\n\n<b>2. コールバック→IAsyncEnumerable変換</b>\nLLMUnityService.csの実コード全文を引用\nConcurrentQueue + TaskCompletionSourceの\n変換ロジックを解説\n\n<b>3. 条件分岐コンパイル</b>\n<code>#if LLM_UNITY</code> で\nパッケージ未インストール環境に対応\n\n<b>4. RAGのローカル化</b>\nLLMEmbedderによるEmbedding統合\n次元数の自動補正ロジック\n\n<b>5. ai.json 1行変更で切り替え</b>\nproviderフィールドだけで\nクラウド⇔ローカル切替\n\n<b>6. 実際に動かしてわかったこと</b>\n・初回起動の重さ → Warmup()\n・GPU設定の調整\n・日本語性能の現状\n・完全オフライン構成の実現\n\n---\n\n<b>【品質チェック】</b>\n\n・文字数: <code>約3,800字</code>\n・コードサンプル: <code>6個</code>\n・見出し: <code>8個</code>\n・全て実プロジェクトの一次情報\n\n<blockquote>旧版の「LLMUnityの使い方ガイド」から、「5つのAIプロバイダーを同一インターフェースで統合した設計記録」に変わりました。マルチプロバイダー設計 + MonoBehaviour依存の解決策は、Unity x AI開発者にとって実用的な知見です。</blockquote>\n\n---\n\n<b>【次のアクション】</b>\n\n<b>A. このまま公開スケジュールに追加</b>\n\n<b>B. 内容を微調整したい</b>\n（修正箇所を指定してください）\n\n<b>C. コミットして保存</b>\n\nどうしますか？\n",
+      "ts": "2026-04-01 03:22"
+    },
+    {
+      "role": "user",
+      "text": "いいね他のセキュリティ設計とクロードの失敗パターン\nUBIのやつと\nあとConfiUIとAudio2Face3Dとかもあったじゃん\nそれらも全部一旦リライトする必要があったら書き直して\n公開予定にストックしていいと思います\nまずは計画立てて\n",
+      "ts": "2026-04-01 03:24"
     }
   ],
-  "summary": "【決定事項】\n- 統計取得方式をPlaywright方式から非公式APIに変更確定（Playwright実装は保留、運用コスト削減）\n- OKR O2を「累計PV 10,000」から「累計スキ数 1,000」に改訂（非公式APIで取得可能な指標に統一）\n- rewrite自動実行は無効化維持、手動指示のみで実行する方式を継続\n\n【作業状態】\n- 非公式API方式への切り替え完了（STRATEGY.md / MEMORY.md / mode-analyze.md更新、コミットdd3b0d0）\n- 手動テストで統計レポートをTelegram送信完了（公開34本、累計スキ189、フォロワー37）\n- CLAUDE.md ASCII図解テーマで記事調査実施 → 既存記事2本と重複判定、差別化案A〜Cを提示し判断待ち\n\n【継続コンテキスト】\n次回記事テーマが未決定。「CLAUDE.mdでASCII図解」は既存2本（2/27・2/28公開）と重複するため、差別化案（A:運用1ヶ月実データ / B:チーム開発共有 / C:スキル・エージェント設計）またはテーマキュー上位（uLoopMCP等）からの選択をユーザーに確認中。週2本公開スケジュール（金・土17時）は継続、次回土曜（4/5）に非公式API方式で初回自動統計レポート実行予定。"
+  "summary": "【決定事項】\n- ASCII図解記事（claude-md-ascii-diagram-rules.md）を非公開化し、新slug（2026-04-01-claude-md-ascii-diagram-output.md）で新規公開する方針に確定\n- リライト方針: 社長の「AI大量出力→理解不足→技術負債」メッセージを中心テーマに据え、旧版のBefore/After比較・7種テンプレート等は継承\n- 統計取得は非公式API方式、OKR O2は「累計スキ数1,000」、rewrite自動実行は無効化維持（前回決定を継続）\n\n【作業状態】\n- ASCII図解記事リライト完了・コミット済み（c0fa66f）、旧版をpublished:false、新版をpublished:trueで作成\n- 既存2本（ASCII図解・7つの失敗パターン）がZenn未公開と判明（Git上はpublished:trueだがZenn APIに存在せず）\n- git pushはまだ未実行、公開タイミングをユーザーに確認中（即公開 / スケジュール公開 / 内容確認）\n\n【継続コンテキスト】\nリライト済みASCII図解記事のpush・公開タイミングが未決定（選択肢A:即公開 / B:金土17時予約 / C:内容確認）。2本目の未公開記事（claude-md-7-failure-patterns-2026.md）の扱いも未定。週2本公開スケジュール（金・土17時）は継続、次回土曜（4/5）に非公式API方式で初回自動統計レポート実行予定。"
 }

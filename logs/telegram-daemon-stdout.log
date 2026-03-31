@@ -36,3 +36,10 @@ Args: {'audio': ['/tmp/telegram-voice.XXXXXX.wav'], 'model': 'mlx-community/whis
 [00:00.000 --> 00:11.380] ユニティでローカルLLMを動かしたやつは、私のAIキャラクターコアのプロジェクトに実際に入れたやつがあるんだよね。
 [00:11.560 --> 00:19.580] それはLLMユニティっていうツールを通して入れたんだけど、それに関してちょっと書こう。
 [00:19.580 --> 00:26.740] 私も実際に実践してやってみたから、そのプロジェクトの内容を見てみて、それに沿って書いてみようか。
+Args: {'audio': ['/tmp/telegram-voice.XXXXXX.wav'], 'model': 'mlx-community/whisper-large-v3-mlx', 'output_name': None, 'output_dir': '/tmp/whisper-out.hYCXns', 'output_format': 'txt', 'verbose': True, 'task': 'transcribe', 'language': 'ja', 'temperature': 0, 'best_of': 5, 'patience': None, 'length_penalty': None, 'suppress_tokens': '-1', 'initial_prompt': None, 'condition_on_previous_text': True, 'fp16': True, 'compression_ratio_threshold': 2.4, 'logprob_threshold': -1.0, 'no_speech_threshold': 0.6, 'word_timestamps': False, 'prepend_punctuations': '"\'“¿([{-', 'append_punctuations': '"\'.。,，!！?？:：”)]}、', 'highlight_words': False, 'max_line_width': None, 'max_line_count': None, 'max_words_per_line': None, 'hallucination_silence_threshold': None, 'clip_timestamps': '0'}
+[00:00.000 --> 00:05.320] いいね他のセキュリティ設計とクロードの失敗パターン
+[00:05.320 --> 00:06.700] UBIのやつと
+[00:06.700 --> 00:12.280] あとConfiUIとAudio2Face3Dとかもあったじゃん
+[00:12.280 --> 00:16.880] それらも全部一旦リライトする必要があったら書き直して
+[00:16.880 --> 00:21.260] 公開予定にストックしていいと思います
+[00:21.260 --> 00:22.940] まずは計画立てて
