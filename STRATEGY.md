@@ -12,9 +12,10 @@
 
 **PV取得方法の変更（2026-04-01）:**
 - **新方式**: Playwright MCP でZennダッシュボードにログイン → スクリーンショット → LLM解析でPV抽出
-- **実現可能性**: Claude Code の Playwright MCP 設定済み（@playwright/mcp@latest）
+- **実装状況**: ✅ 完了（scripts/fetch-zenn-analytics.mjs）
 - **取得データ**: 投稿ごとの合計PV、日別/月別PV推移
 - **自動化**: 土曜 analyze モードで統計収集 + metrics.json 更新
+- **セキュリティ**: 認証情報は環境変数（ZENN_EMAIL/ZENN_PASSWORD）から取得
 
 **旧方式（非公式API）の限界:**
 - Zenn公式APIではPV統計を提供していない
