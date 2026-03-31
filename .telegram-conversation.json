@@ -1,7 +1,7 @@
 {
   "status": "processing",
   "target_article": "/Users/okamotoryuya/repository/zenn-engine/articles/2026-03-28-zenn-github-actions-auto-deploy.md",
-  "last_updated": "2026-03-31T16:47:22",
+  "last_updated": "2026-03-31T16:48:43",
   "thread": [
     {
       "role": "user",
@@ -67,6 +67,16 @@
       "role": "user",
       "text": "えーとさ、Uループと9134位に関してはそれはまだ下書きとしてスタックしてないよねもうストックしてあんのかな\n",
       "ts": "2026-03-31 16:47"
+    },
+    {
+      "role": "assistant",
+      "text": "記事ストック状況確認\n\n<b>zenn-engine GMです。</b>\n\n<b>確認結果：どちらもまだ記事化されていません</b>\n\n―――――――――――――――――\n\n<b>【現在の状況】</b>\n\n<b>1. uLoopMCP + Claude Code</b>\n・状態: <code>テーマキュー1位</code>（topics.md）\n・記事: <b>未作成</b>（下書きなし）\n・次回createモード実行時に自動執筆\n\n<b>2. 9134位</b>\n・おそらく: <code>Unity 6.3 Platform Toolkit</code>\n・状態: <code>テーマキュー6位</code>（topics.md）\n・記事: <b>未作成</b>（下書きなし）\n\n―――――――――――――――――\n\n<b>【記事ストック状況（2件）】</b>\n\n下書き保存済み（予約公開）:\n\n1. <code>2026-03-30-claude-code-launchd-autonomous-agent</code>\n   → 4月4日（金）17:00公開予定\n\n2. <code>2026-03-31-why-humans-dislike-ai-design</code>\n   → 4月11日（金）17:00公開予定\n\n―――――――――――――――――\n\n<b>【次のステップ】</b>\n\n<blockquote>4月11日以降の記事枠が空いています。以下から選択してください:</blockquote>\n\n<b>A. uLoopMCP記事を優先執筆</b>\n（既存キュー1位・AI×Unity連携・高スキ期待）\n\n<b>B. Unity AI Beta 2026を執筆</b>\n（Zenn記事ほぼ空白・2026年1月リリース・最もホット）\n\n<b>C. Platform Toolkit（6位）を優先</b>\n（Unity 6.3新機能・競合ゼロ）\n\nどれにしますか？\n",
+      "ts": "2026-03-31 16:48"
+    },
+    {
+      "role": "user",
+      "text": "あーOKじゃあそれ下書きでまだ公開のQEにも入ってないっていうことだよねえーだとしたらその2つに関してちょっと具体的に知りたいなUループMCPがまず何なのか知りたいし私多分使ったことないよね\n",
+      "ts": "2026-03-31 16:48"
     }
   ],
   "summary": "【決定事項】\n- 記事「OpenClawのAPI料金に疲れた人へ：Claude Code × macOS launchd で月額固定の自律AIエージェントを自作する」を2026年4月4日（金）17:00に予約公開設定完了\n- 現在は`published: false`で下書き保存済み、zenn-engine.shが自動で公開処理を実行する仕組みを実装\n- 次回投稿候補として「uLoopMCP + Claude Code で Unity 自律開発サイクルを実現する方法」を推奨（AI × Unity MCP連携・実験記録形式・競合分析で高スキ帯を確認）\n\n【作業状態】\n- git commit + push完了（下書き保存）\n- state.jsonに予約公開情報を記録済み\n- zenn-engine.shにcheck_scheduled_publish()関数を追加し、予約時刻到達時の自動published変更・Telegram通知機能を実装\n\n【継続コンテキスト】\n次回投稿のテーマ選定待ち。uLoopMCP + Claude Code（Unity特化・OpenClaw記事との差別化）、Unity Memory Profiler実践ワークフロー、Unity GPU Instancing完全実装の3候補から選択、または別テーマ追加の方針確認が必要。"

@@ -73,3 +73,7 @@ Args: {'audio': ['/tmp/tg-voice-44845.ogg'], 'model': 'mlx-community/whisper-lar
 [00:00.000 --> 00:07.320] えーとさ、Uループと9134位に関しては
 [00:07.320 --> 00:09.600] それはまだ下書きとしてスタックしてないよね
 [00:09.600 --> 00:10.820] もうストックしてあんのかな
+Args: {'audio': ['/tmp/tg-voice-47619.ogg'], 'model': 'mlx-community/whisper-large-v3-mlx', 'output_name': None, 'output_dir': '/tmp', 'output_format': 'txt', 'verbose': True, 'task': 'transcribe', 'language': 'ja', 'temperature': 0, 'best_of': 5, 'patience': None, 'length_penalty': None, 'suppress_tokens': '-1', 'initial_prompt': None, 'condition_on_previous_text': True, 'fp16': True, 'compression_ratio_threshold': 2.4, 'logprob_threshold': -1.0, 'no_speech_threshold': 0.6, 'word_timestamps': False, 'prepend_punctuations': '"\'“¿([{-', 'append_punctuations': '"\'.。,，!！?？:：”)]}、', 'highlight_words': False, 'max_line_width': None, 'max_line_count': None, 'max_words_per_line': None, 'hallucination_silence_threshold': None, 'clip_timestamps': '0'}
+[00:00.000 --> 00:05.220] あーOKじゃあそれ下書きでまだ公開のQEにも入ってないっていうことだよね
+[00:05.220 --> 00:11.540] えーだとしたらその2つに関してちょっと具体的に知りたいな
+[00:11.540 --> 00:14.980] UループMCPがまず何なのか知りたいし私多分使ったことないよね
