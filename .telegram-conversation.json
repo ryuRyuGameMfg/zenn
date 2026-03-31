@@ -1,7 +1,7 @@
 {
   "status": "processing",
   "target_article": "/Users/okamotoryuya/repository/zenn-engine/articles/2026-03-28-zenn-github-actions-auto-deploy.md",
-  "last_updated": "2026-03-31T17:29:26",
+  "last_updated": "2026-03-31T17:48:38",
   "thread": [
     {
       "role": "user",
@@ -67,6 +67,16 @@
       "role": "user",
       "text": "レポートの内容だけどもう少し全に最適化してほしいです全のそのなんだろうKPIというかOKRを調べてそれで本当に合ってるか一応ファクトチェックしてくださいあとに関してはほとんど認識一致しているので実際に実行していいと思ってます\n",
       "ts": "2026-03-31 17:29"
+    },
+    {
+      "role": "assistant",
+      "text": "OKRファクトチェックと土曜レポート最適化が完了\n\n<b>zenn-engine GMです。</b>\n\n<b>OKRファクトチェックと土曜レポート最適化が完了しました</b>\n\n―――――――――――――――――\n\n<b>【ファクトチェック結果】</b>\n\n<b>問題点を発見</b>\n・O2「月間PV 10,000」は<b>取得不可能</b>\n・ZennはPVを公式API非公開\n・Google Analytics連携が必要（手動設定）\n\n<b>解決策</b>\n・OKRを取得可能な指標に再定義\n・非公式APIで自動取得できる指標のみ使用\n\n―――――――――――――――――\n\n<b>【OKR改訂（2026-03-31）】</b>\n\n<b>O1: フォロワー1000人達成</b>\n現在 <code>37</code> / 目標 <code>1000</code>\n進捗 <code>3.7%</code>\n\n<b>O2: 累計スキ数1000達成</b>\n現在 <code>350</code> / 目標 <code>1000</code>\n進捗 <code>35%</code>\n\n<b>O3: 平均スキ数15以上維持</b>\n現在 <code>12.1</code> / 目標 <code>15</code>\n判定 <code>目標未達</code>\n\n<blockquote>PV非公開のため、スキ数とフォロワー数で代替。これらは非公式APIで自動取得可能です。</blockquote>\n\n―――――――――――――――――\n\n<b>【土曜レポート最適化】</b>\n\n<b>変更内容</b>\n・analyze + improve 実行\n・Telegramレポート送信（HTML形式）\n・rewrite は<b>手動指示のみ</b>\n\n<b>レポート内容</b>\n・OKR進捗（3指標）\n・記事パフォーマンスTOP3\n・テーマキュー状態\n・戦略改善提案\n・次週の公開スケジュール\n\n―――――――――――――――――\n\n<b>【週2回公開スケジュール設定完了】</b>\n\n<b>公開スケジュール（金・土17時）</b>\n\n<code>4/4（金）17:00</code>\nClaude Code × launchd\n\n<code>4/5（土）17:00</code>\nAIデザイン心理学\n\n<code>4/11（金）17:00</code>\nUnity公式MCP完全ガイド\n\n<code>4/12（土）17:00</code>\nuLoopMCP注目度分析\n\n<blockquote>毎週金曜・土曜17時に自動公開されます。週2本ペースで安定的に記事をリリースします。</blockquote>\n\n―――――――――――――――――\n\n<b>【実装完了項目】</b>\n\n1. STRATEGY.md OKR改訂\n   ・PV非公開に対応\n   ・取得可能な指標に再定義\n\n2. zenn-engine.sh 修正\n   ・土曜日: analyze → improve → report\n   ・Telegramレポート自動送信\n   ・rewrite 自動実行を無効化\n\n3. state.json 更新\n   ・週2回公開（金・土17時）\n   ・4/4, 4/5, 4/11, 4/12 設定\n\n4. MEMORY.md 更新\n   ・OKR改訂を反映\n\n5. 土曜レポートテンプレート作成\n   ・memory/saturday-report-template.md\n\n―――――――――――――――――\n\n<b>【参考資料】</b>\n\n・<a href=\"https://zenn.dev/spiegel/articles/20211225-zenn-analytics\">Zennのダッシュボードに統計情報が表示されるようになるらしい</a>\n・<a href=\"https://zenn.dev/karaage0703/articles/c24072adc188a6\">ZennのAPIを使って記事数・いいね数を取得する</a>\n\n―――――――――――――――――\n\n<b>【次回の土曜レポート】</b>\n\n<code>2026-04-05（土）17:00</code>\n\nanalyze + improve 実行後、Telegramに自動送信されます。\n\n―――――――――――――――――\n\n<b>【GMの見解】</b>\n\n<blockquote>OKRを実現可能な指標に改訂し、土曜レポートで戦略的な改善サイクルを確立しました。週2本ペース（金・土17時）で安定的に記事を公開し、読者エンゲージメントを高めていきます。リライトは慎重に判断すべき作業のため手動化し、品質重視の運用とします。</blockquote>\n",
+      "ts": "2026-03-31 17:32"
+    },
+    {
+      "role": "user",
+      "text": "クロードコードからプレイライトのmcpツールを用いて直接ブラウザを閲覧してスクリーンショットとかでデータ取って分析とかだったらできるんじゃないかなって思ってるんだけどもそれで多分できそうだよね\n",
+      "ts": "2026-03-31 17:48"
     }
   ],
   "summary": "【決定事項】\n- uLoopMCPは個人開発者（はたやま氏）の非公式MCPサーバー、Unity公式ではない（v1.0.0でUnity CLI Loopにリネーム）\n- uLoopMCPはコンパイル失敗→修正→再試行の自律ループに特化、公式MCPより高機能\n- 記事化テーマ候補が3つ: ①uLoopMCP（非公式・自律開発特化）②Unity AI Beta 2026（公式・競合空白）③Platform Toolkit（Unity 6.3公式・マルチプラットフォーム）\n\n【作業状態】\n- uLoopMCPとPlatform Toolkit（Unity 6.3）はまだ記事化されておらず下書きもない、テーマキュー内のみ\n- 現在の記事ストックは2件（4月4日: launchd記事 / 4月11日: AIデザイン心理学記事）で4月11日以降が空き\n- uLoopMCPの詳細調査完了（非公式・Unity1Week実績あり・Zenn記事2〜3件・AI×Unity MCP連携高スキ実績26〜33）\n\n【継続コンテキスト】\n次回投稿候補の選択待ち。uLoopMCPは非公式だが実力・実績あり（3日でゲーム完成事例）、競合少なく高スキ期待、OpenClaw記事読者層へのリーチ可能。Unity AI Beta 2026は公式・Zenn記事ほぼ空白・2026年1月リリース直後で最もホット。Platform ToolkitはUnity 6.3公式機能・マルチプラットフォーム統一APIでNintendo Switch 2対応話題性あり。"

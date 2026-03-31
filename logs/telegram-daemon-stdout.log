@@ -124,3 +124,12 @@ Args: {'audio': ['/tmp/tg-voice-14202.ogg'], 'model': 'mlx-community/whisper-lar
 [00:12.340 --> 00:14.440] それで本当に合ってるか一応ファクトチェックしてください
 [00:14.440 --> 00:16.960] あとに関してはほとんど認識一致しているので
 [00:16.960 --> 00:18.500] 実際に実行していいと思ってます
+Args: {'audio': ['/tmp/tg-voice-42388.ogg'], 'model': 'mlx-community/whisper-large-v3-mlx', 'output_name': None, 'output_dir': '/tmp', 'output_format': 'txt', 'verbose': True, 'task': 'transcribe', 'language': 'ja', 'temperature': 0, 'best_of': 5, 'patience': None, 'length_penalty': None, 'suppress_tokens': '-1', 'initial_prompt': None, 'condition_on_previous_text': True, 'fp16': True, 'compression_ratio_threshold': 2.4, 'logprob_threshold': -1.0, 'no_speech_threshold': 0.6, 'word_timestamps': False, 'prepend_punctuations': '"\'“¿([{-', 'append_punctuations': '"\'.。,，!！?？:：”)]}、', 'highlight_words': False, 'max_line_width': None, 'max_line_count': None, 'max_words_per_line': None, 'hallucination_silence_threshold': None, 'clip_timestamps': '0'}
+[00:00.000 --> 00:02.640] クロードコードから
+[00:02.640 --> 00:03.820] プレイライトの
+[00:03.820 --> 00:05.720] mcpツールを用いて
+[00:05.720 --> 00:07.460] 直接ブラウザを閲覧して
+[00:07.460 --> 00:09.420] スクリーンショットとかでデータ取って
+[00:09.420 --> 00:11.840] 分析とかだったらできるんじゃないかなって
+[00:11.840 --> 00:12.720] 思ってるんだけども
+[00:12.720 --> 00:13.880] それで多分できそうだよね
