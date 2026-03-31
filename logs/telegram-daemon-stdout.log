@@ -92,3 +92,5 @@ Args: {'audio': ['/tmp/tg-voice-64069.ogg'], 'model': 'mlx-community/whisper-lar
 [00:04.720 --> 00:10.420] ユニティMCPとはっていうのが結構教科書的すぎるかな今の記事の内容って
 [00:10.420 --> 00:13.680] なんかもうちょっと煽るような
 [00:13.680 --> 00:20.520] もう少し独自の目線とか切り口が入ったタイトルにしてもいいと思ってますね
+Args: {'audio': ['/tmp/tg-voice-85014.ogg'], 'model': 'mlx-community/whisper-large-v3-mlx', 'output_name': None, 'output_dir': '/tmp', 'output_format': 'txt', 'verbose': True, 'task': 'transcribe', 'language': 'ja', 'temperature': 0, 'best_of': 5, 'patience': None, 'length_penalty': None, 'suppress_tokens': '-1', 'initial_prompt': None, 'condition_on_previous_text': True, 'fp16': True, 'compression_ratio_threshold': 2.4, 'logprob_threshold': -1.0, 'no_speech_threshold': 0.6, 'word_timestamps': False, 'prepend_punctuations': '"\'“¿([{-', 'append_punctuations': '"\'.。,，!！?？:：”)]}、', 'highlight_words': False, 'max_line_width': None, 'max_line_count': None, 'max_words_per_line': None, 'hallucination_silence_threshold': None, 'clip_timestamps': '0'}
+[00:00.000 --> 00:05.840] いいねよしじゃあその骨組みで1キリずつ前に前の形式に合わせて書いていってください

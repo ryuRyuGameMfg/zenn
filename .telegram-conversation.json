@@ -1,38 +1,8 @@
 {
   "status": "processing",
   "target_article": "/Users/okamotoryuya/repository/zenn-engine/articles/2026-03-28-zenn-github-actions-auto-deploy.md",
-  "last_updated": "2026-03-31T16:58:16",
+  "last_updated": "2026-03-31T17:13:43",
   "thread": [
-    {
-      "role": "user",
-      "text": "あれプッシュしたのはいいけどまだ非公開にしててほしいのとえーっとねあそうだから予約投稿にしたいんだよねもしもプッシュしてしまってたら一旦削除してもう1回非表示でアップロードし直して予約投稿にしたいです\n",
-      "ts": "2026-03-31 03:55"
-    },
-    {
-      "role": "assistant",
-      "text": "<b>zenn-engine GMです。</b>\n\n<b>予約公開の設定が完了しました</b>\n\n―――――――――――――――――\n\n<b>記事情報</b>\n\n・スラッグ: <code>2026-03-31-why-humans-dislike-ai-design</code>\n・タイトル: なぜ人間はAIデザインを嫌うのか：バイアスと実質的傾向の2方向分析【Unity UI実装例付き】\n・現在の状態: <code>published: false</code>（下書き保存済み）\n\n―――――――――――――――――\n\n<b>公開予定</b>\n\n・日時: <b>2026年4月11日（金）17:00</b>\n・自動実行: zenn-engine.sh が17:00に起動し、自動で <code>published: true</code> に変更してgit push\n\n―――――――――――――――――\n\n<b>実施内容</b>\n\n1. 記事ファイル: <code>published: true</code> → <code>published: false</code> に変更\n2. state.json に予約情報を追加（配列形式）\n3. zenn-engine.sh を配列対応に改修\n   ・複数の予約公開を同時管理可能に\n   ・公開完了後に自動削除\n4. git commit + push 完了\n\n―――――――――――――――――\n\n<b>現在の予約キュー（2件）</b>\n\n1. <code>2026-03-30-claude-code-launchd-autonomous-agent</code>\n   → 2026年4月4日（金）17:00\n\n2. <code>2026-03-31-why-humans-dislike-ai-design</code>\n   → 2026年4月11日（金）17:00\n\n―――――――――――――――――\n\n<b>確認ポイント</b>\n\n・今すぐは公開されません（published: false）\n・金曜17:00のエンジン実行で自動公開\n・公開時に再度Telegram通知が届きます\n・複数の予約公開が同時に動作可能\n\n完了しました！\n",
-      "ts": "2026-03-31 03:56"
-    },
-    {
-      "role": "user",
-      "text": "今のところにストックされて自動更新される自動でパブリッシュされる予定の記事を教えてください\n",
-      "ts": "2026-03-31 15:10"
-    },
-    {
-      "role": "assistant",
-      "text": "<b>zenn-engine GMです。</b>\n\n<b>予約公開記事一覧（2件）</b>\n\n―――――――――――――――――\n\n<b>1件目</b>\n\n・タイトル: OpenClawのAPI料金に疲れた人へ：Claude Code × macOS launchd で月額固定の自律AIエージェントを自作する\n・スラッグ: <code>2026-03-30-claude-code-launchd-autonomous-agent</code>\n・公開予定: <b>2026年4月4日（金）17:00</b>\n・状態: <code>published: false</code>（下書き保存済み）\n\n―――――――――――――――――\n\n<b>2件目</b>\n\n・タイトル: なぜ人間はAIデザインを嫌うのか：バイアスと実質的傾向の2方向分析【Unity UI実装例付き】\n・スラッグ: <code>2026-03-31-why-humans-dislike-ai-design</code>\n・公開予定: <b>2026年4月11日（金）17:00</b>\n・状態: <code>published: false</code>（下書き保存済み）\n\n―――――――――――――――――\n\n<b>自動公開の仕組み</b>\n\n・zenn-engine.sh が毎週金曜17:00に起動\n・予約日時に達した記事を自動で <code>published: true</code> に変更\n・git commit + push で Zenn に公開\n・公開完了後にTelegram通知\n・予約キューから自動削除\n\n―――――――――――――――――\n\n<b>次の公開</b>\n\n<blockquote>2026年4月4日（金）17:00\nClaude Code × launchd の記事が自動公開されます</blockquote>\n\n完了です！\n",
-      "ts": "2026-03-31 15:11"
-    },
-    {
-      "role": "user",
-      "text": "あ、いいね。じゃあ4月11日以降はまだ記事がないよね。新しく記事のネタ考えて投稿したいから、まずネタ集めとか私に提案して。\n",
-      "ts": "2026-03-31 16:32"
-    },
-    {
-      "role": "assistant",
-      "text": "記事ネタ調査完了\n\n<b>zenn-engine GMです。</b>\n\n<b>4月11日以降の記事ネタ提案</b>\n\n―――――――――――――――――\n\n<b>【調査完了】</b>\n\n・Unity 2026最新トレンド調査\n・Zenn競合記事分析（3方向）\n・現在のキュー実力評価\n\n―――――――――――――――――\n\n<b>【2026年トレンド発見】</b>\n\n<b>1. Unity AI Beta 2026（2026年1月リリース）</b>\n\n・Agentモード（指示 → 自動実行）\n・3Dアセット・UI Toolkit生成\n・Zenn記事がほぼ空白（1件のみ）\n\n<b>2. Surface Cache GI（Unity 6.7 LTS）</b>\n\n・新しい動的グローバルイルミネーション\n・品質とコストのバランス改善\n・Zenn記事ゼロ\n\n<b>3. CoreClr デスクトッププレイヤー（Unity 6.7）</b>\n\n・Mono廃止の方向性\n・.NET 10 / C# 14対応\n・Zenn記事ゼロ\n\n―――――――――――――――――\n\n<b>【現在のキュー評価】</b>\n\n<b>キュー1位: uLoopMCP + Claude Code</b>\n\n・<b>強さ: ★★★★★</b>\n・競合: 1件のみ（2026年2月）\n・差別化: OpenClawと違い、uLoopMCPは実用的\n・スキ期待: 18〜33（AI × Unity MCP帯）\n\n<b>キュー3位: Unity Memory Profiler</b>\n\n・<b>強さ: ★★★☆☆</b>\n・競合: 入門記事は多い（実践少ない）\n・差別化: 実ワークフロー記事で勝負\n・スキ期待: 10〜18\n\n<b>キュー4位: GPU Instancing</b>\n\n・<b>強さ: ★★★☆☆</b>\n・競合: 草生成・基礎実装は多い\n・差別化: DrawMeshInstanced → RenderMeshIndirect段階実装\n・スキ期待: 10〜18\n\n―――――――――――――――――\n\n<b>【新規テーマ提案（3件）】</b>\n\n<b>提案1: Unity AI Beta 2026 完全ガイド</b>\n\n・ターゲット: Unity 6.3以上ユーザー\n・内容:\n  ├─ Agentモードの実装例\n  ├─ 3Dアセット生成ワークフロー\n  ├─ UI Toolkit自動生成\n  └─ Unity AIのコスト分析（β無料→GA有料）\n・差別化: <b>Zenn記事ほぼ空白（1件のみ）</b>\n・競合優位性: 最も高い\n・スキ期待: 18〜26\n\n<b>提案2: Unity 6.7 Surface Cache GI 実装ガイド</b>\n\n・ターゲット: URP開発者（品質とコスト両立）\n・内容:\n  ├─ 従来GI（Screen Space GI）との比較\n  ├─ Surface Cache GIの実装手順\n  ├─ パフォーマンス検証（FPS比較）\n  └─ ベイクGIとの使い分け\n・差別化: <b>Zenn記事ゼロ（完全空白）</b>\n・競合優位性: 最も高い\n・スキ期待: 18〜26\n\n<b>提案3: Unity 6.7 CoreClr移行ガイド</b>\n\n・ターゲット: .NET/C# 最新機能を使いたい開発者\n・内容:\n  ├─ Mono廃止のスケジュール\n  ├─ CoreClr移行の具体手順\n  ├─ .NET 10 / C# 14の新機能活用例\n  └─ 既存プロジェクトの移行チェックリスト\n・差別化: <b>Zenn記事ゼロ（完全空白）</b>\n・競合優位性: 最も高い\n・スキ期待: 18〜26\n\n―――――――――――――――――\n\n<b>【推奨優先順位（最終提案）】</b>\n\n<b>1位: Unity AI Beta 2026 完全ガイド</b>\n理由: 最もホット（2026年1月リリース）、競合ほぼ空白、AI × Unity連携は高スキ帯\n\n<b>2位: uLoopMCP + Claude Code（既存キュー1位）</b>\n理由: 競合1件、実用的、AI × Unity MCP連携で高スキ実績\n\n<b>3位: Surface Cache GI（新規）</b>\n理由: Unity 6.7 LTSで正式採用、競合ゼロ、URP開発者の実ニーズ\n\n―――――――――――――――――\n\n<b>【GMの見解】</b>\n\n<blockquote>Unity AI Beta 2026の記事を最優先推奨します。理由:\n1. Zenn記事がほぼ空白（1件のみ）\n2. 2026年1月リリースで最もホット\n3. AI × Unity連携は高スキ帯（18〜33実績）\n4. Unity 6.3以上で誰でも試せる\n5. β無料 → GA有料の移行期で需要高</blockquote>\n\n―――――――――――――――――\n\n<b>【次のステップ】</b>\n\n以下から選んでください:\n\n<b>A. Unity AI Beta 2026を4月11日以降の投稿にする</b>\n<b>B. uLoopMCPを優先する（既存キュー1位）</b>\n<b>C. Surface Cache GIを投稿する</b>\n<b>D. 別のテーマを提案してほしい</b>\n\nどれにしますか？\n\n<b>参考文献:</b>\n・<a href=\"https://gamemakers.jp/article/2026_01_15_128490/\">Unity AI Beta 2026提供開始</a>\n・<a href=\"https://note.com/a_orange/n/nee507a226cc6\">GDC 2026 Unity最新アップデート</a>\n・<a href=\"https://zenn.dev/omori432/articles/open-claw-unity-hackathon-2026\">OpenClaw Unity自律開発</a>\n・<a href=\"https://zenn.dev/unsoluble_sugar/articles/cd8d59be7b8f85\">uLoopMCP × Claude Code</a>\n",
-      "ts": "2026-03-31 16:34"
-    },
     {
       "role": "user",
       "text": "えーとさ、Uループと9134位に関してはそれはまだ下書きとしてスタックしてないよねもうストックしてあんのかな\n",
@@ -77,7 +47,17 @@
       "role": "user",
       "text": "なんか今見出しが結構冷たい感じになってるかもしれないなユニティMCPとはっていうのが結構教科書的すぎるかな今の記事の内容ってなんかもうちょっと煽るようなもう少し独自の目線とか切り口が入ったタイトルにしてもいいと思ってますね\n",
       "ts": "2026-03-31 16:58"
+    },
+    {
+      "role": "assistant",
+      "text": "見出し刷新案完成\n\n<b>zenn-engine GMです。</b>\n\n<b>見出しを「独自の切り口」で刷新しました</b>\n\n―――――――――――――――――\n\n<b>【記事1: Unity公式MCP】</b>\n\n<b>新タイトル案（3候補）</b>\n\n1. Unity公式が本気で作ったAI連携：Claude/Cursorと直結する新時代の開発フロー\n\n2. AIにUnityを丸投げできる時代が来た：公式MCPで変わる開発ワークフロー\n\n3. Unity 6.0で静かに追加された革命機能：AI ↔ Editor直結の衝撃\n\n<b>構成の変更点</b>\n\n<b>Before</b>（教科書的）\n・Unity MCPとは\n・アーキテクチャ\n・組み込みツール一覧\n\n<b>After</b>（読者を引き込む）\n・Unity公式が「AI連携」に本気を出した背景\n・従来の開発フローとの決定的な違い\n・Unity公式MCP、その実力を解剖する\n・「公式」と「コミュニティ版」の決定的な違い\n・Unity公式MCPが切り開く未来\n\n―――――――――――――――――\n\n<b>【記事2: uLoopMCP】</b>\n\n<b>新タイトル案（3候補）</b>\n\n1. 非公式なのに公式を超えた？uLoopMCPがコミュニティで熱狂される理由\n\n2. 3日でゲーム完成、コード0行でUnity1Week参加：uLoopMCPの実力を検証する\n\n3. Unity公式MCPでは足りない人へ：自律開発ループを実現した非公式ツールの正体\n\n<b>構成の変更点</b>\n\n<b>Before</b>（教科書的）\n・uLoopMCPとは\n・公式MCPとの違い\n・SNS反応まとめ\n\n<b>After</b>（ストーリー性）\n・「非公式なのに注目される」異例の事態\n・uLoopMCPが解決した「公式MCPの限界」\n・SNSで見つけた驚異の実績\n・Zenn/Qiitaで語られた「uLoopMCPの強み」\n・「v1.0.0でUnity CLI Loop」に改名した理由\n・uLoopMCPを巡る論点：公式 vs 非公式の未来\n\n―――――――――――――――――\n\n<b>【刷新のポイント】</b>\n\n<b>記事1</b>\n・「とは」系の見出しを全削除\n・「背景」「違い」「実力」「未来」でストーリー化\n・読者の疑問「なぜ今？何が変わる？」を軸に構成\n\n<b>記事2</b>\n・「非公式なのに注目」のギャップを冒頭に\n・「公式の限界 → uLoopMCPの解決策」の流れ\n・「驚異の実績」「コミュニティの声」で事実ベース\n・「公式 vs 非公式の未来」で論点提示\n\n―――――――――――――――――\n\n<b>【GMの見解】</b>\n\n<blockquote>この見出し刷新で、記事の独自性と読者訴求力が大幅に向上します。理由:\n1. 「とは」系の教科書見出しを全削除\n2. 読者の疑問・関心を軸にした構成\n3. ギャップ・驚き・論点でストーリー化\n4. Zennで刺さる「実験記録・限界検証」フォーマットに準拠</blockquote>\n\n―――――――――――――――――\n\n<b>【次のステップ】</b>\n\n以下から選んでください:\n\n<b>A. この構成で2本執筆を開始する</b>\n（記事1 → 記事2の順で執筆）\n\n<b>B. タイトル案を絞りたい</b>\n（3候補から1つに決定）\n\n<b>C. さらに見出しを修正する</b>\n（別の切り口・表現を提案）\n\n<b>D. 構成の順序を変更する</b>\n（セクション入れ替え・追加・削除）\n\nどれにしますか？\n",
+      "ts": "2026-03-31 16:59"
+    },
+    {
+      "role": "user",
+      "text": "いいねよしじゃあその骨組みで1キリずつ前に前の形式に合わせて書いていってください\n",
+      "ts": "2026-03-31 17:13"
     }
   ],
-  "summary": "【決定事項】\n- 「なぜ人間はAIデザインを嫌うのか：バイアスと実質的傾向の2方向分析【Unity UI実装例付き】」を即時公開設定で執筆完了（2026-03-31）\n- 記事構成は①バイアス仮説検証（音楽実験）②実質的傾向検証（2026年トレンド・均一化等4特徴）③ハイブリッド仮説④Unity実装3戦略の4部構成\n- 実質的傾向の検証を重点化（2026年デザイントレンド・ブランド均一化問題・対抗トレンド等を詳述）\n\n【作業状態】\n- git commit + push完了、Zenn自動公開済み\n- 参考文献10件（学術論文4件・業界記事6件）を統合\n- Unity実装コード3種（150行以上）を含む実践的内容で執筆\n\n【継続コンテキスト】\n次回投稿候補は①uLoopMCP + Claude Code（Unity MCP連携）②Unity Memory Profiler実践③Unity GPU Instancing完全実装の3案。note記事（心理学・SNS分析重視）とZenn記事（技術実装重視）の差別化を継続。"
+  "summary": "【決定事項】\n- 2026-03-31作成の「なぜ人間はAIデザインを嫌うのか」記事を非公開(published: false)に変更、4月11日17:00予約公開設定完了\n- 予約キューが2件体制（4月4日: Claude Code × launchd / 4月11日: AIデザイン心理学）、zenn-engine.shを配列対応に改修\n- 4月11日以降の新規ネタとして「Unity AI Beta 2026完全ガイド」を最優先推奨（競合ほぼ空白、2026年1月リリース直後、スキ期待値18〜26）\n\n【作業状態】\n- 記事の予約公開システム構築完了（state.jsonの配列化、自動published切替、複数予約同時管理対応）\n- 2026年トレンド調査完了（Unity AI Beta 2026/Surface Cache GI/CoreClrデスクトッププレイヤー全て競合空白）\n- 既存キュー評価完了（uLoopMCP最強ランク★5、Memory Profiler/GPU Instancing★3）\n\n【継続コンテキスト】\n次回投稿候補は①Unity AI Beta 2026（最優先・競合1件のみ）②uLoopMCP（既存キュー1位）③Surface Cache GI（競合ゼロ）の3案。Unity AI Beta 2026が最もホット（2026年1月リリース直後、β無料期間中、Agentモード/3Dアセット生成/UI Toolkit自動生成のワークフロー記事でスキ期待値18〜26）。STRATEGY.mdのテーマ優先度と整合（Unity × AI支援開発が差別化最大）。"
 }
