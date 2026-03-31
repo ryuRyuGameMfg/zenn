@@ -1,2 +1,8 @@
 [2026-04-01T00:11:10] START: claude execution
 [2026-04-01T00:11:10] [runner] Claude起動 (tools=Read,Write,Edit,Glob,Grep,Bash)
+[2026-04-01T00:11:45] [runner] Claude終了 (exit=0, elapsed=35s)
+[2026-04-01T00:11:45] OK: claude execution completed
+[2026-04-01T00:11:46] END: telegram-react.sh completed
+[2026-04-01T00:13:10] START: claude execution
+[2026-04-01T00:13:10] [runner] Claude起動 (tools=Read,Write,Edit,Glob,Grep,Bash)
+[2026-04-01T00:14:14] [runner] 経過通知: 1分
