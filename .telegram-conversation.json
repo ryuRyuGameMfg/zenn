@@ -1,7 +1,7 @@
 {
   "status": "processing",
   "target_article": "/Users/okamotoryuya/repository/zenn-engine/articles/2026-03-28-zenn-github-actions-auto-deploy.md",
-  "last_updated": "2026-04-01T03:06:05",
+  "last_updated": "2026-04-01T03:09:15",
   "thread": [
     {
       "role": "user",
@@ -67,6 +67,16 @@
       "role": "user",
       "text": "ちょっとさっきの音声データをもう一度文字起こしして再度お願いします\n",
       "ts": "2026-04-01 03:06"
+    },
+    {
+      "role": "assistant",
+      "text": "未公開35本からリライト推薦ベスト5\n\n<b>zenn-engine GMです。</b>\n\n<b>前回のご指示を再確認し、\n未公開35本から推薦をまとめました。</b>\n\n---\n\n<b>【社長が選定済みの2本】</b>\n\n<b>1. Claude Codeの機密情報漏洩を防ぐ\n5つのHooksセキュリティ設計</b>\n→ 実運用中の多層セキュリティと\n最新情報を合わせてリライト\n\n<b>2. UbisoftがPBR生成AIをOSS公開\nCHORDの全貌と使い方</b>\n→ 海外記事の翻訳・キュレーションで\n1本記事化\n\n<blockquote>どちらも良い判断です。セキュリティ記事は実運用データが加わることで唯一無二の記事になります。CHORD記事は日本語解説がほぼ皆無なので先行者優位が取れます。</blockquote>\n\n---\n\n<b>【GMおすすめ追加5本】</b>\n\n<b>3. CLAUDE.mdで失敗しまくった\n7つのパターンと解決策</b>\n推薦度: <code>A（最高）</code>\n修正量: <code>軽微</code>\n\n<blockquote>339行→42行への最適化実績、遵守率50%→95%の数値データは強力な一次情報。ASCII図解記事と合わせて「CLAUDE.mdシリーズ」として連続公開すると相乗効果あり。</blockquote>\n\n<b>4. UnityでローカルLLMを動かす完全ガイド\nGemma3/DeepSeek/Phi-3</b>\n推薦度: <code>A（最高）</code>\n修正量: <code>軽微</code>\n\n<blockquote>LLMUnity + llama.cppの組み合わせは2026年でも標準的。モデル比較表と量子化ガイドが実用的で、「完全ガイド」系は検索流入が安定します。</blockquote>\n\n<b>5. mcp-unity: Claude/Cursorから\nUnity Editorを操作する</b>\n推薦度: <code>A（最高）</code>\n修正量: <code>軽微</code>\n\n<blockquote>MCPはAI開発ツールの標準として急拡大中。mcp-unityの日本語解説は競合がほぼゼロ。社長のテーマ優先順位1位「Unity x Claude Code」に直結します。</blockquote>\n\n<b>6. NVIDIA Audio2Face-3Dが\nオープンソース化 実装ガイド</b>\n推薦度: <code>A（最高）</code>\n修正量: <code>軽微</code>\n\n<blockquote>NVIDIAのOSS化は2025年の重大ニュース。MIT+Apacheライセンスで商用利用可能。音声→顔面アニメーションは今後も需要が伸びる領域です。CHORD記事と同じ「海外OSS解説」シリーズとして展開可能。</blockquote>\n\n<b>7. ComfyUIでゲーム素材を量産する\nインディー開発者向け実践ガイド</b>\n推薦度: <code>A（最高）</code>\n修正量: <code>軽微</code>\n\n<blockquote>「90%コスト削減」の数字が強い訴求力。Hunyuan3D-2による2D→3D変換パイプラインは先駆的で、インディー開発者の検索需要に直結します。</blockquote>\n\n---\n\n<b>【選定の観点】</b>\n\n全て以下の条件を満たしています:\n・修正量が<b>軽微</b>（すぐ公開可能）\n・2026年でも<b>技術的に有効</b>\n・<b>検索需要が高い</b>テーマ\n・<b>日本語の競合記事がほぼゼロ</b>\n\n---\n\n<b>【公開スケジュール案】</b>\n\n既存スケジュール（4/4〜4/18）の後に\n1日1本で追加すると:\n\n<code>4/25（金）</code> セキュリティ設計\n<code>5/2（金）</code> CLAUDE.md失敗パターン\n<code>5/9（金）</code> Ubisoft CHORD\n<code>5/10（土）</code> ローカルLLMガイド\n<code>5/16（金）</code> mcp-unity\n<code>5/17（土）</code> Audio2Face-3D\n<code>5/23（金）</code> ComfyUI素材量産\n\n<blockquote>リライトは内容の最新化 + 社長の実運用経験の追記がメインなので、1本あたりの作業量は新規記事の半分程度です。</blockquote>\n\n---\n\n<b>【次のアクション】</b>\n\n<b>A. この7本でスケジュール確定</b>\n\n<b>B. 本数を絞りたい</b>\n（どれを優先するか選択）\n\n<b>C. 他の記事も見たい</b>\n（残り23本から追加推薦）\n\nどうしますか？\n",
+      "ts": "2026-04-01 03:08"
+    },
+    {
+      "role": "user",
+      "text": "ユニティでローカルLLMを動かしたやつは、私のAIキャラクターコアのプロジェクトに実際に入れたやつがあるんだよね。\nそれはLLMユニティっていうツールを通して入れたんだけど、それに関してちょっと書こう。\n私も実際に実践してやってみたから、そのプロジェクトの内容を見てみて、それに沿って書いてみようか。\n",
+      "ts": "2026-04-01 03:09"
     }
   ],
   "summary": "【決定事項】\n- 統計取得方式をPlaywright方式から非公式APIに変更確定（Playwright実装は保留、運用コスト削減）\n- OKR O2を「累計PV 10,000」から「累計スキ数 1,000」に改訂（非公式APIで取得可能な指標に統一）\n- rewrite自動実行は無効化維持、手動指示のみで実行する方式を継続\n\n【作業状態】\n- 非公式API方式への切り替え完了（STRATEGY.md / MEMORY.md / mode-analyze.md更新、コミットdd3b0d0）\n- 手動テストで統計レポートをTelegram送信完了（公開34本、累計スキ189、フォロワー37）\n- CLAUDE.md ASCII図解テーマで記事調査実施 → 既存記事2本と重複判定、差別化案A〜Cを提示し判断待ち\n\n【継続コンテキスト】\n次回記事テーマが未決定。「CLAUDE.mdでASCII図解」は既存2本（2/27・2/28公開）と重複するため、差別化案（A:運用1ヶ月実データ / B:チーム開発共有 / C:スキル・エージェント設計）またはテーマキュー上位（uLoopMCP等）からの選択をユーザーに確認中。週2本公開スケジュール（金・土17時）は継続、次回土曜（4/5）に非公式API方式で初回自動統計レポート実行予定。"

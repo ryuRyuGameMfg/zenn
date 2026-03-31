@@ -1,207 +1,471 @@
 ---
-title: "UnityでローカルLLMを動かす完全ガイド - Gemma3/DeepSeek/Phi-3"
+title: "LLMUnityでAIキャラクターにローカルLLMを組み込んだ実装記録"
 emoji: "🧠"
 type: "tech"
-topics: ["unity", "llm", "gemma", "deepseek", "ai"]
+topics: ["unity", "llm", "llmunity", "csharp", "ai"]
 published: true
 published_at: 2026-03-29 17:00
 ---
 
 ## はじめに
 
-UnityでAIキャラクターと自然な会話ができるゲームを作りたい。そう考えたとき、まず思いつくのはChatGPT APIの呼び出しでしょう。しかしクラウドAPIには課題があります。通信コスト、レイテンシ、プライバシー、そしてオフライン非対応。
+私は現在、VTuberやゲームNPC向けのAIキャラクターフレームワーク（ai-character-core）を開発しています。これまでOpenAI、Claude、Geminiといったクラウド型LLMに対応していましたが、ローカルLLM対応を追加する必要がありました。
 
-ローカルLLMなら、これらの課題を一気に解決できます。
+**目的は明確でした。ai.jsonのproviderフィールドを"LLMUnity"に変更するだけで、既存のクラウドAPIと同じように動作するローカルLLMサービスを実現すること。**
 
-- APIコスト: 完全無料（推論はすべてローカル）
-- レイテンシ: ネットワーク往復なしで即座に応答
-- プライバシー: プレイヤーの入力データが外部に出ない
-- オフライン: インターネット接続不要で動作
+選択肢を検討した結果、[LLM for Unity（LLMUnity）](https://github.com/undreamai/LLMUnity)を採用しました。理由は以下の通りです。
 
-本記事では、[LLM for Unity（LLMUnity）](https://github.com/undreamai/LLMUnity)を使い、Gemma 3やDeepSeek、Phi-3などのモデルをUnity上で動かす方法を解説します。 **クラウドAPIに頼らず、ゲーム内で完結するAI会話システムを構築できます** 。
+- llama.cppベースで推論速度が速い
+- GGUF形式のモデルをそのまま使える
+- Unity統合済みでInspectorから設定可能
+- RAGシステム（LLMEmbedder）もセットで提供
 
-## LLMUnityの概要
+結果として、IAIServiceインターフェースにLLMUnityServiceを追加し、ai.jsonの1行変更でプロバイダーを切り替え可能にすることができました。
 
-### llama.cppベースのUnityパッケージ
+## アーキテクチャの課題: MonoBehaviourとDIの衝突
 
-LLMUnityは、C/C++製の高速LLM推論エンジン[llama.cpp](https://github.com/ggml-org/llama.cpp)をUnity向けにラップしたパッケージです。Unity Asset Storeで無料配布されており、個人・商用問わず利用できます。
+最初に直面した問題は、LLMUnityとマルチプロバイダー設計の根本的な相性の悪さでした。
 
-```mermaid
-graph TB
-    subgraph "LLMUnity アーキテクチャ"
-        A[Unity C# スクリプト] -->|API呼び出し| B[LLMAgent / LLM コンポーネント]
-        B -->|推論リクエスト| C[LlamaLib<br>C++ネイティブ]
-        C -->|llama.cpp| D[GGUFモデル<br>量子化済み]
-    end
-    E[CPU / GPU<br>Metal・CUDA・Vulkan] --> C
+**既存のAIサービス実装:**
+```csharp
+// OpenAI/Claude/GeminiはPure C#クラス → newで生成可能
+IAIService openai = new OpenAIService();
+IAIService claude = new ClaudeService();
+IAIService gemini = new GeminiService();
 ```
 
-主要な特徴は以下の通りです。
+これらはMonoBehaviourに依存しないため、ファクトリーパターンでnew演算子を使って生成できます。
 
-| 機能 | 説明 |
-|------|------|
-| マルチプラットフォーム | PC、iOS、Android、VR対応 |
-| GPU高速推論 | NVIDIA CUDA、AMD ROCm、Apple Metal |
-| RAGシステム | ANN検索ベースの知識拡張 |
-| LoRAサポート | ファインチューニング済みアダプタの適用 |
-| 文法制約 | GBNF文法による出力フォーマット制御 |
-| リモートサーバー | 別マシンへの推論オフロード |
-
-:::message
-LLMUnityは1,200人以上のコントリビュータを持つllama.cppエコシステムの上に構築されています。GGUF形式のモデルであれば、Gemma 3、DeepSeek、Phi-3、Llama 3、Mistral、Qwenなどほぼすべての主要モデルが動作します。
-:::
-
-## セットアップ手順
-
-### 1. パッケージのインストール
-
-2つの方法があります。
-
-**Asset Store経由（推奨）:**
-1. Unity Asset Storeの[LLM for Unity](https://assetstore.unity.com/packages/tools/ai-ml-integration/llm-for-unity-273604)ページで「Add to My Assets」
-2. Unity Editor で `Window > Package Manager` → `Packages: My Assets` から Import
-
-**Git URL経由:**
-`Window > Package Manager` → `+` → `Add package from git URL` に以下を入力:
-```text
-https://github.com/undreamai/LLMUnity.git
-```
-
-### 2. モデルの選択とダウンロード
-
-LLMUnityのインスペクタからモデルをダウンロードできます。用途別の推奨モデルは以下の通りです。
-
-```mermaid
-graph LR
-    subgraph "モデル選択フロー"
-        Q{ターゲット<br>プラットフォーム} -->|モバイル / VR| S[1-2Bモデル<br>Gemma3 1B]
-        Q -->|PC / コンソール| M{必要な<br>推論品質}
-        M -->|高品質| L[7-8Bモデル<br>DeepSeek 7B]
-        M -->|バランス| N[3-4Bモデル<br>Phi-3 mini / Qwen3 4B]
-    end
-```
-
-### 3. 量子化レベルの選択
-
-量子化（Quantization）はモデルの精度を下げてサイズと速度を最適化する手法です。
-
-| 量子化 | サイズ削減 | 品質 | 7Bモデル目安RAM |
-|--------|----------|------|----------------|
-| Q8_0 | 約50% | 最高 | 約8GB |
-| Q6_K | 約58% | 高 | 約6GB |
-| Q5_K_M | 約65% | 良好 | 約5.5GB |
-| Q4_K_M | 約70-75% | 実用的 | 約5GB |
-| Q3_K_M | 約80% | やや劣化 | 約4GB |
-
-補足: モバイル向けには1-2Bパラメータのモデルが現実的です。7B以上のモデルはモバイルのメモリ制約でほぼ動作しません。
-
-:::message alert
-AndroidビルドではIL2CPPスクリプティングバックエンドとARM64ターゲットアーキテクチャが必須です。`Edit > Project Settings > Player > Other Settings` から設定してください。
-:::
-
-## 実装例
-
-### 基本的なチャットの実装
-
-LLMUnityでは `LLM` コンポーネントがモデル管理を、`LLMAgent` コンポーネントがキャラクター別の会話を担当します。
-
-```csharp:AICharacterChat.cs
-using LLMUnity;
-using UnityEngine;
-
-public class AICharacterChat : MonoBehaviour
+**LLMUnityの要求:**
+```csharp
+// LLMCharacterはMonoBehaviour → InspectorでLLMコンポーネントへの参照が必須
+public class SomeMonoBehaviour : MonoBehaviour
 {
-    public LLMAgent llmAgent;
+    public LLMCharacter llmCharacter; // InspectorからD&D設定
+}
+```
 
-    async void Start()
+LLMUnityは `LLMCharacter` というMonoBehaviourコンポーネントが必須で、そこから `Chat()` メソッドを呼び出す設計になっています。**MonoBehaviourはnewできません。**
+
+この衝突をどう解決するか？答えは「後注入パターン」でした。
+
+### 解決策: ファクトリー生成→後からInspector参照を注入
+
+```csharp:AIServiceFactory.cs
+public static class AIServiceFactory
+{
+    public static IAIService CreateService(AIServiceType serviceType, AIServiceConfig config = null)
     {
-        // システムプロンプトでキャラクター設定
-        llmAgent.systemPrompt =
-            "あなたは冒険者ギルドの受付嬢リリアです。" +
-            "丁寧だが少しおっちょこちょいな性格で、" +
-            "冒険者に依頼を紹介する役割を担っています。";
-        llmAgent.assistantRole = "リリア";
-        llmAgent.userRole = "冒険者";
-
-        // 初回レスポンス高速化のためウォームアップ
-        await llmAgent.Warmup();
-    }
-
-    public async void SendMessage(string playerInput)
-    {
-        // 非同期で応答を取得（ストリーミング）
-        string reply = await llmAgent.Chat(playerInput);
-        Debug.Log($"リリア: {reply}");
+        return serviceType switch
+        {
+            AIServiceType.OpenAI => new OpenAIService(),
+            AIServiceType.Claude => new ClaudeService(),
+            AIServiceType.Gemini => new GeminiService(),
+            AIServiceType.Ollama => new OllamaService(),
+            AIServiceType.LLMUnity => new LLMUnityService(), // パラメータなしでnew
+            _ => throw new NotSupportedException($"AI service type {serviceType} is not supported")
+        };
     }
 }
 ```
 
-### ストリーミング応答とUI連携
+まずパラメータなしでnewします。その後、CharacterSystemが `SetLLMCharacter()` でInspectorの参照を後から注入します。
 
-1文字ずつUIに表示するストリーミング方式も簡単に実装できます。
+```csharp:CharacterSystem.cs（抜粋）
+// ファクトリーで生成
+_aiService = AIServiceFactory.CreateService(config.Provider);
 
-```csharp:StreamingChat.cs
+// LLMUnityの場合のみ、Inspector参照を後注入
+if (_aiService is LLMUnityService llmUnityService && llmCharacter != null)
+{
+    llmUnityService.SetLLMCharacter(llmCharacter);
+}
+
+await _aiService.InitializeAsync(config);
+```
+
+この設計により、LLMUnityServiceは他のサービスと同じファクトリー経由で生成でき、かつMonoBehaviour依存も満たせるようになりました。
+
+## 実装: IAIServiceインターフェースへの統合
+
+### 核心: コールバック→IAsyncEnumerable変換
+
+LLMUnityの `Chat()` メソッドはコールバック方式です。
+
+```csharp
+llmCharacter.Chat(
+    message,
+    onPartialReply: (string partialText) => { /* 累積テキスト */ },
+    onComplete: () => { /* 完了通知 */ }
+);
+```
+
+一方、IAIServiceインターフェースはIAsyncEnumerable<AIResponse>によるストリーミングを要求します。
+
+```csharp
+IAsyncEnumerable<AIResponse> SendMessageStreamingAsync(
+    AIRequest request,
+    CancellationToken cancellationToken = default);
+```
+
+この変換を実現するために、ConcurrentQueueとTaskCompletionSourceを使いました。
+
+```csharp:LLMUnityService.cs
+#if LLM_UNITY
+
+using System;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Threading;
+using System.Threading.Tasks;
 using LLMUnity;
-using TMPro;
 using UnityEngine;
 
-public class StreamingChat : MonoBehaviour
+public class LLMUnityService : IAIService
 {
-    public LLMAgent llmAgent;
-    public TMP_Text responseText;
+    public string ServiceName => "LLMUnity";
+    public bool IsInitialized { get; private set; }
 
-    public void OnSendClicked(string message)
+    private LLMCharacter llmCharacter;
+    private AIServiceConfig config;
+
+    public LLMUnityService() { }
+
+    public LLMUnityService(LLMCharacter llmCharacter)
     {
-        responseText.text = "";
-        // トークン単位のコールバックでストリーミング表示
-        _ = llmAgent.Chat(message, OnTokenReceived, OnReplyComplete);
+        this.llmCharacter = llmCharacter;
     }
 
-    void OnTokenReceived(string token)
+    public void SetLLMCharacter(LLMCharacter character)
     {
-        responseText.text += token;
+        llmCharacter = character;
     }
 
-    void OnReplyComplete()
+    public async Task<bool> InitializeAsync(AIServiceConfig config)
     {
-        Debug.Log("応答完了");
+        try
+        {
+            this.config = config;
+            if (llmCharacter == null)
+            {
+                Debug.LogError("[LLMUnityService] LLMCharacterが設定されていません。");
+                return false;
+            }
+            // ai.jsonのシステムプロンプト・温度・最大トークン数を反映
+            if (!string.IsNullOrEmpty(config?.SystemPrompt))
+            {
+                llmCharacter.prompt = config.SystemPrompt;
+            }
+            if (config != null)
+            {
+                llmCharacter.temperature = config.Temperature;
+                llmCharacter.numPredict = config.MaxTokens;
+            }
+            IsInitialized = true;
+            await Task.CompletedTask;
+            return true;
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError($"[LLMUnityService] 初期化失敗: {ex.Message}");
+            return false;
+        }
     }
+
+    public async IAsyncEnumerable<AIResponse> SendMessageStreamingAsync(
+        AIRequest request,
+        [EnumeratorCancellation] CancellationToken cancellationToken = default)
+    {
+        if (!IsInitialized || llmCharacter == null)
+        {
+            yield return new AIResponse { ErrorMessage = "サービスが初期化されていません", IsComplete = true };
+            yield break;
+        }
+
+        var chunkQueue = new System.Collections.Concurrent.ConcurrentQueue<string>();
+        var completionSource = new TaskCompletionSource<string>();
+
+        cancellationToken.Register(() => completionSource.TrySetCanceled());
+
+        // 累積テキストから差分を抽出するロジック
+        string previousText = "";
+        _ = llmCharacter.Chat(
+            request.Message,
+            partialReply =>
+            {
+                if (!string.IsNullOrEmpty(partialReply) && partialReply.Length > previousText.Length)
+                {
+                    var delta = partialReply.Substring(previousText.Length);
+                    chunkQueue.Enqueue(delta);
+                    previousText = partialReply;
+                }
+            },
+            () => completionSource.TrySetResult("")
+        );
+
+        // 非同期ストリームで差分を順次返す
+        while (!completionSource.Task.IsCompleted)
+        {
+            if (cancellationToken.IsCancellationRequested) yield break;
+            while (chunkQueue.TryDequeue(out var chunk))
+            {
+                yield return new AIResponse { Content = chunk, IsComplete = false };
+            }
+            await Task.Delay(10, cancellationToken).ContinueWith(_ => { });
+        }
+
+        while (chunkQueue.TryDequeue(out var remainingChunk))
+        {
+            yield return new AIResponse { Content = remainingChunk, IsComplete = false };
+        }
+
+        yield return new AIResponse { Content = "", IsComplete = true };
+    }
+
+    public void Dispose() { IsInitialized = false; }
+}
+
+#else
+
+// LLMUnityパッケージがインストールされていない環境用のスタブ
+public class LLMUnityService : IAIService
+{
+    public string ServiceName => "LLMUnity (Not Installed)";
+    public bool IsInitialized => false;
+
+    public Task<bool> InitializeAsync(AIServiceConfig config)
+    {
+        Debug.LogError("[LLMUnityService] LLMUnityパッケージがインストールされていません。");
+        return Task.FromResult(false);
+    }
+
+    public async IAsyncEnumerable<AIResponse> SendMessageStreamingAsync(
+        AIRequest request,
+        [EnumeratorCancellation] CancellationToken cancellationToken = default)
+    {
+        yield return new AIResponse
+        {
+            ErrorMessage = "LLMUnityパッケージがインストールされていません",
+            IsComplete = true
+        };
+        await Task.CompletedTask;
+    }
+
+    public void Dispose() { }
+}
+
+#endif
+```
+
+**ポイント:**
+- `previousText` で累積テキストを保持し、差分だけを抽出
+- `ConcurrentQueue` でスレッドセーフなチャンクキューを実現
+- `TaskCompletionSource` で完了通知を待機
+- `#if LLM_UNITY` でパッケージ未インストール環境でもコンパイル可能
+
+この実装により、LLMUnityのコールバック方式をIAsyncEnumerable<AIResponse>に変換でき、既存のCharacterSystemのストリーミングパイプラインに統合できました。
+
+## パッケージ依存の分離: 条件分岐コンパイル
+
+LLMUnityパッケージがインストールされていない環境でもコンパイルが通るよう、`#if LLM_UNITY` による条件分岐を使用しています。
+
+**Assembly Definition (.asmdef) で定義:**
+```json
+{
+    "name": "AICharacter.Core",
+    "versionDefines": [
+        {
+            "name": "com.undreamai.llmunity",
+            "expression": "",
+            "define": "LLM_UNITY"
+        }
+    ]
 }
 ```
 
-### メモリ管理の注意点
+パッケージがインストールされていれば `LLM_UNITY` シンボルが定義され、本実装が有効になります。なければスタブ実装が使われ、エラーメッセージを返します。
 
-- `Warmup()` でシステムプロンプトを事前処理し、初回応答の遅延を回避する
-- シーン遷移時には `CancelRequests()` で推論を確実に停止する
-- 会話履歴は `SaveHistory()` / `LoadHistory()` でJSON永続化できる
-- 複数キャラクターは1つの `LLM` コンポーネントに複数の `LLMAgent` を紐づけて管理する
+## RAG（検索拡張生成）のローカル化
 
-:::message
-`numGPULayers` の値を増やすとGPUオフロード量が増えて高速化しますが、VRAMの消費も増えます。ターゲット環境のVRAM容量に応じて調整してください。
-:::
+LLMUnityは推論だけでなく、Embeddingもローカル実行できます。LLMEmbedderコンポーネントを使い、OpenAI Embeddingと同じIEmbeddingServiceインターフェースに統合しました。
+
+```csharp:LLMUnityEmbeddingService.cs
+#if LLM_UNITY
+
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+using LLMUnity;
+using UnityEngine;
+
+public class LLMUnityEmbeddingService : IEmbeddingService
+{
+    public int EmbeddingDimension { get; private set; }
+    private LLMEmbedder llmEmbedder;
+
+    public void SetLLMEmbedder(LLMEmbedder embedder)
+    {
+        llmEmbedder = embedder;
+        // 初期化時に次元数を0にリセット（実際の埋め込み実行時に自動補正）
+        EmbeddingDimension = 0;
+    }
+
+    public async Task<float[]> GetEmbeddingAsync(string text, CancellationToken cancellationToken = default)
+    {
+        if (llmEmbedder == null)
+        {
+            Debug.LogError("[LLMUnityEmbeddingService] LLMEmbedderが設定されていません。");
+            return new float[0];
+        }
+
+        List<float> embeddingList = await llmEmbedder.Embeddings(text);
+        float[] result = embeddingList.ToArray();
+
+        // 実際の次元数で自動補正（モデルによって異なるため）
+        if (EmbeddingDimension != result.Length)
+        {
+            EmbeddingDimension = result.Length;
+            Debug.Log($"[LLMUnityEmbeddingService] Embedding次元数を自動補正: {EmbeddingDimension}");
+        }
+
+        return result;
+    }
+}
+
+#endif
+```
+
+**重要な実装ポイント:**
+- Embedding次元数はモデル依存（例: all-MiniLM-L6-v2なら384次元）
+- 初回実行時に実際の次元数を自動検出して補正
+- OpenAI Embeddingと同じインターフェースで呼び出し可能
+
+これにより、RAGシステムも完全にローカルで動作するようになりました。
+
+## ai.jsonによるプロバイダー切り替え
+
+実際のai.jsonファイルはこのような形です。
+
+```json:ai.json
+{
+    "provider": "LLMUnity",
+    "temperature": 0.7,
+    "maxTokens": 500,
+    "useStreaming": true,
+    "systemPrompt": "あなたは冒険者ギルドの受付嬢リリアです。丁寧だが少しおっちょこちょいな性格で、冒険者に依頼を紹介する役割を担っています。"
+}
+```
+
+**providerフィールドを変更するだけ:**
+- `"OpenAI"` → OpenAI APIを使用
+- `"Claude"` → Claude APIを使用
+- `"Gemini"` → Gemini APIを使用
+- `"LLMUnity"` → ローカルLLMを使用
+
+APIキー設定、エンドポイント指定、認証ヘッダー等の変更は一切不要です。同じシステムプロンプト、温度、最大トークン数設定がそのまま適用されます。
+
+## アーキテクチャ全体図
+
+最終的なアーキテクチャは以下のようになりました。
+
+```
+入力層:
+  YouTubeInputAdapter（YouTube配信コメント）
+  ScriptInputAdapter（シナリオ台本）
+  TextInputAdapter（テキスト入力）
+  VoiceInputAdapter（音声入力 + Whisper文字起こし）
+        ↓
+CharacterSystem（コア制御）:
+  1. 入力キュー管理
+  2. AI推論（IAIService経由）← ここで OpenAI / Claude / Gemini / LLMUnity を切り替え
+  3. 文分割パイプライン（句読点区切り）
+  4. 音声合成（IVoiceService経由）
+  5. 再生キュー管理
+        ↓
+サービス層:
+  - AI推論:
+      OpenAIService
+      ClaudeService
+      GeminiService
+      OllamaService
+      LLMUnityService ← 今回追加
+  - 音声合成:
+      VoicevoxService
+      OpenAITTSService
+  - RAG（検索拡張生成）:
+      RAGService
+        ↓
+      Embedding:
+        OpenAIEmbeddingService
+        LLMUnityEmbeddingService ← 今回追加
+        ↓
+出力層:
+  EmotionService → VRM BlendShape制御（喜怒哀楽表情）
+  AnimationService → Animator制御（モーション再生）
+  SubtitleService → TextMeshPro字幕表示
+```
+
+**この設計の利点:**
+- 開発時はOpenAI APIで高速イテレーション
+- 本番環境はローカルLLMでコスト削減・オフライン対応
+- 1行の設定変更でプロバイダー切り替え可能
+- 新しいLLMプロバイダーの追加が容易（IAIServiceを実装するだけ）
+
+## 実際に動かしてわかったこと
+
+### 初回起動が重い → Warmup()で対処
+
+LLMUnityは初回推論時にモデルをメモリにロードするため、1回目の応答が遅くなります。`Warmup()` を使って事前ロードすることで解決しました。
+
+```csharp
+await llmCharacter.Warmup();
+```
+
+### GPUレイヤー数の調整が重要
+
+InspectorのnumGPULayersを増やすとGPU推論が増えて高速化しますが、VRAMを大量に消費します。ターゲット環境のVRAM容量に応じて調整が必要でした。
+
+| 環境 | 推奨numGPULayers |
+|------|-----------------|
+| RTX 4090（24GB VRAM） | 全層（例: 32層） |
+| RTX 3060（12GB VRAM） | 半分（例: 16層） |
+| M1 Mac（統合メモリ） | 全層（統合メモリのため柔軟） |
+
+### 日本語性能はまだ発展途上
+
+ローカルLLMの日本語性能は、クラウドAPIに比べるとまだ差があります。特に1-2Bの軽量モデルは会話の自然さに課題があります。
+
+**比較的良好だったモデル:**
+- Qwen2.5系（多言語最適化されている）
+- Gemma3（Googleの多言語事前学習の恩恵）
+
+**今後の期待:**
+- 日本語特化ファインチューニングモデルの増加
+- 量子化手法の改良（Q4でも品質維持）
+
+### 完全オフラインAIキャラクターの実現
+
+最終的に、以下の構成で完全オフライン動作するAIキャラクターを実現できました。
+
+- VRMアバター（3Dモデル）
+- VoiceVox（音声合成）
+- LLMUnity（ローカルLLM推論）
+- LLMEmbedder（ローカルEmbedding）
+
+**インターネット接続なしで動作し、APIコストもゼロ。プライバシーも完全に保護されます。**
 
 ## まとめ
 
-### モデル比較と用途別推奨
+LLMUnityをマルチプロバイダー設計に統合した結果、以下が実現できました。
 
-| モデル | パラメータ | 推奨用途 | 特徴 |
-|--------|----------|---------|------|
-| Gemma 3 1B | 1B | モバイル・VR | 軽量で高品質、Google製 |
-| Phi-3 mini | 3.8B | PC（軽量） | Microsoft製、推論効率が高い |
-| Qwen3 4B | 4B | PC（バランス） | 多言語対応、日本語性能良好 |
-| DeepSeek 7B | 7B | PC（高品質） | コード生成にも強い |
-| Llama 3 8B | 8B | PC（最高品質） | Meta製、汎用性が高い |
+1. **ai.jsonの1行変更でクラウドAPI↔ローカルLLMを切り替え可能**
+2. **MonoBehaviour依存は後注入パターンで解決**
+3. **条件分岐コンパイルでパッケージ未インストール環境にも対応**
+4. **RAGシステムも完全ローカル化**
+5. **開発はクラウドAPI、本番はローカルLLMというワークフローが実現**
 
-補足: 日本語での会話品質を重視するなら、Qwen3系が比較的良好な結果を返します。ただしローカルモデルの日本語性能はクラウドAPIに比べると限定的である点は留意してください。
+マルチプロバイダー設計にしておくと、新しいLLMサービスの追加が1クラスの実装で済むため、今後の拡張も容易です。
 
-LLMUnityは、ローカルLLMをUnityに統合するための最も手軽な選択肢です。llama.cppの高速推論エンジンを数行のコードで呼び出せるため、プロトタイピングから製品開発まで幅広く活用できます。 **まずは1-2Bの軽量モデルで試し、ターゲットプラットフォームに合わせてモデルサイズを調整するアプローチが確実です** 。
+LLMUnityはllama.cppの高速推論エンジンをUnityから数行で呼び出せる優れたパッケージです。Unity Asset Storeで無料配布されており、商用利用も可能です。
 
 興味がある方は[LLMUnity公式リポジトリ](https://github.com/undreamai/LLMUnity)からすぐに試すことができます。
-
----
-
-**AIキャラクター開発に興味がある方へ**
-
-https://coconala.com/services/3327092
-
-https://coconala.com/services/2610064
