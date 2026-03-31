@@ -1,7 +1,7 @@
 {
   "status": "processing",
   "target_article": "/Users/okamotoryuya/repository/zenn-engine/articles/2026-03-28-zenn-github-actions-auto-deploy.md",
-  "last_updated": "2026-04-01T00:21:06",
+  "last_updated": "2026-04-01T02:56:37",
   "thread": [
     {
       "role": "user",
@@ -67,6 +67,16 @@
       "role": "user",
       "text": "これも公開スケジュールに追加していいよ\n多分ね\n公開が失敗してる理由って\n前提\n1日1回しかデプロイ受け付けてないと思うので\n1日1記事しか公開できないというか\nデプロイ受け付けてないから\nそれちょっと注意しといてね\nもし問題あったら報告ちょうだい\n",
       "ts": "2026-04-01 00:21"
+    },
+    {
+      "role": "assistant",
+      "text": "ASCII図解記事を公開スケジュールに追加しました\n\n<b>zenn-engine GMです。</b>\n\n<b>スケジュール登録完了 + デプロイ制限の確認結果です。</b>\n\n---\n\n<b>【公開スケジュール（全5本）】</b>\n\n<b>1. 4/4（金）17:00</b>\n<code>Claude Code x launchd 自律エージェント</code>\n\n<b>2. 4/5（土）17:00</b>\n<code>AIデザインを嫌う理由の2方向分析</code>\n\n<b>3. 4/11（金）17:00</b>\n<code>Unity公式MCP完全ガイド</code>\n\n<b>4. 4/12（土）17:00</b>\n<code>uLoopMCPコミュニティ熱狂の理由</code>\n\n<b>5. 4/18（金）17:00 ← NEW</b>\n<code>CLAUDE.md ASCII図解ルールで出力改善</code>\n\n全て <code>published: false</code> で待機中。\n公開日に <code>true</code> に変更 + push で公開。\n\n---\n\n<b>【デプロイ制限について確認】</b>\n\n<b>結論: 現状のスケジュールでは問題なし</b>\n\n・全て<b>別の日</b>に設定済み（同日重複なし）\n・Zenn GitHub連携はpush毎にデプロイ実行\n・同日に2回pushすると反映遅延の可能性あり\n\n<blockquote>社長のご指摘通り、1日1記事（1push）を守る運用が安全です。現在のスケジュールは全て別日なので問題ありません。</blockquote>\n\n---\n\n<b>【旧版のストック確認】</b>\n\n<code>claude-md-ascii-diagram-rules.md</code>\n（旧版）→ <code>published: false</code> 済み\n\n新版と旧版が同時に公開される心配はありません。\n\n---\n\n<b>【以前の未公開2記事について】</b>\n\nZenn APIで確認した結果、\n旧版ASCII図解記事と失敗パターン記事は\n<b>Zenn上に公開されていなかった</b>件ですが、\nこれはおそらく <code>published: false</code> の\nままpushされていたためです。\n\n今回の新版は4/18に <code>published: true</code>\nに変更してpushするので正常に公開されます。\n\n---\n\n<b>【次のアクション】</b>\n\n・4/4（金）: 最初の記事の公開処理を自動実行予定\n・公開日に published を true に変更 → push\n\n何かあれば報告します。\n",
+      "ts": "2026-04-01 00:22"
+    },
+    {
+      "role": "user",
+      "text": "他にもさ公開されてないけど下書きになってるやつでストックもされてないやつたくさんあると思うんだけどちょっと掘り出してみてもしデータあったら\n",
+      "ts": "2026-04-01 02:56"
     }
   ],
   "summary": "【決定事項】\n- OKRをZennダッシュボードから取得可能な指標に改訂（O1: フォロワー1000人、O2: 累計PV 10,000、O3: 平均スキ数15以上）\n- Playwright MCPでZennダッシュボードからPV統計を自動取得する方式を採用\n- rewrite自動実行を無効化、手動指示のみで実行する方式に確定\n\n【作業状態】\n- Playwright PV自動取得スクリプト（scripts/fetch-zenn-analytics.mjs）実装・コミット完了（1daa6fb）\n- 週2本公開スケジュール設定完了（金・土17時、4/4〜4/12の4件登録済み）\n- 土曜analyzeモードにPlaywright PV取得を統合、Telegramレポート送信機能も実装済み\n\n【継続コンテキスト】\n環境変数（ZENN_EMAIL/ZENN_PASSWORD）の設定と手動テストが未実施。次回土曜（2026-04-05 17:00）に初回PV自動取得が実行予定。土曜の処理フローはanalyze（Playwright PV取得含む）→ improve → Telegramレポート送信。"
