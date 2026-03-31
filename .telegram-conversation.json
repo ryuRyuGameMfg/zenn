@@ -1,7 +1,7 @@
 {
   "status": "processing",
   "target_article": "/Users/okamotoryuya/repository/zenn-engine/articles/2026-03-28-zenn-github-actions-auto-deploy.md",
-  "last_updated": "2026-03-31T17:13:43",
+  "last_updated": "2026-03-31T17:18:01",
   "thread": [
     {
       "role": "user",
@@ -57,6 +57,16 @@
       "role": "user",
       "text": "いいねよしじゃあその骨組みで1キリずつ前に前の形式に合わせて書いていってください\n",
       "ts": "2026-03-31 17:13"
+    },
+    {
+      "role": "assistant",
+      "text": "記事1執筆完了\n\n<b>zenn-engine GMです。</b>\n\n<b>記事1「Unity公式MCP完全ガイド」執筆完了</b>\n\n―――――――――――――――――\n\n<b>【作成記事】</b>\n\n<code>2026-04-01-unity-official-mcp-complete-guide.md</code>\n\n<b>タイトル:</b>\nUnity公式が本気で作ったAI連携：Claude/Cursorと直結する新時代の開発フロー\n\n<b>文字数:</b> 約8,500字\n\n―――――――――――――――――\n\n<b>【構成（刷新後）】</b>\n\n1. Unity公式が「AI連携」に本気を出した背景\n2. 従来の開発フローとの決定的な違い\n3. Unity公式MCP、その実力を解剖する\n   ├─ 4層アーキテクチャ\n   ├─ セキュリティモデル\n   ├─ 複数クライアント同時接続\n   └─ 動的ツール登録システム\n4. セットアップ手順（macOS/Windows/Linux）\n5. Unity公式MCPの組み込みツール\n6. 「公式」と「コミュニティ版」の決定的な違い\n   ├─ CoplayDev/unity-mcp 比較\n   ├─ IvanMurzak/Unity-MCP 比較\n   └─ 選択基準\n7. Unity公式MCPが切り開く未来\n\n―――――――――――――――――\n\n<b>【差別化ポイント】</b>\n\n・Unity公式ドキュメント翻訳記事がZenn 0件\n・公式 vs コミュニティ版の比較表\n・セットアップ手順を初心者向けに詳細化\n・アーキテクチャをASCII図で可視化\n\n―――――――――――――――――\n\n<b>【次のステップ】</b>\n\n記事2「uLoopMCP注目度分析」を執筆開始しますか？\n\n<b>A. 記事2を執筆開始</b>\n（SNS反応まとめ・事実ベースの分析記事）\n\n<b>B. 記事1を先にレビュー</b>\n（構成・内容を確認してから記事2へ）\n\n<b>C. 公開スケジュールを設定</b>\n（記事1を4月18日予約公開に追加）\n\nどれにしますか？\n",
+      "ts": "2026-03-31 17:16"
+    },
+    {
+      "role": "user",
+      "text": "いいねじゃあ次の記事書いちゃおうさっきの書いた記事はこれも順次予約投稿にしておいてください\n",
+      "ts": "2026-03-31 17:18"
     }
   ],
   "summary": "【決定事項】\n- 2026-03-31作成の「なぜ人間はAIデザインを嫌うのか」記事を非公開(published: false)に変更、4月11日17:00予約公開設定完了\n- 予約キューが2件体制（4月4日: Claude Code × launchd / 4月11日: AIデザイン心理学）、zenn-engine.shを配列対応に改修\n- 4月11日以降の新規ネタとして「Unity AI Beta 2026完全ガイド」を最優先推奨（競合ほぼ空白、2026年1月リリース直後、スキ期待値18〜26）\n\n【作業状態】\n- 記事の予約公開システム構築完了（state.jsonの配列化、自動published切替、複数予約同時管理対応）\n- 2026年トレンド調査完了（Unity AI Beta 2026/Surface Cache GI/CoreClrデスクトッププレイヤー全て競合空白）\n- 既存キュー評価完了（uLoopMCP最強ランク★5、Memory Profiler/GPU Instancing★3）\n\n【継続コンテキスト】\n次回投稿候補は①Unity AI Beta 2026（最優先・競合1件のみ）②uLoopMCP（既存キュー1位）③Surface Cache GI（競合ゼロ）の3案。Unity AI Beta 2026が最もホット（2026年1月リリース直後、β無料期間中、Agentモード/3Dアセット生成/UI Toolkit自動生成のワークフロー記事でスキ期待値18〜26）。STRATEGY.mdのテーマ優先度と整合（Unity × AI支援開発が差別化最大）。"
