@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.ryuryu.zenn-publish-daemon</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/local/bin/node</string>
+        <string>/Users/okamotoryuya/repository/zenn-engine/scripts/publish-daemon.mjs</string>
+    </array>
+    <key>WorkingDirectory</key>
+    <string>/Users/okamotoryuya/repository/zenn-engine</string>
+    <key>KeepAlive</key>
+    <true/>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>StandardOutPath</key>
+    <string>/Users/okamotoryuya/repository/zenn-engine/logs/publish-daemon-stdout.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/okamotoryuya/repository/zenn-engine/logs/publish-daemon-stderr.log</string>
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/Users/okamotoryuya/.local/bin:/usr/local/bin:/usr/bin:/bin:/opt/homebrew/bin</string>
+        <key>TZ</key>
+        <string>Asia/Tokyo</string>
+    </dict>
+    <key>ThrottleInterval</key>
+    <integer>60</integer>
+</dict>
+</plist>
