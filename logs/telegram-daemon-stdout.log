@@ -79,3 +79,11 @@ Args: {'audio': ['/tmp/tg-voice-47619.ogg'], 'model': 'mlx-community/whisper-lar
 [00:11.540 --> 00:14.980] UループMCPがまず何なのか知りたいし私多分使ったことないよね
 Args: {'audio': ['/tmp/tg-voice-52848.ogg'], 'model': 'mlx-community/whisper-large-v3-mlx', 'output_name': None, 'output_dir': '/tmp', 'output_format': 'txt', 'verbose': True, 'task': 'transcribe', 'language': 'ja', 'temperature': 0, 'best_of': 5, 'patience': None, 'length_penalty': None, 'suppress_tokens': '-1', 'initial_prompt': None, 'condition_on_previous_text': True, 'fp16': True, 'compression_ratio_threshold': 2.4, 'logprob_threshold': -1.0, 'no_speech_threshold': 0.6, 'word_timestamps': False, 'prepend_punctuations': '"\'“¿([{-', 'append_punctuations': '"\'.。,，!！?？:：”)]}、', 'highlight_words': False, 'max_line_width': None, 'max_line_count': None, 'max_words_per_line': None, 'hallucination_silence_threshold': None, 'clip_timestamps': '0'}
 [00:00.000 --> 00:05.020] え、UループMCPってもしかしてユニティ公式が出しているユニティのMCPってことかな
+Args: {'audio': ['/tmp/tg-voice-55705.ogg'], 'model': 'mlx-community/whisper-large-v3-mlx', 'output_name': None, 'output_dir': '/tmp', 'output_format': 'txt', 'verbose': True, 'task': 'transcribe', 'language': 'ja', 'temperature': 0, 'best_of': 5, 'patience': None, 'length_penalty': None, 'suppress_tokens': '-1', 'initial_prompt': None, 'condition_on_previous_text': True, 'fp16': True, 'compression_ratio_threshold': 2.4, 'logprob_threshold': -1.0, 'no_speech_threshold': 0.6, 'word_timestamps': False, 'prepend_punctuations': '"\'“¿([{-', 'append_punctuations': '"\'.。,，!！?？:：”)]}、', 'highlight_words': False, 'max_line_width': None, 'max_line_count': None, 'max_words_per_line': None, 'hallucination_silence_threshold': None, 'clip_timestamps': '0'}
+[00:00.000 --> 00:07.760] じゃあまず、Unity公式のMCPに関する解説記事みたいな公式の出してる記事とか動画とかを分析して、
+[00:08.020 --> 00:11.680] 要約して、日本語訳して、きれいにまとめた記事をまず1本書きます。
+[00:12.060 --> 00:16.820] その後に、YouLoop MCPがなぜ注目されているのかみたいな見出しで書いて、
+[00:17.220 --> 00:20.420] 実際にSNSとかの反応をまとめて、事実ベースでまとめます。
+[00:20.420 --> 00:29.780] あくまで私の体験としてではなくて、事実ベースのニュースとかの翻訳、要約、キュレーションとかまとめ記事みたいな形にしたいです。
+[00:30.100 --> 00:32.920] それで2本記事を出したいと思っています。
+[00:33.240 --> 00:34.480] まずは計画を立ててください。

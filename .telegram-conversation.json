@@ -1,7 +1,7 @@
 {
   "status": "processing",
   "target_article": "/Users/okamotoryuya/repository/zenn-engine/articles/2026-03-28-zenn-github-actions-auto-deploy.md",
-  "last_updated": "2026-03-31T16:52:00",
+  "last_updated": "2026-03-31T16:54:11",
   "thread": [
     {
       "role": "user",
@@ -57,6 +57,16 @@
       "role": "user",
       "text": "え、UループMCPってもしかしてユニティ公式が出しているユニティのMCPってことかな\n",
       "ts": "2026-03-31 16:52"
+    },
+    {
+      "role": "assistant",
+      "text": "uLoopMCP は Unity 公式ではありません\n\n<b>zenn-engine GMです。</b>\n\n<b>【重要な訂正】</b>\n\n<blockquote>uLoopMCP は Unity 公式ツールではなく、個人開発者「はたやま」さんが作った非公式MCPサーバーです。</blockquote>\n\n―――――――――――――――――\n\n<b>【uLoopMCPの正体】</b>\n\n<b>開発者</b>\n・はたやま（<code>@m_hatayama</code>）さん\n・個人開発者・オープンソース\n\n<b>正式名称変更</b>\n・旧: <code>uLoopMCP</code>\n・新: <code>Unity CLI Loop</code>（v1.0.0でリネーム）\n・GitHub: <code>hatayama/uLoopMCP</code> → <code>hatayama/unity-cli-loop</code>\n\n<b>公開時期</b>\n・2025年12月〜2026年1月に初リリース\n・2026年2月にZenn記事・スライド公開\n・2026年3月に正式名称変更\n\n―――――――――――――――――\n\n<b>【Unity公式MCPとの関係】</b>\n\n<b>Unity公式MCP</b>\n・Unity Technologies が公式に提供\n・シンプルな汎用MCP実装\n・基本的なUnity操作のみ対応\n\n<b>uLoopMCP（非公式）</b>\n・個人開発者が作った<b>上位互換版</b>\n・<b>自律開発ループ機能</b>を追加\n  ├─ コンパイル失敗 → 修正 → 再試行\n  ├─ テスト失敗 → デバッグ → 再実行\n  └─ AIが自動で問題解決まで実行\n\n<b>コンフリクト問題</b>\n・公式MCPとuLoopMCPは併用不可\n・はたやまさんがコンフリクト対処版をリリース済み\n・現在は両立可能（最新版を使えば）\n\n―――――――――――――――――\n\n<b>【なぜuLoopMCPが注目されているか】</b>\n\n<b>公式MCPとの差</b>\n・公式: 単純なコマンド実行のみ\n・uLoopMCP: <b>失敗 → 修正 → 再試行を自動化</b>\n\n<b>実績</b>\n・3日でゲームを完成させた事例（Gemini CLI + uLoopMCP）\n・コード0行で Unity1Week 参加\n・AIが自律的にバグ修正まで実行\n\n<b>独自機能</b>\n・動的コード解釈（コンパイル不要で実行）\n・Unity 6.2 AI Assistant 相当の機能\n・Editor作業のAI完全委譲\n\n―――――――――――――――――\n\n<b>【記事化する価値の再評価】</b>\n\n<b>メリット</b>\n・非公式だが実力は公式以上\n・競合記事が少ない（Zenn: 2〜3件）\n・AI × Unity自律開発は高スキ帯（18〜33）\n・実験記録形式が刺さる\n\n<b>懸念点</b>\n・非公式ツールのため、長期メンテナンス不明\n・公式MCPとの併用問題（解決済みだが）\n・個人開発者依存のリスク\n\n<b>GMの見解</b>\n<blockquote>非公式であっても記事化する価値は高いと判断します。理由:\n1. 実力・機能は公式以上（自律ループ特化）\n2. 実際にゲーム開発実績がある（Unity1Week等）\n3. 競合記事が少ない（2〜3件）\n4. AI × Unity MCP連携記事は高スキ実績（26〜33）\n5. OpenClaw記事の読者層にリーチ可能</blockquote>\n\n―――――――――――――――――\n\n<b>【次のステップ】</b>\n\n以下から選んでください:\n\n<b>A. uLoopMCP記事を執筆する</b>\n（非公式だが実力は公式以上・自律開発ループ特化）\n\n<b>B. Unity AI Beta 2026を優先</b>\n（公式機能・Zenn記事ほぼ空白・最もホット）\n\n<b>C. Platform Toolkitを優先</b>\n（Unity 6.3 LTS公式機能・マルチプラットフォーム）\n\n<b>D. 別のテーマを提案してほしい</b>\n\nどれにしますか？\n\n<b>参考文献:</b>\n・<a href=\"https://github.com/hatayama/uLoopMCP\">uLoopMCP GitHub（旧リポジトリ）</a>\n・<a href=\"https://zenn.dev/m_hatayama/articles/91fb5be82c4e1b\">Unity向けMCP「uLoopMCP」を作った話</a>\n・<a href=\"https://zenn.dev/unsoluble_sugar/articles/cd8d59be7b8f85\">uLoopMCP × Claude Code AI駆動Unity開発</a>\n・<a href=\"https://qiita.com/NNNiNiNNN/items/5f51f540c28d0b179ca9\">Gemini CLI+uLoopMCP 3日でゲーム制作</a>\n",
+      "ts": "2026-03-31 16:52"
+    },
+    {
+      "role": "user",
+      "text": "じゃあまず、Unity公式のMCPに関する解説記事みたいな公式の出してる記事とか動画とかを分析して、要約して、日本語訳して、きれいにまとめた記事をまず1本書きます。その後に、YouLoop MCPがなぜ注目されているのかみたいな見出しで書いて、実際にSNSとかの反応をまとめて、事実ベースでまとめます。あくまで私の体験としてではなくて、事実ベースのニュースとかの翻訳、要約、キュレーションとかまとめ記事みたいな形にしたいです。それで2本記事を出したいと思っています。まずは計画を立ててください。\n",
+      "ts": "2026-03-31 16:54"
     }
   ],
   "summary": "【決定事項】\n- 「なぜ人間はAIデザインを嫌うのか：バイアスと実質的傾向の2方向分析【Unity UI実装例付き】」を即時公開設定で執筆完了（2026-03-31）\n- 記事構成は①バイアス仮説検証（音楽実験）②実質的傾向検証（2026年トレンド・均一化等4特徴）③ハイブリッド仮説④Unity実装3戦略の4部構成\n- 実質的傾向の検証を重点化（2026年デザイントレンド・ブランド均一化問題・対抗トレンド等を詳述）\n\n【作業状態】\n- git commit + push完了、Zenn自動公開済み\n- 参考文献10件（学術論文4件・業界記事6件）を統合\n- Unity実装コード3種（150行以上）を含む実践的内容で執筆\n\n【継続コンテキスト】\n次回投稿候補は①uLoopMCP + Claude Code（Unity MCP連携）②Unity Memory Profiler実践③Unity GPU Instancing完全実装の3案。note記事（心理学・SNS分析重視）とZenn記事（技術実装重視）の差別化を継続。"
