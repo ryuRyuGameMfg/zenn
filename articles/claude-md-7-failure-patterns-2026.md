@@ -4,7 +4,6 @@ emoji: "💥"
 type: "tech"
 topics: ["claude", "claudecode", "ai", "開発環境", "cli"]
 published: true
-published_at: 2026-02-28 17:00
 ---
 
 ## はじめに
@@ -62,7 +61,7 @@ WHYを書くことで「このルールは現在のタスクに高度に関連�
 
 ### パターン6: スキル一覧ベタ書きでトークン浪費
 
-30個以上のスキルを直接列挙して80-100行に。MCPサーバーのツール定義だけで数万トークンを消費する事例も報告されています。
+34個以上のスキル・61エージェントを直接列挙して80-100行に。MCPサーバーのツール定義だけで数万トークンを消費する事例も報告されています。
 
 https://deploystack.io/blog/how-mcp-servers-use-your-context-window
 
@@ -119,6 +118,11 @@ CLAUDE.mdは42行（20-30個の指示）に抑え、詳細は段階的に外部�
 **339行で失敗した僕だから言える。CLAUDE.mdは短いほうが強い。**
 
 ---
+
+:::message
+**CLAUDE.mdシリーズ 関連記事**
+- [Claude Codeの出力が読めない問題をCLAUDE.mdのASCII図ルールで解決した](https://zenn.dev/ryuryu/articles/2026-04-01-claude-md-ascii-diagram-output)
+:::
 
 **AIキャラクター開発に興味がある方へ**
 

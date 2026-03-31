@@ -4,7 +4,6 @@ emoji: "🎨"
 type: "tech"
 topics: ["comfyui", "gamedev", "ai", "stableDiffusion", "unity"]
 published: true
-published_at: 2026-03-21 17:00
 ---
 
 ## はじめに
@@ -46,22 +45,12 @@ ComfyUIはワークフローとして保存・再利用できるため、キャ�
 
 ComfyUIのゲーム素材ワークフローは、以下の3層構造で設計します。
 
-```mermaid
-graph TD
-    A[入力レイヤー] --> B[生成レイヤー]
-    B --> C[後処理レイヤー]
+```
+ComfyUIのゲーム素材ワークフローは3層構造で設計します。
 
-    A1[テキストプロンプト] --> A
-    A2[参照画像] --> A
-    A3[ControlNet条件] --> A
-
-    B1[SDXLベースモデル] --> B
-    B2[LoRA適用] --> B
-    B3[VAEデコード] --> B
-
-    C1[背景除去RemBG] --> C
-    C2[解像度調整] --> C
-    C3[スプライトシート化] --> C
+**入力レイヤー**（テキストプロンプト / 参照画像 / ControlNet条件）
+  → **生成レイヤー**（SDXLベースモデル + LoRA適用 + VAEデコード）
+  → **後処理レイヤー**（背景除去RemBG + 解像度調整 + スプライトシート化）
 ```
 
 ### 使用する主要コンポーネント
@@ -101,14 +90,16 @@ clean outlines, game sprite, transparent background,
 
 キャラクタースプライトシートの生成パイプラインを示します。
 
-```mermaid
-graph LR
-    A[プロンプト設定] --> B[バッチ生成]
-    B --> C[背景除去]
-    C --> D[サイズ正規化]
-    D --> E[グリッド整列]
-    E --> F[スプライトシート出力]
-    F --> G[Unity/Godotへインポート]
+```
+スプライトシート生成の流れは以下の通りです。
+
+1. プロンプト設定
+2. バッチ生成（複数枚一括出力）
+3. 背景除去（RemBGノード）
+4. サイズ正規化（128x128px等に統一）
+5. グリッド整列（SpriteSheetMakerノード）
+6. スプライトシート出力（PNG）
+7. Unity/Godotへインポート
 ```
 
 SpriteSheetMakerノードの基本設定例です。
@@ -132,12 +123,13 @@ Unityのスプライトスライス機能に合わせた2のべき乗サイズ�
 2025年12月、UbisoftがCHORD（Chain of Rendering Decomposition）モデルをオープンソース化しました。
 ComfyUIカスタムノードとして提供され、エンドツーエンドのPBRマテリアル生成が可能になっています。
 
-```mermaid
-graph TD
-    A[テキストプロンプト or 参照画像] --> B[Stage 1: タイラブルテクスチャ生成]
-    B --> C[Stage 2: PBRマップ変換]
-    C --> D[Stage 3: 2K/4Kアップスケール]
-    D --> E[出力: BaseColor / Normal / Roughness / Metalness / Height]
+```
+CHORDモデルのパイプラインは3ステージ構成です。
+
+**Stage 1**: テキストプロンプトまたは参照画像 → タイラブルテクスチャ生成
+**Stage 2**: 生成テクスチャ → CHORDモデルでPBRマップ変換
+**Stage 3**: PBRマップ → 2K/4Kにアップスケール
+→ 出力: BaseColor / Normal / Roughness / Metalness / Height
 ```
 
 CHORDの出力マップ構成です。
@@ -186,6 +178,11 @@ ComfyUIはインディー開発者にとって、アート制作の制約を取�
 
 ComfyUIコミュニティは活発で、新しいワークフローやモデルが日々公開されています。
 ゲーム開発における素材制作の常識が、今まさに塗り替えられています。
+
+:::message
+**関連記事**
+- [UbisoftがPBR生成AIをOSS公開 - CHORDの全貌と使い方](https://zenn.dev/ryuryu/articles/ubisoft-chord-pbr-material-generation-oss) - CHORDの技術詳細はこちら
+:::
 
 ---
 

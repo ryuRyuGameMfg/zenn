@@ -4,7 +4,6 @@ emoji: "🎨"
 type: "tech"
 topics: ["ubisoft", "pbr", "comfyui", "ai", "gamedev"]
 published: true
-published_at: 2026-03-27 17:00
 ---
 
 ## はじめに
@@ -21,13 +20,10 @@ ComfyUIのカスタムノードとして提供されており、既存のワー�
 
 CHORDの核心は、名前の通り「レンダリングの逆分解をチェーン（連鎖）的に行う」アプローチにあります。
 
-```mermaid
-graph LR
-    A[RGB入力画像] --> B[BaseColor推定]
-    B --> C[色情報除去 → Normal推定]
-    C --> D[Height推定]
-    D --> E[レンダリング比較]
-    E --> F[Roughness / Metalness推定]
+CHORDの処理は連鎖的に進みます。
+
+```
+RGB入力画像 → BaseColor推定 → 色情報除去してNormal推定 → Height推定 → レンダリング比較 → Roughness/Metalness推定
 ```
 
 処理は以下の順序で連鎖的に進みます。
@@ -77,20 +73,10 @@ pip install -r requirements.txt
 
 CHORDは3ステージのパイプラインとして動作します。
 
-```mermaid
-graph TD
-    subgraph Stage1[Stage 1: テクスチャ生成]
-        T[テキスト / 参照画像] --> G[拡散モデル]
-        G --> S[シームレスタイル可能テクスチャ]
-    end
-    subgraph Stage2[Stage 2: CHORD推定]
-        S --> C[CHORD モデル]
-        C --> P[PBRマップ 5種]
-    end
-    subgraph Stage3[Stage 3: アップスケーリング]
-        P --> U[2x / 4x アップスケーラー]
-        U --> F[2K-4K PBRマップ]
-    end
+```
+**Stage 1（テクスチャ生成）**: テキストまたは参照画像 → 拡散モデル → シームレスタイル可能テクスチャ
+**Stage 2（CHORD推定）**: テクスチャ → CHORDモデル → PBRマップ5種
+**Stage 3（アップスケーリング）**: PBRマップ → 2x/4xアップスケーラー → 2K-4K PBRマップ
 ```
 
 リポジトリにはサンプルワークフローJSONが2種類付属しています。
@@ -112,16 +98,17 @@ CHORDの出力は、UnityやUnreal Engineのマテリアルシステムに直接
 
 ### テクスチャ生成パイプラインへの組み込み
 
-```mermaid
-graph LR
-    A[コンセプトアート] --> B[Stable Diffusion<br/>テクスチャ生成]
-    B --> C[CHORD<br/>PBR分解]
-    C --> D1[BaseColor → Albedo]
-    C --> D2[Normal → バンプ]
-    C --> D3[Roughness → 光沢制御]
-    C --> D4[Metalness → 金属判定]
-    C --> D5[Height → ディスプレイスメント]
-    D1 & D2 & D3 & D4 & D5 --> E[ゲームエンジン<br/>マテリアル]
+ゲーム開発での典型的なパイプラインは以下の通りです。
+
+```
+コンセプトアート → Stable Diffusionでテクスチャ生成 → CHORDでPBR分解
+→ 5種のマップ出力:
+  - BaseColor → Albedo
+  - Normal → バンプ
+  - Roughness → 光沢制御
+  - Metalness → 金属判定
+  - Height → ディスプレイスメント
+→ ゲームエンジンのマテリアルに適用
 ```
 
 **実用的な活用シーン** は以下の通りです。
@@ -155,6 +142,11 @@ CHORDは、 **AAA開発スタジオの研究成果が無料で使えるPBRマテ
 - CHORD GitHub: [github.com/ubisoft/ubisoft-laforge-chord](https://github.com/ubisoft/ubisoft-laforge-chord)
 - ComfyUIノード: [github.com/ubisoft/ComfyUI-Chord](https://github.com/ubisoft/ComfyUI-Chord)
 - プロジェクトページ: [ubisoft-laforge.github.io/world/chord/](https://ubisoft-laforge.github.io/world/chord/)
+
+:::message
+**関連記事**
+- [ComfyUIでゲーム素材を量産する - インディー開発者向け実践ガイド](https://zenn.dev/ryuryu/articles/comfyui-game-assets-indie-dev-guide) - ComfyUIとの連携手法はこちら
+:::
 
 ---
 

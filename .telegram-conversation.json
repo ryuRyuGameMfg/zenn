@@ -1,7 +1,7 @@
 {
   "status": "processing",
   "target_article": "/Users/okamotoryuya/repository/zenn-engine/articles/2026-03-28-zenn-github-actions-auto-deploy.md",
-  "last_updated": "2026-04-01T03:24:40",
+  "last_updated": "2026-04-01T03:29:13",
   "thread": [
     {
       "role": "user",
@@ -57,6 +57,16 @@
       "role": "user",
       "text": "いいね他のセキュリティ設計とクロードの失敗パターン\nUBIのやつと\nあとConfiUIとAudio2Face3Dとかもあったじゃん\nそれらも全部一旦リライトする必要があったら書き直して\n公開予定にストックしていいと思います\nまずは計画立てて\n",
       "ts": "2026-04-01 03:24"
+    },
+    {
+      "role": "assistant",
+      "text": "5本リライト計画\n\n<b>zenn-engine GMです。</b>\n\n<b>5本の記事を精査しました。\n各記事の「現状」と「リライト方針」を報告します。</b>\n\n---\n\n<b>【1. Claude Code セキュリティ設計】</b>\n<code>claude-code-security-5-defense-layers.md</code>\n文字数: <code>約2,800字</code>\n現状品質: <code>B（実用的だが表面的）</code>\n\n<b>リライト内容:</b>\n・社長の現環境（60エージェント・34スキル）の\n <b>実際の設定値</b>を反映\n・settings.jsonの具体的なdenyパターン全文\n・realtime-sanitize.shの<b>処理フロー図</b>追加\n・794件のprivacy-map.jsonの生成手順を詳述\n・Hooks一覧（8本）と各トリガーの関係を図解\n・「260件受注で漏洩ゼロ」の実績をより\n 具体的に裏付け\n・<b>新slug</b>で公開（旧版はpublished: false）\n\n<blockquote>最も大きな変化が見込める記事。現在の記事は概念説明にとどまっていますが、社長の実運用データを入れることで「唯一無二の一次情報記事」に格上げできます。</blockquote>\n\n---\n\n<b>【2. CLAUDE.md 7つの失敗パターン】</b>\n<code>claude-md-7-failure-patterns-2026.md</code>\n文字数: <code>約3,200字</code>\n現状品質: <code>A（良い、微修正のみ）</code>\n\n<b>リライト内容:</b>\n・パターン5のGitHub Issue URLが有効か確認\n・パターン6の数値を最新に更新\n （現在30スキル→34スキル、60エージェント→61）\n・ASCII図解記事との<b>相互リンク追加</b>\n （シリーズ化の効果を狙う）\n・published_atを公開日に変更\n・<b>既存slugのまま</b>リライト（内容が十分良い）\n\n<blockquote>既に完成度が高い記事です。数値の最新化とシリーズリンク追加だけで公開可能。作業量は最小です。</blockquote>\n\n---\n\n<b>【3. Ubisoft CHORD PBR生成AI】</b>\n<code>ubisoft-chord-pbr-material-generation-oss.md</code>\n文字数: <code>約3,600字</code>\n現状品質: <code>B+（技術解説は充実）</code>\n\n<b>リライト内容:</b>\n・Mermaid図→<b>テキスト説明に変換</b>\n （Zennでの表示安定性のため）\n・2026年4月時点のリポジトリ最新情報を確認\n・ライセンス条件の最新確認\n （Research-Only→変更有無）\n・ComfyUI記事との<b>相互リンク追加</b>\n・<b>既存slugのまま</b>リライト\n\n<blockquote>海外OSS翻訳記事として十分な品質。Mermaid→テキスト変換と最新情報の反映が主な作業です。</blockquote>\n\n---\n\n<b>【4. ComfyUI ゲーム素材量産】</b>\n<code>comfyui-game-assets-indie-dev-guide.md</code>\n文字数: <code>約4,200字</code>\n現状品質: <code>B+（構成は良好）</code>\n\n<b>リライト内容:</b>\n・Mermaid図→<b>テキスト説明に変換</b>\n・CHORD記事との<b>相互リンク追加</b>\n・Hunyuan3D-2の最新状況を確認・更新\n・「90%コスト削減」の根拠をより明確に\n・<b>既存slugのまま</b>リライト\n\n<blockquote>実用性の高いガイド記事。大きな修正は不要で、相互リンクと情報鮮度の担保が中心です。</blockquote>\n\n---\n\n<b>【5. NVIDIA Audio2Face-3D】</b>\n<code>nvidia-audio2face-3d-opensource-guide.md</code>\n文字数: <code>約3,500字</code>\n現状品質: <code>B+（技術詳細は充実）</code>\n\n<b>リライト内容:</b>\n・Mermaid図→<b>テキスト説明に変換</b>\n・UE5プラグインの最新バージョン確認\n・<b>Unity対応状況</b>を追加調査\n （現在UE5のみ記載、Unity開発者向けに\n SDK直接利用やglTFエクスポート経路を追記）\n・モデルサイズ・推論速度の実測値があれば追加\n・<b>既存slugのまま</b>リライト\n\n<blockquote>UE5寄りの内容なので、Unity開発者視点の情報を追加するとターゲット読者に刺さります。</blockquote>\n\n---\n\n<b>【作業スケジュール案】</b>\n\n<b>Phase 1: 軽微リライト（本日中に可能）</b>\n・CLAUDE.md失敗パターン（微修正のみ）\n・ComfyUI素材量産（Mermaid変換+リンク）\n・Ubisoft CHORD（Mermaid変換+リンク）\n\n<b>Phase 2: 情報調査+リライト</b>\n・Audio2Face-3D（Unity対応追加調査）\n・セキュリティ設計（実運用データ反映、新slug）\n\n<b>Phase 3: スケジュール登録</b>\n全5本を公開キューに追加\n\n---\n\n<b>【公開スケジュール（既存+追加）】</b>\n\n<code>4/4 金</code> launchd自律エージェント\n<code>4/5 土</code> AIデザイン2方向分析\n<code>4/11 金</code> Unity公式MCP\n<code>4/12 土</code> uLoopMCP\n<code>4/18 金</code> ASCII図解ルール\n<code>4/19 土</code> CLAUDE.md失敗パターン ← NEW\n<code>4/25 金</code> セキュリティ設計 ← NEW\n<code>4/26 土</code> Ubisoft CHORD ← NEW\n<code>5/2 金</code> ComfyUI素材量産 ← NEW\n<code>5/3 土</code> Audio2Face-3D ← NEW\n\n<blockquote>Phase 1の3本は修正量が少ないので、承認いただければすぐ着手できます。Phase 2のセキュリティ記事は社長の実環境データを参照するため、最も手間がかかりますが最もインパクトも大きいです。</blockquote>\n\n---\n\n<b>【確認事項】</b>\n\n<b>A. この計画で進める</b>\n（Phase 1から順に着手）\n\n<b>B. スケジュールを調整したい</b>\n\n<b>C. 特定の記事を優先したい</b>\n\nどうしますか？\n",
+      "ts": "2026-04-01 03:28"
+    },
+    {
+      "role": "user",
+      "text": "いいねその計画でじゃあ進めてください\n",
+      "ts": "2026-04-01 03:29"
     }
   ],
   "summary": "【決定事項】\n- ASCII図解記事（claude-md-ascii-diagram-rules.md）を非公開化し、新slug（2026-04-01-claude-md-ascii-diagram-output.md）で新規公開する方針に確定\n- リライト方針: 社長の「AI大量出力→理解不足→技術負債」メッセージを中心テーマに据え、旧版のBefore/After比較・7種テンプレート等は継承\n- 統計取得は非公式API方式、OKR O2は「累計スキ数1,000」、rewrite自動実行は無効化維持（前回決定を継続）\n\n【作業状態】\n- ASCII図解記事リライト完了・コミット済み（c0fa66f）、旧版をpublished:false、新版をpublished:trueで作成\n- 既存2本（ASCII図解・7つの失敗パターン）がZenn未公開と判明（Git上はpublished:trueだがZenn APIに存在せず）\n- git pushはまだ未実行、公開タイミングをユーザーに確認中（即公開 / スケジュール公開 / 内容確認）\n\n【継続コンテキスト】\nリライト済みASCII図解記事のpush・公開タイミングが未決定（選択肢A:即公開 / B:金土17時予約 / C:内容確認）。2本目の未公開記事（claude-md-7-failure-patterns-2026.md）の扱いも未定。週2本公開スケジュール（金・土17時）は継続、次回土曜（4/5）に非公式API方式で初回自動統計レポート実行予定。"
