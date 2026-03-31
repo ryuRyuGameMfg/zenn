@@ -87,3 +87,8 @@ Args: {'audio': ['/tmp/tg-voice-55705.ogg'], 'model': 'mlx-community/whisper-lar
 [00:20.420 --> 00:29.780] あくまで私の体験としてではなくて、事実ベースのニュースとかの翻訳、要約、キュレーションとかまとめ記事みたいな形にしたいです。
 [00:30.100 --> 00:32.920] それで2本記事を出したいと思っています。
 [00:33.240 --> 00:34.480] まずは計画を立ててください。
+Args: {'audio': ['/tmp/tg-voice-64069.ogg'], 'model': 'mlx-community/whisper-large-v3-mlx', 'output_name': None, 'output_dir': '/tmp', 'output_format': 'txt', 'verbose': True, 'task': 'transcribe', 'language': 'ja', 'temperature': 0, 'best_of': 5, 'patience': None, 'length_penalty': None, 'suppress_tokens': '-1', 'initial_prompt': None, 'condition_on_previous_text': True, 'fp16': True, 'compression_ratio_threshold': 2.4, 'logprob_threshold': -1.0, 'no_speech_threshold': 0.6, 'word_timestamps': False, 'prepend_punctuations': '"\'“¿([{-', 'append_punctuations': '"\'.。,，!！?？:：”)]}、', 'highlight_words': False, 'max_line_width': None, 'max_line_count': None, 'max_words_per_line': None, 'hallucination_silence_threshold': None, 'clip_timestamps': '0'}
+[00:00.000 --> 00:04.720] なんか今見出しが結構冷たい感じになってるかもしれないな
+[00:04.720 --> 00:10.420] ユニティMCPとはっていうのが結構教科書的すぎるかな今の記事の内容って
+[00:10.420 --> 00:13.680] なんかもうちょっと煽るような
+[00:13.680 --> 00:20.520] もう少し独自の目線とか切り口が入ったタイトルにしてもいいと思ってますね
