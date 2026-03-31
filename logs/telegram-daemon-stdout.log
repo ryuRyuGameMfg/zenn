@@ -140,3 +140,24 @@ Args: {'audio': ['/tmp/tg-voice-32535.ogg'], 'model': 'mlx-community/whisper-lar
 [00:00.000 --> 00:04.940] 手動テストして一応レポートを今日も報告してみていますぐ
 Args: {'audio': ['/tmp/tg-voice-60352.ogg'], 'model': 'mlx-community/whisper-large-v3-mlx', 'output_name': None, 'output_dir': '/tmp', 'output_format': 'txt', 'verbose': True, 'task': 'transcribe', 'language': 'ja', 'temperature': 0, 'best_of': 5, 'patience': None, 'length_penalty': None, 'suppress_tokens': '-1', 'initial_prompt': None, 'condition_on_previous_text': True, 'fp16': True, 'compression_ratio_threshold': 2.4, 'logprob_threshold': -1.0, 'no_speech_threshold': 0.6, 'word_timestamps': False, 'prepend_punctuations': '"\'“¿([{-', 'append_punctuations': '"\'.。,，!！?？:：”)]}、', 'highlight_words': False, 'max_line_width': None, 'max_line_count': None, 'max_words_per_line': None, 'hallucination_silence_threshold': None, 'clip_timestamps': '0'}
 [00:00.000 --> 00:04.400] 非公開APIで別にそんなに精度良くできるんだったらそのまんまでいいですよ
+Args: {'audio': ['/tmp/tg-voice-56438.ogg'], 'model': 'mlx-community/whisper-large-v3-mlx', 'output_name': None, 'output_dir': '/tmp', 'output_format': 'txt', 'verbose': True, 'task': 'transcribe', 'language': 'ja', 'temperature': 0, 'best_of': 5, 'patience': None, 'length_penalty': None, 'suppress_tokens': '-1', 'initial_prompt': None, 'condition_on_previous_text': True, 'fp16': True, 'compression_ratio_threshold': 2.4, 'logprob_threshold': -1.0, 'no_speech_threshold': 0.6, 'word_timestamps': False, 'prepend_punctuations': '"\'“¿([{-', 'append_punctuations': '"\'.。,，!！?？:：”)]}、', 'highlight_words': False, 'max_line_width': None, 'max_line_count': None, 'max_words_per_line': None, 'hallucination_silence_threshold': None, 'clip_timestamps': '0'}
+[00:00.000 --> 00:02.780] 次の記事のネタ決まりました
+[00:02.780 --> 00:03.900] それ何かっていうと
+[00:03.900 --> 00:08.000] 私の.cloudの隠しフォルダを見てみてください
+[00:08.000 --> 00:11.580] そのフォルダのcloud.mind.md
+[00:11.580 --> 00:12.560] マークダウンファイル
+[00:12.560 --> 00:15.220] つまりクロードへの指示ファイルを見てみてください
+[00:15.220 --> 00:17.620] これには何が重要かっていうと
+[00:17.620 --> 00:20.540] ASCII図でできるだけ回答してください
+[00:20.540 --> 00:21.580] っていうことが書いてあって
+[00:21.580 --> 00:24.360] このASCII図で回答してくれることによって
+[00:24.360 --> 00:29.340] ターミナルでもめちゃくちゃ視認性のいい出力を出すことができます
+[00:29.340 --> 00:32.080] 文字をたくさんグワーッと並べるんじゃなくて
+[00:32.080 --> 00:34.900] ASCII図でものすごくデザイン性のあって
+[00:34.900 --> 00:37.000] 見やすいフォーマットが送られてくるので
+[00:37.000 --> 00:39.980] AIがたくさん情報を出力しすぎて
+[00:39.980 --> 00:41.700] AIがやってることが理解できない
+[00:41.700 --> 00:45.980] 理解不採や技術不採が積み重なっていかないっていうのが
+[00:45.980 --> 00:47.480] すごくメリットなのでおすすめです
+[00:47.480 --> 00:49.940] こういったテーマで記事を書きたい
+[00:49.940 --> 00:50.700] まずは調査をして

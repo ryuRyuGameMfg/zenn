@@ -177,3 +177,11 @@
 [2026-03-31T19:11:41] START: claude execution
 [2026-03-31T19:11:42] [runner] Claude起動 (tools=Read,Write,Edit,Glob,Grep,Bash)
 [2026-03-31T19:12:44] [runner] 経過通知: 1分
+[2026-03-31T19:13:04] [runner] Claude終了 (exit=0, elapsed=80s)
+[2026-03-31T19:13:04] OK: claude execution completed
+[2026-03-31T19:13:05] [SUMMARY] スレッド16件 → サマリー生成開始
+[2026-03-31T19:13:18] [SUMMARY] サマリー更新完了。thread を10件にトリム
+[2026-03-31T19:13:18] END: telegram-react.sh completed
+[2026-03-31T20:13:14] START: claude execution
+[2026-03-31T20:13:14] [runner] Claude起動 (tools=Read,Write,Edit,Glob,Grep,Bash)
+[2026-03-31T20:14:16] [runner] 経過通知: 1分
