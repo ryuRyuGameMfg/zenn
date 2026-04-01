@@ -1,5 +1,5 @@
 {
-  "status": "processing",
+  "status": "idle",
   "target_article": "/Users/okamotoryuya/repository/zenn-engine/articles/2026-03-28-zenn-github-actions-auto-deploy.md",
   "last_updated": "2026-04-02T01:50:55",
   "thread": [
@@ -82,6 +82,11 @@
       "role": "user",
       "text": "公開のさ投稿日が来たらさ自動的にさパブリッシュトゥルーにしてさ\n1本ずつ投稿されないの\n要するにその公開日のその日が来た時にあなたがトゥルーにしてくれればいいんだけど\n一遍に公開とはできないんだよその前話\n",
       "ts": "2026-04-02 01:50"
+    },
+    {
+      "role": "assistant",
+      "text": "自動公開スケジュール整備完了\n\n<b>zenn-engine GMです。</b>\n\n<b>結論: 自動公開の仕組みは既に動いています。\nスケジュール登録を整備しました。</b>\n\n---\n\n<b>【仕組みの説明】</b>\n\n<code>publish-daemon.mjs</code> という\n常駐プログラムが60秒ごとに\n<code>queue.json</code> を監視しています。\n\n公開日時が来た記事を検知すると:\n1. <code>published: false</code> → <code>true</code> に変更\n2. 自動で git push\n3. Telegramに公開通知を送信\n\nつまり<b>社長が何もしなくても\n公開日になったら自動で1本ずつ公開</b>されます。\n\n---\n\n<b>【修正した内容】</b>\n\nqueue.json に5本全てを正しい日付で登録しました。\n（Unity MCP と uLoopMCP の2本が未登録でした）\n日付のズレも修正済みです。\n\n---\n\n<b>【公開スケジュール（確定）】</b>\n\n<code>4/4 金 17:00</code>\nlaunchd自律エージェント記事\n\n<code>4/5 土 17:00</code>\nAIデザイン2方向分析記事\n\n<code>4/11 金 17:00</code>\nUnity公式MCP記事\n\n<code>4/12 土 17:00</code>\nuLoopMCP記事\n\n<code>4/18 金 17:00</code>\nASCII図解ルール記事\n\n---\n\n<b>【残り1つの作業】</b>\n\n全5本の記事は現在 <code>published: false</code> で\n<b>ローカルにしかありません</b>。\n\npublish-daemon が公開日に\ngit pushする前提として、\n<b>先に全記事を published: false のまま\n一度GitHubにpushしておく</b>必要があります。\n\n<blockquote>理由: daemon がpushする際にGitHubとの差分が大きすぎるとconflictのリスクがあります。記事本体を先にpushしておけば、公開日にはfrontmatterの1行変更だけで済み安全です。</blockquote>\n\n---\n\n<b>【確認】</b>\n\n<b>A. 全記事を published: false のまま\n今すぐ git push する</b>\n（Zennには非公開のまま保存、\n公開日に自動で true に変更）\n\n<b>B. pushせずこのまま待つ</b>\n（daemon がまとめてpush）\n\nAが安全でおすすめです。どうしますか？\n",
+      "ts": "2026-04-02 01:53"
     }
   ],
   "summary": "【決定事項】\n- ASCII図解記事（claude-md-ascii-diagram-rules.md）を非公開化し、新slug（2026-04-01-claude-md-ascii-diagram-output.md）で新規公開する方針に確定\n- リライト方針: 社長の「AI大量出力→理解不足→技術負債」メッセージを中心テーマに据え、旧版のBefore/After比較・7種テンプレート等は継承\n- 統計取得は非公式API方式、OKR O2は「累計スキ数1,000」、rewrite自動実行は無効化維持（前回決定を継続）\n\n【作業状態】\n- ASCII図解記事リライト完了・コミット済み（c0fa66f）、旧版をpublished:false、新版をpublished:trueで作成\n- 既存2本（ASCII図解・7つの失敗パターン）がZenn未公開と判明（Git上はpublished:trueだがZenn APIに存在せず）\n- git pushはまだ未実行、公開タイミングをユーザーに確認中（即公開 / スケジュール公開 / 内容確認）\n\n【継続コンテキスト】\nリライト済みASCII図解記事のpush・公開タイミングが未決定（選択肢A:即公開 / B:金土17時予約 / C:内容確認）。2本目の未公開記事（claude-md-7-failure-patterns-2026.md）の扱いも未定。週2本公開スケジュール（金・土17時）は継続、次回土曜（4/5）に非公式API方式で初回自動統計レポート実行予定。"
