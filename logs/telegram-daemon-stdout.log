@@ -88,3 +88,12 @@ Args: {'audio': ['/tmp/telegram-voice.XXXXXX.wav'], 'model': 'mlx-community/whis
 [00:28.800 --> 00:31.180] 下書きだったら弾かれないのかな
 Args: {'audio': ['/tmp/telegram-voice.XXXXXX.wav'], 'model': 'mlx-community/whisper-large-v3-mlx', 'output_name': None, 'output_dir': '/tmp/whisper-out.6S0xpG', 'output_format': 'txt', 'verbose': True, 'task': 'transcribe', 'language': 'ja', 'temperature': 0, 'best_of': 5, 'patience': None, 'length_penalty': None, 'suppress_tokens': '-1', 'initial_prompt': None, 'condition_on_previous_text': True, 'fp16': True, 'compression_ratio_threshold': 2.4, 'logprob_threshold': -1.0, 'no_speech_threshold': 0.6, 'word_timestamps': False, 'prepend_punctuations': '"\'“¿([{-', 'append_punctuations': '"\'.。,，!！?？:：”)]}、', 'highlight_words': False, 'max_line_width': None, 'max_line_count': None, 'max_words_per_line': None, 'hallucination_silence_threshold': None, 'clip_timestamps': '0'}
 [00:00.000 --> 00:06.000] 再度さっき送ったボイスメッセージの内容を解析して状況を教えてほしいです
+Args: {'audio': ['/tmp/telegram-voice.XXXXXX.wav'], 'model': 'mlx-community/whisper-large-v3-mlx', 'output_name': None, 'output_dir': '/tmp/whisper-out.ZHhVv8', 'output_format': 'txt', 'verbose': True, 'task': 'transcribe', 'language': 'ja', 'temperature': 0, 'best_of': 5, 'patience': None, 'length_penalty': None, 'suppress_tokens': '-1', 'initial_prompt': None, 'condition_on_previous_text': True, 'fp16': True, 'compression_ratio_threshold': 2.4, 'logprob_threshold': -1.0, 'no_speech_threshold': 0.6, 'word_timestamps': False, 'prepend_punctuations': '"\'“¿([{-', 'append_punctuations': '"\'.。,，!！?？:：”)]}、', 'highlight_words': False, 'max_line_width': None, 'max_line_count': None, 'max_words_per_line': None, 'hallucination_silence_threshold': None, 'clip_timestamps': '0'}
+[00:00.000 --> 00:05.440] 全CLIでプッシュするっていうか
+[00:05.440 --> 00:08.420] 公開するときに1日1本ぐらいの制限があるんだけど
+[00:08.420 --> 00:12.540] 今GitHub上で全て待機中ってあるけど
+[00:12.540 --> 00:18.040] これはどのタイミングで全CLIにデプロイされるんだろう
+[00:18.040 --> 00:21.880] それはその投稿日に全CLIにデプロイされるってこと?
+[00:22.140 --> 00:24.460] それともGitHubにデプロイした
+[00:24.460 --> 00:27.480] イコール全CLIにデプロイしたことになるのかな
+[00:27.480 --> 00:57.460] そう
