@@ -129,3 +129,13 @@
 [2026-04-02T02:33:15] DYNAMIC: progress_msg_id=216
 [2026-04-02T02:33:15] [runner] Claude起動 (tools=Read,Write,Edit,Glob,Grep,Bash)
 [2026-04-02T02:34:18] [runner] 動的更新: 思考中... (1分経過)
+[2026-04-02T02:34:28] [runner] Claude終了 (exit=0, elapsed=70s)
+[2026-04-02T02:34:28] OK: claude execution completed
+[2026-04-02T02:34:29] [SUMMARY] スレッド16件 → サマリー生成開始
+[2026-04-02T02:34:39] [SUMMARY] サマリー更新完了。thread を10件にトリム
+[2026-04-02T02:34:39] END: telegram-react.sh completed
+[2026-04-02T02:38:28] CALLBACK: data=detail, msg_id=216
+[2026-04-02T02:38:30] START: claude execution
+[2026-04-02T02:38:31] DYNAMIC: progress_msg_id=217
+[2026-04-02T02:38:31] [runner] Claude起動 (tools=Read,Write,Edit,Glob,Grep,Bash)
+[2026-04-02T02:39:34] [runner] 動的更新: 思考中... (1分経過)
