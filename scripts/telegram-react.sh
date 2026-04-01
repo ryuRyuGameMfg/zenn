@@ -6,9 +6,9 @@
 set -u  # エラーで失敗せずログして続行
 
 WORK_DIR="$HOME/repository/zenn-engine"
-TELEGRAM_CONF="$WORK_DIR/.telegram.conf"
+TELEGRAM_CONF="$WORK_DIR/telegram/.telegram.conf"
 NOTIFY_SCRIPT="$WORK_DIR/scripts/telegram-notify.sh"
-CONV_FILE="$WORK_DIR/.telegram-conversation.json"
+CONV_FILE="$WORK_DIR/telegram/.telegram-conversation.json"
 STATE_FILE="$WORK_DIR/data/state.json"
 SOUL_FILE="$WORK_DIR/SOUL.md"
 STRATEGY_FILE="$WORK_DIR/STRATEGY.md"
