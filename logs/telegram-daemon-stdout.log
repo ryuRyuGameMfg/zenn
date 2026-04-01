@@ -78,3 +78,11 @@ Args: {'audio': ['/tmp/telegram-voice.XXXXXX.wav'], 'model': 'mlx-community/whis
 [00:04.720 --> 00:08.900] あと実際にどれがGitにプッシュされてて
 [00:08.900 --> 00:10.360] 予約投稿されているのか
 [00:10.360 --> 00:12.900] それとも当日下げるのかとか状況を教えてください
+Args: {'audio': ['/tmp/telegram-voice.XXXXXX.wav'], 'model': 'mlx-community/whisper-large-v3-mlx', 'output_name': None, 'output_dir': '/tmp/whisper-out.ABH4ND', 'output_format': 'txt', 'verbose': True, 'task': 'transcribe', 'language': 'ja', 'temperature': 0, 'best_of': 5, 'patience': None, 'length_penalty': None, 'suppress_tokens': '-1', 'initial_prompt': None, 'condition_on_previous_text': True, 'fp16': True, 'compression_ratio_threshold': 2.4, 'logprob_threshold': -1.0, 'no_speech_threshold': 0.6, 'word_timestamps': False, 'prepend_punctuations': '"\'“¿([{-', 'append_punctuations': '"\'.。,，!！?？:：”)]}、', 'highlight_words': False, 'max_line_width': None, 'max_line_count': None, 'max_words_per_line': None, 'hallucination_silence_threshold': None, 'clip_timestamps': '0'}
+[00:00.000 --> 00:03.400] あれ5番と6番の記事重複してないかな
+[00:03.400 --> 00:12.980] あとあなたが下書きって言っているその残りの記事は結構もう公式版というか正式に書いたやつだった記憶があります
+[00:12.980 --> 00:16.120] ちなみにプッシュ済みってあるけど
+[00:16.120 --> 00:22.220] ZENのCLIにはプッシュしてあるっていうか公開予約してるのかな
+[00:22.220 --> 00:25.580] なんかデプロイ弾かれてる気がするんだよね
+[00:25.580 --> 00:28.800] その1日制限とかによってどう思いますか
+[00:28.800 --> 00:31.180] 下書きだったら弾かれないのかな

@@ -21,13 +21,8 @@ Audio2Face-3Dは、音声データから音素（Phoneme）やイントネーシ
 
 v3.0は **Transformer + Diffusion** のハイブリッドアーキテクチャを採用しています。音声エンコーダにはHuBERTを使用し、パラメータ数は約1.8億（180M）です。
 
-```mermaid
-graph LR
-    A[音声入力<br/>16kHz] --> B[HuBERT<br/>エンコーダ]
-    B --> C[感情ラベル<br/>結合]
-    C --> D[Diffusion<br/>モデル]
-    D --> E[顔面モーション<br/>30フレーム出力]
-    E --> F[皮膚・舌・顎<br/>眼球の動き]
+```text
+音声入力(16kHz) → HuBERTエンコーダ → 感情ラベル結合 → Diffusionモデル → 顔面モーション(30フレーム出力) → 皮膚・舌・顎・眼球の動き
 ```
 
 ### v2.3との比較
@@ -62,14 +57,14 @@ Audio2Face-3Dは、Pascal世代以降のNVIDIA GPUに対応しています。ロ
 
 ### ソフトウェアスタック
 
-```mermaid
-graph TD
-    A[Hugging Face<br/>モデル配布] --> B[Audio2Face-3D SDK<br/>C++/Python]
-    B --> C{デプロイ先}
-    C --> D[UE5 Plugin<br/>v2.5 / UE5.5-5.6]
-    C --> E[Maya Plugin<br/>MACE v2.0]
-    C --> F[NIM Microservice<br/>Docker / gRPC]
-    B --> G[Training Framework<br/>Docker / Python]
+```text
+Hugging Face（モデル配布）
+  → Audio2Face-3D SDK（C++/Python）
+    → デプロイ先:
+      ├ UE5 Plugin（v2.5 / UE5.4-5.6）
+      ├ Maya Plugin（MACE v2.0）
+      └ NIM Microservice（Docker / gRPC）
+    → Training Framework（Docker / Python）
 ```
 
 推論エンジンには **TensorRT** を使用し、60FPS以上のリアルタイム処理を実現しています。SDKはMIT、Training FrameworkはApacheライセンスで配布されており、 **商用・非商用問わず利用可能** です。
@@ -116,18 +111,14 @@ SDKのビルドにはCUDA Toolkit、TensorRT、CMakeが必要です。Docker環�
 
 UE5プラグインを使えば、MetaHumanキャラクターにAudio2Faceアニメーションを直接適用できます。
 
-```mermaid
-sequenceDiagram
-    participant Audio as 音声入力
-    participant A2F as Audio2Face SDK
-    participant UE5 as UE5 Plugin
-    participant MH as MetaHuman
+```text
+UE5 MetaHuman連携の処理フロー:
 
-    Audio->>A2F: 16kHz音声ストリーム
-    A2F->>A2F: Diffusion推論（30フレーム生成）
-    A2F->>UE5: ARKit互換ブレンドシェイプ
-    UE5->>MH: フェイシャルリグ適用
-    Note over MH: リアルタイム顔面アニメーション
+1. 音声入力 → Audio2Face SDK に16kHz音声ストリームを送信
+2. Audio2Face SDK → Diffusion推論で30フレーム分の顔面モーションを生成
+3. Audio2Face SDK → UE5 Plugin にARKit互換ブレンドシェイプを送信
+4. UE5 Plugin → MetaHumanのフェイシャルリグに適用
+→ リアルタイム顔面アニメーション完成
 ```
 
 UE5プラグインのセットアップ手順は以下の通りです。
@@ -142,6 +133,45 @@ UE5プラグインのセットアップ手順は以下の通りです。
 :::
 
 対応UE5バージョンは **5.4、5.5、5.6** です。オフラインレンダリング用のUSDエクスポートにも対応しており、プリスクリプトのカットシーンにも利用できます。
+
+## Unity開発者向けの対応状況
+
+Audio2Face-3DはUE5向けプラグインが公式に提供されていますが、Unity向けの公式プラグインは2026年4月時点で未提供です。Unity開発者が利用する場合、以下のアプローチが考えられます。
+
+### NIM API経由でのリモート推論
+
+NIM MicroserviceはgRPC/REST APIを提供しているため、Unityからネットワーク経由でAudio2Face-3Dの推論結果を取得できます。
+
+```csharp
+// UnityからNIM API呼び出しの概念例
+using UnityEngine.Networking;
+
+IEnumerator SendAudioToA2F(byte[] audioData)
+{
+    var request = new UnityWebRequest("http://localhost:50051/audio2face", "POST");
+    request.uploadHandler = new UploadHandlerRaw(audioData);
+    request.downloadHandler = new DownloadHandlerBuffer();
+    request.SetRequestHeader("Content-Type", "application/octet-stream");
+    yield return request.SendWebRequest();
+    
+    // ARKit互換ブレンドシェイプの値を取得
+    var blendshapes = JsonUtility.FromJson<BlendshapeData>(
+        request.downloadHandler.text);
+    ApplyToSkinnedMeshRenderer(blendshapes);
+}
+```
+
+### SDKの直接組み込み
+
+Audio2Face-3D SDKはC++ライブラリのため、UnityのNative Pluginとして組み込むことも可能です。ただしTensorRTへの依存があるため、ビルド環境の構築に手間がかかります。
+
+### ARKit BlendShape互換出力の活用
+
+Audio2Face-3Dの出力はARKit互換のブレンドシェイプ形式に対応しています。Live Link Face等のARKitデータをUnityで受け取る既存の仕組みと組み合わせることで、間接的に連携できます。
+
+:::message
+Unity公式プラグインの提供予定についてはNVIDIA ACEロードマップに明記されていません。現時点ではNIM API経由の連携が最も実用的です。
+:::
 
 ## まとめ
 
