@@ -358,25 +358,22 @@ if [[ "$THREAD_LEN" -gt 15 ]]; then
   log_sum "スレッド${THREAD_LEN}件 → サマリー生成開始"
   OLD_MESSAGES=$(jq -r '.thread[:-10] | map("[\(.role)] \(.text)") | join("\n")' "$CONV_FILE" 2>/dev/null || echo "")
   EXISTING_SUMMARY=$(jq -r '.summary // ""' "$CONV_FILE" 2>/dev/null || echo "")
-  SUMMARY_PROMPT="以下の会話履歴を構造化してまとめてください。出力はまとめ文のみ（マーカーや前置き不要）。
+  # 共通サマリープロンプト読み込み
+  SUMMARY_TEMPLATE_FILE="$HOME/.claude/scripts/prompts/thread-summary.md"
+  if [[ -f "$SUMMARY_TEMPLATE_FILE" ]]; then
+    SUMMARY_PROMPT=$(cat "$SUMMARY_TEMPLATE_FILE")
+    SUMMARY_PROMPT="${SUMMARY_PROMPT//\{\{EXISTING_SUMMARY\}\}/$EXISTING_SUMMARY}"
+    SUMMARY_PROMPT="${SUMMARY_PROMPT//\{\{OLD_MESSAGES\}\}/$OLD_MESSAGES}"
+  else
+    # フォールバック: ファイルがない場合はインラインで
+    SUMMARY_PROMPT="以下の会話履歴を簡潔にまとめてください。
 
-## まとめフォーマット（以下の3セクションのみ出力）
-
-【決定事項】
-- 確定した方針・設定・選択肢（箇条書き、最大3件）
-
-【作業状態】
-- 現在進行中・完了した作業（箇条書き、最大3件）
-
-【継続コンテキスト】
-- 次回以降も参照が必要な重要情報（1〜2文）
-
----
-既存のまとめ（統合すること）:
+既存のまとめ:
 ${EXISTING_SUMMARY}
 
 新しい会話履歴:
 ${OLD_MESSAGES}"
+  fi
   NEW_SUMMARY=$(echo "$SUMMARY_PROMPT" | "$CLAUDE_PATH" -p 2>>"$LOG_FILE" || echo "")
   if [[ -n "$NEW_SUMMARY" ]]; then
     TMP_CONV=$(mktemp)

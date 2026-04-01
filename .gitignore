@@ -1,3 +1,19 @@
 node_modules/
+npm-debug.log*
 .DS_Store
+
+# Telegram設定
+telegram/.telegram.conf
+telegram/.telegram-conversation.json
+telegram/.telegram-offset
+telegram/.telegram-daemon.pid
+telegram/.telegram.conf.bak
+
+# Engine runtime
 logs/
+*.log
+
+# Memory（ランタイム生成）
+memory/hot/
+memory/warm/
+memory/cold/

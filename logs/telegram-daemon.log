@@ -53,3 +53,6 @@
 [2026-04-01T19:30:49] WARN: Telegram API returned ok=false. Retrying in 5s. Response prefix: {"ok":false,"error_code":409,"description":"Conflict: terminated by other getUpdates request; make s
 [2026-04-01T19:30:50] Daemon started. PID=21613, NEXT_OFFSET=104714385
 [2026-04-01T19:32:12] Daemon started. PID=24171, NEXT_OFFSET=104714385
+[2026-04-02T00:44:19] SIGTERM/SIGINT received. Shutting down.
+[2026-04-02T00:44:29] Daemon started. PID=87241, NEXT_OFFSET=104714385
+[2026-04-02T01:48:39] Voice message: file_id=AwACAgUAAxkBAAPLac1MZ5Dnw1L6AQ...
