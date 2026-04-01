@@ -1,5 +1,5 @@
 {
-  "status": "processing",
+  "status": "idle",
   "target_article": "/Users/okamotoryuya/repository/zenn-engine/articles/2026-03-28-zenn-github-actions-auto-deploy.md",
   "last_updated": "2026-04-02T02:04:14",
   "thread": [
@@ -57,6 +57,11 @@
       "role": "user",
       "text": "あれ5番と6番の記事重複してないかな\nあとあなたが下書きって言っているその残りの記事は結構もう公式版というか正式に書いたやつだった記憶があります\nちなみにプッシュ済みってあるけど\nZENのCLIにはプッシュしてあるっていうか公開予約してるのかな\nなんかデプロイ弾かれてる気がするんだよね\nその1日制限とかによってどう思いますか\n下書きだったら弾かれないのかな\n",
       "ts": "2026-04-02 02:04"
+    },
+    {
+      "role": "assistant",
+      "text": "公開キュー重複問題 + デプロイ状況の調査報告\n\n<b>zenn-engine GMです。\n3点の質問に回答します。</b>\n\n---\n\n<b>【1. 5番と6番の記事は重複しています】</b>\n\n確認の結果、<b>同じテーマの2バージョン</b>です。\n\n<b>旧版</b>（6番）:\n<code>claude-md-ascii-diagram-rules.md</code>\n「CLAUDE.mdでASCII図ルールを定義したら\nAI出力が劇的に変わった」\npublished_at: <code>2026-02-27</code>設定済み\n\n<b>新版</b>（5番）:\n<code>2026-04-01-claude-md-ascii-diagram-output.md</code>\n「Claude Codeの出力が読めない問題を\nCLAUDE.mdのASCII図ルールで解決した」\npublished_at: 未設定\n\n内容はほぼ同じで、新版の方が\n「技術負債」「認知負荷」の観点を追加した\nリライト版です。\n\n<b>対応案:</b>\n・旧版をキューから外してストック保管\n・新版（5番）のみ4/18公開\n・旧版ファイルは削除せず\n <code>published: false</code>のまま残す\n\n---\n\n<b>【2. 「下書き」は誤りでした】</b>\n\nおっしゃる通り、キュー内の6本は\n<b>正式に執筆が完了した記事</b>です。\n「下書き」と呼んだのは不正確でした。\n\n正確には:\n・記事本文は完成済み\n・<code>published: false</code>にしてある\n =「非公開状態」\n・daemonが公開日に\n <code>published: true</code>に変更してpushする\n\n---\n\n<b>【3. Zennデプロイの状況】</b>\n\n調査結果を報告します。\n\n<b>現在のGitHubリモート状況:</b>\n・6本全て<code>published: false</code>で\n GitHub上に存在しています\n・ローカルに7コミットの未push分あり\n （リライト3本の変更等）\n\n<b>Zennのデプロイ制限について:</b>\nZenn公式ドキュメントには\n<b>1日のデプロイ回数制限の記載はありません</b>。\n「登録ブランチに変更があると自動同期」\nとしか書かれていません。\n\n<b>つまり:</b>\n・<code>published: false</code>でpushしても\n Zennでは「下書き」として反映される\n・デプロイ自体は弾かれていないはず\n・<code>published: true</code>に変えてpushすれば\n その時点で公開される\n\n<b>「弾かれている」可能性:</b>\n・Zenn側のレート制限ではなく\n <b>publish-daemonの1日1本制限</b>が\n 効いている可能性が高い\n・daemonがまだ1本も公開していない\n （<code>last_publish: null</code>）ので\n 明後日4/4が初稼働になります\n\n<blockquote>5番6番の重複整理について、旧版をキューから外して新版のみ公開する方針でよろしいですか？</blockquote>\n",
+      "ts": "2026-04-02 02:05"
     }
   ],
   "summary": "【決定事項】\n- 5本リライト計画を承認、Phase 1（CLAUDE.md失敗パターン / ComfyUI / CHORD）から順に着手\n- LLMUnity記事を実プロジェクト（ai-character-core）ベースの実装記録にリライト完了\n- リライト5本の公開スケジュール確定（4/19, 4/25, 4/26, 5/2, 5/3）\n\n【作業状態】\n- LLMUnity記事リライト完了（タイトル変更・構成転換済み、約3,800字）\n- 5本リライト計画策定済み、Phase 1着手前（CLAUDE.md失敗パターン / ComfyUI / CHORD）\n- 4月公開予定の既存5本が全て未push・published: falseのまま（4/4分が明後日に迫り対応急務）\n\n【継続コンテキスト】\nZennには予約投稿機能がないため、公開は「published: trueにしてgit push」の手動操作が必要。既存5本（4/4-4/18）の公開方法（まとめてpush / 1本ずつ / falseのまま保存）が未決定で、4/4分の対応が最優先。リライト5本はPhase 1の軽微修正3本→Phase 2の調査必要2本の順で進行予定。"

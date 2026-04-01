@@ -54,6 +54,51 @@
       "status": "queued",
       "queued_at": "2026-04-01T17:00:04.380Z",
       "priority": 6
+    },
+    {
+      "filepath": "articles/claude-md-7-failure-patterns-2026.md",
+      "filename": "claude-md-7-failure-patterns-2026.md",
+      "title": "CLAUDE.mdで失敗しまくった7つのパターンと解決策【2026年版】",
+      "scheduled_at": "2026-04-19T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-02T12:00:00.000Z",
+      "priority": 7
+    },
+    {
+      "filepath": "articles/claude-code-security-5-layers-real-config.md",
+      "filename": "claude-code-security-5-layers-real-config.md",
+      "title": "Claude Codeで機密情報漏洩ゼロを実現した5層セキュリティ設計【実設定公開】",
+      "scheduled_at": "2026-04-25T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-02T12:00:00.000Z",
+      "priority": 8
+    },
+    {
+      "filepath": "articles/ubisoft-chord-pbr-material-generation-oss.md",
+      "filename": "ubisoft-chord-pbr-material-generation-oss.md",
+      "title": "UbisoftがPBR生成AIをOSS公開 - CHORDの全貌と使い方",
+      "scheduled_at": "2026-04-26T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-02T12:00:00.000Z",
+      "priority": 9
+    },
+    {
+      "filepath": "articles/comfyui-game-assets-indie-dev-guide.md",
+      "filename": "comfyui-game-assets-indie-dev-guide.md",
+      "title": "ComfyUIでゲーム素材を量産する - インディー開発者向け実践ガイド",
+      "scheduled_at": "2026-05-02T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-02T12:00:00.000Z",
+      "priority": 10
+    },
+    {
+      "filepath": "articles/nvidia-audio2face-3d-opensource-guide.md",
+      "filename": "nvidia-audio2face-3d-opensource-guide.md",
+      "title": "NVIDIA Audio2Face-3Dがオープンソース化 - 実装ガイド",
+      "scheduled_at": "2026-05-03T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-02T12:00:00.000Z",
+      "priority": 11
     }
   ],
   "schedule": {

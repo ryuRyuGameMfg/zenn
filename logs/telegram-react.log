@@ -118,3 +118,6 @@
 [2026-04-02T02:04:15] [runner] Claude起動 (tools=Read,Write,Edit,Glob,Grep,Bash)
 [2026-04-02T02:04:51] [runner] 動的更新: 分析中... (5分経過)
 [2026-04-02T02:05:18] [runner] 動的更新: 思考中... (1分経過)
+[2026-04-02T02:05:49] [runner] Claude終了 (exit=0, elapsed=90s)
+[2026-04-02T02:05:49] OK: claude execution completed
+[2026-04-02T02:05:50] END: telegram-react.sh completed
