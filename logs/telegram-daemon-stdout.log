@@ -97,3 +97,11 @@ Args: {'audio': ['/tmp/telegram-voice.XXXXXX.wav'], 'model': 'mlx-community/whis
 [00:22.140 --> 00:24.460] それともGitHubにデプロイした
 [00:24.460 --> 00:27.480] イコール全CLIにデプロイしたことになるのかな
 [00:27.480 --> 00:57.460] そう
+Args: {'audio': ['/tmp/telegram-voice.XXXXXX.wav'], 'model': 'mlx-community/whisper-large-v3-mlx', 'output_name': None, 'output_dir': '/tmp/whisper-out.B8ZFX6', 'output_format': 'txt', 'verbose': True, 'task': 'transcribe', 'language': 'ja', 'temperature': 0, 'best_of': 5, 'patience': None, 'length_penalty': None, 'suppress_tokens': '-1', 'initial_prompt': None, 'condition_on_previous_text': True, 'fp16': True, 'compression_ratio_threshold': 2.4, 'logprob_threshold': -1.0, 'no_speech_threshold': 0.6, 'word_timestamps': False, 'prepend_punctuations': '"\'“¿([{-', 'append_punctuations': '"\'.。,，!！?？:：”)]}、', 'highlight_words': False, 'max_line_width': None, 'max_line_count': None, 'max_words_per_line': None, 'hallucination_silence_threshold': None, 'clip_timestamps': '0'}
+[00:00.000 --> 00:02.160] 確かにデプロイ制限はないみたいだけど、
+[00:02.640 --> 00:07.520] 次の記事は投稿数の上限に達したためデプロイされませんでしたというメッセージが、
+[00:07.860 --> 00:10.820] 数時間おきに見受けられるので、
+[00:13.400 --> 00:16.520] これはもう一回GitHubにプッシュし直せばいいのかな?
+[00:17.440 --> 00:18.240] どうしたらいいんだろう?
+[00:18.280 --> 00:20.160] これはただ待ってるだけで解決するのかな?
+[00:20.740 --> 00:21.460] 教えてほしいな。
