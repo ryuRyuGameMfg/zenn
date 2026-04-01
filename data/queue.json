@@ -5,7 +5,7 @@
       "filepath": "articles/2026-03-30-claude-code-launchd-autonomous-agent.md",
       "filename": "2026-03-30-claude-code-launchd-autonomous-agent.md",
       "title": "OpenClawのAPI料金に疲れた人へ：Claude Code × macOS launchd で月額固定の自律AIエージェントを自作する",
-      "scheduled_at": "2026-04-04T08:00:00.000Z",
+      "scheduled_at": "2026-04-03T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-03-31T07:36:37.895Z",
       "priority": 1
@@ -14,7 +14,7 @@
       "filepath": "articles/2026-03-31-why-humans-dislike-ai-design.md",
       "filename": "2026-03-31-why-humans-dislike-ai-design.md",
       "title": "なぜ人間はAIデザインを嫌うのか：バイアスと実質的傾向の2方向分析【Unity UI実装例付き】",
-      "scheduled_at": "2026-04-05T08:00:00.000Z",
+      "scheduled_at": "2026-04-04T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-03-31T07:36:37.895Z",
       "priority": 2
@@ -23,7 +23,7 @@
       "filepath": "articles/2026-04-01-unity-official-mcp-complete-guide.md",
       "filename": "2026-04-01-unity-official-mcp-complete-guide.md",
       "title": "Unity公式が本気で作ったAI連携：Claude/Cursorと直結する新時代の開発フロー",
-      "scheduled_at": "2026-04-11T08:00:00.000Z",
+      "scheduled_at": "2026-04-10T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-02T08:00:00.000Z",
       "priority": 3
@@ -32,7 +32,7 @@
       "filepath": "articles/2026-04-02-uloopmcp-community-attention.md",
       "filename": "2026-04-02-uloopmcp-community-attention.md",
       "title": "非公式なのに公式を超えた？uLoopMCPがコミュニティで熱狂される理由",
-      "scheduled_at": "2026-04-12T08:00:00.000Z",
+      "scheduled_at": "2026-04-11T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-02T08:00:00.000Z",
       "priority": 4
@@ -41,7 +41,7 @@
       "filepath": "articles/2026-04-01-claude-md-ascii-diagram-output.md",
       "filename": "2026-04-01-claude-md-ascii-diagram-output.md",
       "title": "Claude Codeの出力が読めない問題をCLAUDE.mdのASCII図ルールで解決した",
-      "scheduled_at": "2026-04-18T08:00:00.000Z",
+      "scheduled_at": "2026-04-17T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-01T08:00:00.000Z",
       "priority": 5
@@ -50,7 +50,7 @@
       "filepath": "articles/claude-md-7-failure-patterns-2026.md",
       "filename": "claude-md-7-failure-patterns-2026.md",
       "title": "CLAUDE.mdで失敗しまくった7つのパターンと解決策【2026年版】",
-      "scheduled_at": "2026-04-19T08:00:00.000Z",
+      "scheduled_at": "2026-04-18T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-02T12:00:00.000Z",
       "priority": 6
@@ -59,7 +59,7 @@
       "filepath": "articles/claude-code-security-5-layers-real-config.md",
       "filename": "claude-code-security-5-layers-real-config.md",
       "title": "Claude Codeで機密情報漏洩ゼロを実現した5層セキュリティ設計【実設定公開】",
-      "scheduled_at": "2026-04-25T08:00:00.000Z",
+      "scheduled_at": "2026-04-24T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-02T12:00:00.000Z",
       "priority": 7
@@ -68,7 +68,7 @@
       "filepath": "articles/ubisoft-chord-pbr-material-generation-oss.md",
       "filename": "ubisoft-chord-pbr-material-generation-oss.md",
       "title": "UbisoftがPBR生成AIをOSS公開 - CHORDの全貌と使い方",
-      "scheduled_at": "2026-04-26T08:00:00.000Z",
+      "scheduled_at": "2026-04-25T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-02T12:00:00.000Z",
       "priority": 8
@@ -77,7 +77,7 @@
       "filepath": "articles/comfyui-game-assets-indie-dev-guide.md",
       "filename": "comfyui-game-assets-indie-dev-guide.md",
       "title": "ComfyUIでゲーム素材を量産する - インディー開発者向け実践ガイド",
-      "scheduled_at": "2026-05-02T08:00:00.000Z",
+      "scheduled_at": "2026-05-01T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-02T12:00:00.000Z",
       "priority": 9
@@ -86,7 +86,7 @@
       "filepath": "articles/nvidia-audio2face-3d-opensource-guide.md",
       "filename": "nvidia-audio2face-3d-opensource-guide.md",
       "title": "NVIDIA Audio2Face-3Dがオープンソース化 - 実装ガイド",
-      "scheduled_at": "2026-05-03T08:00:00.000Z",
+      "scheduled_at": "2026-05-02T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-02T12:00:00.000Z",
       "priority": 10
