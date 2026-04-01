@@ -47,22 +47,13 @@
       "priority": 5
     },
     {
-      "filepath": "articles/claude-md-ascii-diagram-rules.md",
-      "filename": "claude-md-ascii-diagram-rules.md",
-      "title": "CLAUDE.mdでASCII図ルールを定義したらAI出力が劇的に変わった",
-      "scheduled_at": "2026-04-24T08:00:00.000Z",
-      "status": "queued",
-      "queued_at": "2026-04-01T17:00:04.380Z",
-      "priority": 6
-    },
-    {
       "filepath": "articles/claude-md-7-failure-patterns-2026.md",
       "filename": "claude-md-7-failure-patterns-2026.md",
       "title": "CLAUDE.mdで失敗しまくった7つのパターンと解決策【2026年版】",
       "scheduled_at": "2026-04-19T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-02T12:00:00.000Z",
-      "priority": 7
+      "priority": 6
     },
     {
       "filepath": "articles/claude-code-security-5-layers-real-config.md",
@@ -71,7 +62,7 @@
       "scheduled_at": "2026-04-25T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-02T12:00:00.000Z",
-      "priority": 8
+      "priority": 7
     },
     {
       "filepath": "articles/ubisoft-chord-pbr-material-generation-oss.md",
@@ -80,7 +71,7 @@
       "scheduled_at": "2026-04-26T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-02T12:00:00.000Z",
-      "priority": 9
+      "priority": 8
     },
     {
       "filepath": "articles/comfyui-game-assets-indie-dev-guide.md",
@@ -89,7 +80,7 @@
       "scheduled_at": "2026-05-02T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-02T12:00:00.000Z",
-      "priority": 10
+      "priority": 9
     },
     {
       "filepath": "articles/nvidia-audio2face-3d-opensource-guide.md",
@@ -98,7 +89,7 @@
       "scheduled_at": "2026-05-03T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-02T12:00:00.000Z",
-      "priority": 11
+      "priority": 10
     }
   ],
   "schedule": {
