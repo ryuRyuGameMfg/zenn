@@ -52,7 +52,7 @@ REMINDERS_FILE="$WORK_DIR/reminders.json"
 
 is_reminder_command() {
   local msg="$1"
-  echo "$msg" | grep -qiE 'リマインド|リマインダー|通知して|アラーム|忘れないで|思い出させて|覚えておいて|remind'
+  echo "$msg" | grep -qiE 'リマインド|リマインダー|remind'
 }
 
 is_reminder_list_command() {

@@ -1,5 +1,5 @@
 ---
-title: "UbisoftがPBR生成AIをOSS公開 - CHORDの全貌と使い方"
+title: "UbisoftがPBR生成AI「CHORD」をOSS公開 - 導入手順から実戦活用まで"
 emoji: "🎨"
 type: "tech"
 topics: ["ubisoft", "pbr", "comfyui", "ai", "gamedev"]
@@ -13,6 +13,14 @@ Ubisoft La Forgeが、SIGGRAPH Asia 2025で発表した **PBRマテリアル推�
 CHORD（Chain-of-Rendering Decomposition）は、1枚のRGBテクスチャ画像から、BaseColor・Normal・Height・Roughness・Metalnessの5種類のPBRマップを自動生成するAIモデルです。
 
 従来、PBRマテリアルの作成にはSubstance Designerなどの専門ツールで数時間かける必要がありました。CHORDを使えば、テキストや参照画像から生成したテクスチャを入力するだけで、ゲームエンジンに投入可能なPBRマップ一式が数秒で得られます。
+
+### 既存手法との比較
+
+| 手法 | 所要時間 | コスト | 品質 | 自動化 |
+|------|---------|--------|------|--------|
+| Substance Designer | 2-4時間/素材 | ライセンス費 | プロダクション品質 | 手動 |
+| MaterialGAN | 数分 | 無料 | 中程度 | 自動 |
+| CHORD | 数秒 | 無料 | 高（有機系） | 完全自動 |
 
 ComfyUIのカスタムノードとして提供されており、既存のワークフローに組み込める点も実用的です。本記事では、CHORDの技術的な仕組みから実際の導入方法までを解説します。
 
@@ -116,6 +124,8 @@ CHORDの出力は、UnityやUnreal Engineのマテリアルシステムに直接
 - **プロトタイピング**: コンセプト段階で「それらしい」PBRマテリアルを即座に生成し、ルック開発を高速化
 - **プレースホルダー素材**: 本番アセット完成前の仮マテリアルとして使用
 - **バリエーション生成**: 1つのベーステクスチャから複数のPBRバリエーションを自動生成
+- **モバイルゲーム**: テクスチャ軽量化と組み合わせて、低スペック端末でもリッチな見た目を実現。生成後にミップマップ最適化を噛ませるパイプラインと特に相性が良い
+- **VRコンテンツ**: 大量の環境テクスチャが必要なVR空間で、バリエーション生成が特に有効。同一マテリアルの色違い・汚れ違いを一括生成することで、空間の単調さを回避できる
 
 ### 現時点での制約
 
@@ -138,6 +148,8 @@ CHORDは、 **AAA開発スタジオの研究成果が無料で使えるPBRマテ
 1枚のRGB画像から5種類のPBRマップを物理的に整合性のある形で推定できる点は、インディーからAAA開発まで幅広い恩恵をもたらします。ComfyUIベースのため導入の敷居が低く、既存のAI画像生成ワークフローとの連携も容易です。
 
 現時点ではResearch-Onlyライセンスであり、金属系素材の精度にも改善の余地がありますが、PBRマテリアル制作の自動化に向けた大きな一歩です。テクスチャ制作のボトルネックを感じているチームは、まずプロトタイピング用途から試してみる価値があるでしょう。
+
+**2026年4月時点の状況**: OSS公開からしばらく経った現在、GitHubスターは順調に伸び、インディー開発者やVR制作者からの活用報告が増えています。まだResearch-Onlyではあるものの、ComfyUIエコシステムとの統合ノードが複数コミュニティから提案されており、既存のStable Diffusionワークフローへの組み込みが一層容易になりつつあります。
 
 - CHORD GitHub: [github.com/ubisoft/ubisoft-laforge-chord](https://github.com/ubisoft/ubisoft-laforge-chord)
 - ComfyUIノード: [github.com/ubisoft/ComfyUI-Chord](https://github.com/ubisoft/ComfyUI-Chord)

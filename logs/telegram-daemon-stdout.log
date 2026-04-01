@@ -73,3 +73,8 @@ Args: {'audio': ['/tmp/telegram-voice.XXXXXX.wav'], 'model': 'mlx-community/whis
 [00:34.080 --> 00:36.340] 公開はそんなにさ
 [00:36.340 --> 00:38.480] リアルタイム性求められないと思うんだけど
 [00:38.480 --> 00:39.240] どう思いますか
+Args: {'audio': ['/tmp/telegram-voice.XXXXXX.wav'], 'model': 'mlx-community/whisper-large-v3-mlx', 'output_name': None, 'output_dir': '/tmp/whisper-out.girMJY', 'output_format': 'txt', 'verbose': True, 'task': 'transcribe', 'language': 'ja', 'temperature': 0, 'best_of': 5, 'patience': None, 'length_penalty': None, 'suppress_tokens': '-1', 'initial_prompt': None, 'condition_on_previous_text': True, 'fp16': True, 'compression_ratio_threshold': 2.4, 'logprob_threshold': -1.0, 'no_speech_threshold': 0.6, 'word_timestamps': False, 'prepend_punctuations': '"\'“¿([{-', 'append_punctuations': '"\'.。,，!！?？:：”)]}、', 'highlight_words': False, 'max_line_width': None, 'max_line_count': None, 'max_words_per_line': None, 'hallucination_silence_threshold': None, 'clip_timestamps': '0'}
+[00:00.000 --> 00:04.720] 今全体の公開Q、ローカルの公開Qの設定と
+[00:04.720 --> 00:08.900] あと実際にどれがGitにプッシュされてて
+[00:08.900 --> 00:10.360] 予約投稿されているのか
+[00:10.360 --> 00:12.900] それとも当日下げるのかとか状況を教えてください

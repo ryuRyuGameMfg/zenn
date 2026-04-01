@@ -86,3 +86,20 @@
 [2026-04-02T01:56:05] DYNAMIC: progress_msg_id=208
 [2026-04-02T01:56:05] [runner] Claude起動 (tools=Read,Write,Edit,Glob,Grep,Bash)
 [2026-04-02T01:57:08] [runner] 動的更新: 思考中... (1分経過)
+[2026-04-02T01:57:44] [runner] Claude終了 (exit=0, elapsed=95s)
+[2026-04-02T01:57:44] OK: claude execution completed
+[2026-04-02T01:57:46] END: telegram-react.sh completed
+[2026-04-02T01:59:37] CALLBACK: data=approve, msg_id=208
+[2026-04-02T01:59:38] START: claude execution
+[2026-04-02T01:59:39] CALLBACK: data=approve, msg_id=208
+[2026-04-02T01:59:39] DYNAMIC: progress_msg_id=209
+[2026-04-02T01:59:39] [runner] Claude起動 (tools=Read,Write,Edit,Glob,Grep,Bash)
+[2026-04-02T01:59:40] START: claude execution
+[2026-04-02T01:59:41] DYNAMIC: progress_msg_id=210
+[2026-04-02T01:59:41] [runner] Claude起動 (tools=Read,Write,Edit,Glob,Grep,Bash)
+[2026-04-02T02:00:42] [runner] 動的更新: 思考中... (1分経過)
+[2026-04-02T02:00:45] [runner] 動的更新: 思考中... (1分経過)
+[2026-04-02T02:00:57] START: claude execution
+[2026-04-02T02:00:58] DYNAMIC: progress_msg_id=213
+[2026-04-02T02:00:58] [runner] Claude起動 (tools=Read,Write,Edit,Glob,Grep,Bash)
+[2026-04-02T02:02:01] [runner] 動的更新: 思考中... (1分経過)

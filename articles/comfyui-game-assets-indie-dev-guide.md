@@ -9,6 +9,7 @@ published: true
 ## はじめに
 
 インディーゲーム開発において、アート制作コストは最大の壁の一つです。
+1キャラクターの全アニメーションスプライトに40〜60時間、背景タイルセットに80〜120時間——これが今も多くの開発者を苦しめている現実です。
 プロクオリティのキャラクタースプライトやテクスチャを揃えるには、膨大な時間と費用がかかります。
 
 ComfyUIはこの問題を根本から変えるツールです。
@@ -143,8 +144,9 @@ CHORDの出力マップ構成です。
 | Height Map | ディスプレイスメント用 |
 
 :::message alert
-CHORDモデルのライセンスは **Research-Only** です。
-商業プロジェクトへの利用前に必ずライセンスを確認してください。
+CHORDモデルのライセンスは **Research-Only** です（2026年4月現在）。
+Ubisoft La ForgeのCHORDは研究目的のみ利用可能で、商用利用はできません。
+商用プロジェクトに同等機能が必要な場合はAdobe Substance 3D等の代替ツールも検討してください。
 モデルはHugging Face (`Ubisoft/ubisoft-laforge-chord`) からダウンロードできます。
 :::
 
@@ -154,12 +156,13 @@ CHORDモデルのライセンスは **Research-Only** です。
 
 ```text
 1. ComfyUIでスプライトシート出力（PNG, 透過背景）
-2. Unity ProjectにDrag & Drop
-3. Texture Type: Sprite (2D and UI)
-4. Sprite Mode: Multiple
-5. Sprite Editor でSlice → Grid By Cell Size
-6. Cell Size: 128 x 128 に設定
-7. Apply → Animator Controllerで使用
+2. Unity Projectに Assets/Sprites/Generated/ などの専用フォルダを事前に作成しておくと管理しやすい
+3. 作成したフォルダにDrag & Drop
+4. Texture Type: Sprite (2D and UI)
+5. Sprite Mode: Multiple
+6. Sprite Editor でSlice → Grid By Cell Size
+7. Cell Size: 128 x 128 に設定
+8. Apply → Animator Controllerで使用
 ```
 
 ## まとめ
@@ -174,7 +177,7 @@ ComfyUIはインディー開発者にとって、アート制作の制約を取�
 
 - SpriteSheetMakerで2Dスプライトパイプラインを構築する
 - CHORDモデルで3D環境テクスチャを試作する
-- Hunyuan3D-2でコンセプトアートから3Dモデルを生成する
+- Hunyuan3D-2でコンセプトアートから3Dモデルを生成する（ComfyUIノードとして利用可能で、2D画像を入力として3Dメッシュを出力する2D→3D変換ワークフローを組める）
 
 ComfyUIコミュニティは活発で、新しいワークフローやモデルが日々公開されています。
 ゲーム開発における素材制作の常識が、今まさに塗り替えられています。

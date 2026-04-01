@@ -61,7 +61,7 @@ WHYを書くことで「このルールは現在のタスクに高度に関連�
 
 ### パターン6: スキル一覧ベタ書きでトークン浪費
 
-34個以上のスキル・61エージェントを直接列挙して80-100行に。MCPサーバーのツール定義だけで数万トークンを消費する事例も報告されています。
+22のスキル・61エージェントを直接列挙して80-100行に。MCPサーバーのツール定義だけで数万トークンを消費する事例も報告されています。
 
 https://deploystack.io/blog/how-mcp-servers-use-your-context-window
 
@@ -87,7 +87,7 @@ https://deploystack.io/blog/how-mcp-servers-use-your-context-window
 
 ### 原則1: 42行ルール
 
-CLAUDE.mdは42行（20-30個の指示）に抑え、詳細は段階的に外部化する。
+CLAUDE.mdは42行（20-30個の指示）に抑え、詳細は段階的に外部化する。実際に著者のグローバルCLAUDE.mdは現在も約40行程度に維持している。
 
 | レベル | ファイル | 読み込みタイミング |
 |-------|---------|------------------|
@@ -122,6 +122,7 @@ CLAUDE.mdは42行（20-30個の指示）に抑え、詳細は段階的に外部�
 :::message
 **CLAUDE.mdシリーズ 関連記事**
 - [Claude Codeの出力が読めない問題をCLAUDE.mdのASCII図ルールで解決した](https://zenn.dev/ryuryu/articles/2026-04-01-claude-md-ascii-diagram-output)
+- [Claude Code × macOS launchd で自律AIエージェントを自作する](https://zenn.dev/ryuryu/articles/2026-03-30-claude-code-launchd-autonomous-agent)
 :::
 
 **AIキャラクター開発に興味がある方へ**
