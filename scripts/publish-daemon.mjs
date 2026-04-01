@@ -24,7 +24,7 @@ import { execSync } from 'child_process';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT_DIR = join(__dirname, '..');
 const QUEUE_FILE = join(ROOT_DIR, 'data', 'queue.json');
-const CHECK_INTERVAL = 60 * 1000; // 60秒
+const CHECK_INTERVAL = 60 * 60 * 1000; // 1時間
 
 // リトライ設定
 const RETRY_DELAYS = [0, 5 * 60 * 1000, 15 * 60 * 1000]; // 即時, 5分後, 15分後
@@ -290,6 +290,18 @@ async function checkAndPublish(dryRun = false) {
 
   log(`公開対象記事 ${dueArticles.length}件 を検出`);
 
+  // 1日1本制限: 本日すでに公開済みの記事があればスキップ
+  const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+  const alreadyPublishedToday = queue.queue.some(e =>
+    e.status === 'published' &&
+    e.published_at &&
+    e.published_at.slice(0, 10) === today
+  );
+  if (alreadyPublishedToday) {
+    log('本日はすでに1本公開済みのため、残りは翌日以降に公開します');
+    return;
+  }
+
   for (const entry of dueArticles) {
     // status を "publishing" に更新（ロック）
     entry.status = 'publishing';
@@ -303,6 +315,12 @@ async function checkAndPublish(dryRun = false) {
 
     // Telegram 通知
     sendTelegram(entry, result, dryRun);
+
+    // 1日1本制限: 1本公開したらループを終了
+    if (result.success) {
+      log('1日1本制限のため、残りの記事は次回以降に公開します');
+      break;
+    }
   }
 }
 

@@ -80,3 +80,9 @@
 [2026-04-02T01:53:12] [runner] Claude終了 (exit=0, elapsed=130s)
 [2026-04-02T01:53:12] OK: claude execution completed
 [2026-04-02T01:53:13] [SUMMARY] スレッド17件 → サマリー生成開始
+[2026-04-02T01:55:54] [SUMMARY] サマリー更新完了。thread を10件にトリム
+[2026-04-02T01:55:54] END: telegram-react.sh completed
+[2026-04-02T01:56:04] START: claude execution
+[2026-04-02T01:56:05] DYNAMIC: progress_msg_id=208
+[2026-04-02T01:56:05] [runner] Claude起動 (tools=Read,Write,Edit,Glob,Grep,Bash)
+[2026-04-02T01:57:08] [runner] 動的更新: 思考中... (1分経過)
