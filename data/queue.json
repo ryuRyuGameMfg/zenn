@@ -45,6 +45,15 @@
       "status": "queued",
       "queued_at": "2026-04-01T08:00:00.000Z",
       "priority": 5
+    },
+    {
+      "filepath": "articles/claude-md-ascii-diagram-rules.md",
+      "filename": "claude-md-ascii-diagram-rules.md",
+      "title": "CLAUDE.mdでASCII図ルールを定義したらAI出力が劇的に変わった",
+      "scheduled_at": "2026-04-24T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-01T17:00:04.380Z",
+      "priority": 6
     }
   ],
   "schedule": {
@@ -55,6 +64,6 @@
     "time": "17:00",
     "timezone": "Asia/Tokyo"
   },
-  "last_scan": "2026-04-02T08:00:00.000Z",
+  "last_scan": "2026-04-01T17:00:04.380Z",
   "last_publish": null
 }
