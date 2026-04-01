@@ -36,6 +36,20 @@ if [[ -z "$USER_MESSAGE" ]]; then
   exit 0
 fi
 
+# ---- リマインダー検知（共通基盤） ----
+REMINDER_PARSE_CORE="$HOME/.claude/scripts/reminder-parse-core.sh"
+REMINDERS_FILE="$WORK_DIR/reminders.json"
+
+is_reminder_command() {
+  local msg="$1"
+  echo "$msg" | grep -qiE 'リマインド|リマインダー|通知して|アラーム|忘れないで|思い出させて|覚えておいて|remind'
+}
+
+is_reminder_list_command() {
+  local msg="$1"
+  echo "$msg" | grep -qiE 'リマインダー一覧|リマインド一覧|予定一覧|リマインダー確認|リマインド確認'
+}
+
 # ---- 会話状態読み込み ----
 get_conv() {
   jq -r ".$1 // empty" "$CONV_FILE" 2>/dev/null || echo ""
@@ -115,6 +129,79 @@ build_thread_str() {
 append_thread "user" "$USER_MESSAGE"
 update_conv_str "last_updated" "$(date '+%Y-%m-%dT%H:%M:%S')"
 update_conv_str "status" "processing"
+
+# リマインダー一覧表示
+if is_reminder_list_command "$USER_MESSAGE"; then
+  LIST_REPLY=$(python3 << PYEOF
+import json, os
+from datetime import datetime
+
+f = "$REMINDERS_FILE"
+if not os.path.exists(f):
+    print("リマインダーはありません。")
+else:
+    with open(f) as fp:
+        data = json.load(fp)
+    active = [r for r in data.get("reminders", []) if r.get("status") == "active"]
+    if not active:
+        print("リマインダーはありません。")
+    else:
+        dow = ['月','火','水','木','金','土','日']
+        lines = [f"リマインダー一覧（{len(active)}件）\n"]
+        lines.append("<b>登録済みリマインダー</b>\n")
+        for i, r in enumerate(sorted(active, key=lambda x: x.get("datetime", "")), 1):
+            try:
+                t = datetime.fromisoformat(r["datetime"])
+                d = f"{t.month}/{t.day}({dow[t.weekday()]}) {t.hour:02d}:{t.minute:02d}"
+            except:
+                d = r.get("datetime", "不明")
+            lines.append(f"<code>{i}.</code> {r.get('message','')}")
+            lines.append(f"   <code>{d}</code>\n")
+        print("\n".join(lines))
+PYEOF
+  )
+  bash "$NOTIFY_SCRIPT" "$LIST_REPLY" 2>>"$LOG_FILE" || true
+  append_thread "assistant" "$LIST_REPLY" || true
+  update_conv_str "status" "idle"
+  echo "[$(date '+%Y-%m-%dT%H:%M:%S')] END: reminder list" >> "$LOG_FILE"
+  exit 0
+fi
+
+# リマインダー登録
+if is_reminder_command "$USER_MESSAGE"; then
+  echo "[$(date '+%Y-%m-%dT%H:%M:%S')] REMINDER: detected reminder command" >> "$LOG_FILE"
+  PARSE_RESULT=$(bash "$REMINDER_PARSE_CORE" "$USER_MESSAGE" "$TELEGRAM_CONF" "$LOG_FILE" "$REMINDERS_FILE" 2>>"$LOG_FILE")
+  PARSE_EXIT=$?
+
+  if [[ $PARSE_EXIT -eq 0 ]] && echo "$PARSE_RESULT" | grep -q "^REMINDER_SET|"; then
+    IFS='|' read -r _ DISP_DATE DISP_MSG DISP_ID <<< "$PARSE_RESULT"
+    REPLY_MSG="リマインダー登録完了
+
+<b>${DISP_MSG}</b>
+
+<blockquote>${DISP_DATE} に
+お知らせします。</blockquote>
+
+ID: <code>${DISP_ID}</code>"
+  else
+    REPLY_MSG="リマインダー登録エラー
+
+<blockquote>${PARSE_RESULT}</blockquote>
+
+例:
+<code>来週月曜10時に
+ミーティング準備リマインド</code>
+
+<code>明日15時に
+クライアントに連絡リマインド</code>"
+  fi
+
+  bash "$NOTIFY_SCRIPT" "$REPLY_MSG" 2>>"$LOG_FILE" || true
+  append_thread "assistant" "$REPLY_MSG" || true
+  update_conv_str "status" "idle"
+  echo "[$(date '+%Y-%m-%dT%H:%M:%S')] END: reminder processing" >> "$LOG_FILE"
+  exit 0
+fi
 
 # 2. 記事候補特定
 ARTICLE_CANDIDATE=$(find_article_candidate)

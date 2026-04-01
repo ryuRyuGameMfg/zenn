@@ -20,3 +20,36 @@
 [2026-04-01T03:29:05] Voice message: file_id=AwACAgUAAxkBAAPAacwScAAB7YkkLQ...
 [2026-04-01T05:20:38] WARN: Empty response from Telegram API. Retrying in 5s.
 [2026-04-01T05:22:33] WARN: Empty response from Telegram API. Retrying in 5s.
+[2026-04-01T09:33:14] WARN: Empty response from Telegram API. Retrying in 5s.
+[2026-04-01T09:33:50] WARN: Empty response from Telegram API. Retrying in 5s.
+[2026-04-01T09:34:25] WARN: Empty response from Telegram API. Retrying in 5s.
+[2026-04-01T19:28:13] SIGTERM/SIGINT received. Shutting down.
+[2026-04-01T19:28:13] Daemon started. PID=19812, NEXT_OFFSET=104714385
+[2026-04-01T19:28:23] Daemon started. PID=19979, NEXT_OFFSET=104714385
+[2026-04-01T19:28:31] Daemon started. PID=20045, NEXT_OFFSET=104714385
+[2026-04-01T19:28:31] WARN: Telegram API returned ok=false. Retrying in 5s. Response prefix: {"ok":false,"error_code":409,"description":"Conflict: terminated by other getUpdates request; make s
+[2026-04-01T19:28:38] WARN: Telegram API returned ok=false. Retrying in 5s. Response prefix: {"ok":false,"error_code":409,"description":"Conflict: terminated by other getUpdates request; make s
+[2026-04-01T19:28:43] WARN: Telegram API returned ok=false. Retrying in 5s. Response prefix: {"ok":false,"error_code":409,"description":"Conflict: terminated by other getUpdates request; make s
+[2026-04-01T19:28:49] WARN: Telegram API returned ok=false. Retrying in 5s. Response prefix: {"ok":false,"error_code":409,"description":"Conflict: terminated by other getUpdates request; make s
+[2026-04-01T19:28:55] WARN: Telegram API returned ok=false. Retrying in 5s. Response prefix: {"ok":false,"error_code":409,"description":"Conflict: terminated by other getUpdates request; make s
+[2026-04-01T19:29:01] WARN: Telegram API returned ok=false. Retrying in 5s. Response prefix: {"ok":false,"error_code":409,"description":"Conflict: terminated by other getUpdates request; make s
+[2026-04-01T19:29:07] WARN: Telegram API returned ok=false. Retrying in 5s. Response prefix: {"ok":false,"error_code":409,"description":"Conflict: terminated by other getUpdates request; make s
+[2026-04-01T19:29:13] WARN: Telegram API returned ok=false. Retrying in 5s. Response prefix: {"ok":false,"error_code":409,"description":"Conflict: terminated by other getUpdates request; make s
+[2026-04-01T19:29:19] WARN: Telegram API returned ok=false. Retrying in 5s. Response prefix: {"ok":false,"error_code":409,"description":"Conflict: terminated by other getUpdates request; make s
+[2026-04-01T19:29:25] WARN: Telegram API returned ok=false. Retrying in 5s. Response prefix: {"ok":false,"error_code":409,"description":"Conflict: terminated by other getUpdates request; make s
+[2026-04-01T19:29:31] WARN: Telegram API returned ok=false. Retrying in 5s. Response prefix: {"ok":false,"error_code":409,"description":"Conflict: terminated by other getUpdates request; make s
+[2026-04-01T19:29:37] WARN: Telegram API returned ok=false. Retrying in 5s. Response prefix: {"ok":false,"error_code":409,"description":"Conflict: terminated by other getUpdates request; make s
+[2026-04-01T19:29:43] WARN: Telegram API returned ok=false. Retrying in 5s. Response prefix: {"ok":false,"error_code":409,"description":"Conflict: terminated by other getUpdates request; make s
+[2026-04-01T19:29:49] WARN: Telegram API returned ok=false. Retrying in 5s. Response prefix: {"ok":false,"error_code":409,"description":"Conflict: terminated by other getUpdates request; make s
+[2026-04-01T19:29:55] WARN: Telegram API returned ok=false. Retrying in 5s. Response prefix: {"ok":false,"error_code":409,"description":"Conflict: terminated by other getUpdates request; make s
+[2026-04-01T19:30:01] WARN: Telegram API returned ok=false. Retrying in 5s. Response prefix: {"ok":false,"error_code":409,"description":"Conflict: terminated by other getUpdates request; make s
+[2026-04-01T19:30:07] WARN: Telegram API returned ok=false. Retrying in 5s. Response prefix: {"ok":false,"error_code":409,"description":"Conflict: terminated by other getUpdates request; make s
+[2026-04-01T19:30:13] WARN: Telegram API returned ok=false. Retrying in 5s. Response prefix: {"ok":false,"error_code":409,"description":"Conflict: terminated by other getUpdates request; make s
+[2026-04-01T19:30:19] WARN: Telegram API returned ok=false. Retrying in 5s. Response prefix: {"ok":false,"error_code":409,"description":"Conflict: terminated by other getUpdates request; make s
+[2026-04-01T19:30:25] WARN: Telegram API returned ok=false. Retrying in 5s. Response prefix: {"ok":false,"error_code":409,"description":"Conflict: terminated by other getUpdates request; make s
+[2026-04-01T19:30:31] WARN: Telegram API returned ok=false. Retrying in 5s. Response prefix: {"ok":false,"error_code":409,"description":"Conflict: terminated by other getUpdates request; make s
+[2026-04-01T19:30:37] WARN: Telegram API returned ok=false. Retrying in 5s. Response prefix: {"ok":false,"error_code":409,"description":"Conflict: terminated by other getUpdates request; make s
+[2026-04-01T19:30:43] WARN: Telegram API returned ok=false. Retrying in 5s. Response prefix: {"ok":false,"error_code":409,"description":"Conflict: terminated by other getUpdates request; make s
+[2026-04-01T19:30:49] WARN: Telegram API returned ok=false. Retrying in 5s. Response prefix: {"ok":false,"error_code":409,"description":"Conflict: terminated by other getUpdates request; make s
+[2026-04-01T19:30:50] Daemon started. PID=21613, NEXT_OFFSET=104714385
+[2026-04-01T19:32:12] Daemon started. PID=24171, NEXT_OFFSET=104714385

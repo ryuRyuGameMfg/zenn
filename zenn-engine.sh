@@ -660,9 +660,9 @@ run_single_mode() {
       *)       _mode_jp="${mode}";;
     esac
     local _summary; _summary=$(extract_summary "$LAST_MODE_OUTPUT")
-    telegram_notify "第${iteration}サイクル・${_mode_jp} 完了
+    telegram_notify "${_mode_jp}が完了しました。
 
-${_summary:-詳細なし}"
+${_summary:-引き続き進めます。}"
   else
     log "ERROR" "Mode $mode 失敗"
     local _mode_jp
@@ -673,9 +673,9 @@ ${_summary:-詳細なし}"
       rewrite) _mode_jp="記事リライト";;
       *)       _mode_jp="${mode}";;
     esac
-    telegram_notify "第${iteration}サイクル・${_mode_jp} エラー
+    telegram_notify "<b>確認をお願いします</b>
 
-ご確認ください。"
+${_mode_jp}でエラーが発生しました。"
     git_commit_and_push "$mode" "$iteration" || true
     return 1
   fi
@@ -714,7 +714,7 @@ memory/saturday-report-template.md のフォーマットに従って、以下の
 
 Telegram HTML形式で出力すること:
 - 1行目: タイトル（プレーンテキスト、HTMLタグなし）
-- 2行目以降: HTMLタグで装飾（<b>, <code>, <blockquote>のみ使用）
+- 2行目以降: HTMLタグで装飾（<b>, <blockquote>のみ使用。<code>タグ禁止）
 - 1行30〜40文字以内
 - テーブル禁止（スマホで崩れる）
 
@@ -741,10 +741,10 @@ CRITICAL: Write/Edit/Bash ツールを使わないこと。テキスト出力の
 
   if [[ -z "$report_output" ]]; then
     log "WARN" "土曜レポート生成失敗"
-    telegram_notify "<b>今週の分析・改善が完了しました</b>
+    telegram_notify "<b>確認をお願いします</b>
 
-レポート生成に失敗しました。
-memory/metrics.json を手動確認してください。"
+今週のレポート生成に失敗しました。
+memory/metrics.json を手動で確認してください。"
     return 1
   fi
 
@@ -833,15 +833,10 @@ check_scheduled_publish() {
 
           published_slugs+=("$scheduled_slug")
 
-          telegram_notify "<b>予約公開が完了しました</b>
+          telegram_notify "記事を公開しました。
 
-<b>記事</b>
-<code>$scheduled_slug</code>
-
-<b>予定時刻</b>
-$(date -j -f '%Y-%m-%dT%H:%M:%S' "${scheduled_date%%+*}" '+%Y年%m月%d日 %H:%M' 2>/dev/null || echo "$scheduled_date")
-
-記事が公開されました。"
+<blockquote>${scheduled_slug}
+$(date -j -f '%Y-%m-%dT%H:%M:%S' "${scheduled_date%%+*}" '+%Y年%m月%d日 %H:%M' 2>/dev/null || echo "$scheduled_date")</blockquote>"
 
           log "INFO" "予約公開完了: $scheduled_slug"
         else
