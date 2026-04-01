@@ -135,46 +135,6 @@ build_thread_str() {
 
 # ---- メイン ----
 
-# ---- コールバック（ボタン押下）処理 ----
-if [[ "$USER_MESSAGE" =~ ^\[CALLBACK:(.+):([0-9]+)\]$ ]]; then
-  CB_DATA="${BASH_REMATCH[1]}"
-  CB_MSG_ID="${BASH_REMATCH[2]}"
-
-  echo "[$(date '+%Y-%m-%dT%H:%M:%S')] CALLBACK: data=${CB_DATA}, msg_id=${CB_MSG_ID}" >> "$LOG_FILE"
-
-  case "$CB_DATA" in
-    approve|approve:*)
-      if [[ "$USE_DYNAMIC" == "true" ]]; then
-        tg_remove_buttons "$TELEGRAM_BOT_TOKEN" "$TELEGRAM_CHAT_ID" "$CB_MSG_ID" 2>/dev/null || true
-      fi
-      USER_MESSAGE="承認します。計画通り進めてください。"
-      append_thread "user" "[ボタン] 承認"
-      update_conv_str "last_updated" "$(date '+%Y-%m-%dT%H:%M:%S')"
-      ;;
-    revise|revise:*)
-      if [[ "$USE_DYNAMIC" == "true" ]]; then
-        tg_remove_buttons "$TELEGRAM_BOT_TOKEN" "$TELEGRAM_CHAT_ID" "$CB_MSG_ID" 2>/dev/null || true
-      fi
-      USER_MESSAGE="計画を見直してください。別のアプローチを提案してください。"
-      append_thread "user" "[ボタン] 計画見直し"
-      update_conv_str "last_updated" "$(date '+%Y-%m-%dT%H:%M:%S')"
-      ;;
-    detail|detail:*)
-      if [[ "$USE_DYNAMIC" == "true" ]]; then
-        tg_remove_buttons "$TELEGRAM_BOT_TOKEN" "$TELEGRAM_CHAT_ID" "$CB_MSG_ID" 2>/dev/null || true
-      fi
-      USER_MESSAGE="もう少し詳しく説明してください。"
-      append_thread "user" "[ボタン] 詳細希望"
-      update_conv_str "last_updated" "$(date '+%Y-%m-%dT%H:%M:%S')"
-      ;;
-    *)
-      USER_MESSAGE="ボタン操作: ${CB_DATA}"
-      append_thread "user" "[ボタン] ${CB_DATA}"
-      update_conv_str "last_updated" "$(date '+%Y-%m-%dT%H:%M:%S')"
-      ;;
-  esac
-fi
-
 # 1. ユーザーメッセージをスレッドに追加
 append_thread "user" "$USER_MESSAGE"
 update_conv_str "last_updated" "$(date '+%Y-%m-%dT%H:%M:%S')"
@@ -313,21 +273,9 @@ fi
 
 # 6. Telegramに返信
 if [[ "$USE_DYNAMIC" == "true" && -n "$PROGRESS_MSG_ID" ]]; then
-  HAS_PLAN=false
-  if echo "$TELEGRAM_REPLY" | grep -qiE '計画|提案|方針|プラン|アプローチ|設計|実装予定|進め方'; then
-    HAS_PLAN=true
-  fi
-
-  if [[ "$HAS_PLAN" == "true" ]]; then
-    BUTTONS='[[{"text":"承認する","callback_data":"approve"},{"text":"計画見直し","callback_data":"revise"}],[{"text":"詳しく聞く","callback_data":"detail"}]]'
-    tg_edit_message_with_buttons "$TELEGRAM_BOT_TOKEN" "$TELEGRAM_CHAT_ID" "$PROGRESS_MSG_ID" "$TELEGRAM_REPLY" "$BUTTONS" 2>/dev/null || {
-      bash "$NOTIFY_SCRIPT" "$TELEGRAM_REPLY" 2>>"$LOG_FILE" || true
-    }
-  else
-    tg_edit_message "$TELEGRAM_BOT_TOKEN" "$TELEGRAM_CHAT_ID" "$PROGRESS_MSG_ID" "$TELEGRAM_REPLY" 2>/dev/null || {
-      bash "$NOTIFY_SCRIPT" "$TELEGRAM_REPLY" 2>>"$LOG_FILE" || true
-    }
-  fi
+  tg_edit_message "$TELEGRAM_BOT_TOKEN" "$TELEGRAM_CHAT_ID" "$PROGRESS_MSG_ID" "$TELEGRAM_REPLY" 2>/dev/null || {
+    bash "$NOTIFY_SCRIPT" "$TELEGRAM_REPLY" 2>>"$LOG_FILE" || true
+  }
 else
   bash "$NOTIFY_SCRIPT" "$TELEGRAM_REPLY" 2>>"$LOG_FILE" || echo "[$(date '+%Y-%m-%dT%H:%M:%S')] WARN: telegram-notify.sh failed" >> "$LOG_FILE"
 fi

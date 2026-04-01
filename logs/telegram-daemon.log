@@ -65,3 +65,5 @@
 [2026-04-02T02:33:11] Callback query: data=detail, msg_id=215
 [2026-04-02T02:38:27] Callback query: data=detail, msg_id=216
 [2026-04-02T02:40:44] Callback query: data=approve, msg_id=217
+[2026-04-02T02:51:42] Daemon started. PID=66703, NEXT_OFFSET=104714396
+[2026-04-02T03:15:26] Voice message: file_id=AwACAgUAAxkBAAPbac1gvkkgrxYk5k...
