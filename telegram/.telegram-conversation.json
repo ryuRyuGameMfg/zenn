@@ -1,7 +1,7 @@
 {
-  "status": "idle",
+  "status": "processing",
   "target_article": "/Users/okamotoryuya/repository/zenn-engine/articles/2026-03-28-zenn-github-actions-auto-deploy.md",
-  "last_updated": "2026-04-02T02:04:14",
+  "last_updated": "2026-04-02T02:33:13",
   "thread": [
     {
       "role": "assistant",
@@ -62,6 +62,21 @@
       "role": "assistant",
       "text": "公開キュー重複問題 + デプロイ状況の調査報告\n\n<b>zenn-engine GMです。\n3点の質問に回答します。</b>\n\n---\n\n<b>【1. 5番と6番の記事は重複しています】</b>\n\n確認の結果、<b>同じテーマの2バージョン</b>です。\n\n<b>旧版</b>（6番）:\n<code>claude-md-ascii-diagram-rules.md</code>\n「CLAUDE.mdでASCII図ルールを定義したら\nAI出力が劇的に変わった」\npublished_at: <code>2026-02-27</code>設定済み\n\n<b>新版</b>（5番）:\n<code>2026-04-01-claude-md-ascii-diagram-output.md</code>\n「Claude Codeの出力が読めない問題を\nCLAUDE.mdのASCII図ルールで解決した」\npublished_at: 未設定\n\n内容はほぼ同じで、新版の方が\n「技術負債」「認知負荷」の観点を追加した\nリライト版です。\n\n<b>対応案:</b>\n・旧版をキューから外してストック保管\n・新版（5番）のみ4/18公開\n・旧版ファイルは削除せず\n <code>published: false</code>のまま残す\n\n---\n\n<b>【2. 「下書き」は誤りでした】</b>\n\nおっしゃる通り、キュー内の6本は\n<b>正式に執筆が完了した記事</b>です。\n「下書き」と呼んだのは不正確でした。\n\n正確には:\n・記事本文は完成済み\n・<code>published: false</code>にしてある\n =「非公開状態」\n・daemonが公開日に\n <code>published: true</code>に変更してpushする\n\n---\n\n<b>【3. Zennデプロイの状況】</b>\n\n調査結果を報告します。\n\n<b>現在のGitHubリモート状況:</b>\n・6本全て<code>published: false</code>で\n GitHub上に存在しています\n・ローカルに7コミットの未push分あり\n （リライト3本の変更等）\n\n<b>Zennのデプロイ制限について:</b>\nZenn公式ドキュメントには\n<b>1日のデプロイ回数制限の記載はありません</b>。\n「登録ブランチに変更があると自動同期」\nとしか書かれていません。\n\n<b>つまり:</b>\n・<code>published: false</code>でpushしても\n Zennでは「下書き」として反映される\n・デプロイ自体は弾かれていないはず\n・<code>published: true</code>に変えてpushすれば\n その時点で公開される\n\n<b>「弾かれている」可能性:</b>\n・Zenn側のレート制限ではなく\n <b>publish-daemonの1日1本制限</b>が\n 効いている可能性が高い\n・daemonがまだ1本も公開していない\n （<code>last_publish: null</code>）ので\n 明後日4/4が初稼働になります\n\n<blockquote>5番6番の重複整理について、旧版をキューから外して新版のみ公開する方針でよろしいですか？</blockquote>\n",
       "ts": "2026-04-02 02:05"
+    },
+    {
+      "role": "assistant",
+      "text": "5本リライト計画 全Phase完了\n\n<b>zenn-engine GMです。</b>\n\n<b>承認いただいた5本リライト計画、\n全3フェーズが完了しました。</b>\n\n---\n\n<b>【Phase 1: 軽微リライト 3本】</b>\n\n<b>1. CLAUDE.md失敗パターン</b>\n・スキル数を<code>34→22</code>に修正\n・他は確認済み、変更不要\n\n<b>2. ComfyUI素材量産</b>\n・Mermaid変換済み、相互リンク済み\n・<code>変更不要</code>\n\n<b>3. Ubisoft CHORD</b>\n・Mermaid変換済み、相互リンク済み\n・ライセンス明記済み\n・<code>変更不要</code>\n\n---\n\n<b>【Phase 2: 情報調査+リライト 2本】</b>\n\n<b>4. Audio2Face-3D</b>\n・Mermaid図3箇所をテキストに変換\n・<b>Unity対応セクション</b>を新規追加\n （NIM API連携 / SDK組み込み /\n  ARKit BlendShape活用の3アプローチ）\n・C#サンプルコード付き\n\n<b>5. セキュリティ5層設計</b>\n・<b>新slug</b>で完全リライト\n <code>claude-code-security-5-layers-real-config.md</code>\n・旧記事は<code>published: false</code>に変更\n・実運用の<code>settings.json</code>全文掲載\n・<code>privacy-map.json</code>生成手順を詳述\n・Hooks 8本の全体像を図解\n・61エージェント・22スキルに数値更新\n・シリーズ相互リンク追加\n\n---\n\n<b>【Phase 3: スケジュール登録】</b>\n\nqueue.jsonに5本追加済み:\n\n<code>4/19 土</code> CLAUDE.md失敗パターン\n<code>4/25 金</code> セキュリティ設計【実設定公開】\n<code>4/26 土</code> Ubisoft CHORD\n<code>5/2 金</code> ComfyUI素材量産\n<code>5/3 土</code> Audio2Face-3D\n\n---\n\n<b>【公開キュー全体（11本）】</b>\n\n<code>4/4</code> launchd自律エージェント\n<code>4/5</code> AIデザイン2方向分析\n<code>4/11</code> Unity公式MCP\n<code>4/12</code> uLoopMCP\n<code>4/18</code> ASCII図解ルール\n<code>4/19</code> CLAUDE.md失敗パターン\n<code>4/24</code> ASCII図ルール（別記事）\n<code>4/25</code> セキュリティ設計\n<code>4/26</code> Ubisoft CHORD\n<code>5/2</code> ComfyUI素材量産\n<code>5/3</code> Audio2Face-3D\n\n<blockquote>約5週間分のコンテンツが準備完了です。publish-daemonが公開日に1本ずつ自動公開します。次のアクションがあればお知らせください。</blockquote>\n",
+      "ts": "2026-04-02 02:06"
+    },
+    {
+      "role": "user",
+      "text": "[ボタン] 詳細希望\n",
+      "ts": "2026-04-02 02:33"
+    },
+    {
+      "role": "user",
+      "text": "もう少し詳しく説明してください。\n",
+      "ts": "2026-04-02 02:33"
     }
   ],
   "summary": "【決定事項】\n- 5本リライト計画を承認、Phase 1（CLAUDE.md失敗パターン / ComfyUI / CHORD）から順に着手\n- LLMUnity記事を実プロジェクト（ai-character-core）ベースの実装記録にリライト完了\n- リライト5本の公開スケジュール確定（4/19, 4/25, 4/26, 5/2, 5/3）\n\n【作業状態】\n- LLMUnity記事リライト完了（タイトル変更・構成転換済み、約3,800字）\n- 5本リライト計画策定済み、Phase 1着手前（CLAUDE.md失敗パターン / ComfyUI / CHORD）\n- 4月公開予定の既存5本が全て未push・published: falseのまま（4/4分が明後日に迫り対応急務）\n\n【継続コンテキスト】\nZennには予約投稿機能がないため、公開は「published: trueにしてgit push」の手動操作が必要。既存5本（4/4-4/18）の公開方法（まとめてpush / 1本ずつ / falseのまま保存）が未決定で、4/4分の対応が最優先。リライト5本はPhase 1の軽微修正3本→Phase 2の調査必要2本の順で進行予定。"

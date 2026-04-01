@@ -121,3 +121,11 @@
 [2026-04-02T02:05:49] [runner] Claude終了 (exit=0, elapsed=90s)
 [2026-04-02T02:05:49] OK: claude execution completed
 [2026-04-02T02:05:50] END: telegram-react.sh completed
+[2026-04-02T02:06:49] [runner] Claude終了 (exit=0, elapsed=415s)
+[2026-04-02T02:06:49] OK: claude execution completed
+[2026-04-02T02:06:51] END: telegram-react.sh completed
+[2026-04-02T02:33:12] CALLBACK: data=detail, msg_id=215
+[2026-04-02T02:33:13] START: claude execution
+[2026-04-02T02:33:15] DYNAMIC: progress_msg_id=216
+[2026-04-02T02:33:15] [runner] Claude起動 (tools=Read,Write,Edit,Glob,Grep,Bash)
+[2026-04-02T02:34:18] [runner] 動的更新: 思考中... (1分経過)
