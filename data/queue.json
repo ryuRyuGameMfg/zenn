@@ -5,7 +5,7 @@
       "filepath": "articles/2026-03-30-claude-code-launchd-autonomous-agent.md",
       "filename": "2026-03-30-claude-code-launchd-autonomous-agent.md",
       "title": "OpenClawのAPI料金に疲れた人へ：Claude Code × macOS launchd で月額固定の自律AIエージェントを自作する",
-      "scheduled_at": "2026-04-03T08:00:00.000Z",
+      "scheduled_at": "2026-04-04T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-03-31T07:36:37.895Z",
       "priority": 1
@@ -14,10 +14,28 @@
       "filepath": "articles/2026-03-31-why-humans-dislike-ai-design.md",
       "filename": "2026-03-31-why-humans-dislike-ai-design.md",
       "title": "なぜ人間はAIデザインを嫌うのか：バイアスと実質的傾向の2方向分析【Unity UI実装例付き】",
-      "scheduled_at": "2026-04-04T08:00:00.000Z",
+      "scheduled_at": "2026-04-05T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-03-31T07:36:37.895Z",
       "priority": 2
+    },
+    {
+      "filepath": "articles/2026-04-01-unity-official-mcp-complete-guide.md",
+      "filename": "2026-04-01-unity-official-mcp-complete-guide.md",
+      "title": "Unity公式が本気で作ったAI連携：Claude/Cursorと直結する新時代の開発フロー",
+      "scheduled_at": "2026-04-11T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-02T08:00:00.000Z",
+      "priority": 3
+    },
+    {
+      "filepath": "articles/2026-04-02-uloopmcp-community-attention.md",
+      "filename": "2026-04-02-uloopmcp-community-attention.md",
+      "title": "非公式なのに公式を超えた？uLoopMCPがコミュニティで熱狂される理由",
+      "scheduled_at": "2026-04-12T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-02T08:00:00.000Z",
+      "priority": 4
     },
     {
       "filepath": "articles/2026-04-01-claude-md-ascii-diagram-output.md",
@@ -37,6 +55,6 @@
     "time": "17:00",
     "timezone": "Asia/Tokyo"
   },
-  "last_scan": "2026-03-31T07:36:37.895Z",
+  "last_scan": "2026-04-02T08:00:00.000Z",
   "last_publish": null
 }
