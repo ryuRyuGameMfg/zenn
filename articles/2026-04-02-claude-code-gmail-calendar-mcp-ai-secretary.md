@@ -3,7 +3,7 @@ title: "Claude Code × Gmail/Calendar MCP でAI秘書を実現する"
 emoji: "📅"
 type: "tech"
 topics: ["claude", "gmail", "googlecalendar", "mcp", "automation"]
-published: true
+published: false
 ---
 
 ## なぜ Gmail/Calendar MCP が必要なのか
