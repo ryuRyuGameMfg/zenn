@@ -44,4 +44,6 @@
 | 2026-03-30-claude-code-launchd-autonomous-agent | OpenClawのAPI料金に疲れた人へ：Claude Code × macOS launchd で月額固定の自律AIエージェントを自作する | 2026-03-30 |
 | 2026-03-31-why-humans-dislike-ai-design | なぜ人間はAIデザインを嫌うのか：バイアスと実質的傾向の2方向分析【Unity UI実装例付き】 | 2026-03-31 |
 | 2026-04-01-claude-md-ascii-diagram-output | Claude Codeの出力が読めない問題をCLAUDE.mdのASCII図ルールで解決した | 2026-04-01 |
+| 2026-04-02-claude-code-notion-mcp-root-page-automation | Claude Code × Notion MCP でルートページ整理を自動化する | 2026-04-02 |
+| 2026-04-02-claude-code-gmail-calendar-mcp-ai-secretary | Claude Code × Gmail/Calendar MCP でAI秘書を実現する | 2026-04-02 |
 
