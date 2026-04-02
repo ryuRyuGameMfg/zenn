@@ -192,7 +192,7 @@ if [[ "$USE_DYNAMIC" == "true" ]]; then
 fi
 export CLAUDE_PATH BOT_NAME="zenn-engine GM" LOG_FILE NOTIFY_SCRIPT
 export ALLOWED_TOOLS="Read,Write,Edit,Glob,Grep,Bash"
-export MAX_BUDGET="2.00"
+export MAX_BUDGET="3.00"
 export SESSION_ID_FILE="$WORK_DIR/telegram/.telegram-session-id"
 export SYSTEM_PROMPT_FILE="$WORK_DIR/prompts/telegram-react.md"
 export PROGRESS_MSG_ID TELEGRAM_BOT_TOKEN TELEGRAM_CHAT_ID
