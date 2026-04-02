@@ -4,7 +4,7 @@
 
 | 層 | パス | ロード | 説明 |
 |----|------|--------|------|
-| HOT | memory/hot/ | 常時 | 直近20件の日次記録 |
+| HOT | memory/hot/ | デーモン起動時のみ | 直近20件の日次記録 |
 | WARM | memory/warm/ | 常時 | 週次サマリー |
 | COLD | memory/cold/ | 要求時 | 月次サマリー |
 | INSIGHTS | memory/insights.md | 常時 | 学習パターン |
@@ -26,3 +26,8 @@
 
 ## COLD アーカイブ
 - ai-design-research.md
+
+## メモリ参照方針
+- Telegram経由（--resume）: HOT読み込み不要（セッション継続で代替）
+- WARM: memory/warm/ を必要に応じてGrep参照（~90日）
+- COLD: memory/cold/ を必要に応じてGrep参照（永続）
