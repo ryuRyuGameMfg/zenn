@@ -60,6 +60,32 @@ slug ルール:
 - prompts/ : mode-create/analyze/improve/rewrite.md
 - memory/ : metrics.json, insights.md, hot/, cold/
 
+## 記事公開フロー（重要）
+
+**新規記事作成時の必須手順**:
+
+1. **published: false で作成**: frontmatter は必ず `published: false` に設定
+2. **予約投稿キューに追加**: `data/queue.json` に記事情報を追加（優先度は末尾）
+3. **Git コミット・プッシュ**: 記事ファイル + queue.json を同時にコミット
+
+**予約投稿キュー（queue.json）の構造**:
+
+```json
+{
+  "filepath": "articles/{slug}.md",
+  "filename": "{slug}.md",
+  "title": "記事タイトル",
+  "scheduled_at": "YYYY-MM-DDTHH:mm:ss.sssZ",
+  "status": "queued",
+  "queued_at": "YYYY-MM-DDTHH:mm:ss.sssZ",
+  "priority": N
+}
+```
+
+**公開タイミング**: publish-daemon.mjs が scheduled_at に達したら自動的に `published: true` に変更
+
+**禁止事項**: 新規記事を `published: true` で即座に公開することは禁止（予約投稿キューを経由すること）
+
 ## 禁止事項
 
 - SOUL.md の変更
@@ -67,3 +93,4 @@ slug ルール:
 - git push は articles/ への変更がある場合のみ
 - プロジェクト外のファイル操作
 - sudo コマンドの実行
+- **新規記事を published: true で即公開すること（必ず queue.json 経由）**
