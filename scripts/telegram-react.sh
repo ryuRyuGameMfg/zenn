@@ -208,15 +208,7 @@ fi
 
 echo "[$(date '+%Y-%m-%dT%H:%M:%S')] OK: claude execution completed" >> "$LOG_FILE"
 
-# 5. TELEGRAM_REPLY抽出
-TELEGRAM_REPLY=$(echo "$CLAUDE_OUTPUT" | \
-  awk '/TELEGRAM_REPLY_START/{found=1; next} /TELEGRAM_REPLY_END/{found=0} found{print}' | \
-  head -500)
-
-if [[ -z "$TELEGRAM_REPLY" ]]; then
-  # マーカーがない場合は最後の数行を返信に使う
-  TELEGRAM_REPLY=$(echo "$CLAUDE_OUTPUT" | tail -5)
-fi
+TELEGRAM_REPLY="$CLAUDE_OUTPUT"
 
 # 6. Telegramに返信
 if [[ "$USE_DYNAMIC" == "true" && -n "$PROGRESS_MSG_ID" ]]; then

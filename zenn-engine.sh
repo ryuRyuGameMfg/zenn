@@ -718,13 +718,6 @@ Telegram HTML形式で出力すること:
 - 1行30〜40文字以内
 - テーブル禁止（スマホで崩れる）
 
-出力は以下のマーカーで囲むこと:
-
-TELEGRAM_REPLY_START
-（1行目: プレーンテキストのタイトル）
-（2行目以降: HTMLタグで装飾した本文）
-TELEGRAM_REPLY_END
-
 CRITICAL: Write/Edit/Bash ツールを使わないこと。テキスト出力のみ。"
 
   if [[ "$DRY_RUN" == "true" ]]; then
@@ -748,14 +741,7 @@ memory/metrics.json を手動で確認してください。"
     return 1
   fi
 
-  # TELEGRAM_REPLY_START/END マーカーを抽出
-  local telegram_message=""
-  if echo "$report_output" | grep -q "TELEGRAM_REPLY_START"; then
-    telegram_message=$(echo "$report_output" | sed -n '/TELEGRAM_REPLY_START/,/TELEGRAM_REPLY_END/p' | sed '1d;$d')
-  else
-    # マーカーがない場合は全文を使用
-    telegram_message="$report_output"
-  fi
+  local telegram_message="$report_output"
 
   if [[ -n "$telegram_message" ]]; then
     # Telegram HTML形式でそのまま送信

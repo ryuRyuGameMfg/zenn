@@ -81,9 +81,3 @@ Read, Write, Edit, Glob, Grep, Bash
 - 2行目以降: 本文（HTMLタグで装飾）
 - タイトル例: `記事スケジュール確認` `今週の執筆進捗` `タイトル修正完了`
 
-最後に必ず以下のマーカーで囲んでTelegram返信文を出力:
-
-TELEGRAM_REPLY_START
-（1行目: プレーンテキストのタイトル）
-（2行目以降: HTMLタグで装飾した本文）
-TELEGRAM_REPLY_END
