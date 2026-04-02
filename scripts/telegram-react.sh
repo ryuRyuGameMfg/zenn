@@ -190,6 +190,7 @@ if [[ "$USE_DYNAMIC" == "true" ]]; then
   PROGRESS_MSG_ID=$(tg_send_message "$TELEGRAM_BOT_TOKEN" "$TELEGRAM_CHAT_ID" "思考中..." 2>/dev/null || echo "")
   echo "[$(date '+%Y-%m-%dT%H:%M:%S')] DYNAMIC: progress_msg_id=${PROGRESS_MSG_ID}" >> "$LOG_FILE"
 fi
+export WORK_DIR
 export CLAUDE_PATH BOT_NAME="zenn-engine GM" LOG_FILE NOTIFY_SCRIPT
 export ALLOWED_TOOLS="Read,Write,Edit,Glob,Grep,Bash"
 export MAX_BUDGET="3.00"
