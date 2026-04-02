@@ -200,7 +200,7 @@ export PROGRESS_MSG_ID TELEGRAM_BOT_TOKEN TELEGRAM_CHAT_ID
 echo "$PROMPT" | bash ~/.claude/scripts/telegram-claude-runner.sh "$CLAUDE_TMP"
 RUNNER_EXIT=$?
 CLAUDE_OUTPUT=$(cat "$CLAUDE_TMP" 2>/dev/null || echo "")
-rm -f "$CLAUDE_TMP"
+rm -f "$CLAUDE_TMP" "${CLAUDE_TMP}.handled"
 
 if [[ $RUNNER_EXIT -ne 0 ]]; then
   exit 0
@@ -209,15 +209,6 @@ fi
 echo "[$(date '+%Y-%m-%dT%H:%M:%S')] OK: claude execution completed" >> "$LOG_FILE"
 
 TELEGRAM_REPLY="$CLAUDE_OUTPUT"
-
-# 6. Telegramに返信
-if [[ "$USE_DYNAMIC" == "true" && -n "$PROGRESS_MSG_ID" ]]; then
-  tg_edit_message "$TELEGRAM_BOT_TOKEN" "$TELEGRAM_CHAT_ID" "$PROGRESS_MSG_ID" "$TELEGRAM_REPLY" 2>/dev/null || {
-    bash "$NOTIFY_SCRIPT" "$TELEGRAM_REPLY" 2>>"$LOG_FILE" || true
-  }
-else
-  bash "$NOTIFY_SCRIPT" "$TELEGRAM_REPLY" 2>>"$LOG_FILE" || echo "[$(date '+%Y-%m-%dT%H:%M:%S')] WARN: telegram-notify.sh failed" >> "$LOG_FILE"
-fi
 
 # AI応答をhot/に記録
 HOT_DIR="$WORK_DIR/memory/hot"
