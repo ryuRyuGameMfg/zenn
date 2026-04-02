@@ -92,8 +92,8 @@
       "priority": 10
     },
     {
-      "filepath": "articles/2026-04-02-claude-code-notion-mcp-root-page-automation.md",
-      "filename": "2026-04-02-claude-code-notion-mcp-root-page-automation.md",
+      "filepath": "articles/2026-04-02-notion-mcp-root-page-automation.md",
+      "filename": "2026-04-02-notion-mcp-root-page-automation.md",
       "title": "Claude Code × Notion MCP でルートページ整理を自動化する",
       "scheduled_at": "2026-05-08T08:00:00.000Z",
       "status": "queued",
@@ -101,8 +101,8 @@
       "priority": 11
     },
     {
-      "filepath": "articles/2026-04-02-claude-code-gmail-calendar-mcp-ai-secretary.md",
-      "filename": "2026-04-02-claude-code-gmail-calendar-mcp-ai-secretary.md",
+      "filepath": "articles/2026-04-02-gmail-calendar-mcp-ai-secretary.md",
+      "filename": "2026-04-02-gmail-calendar-mcp-ai-secretary.md",
       "title": "Claude Code × Gmail/Calendar MCP でAI秘書を実現する",
       "scheduled_at": "2026-05-09T08:00:00.000Z",
       "status": "queued",

@@ -24,6 +24,11 @@
 
 以下のフォーマットで `~/repository/zenn-engine/articles/{YYYY-MM-DD}-{slug}.md` を作成する:
 
+**slug ルール（Zenn制約）:**
+- a-z0-9・ハイフン(-)・アンダースコア(_)のみ使用可
+- ファイル名全体（YYYY-MM-DD-{slug} 部分）が **12〜50文字** であること
+- 日本語・大文字・特殊文字は使用不可
+
 **frontmatter:**
 ```yaml
 ---
