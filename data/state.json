@@ -1,8 +1,8 @@
 {
   "mode": "create",
   "iteration": 2,
-  "status": "completed",
-  "last_run": "2026-03-31T14:30:00Z",
+  "status": "idle",
+  "last_run": "2026-04-03T08:00:03Z",
   "current_article": {
     "slug": "2026-04-01-claude-md-ascii-diagram-output",
     "title": "Claude Codeの出力が読めない問題をCLAUDE.mdのASCII図ルールで解決した",
