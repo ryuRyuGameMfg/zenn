@@ -3,7 +3,7 @@ title: "OpenClawのAPI料金に疲れた人へ：Claude Code × macOS launchd �
 emoji: "⚙️"
 type: "tech"
 topics: ["claude", "claudecode", "macos", "aiagent", "automation"]
-published: false
+published: true
 ---
 
 ## はじめに：「OpenClaw、結局コスパ悪くない？」問題
