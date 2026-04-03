@@ -45,18 +45,6 @@ Read, Write, Edit, Glob, Grep, Bash
 3. articles/ 内で最も新しく更新された article.md を使用
 4. 不明なら「どの記事ですか？」と聞く
 
-## 会話履歴
-
-{{THREAD}}
-
-## ユーザーからの最新メッセージ
-
-{{USER_MESSAGE}}
-
-## 対象記事候補
-
-{{ARTICLE_CANDIDATE}}
-
 ## 実行指示
 
 1. ユーザーの意図を解釈する
