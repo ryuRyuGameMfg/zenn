@@ -126,6 +126,15 @@
       "status": "queued",
       "queued_at": "2026-04-02T17:00:05.317Z",
       "priority": 14
+    },
+    {
+      "filepath": "articles/2026-04-03-unity-architecture-ai-code-instruction.md",
+      "filename": "2026-04-03-unity-architecture-ai-code-instruction.md",
+      "title": "MonoBehaviourベタ書きを卒業したい人へ：AIに設計パターンを指示してUnityコードを整理する方法",
+      "scheduled_at": "2026-05-17T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-03T08:00:00.000Z",
+      "priority": 15
     }
   ],
   "schedule": {

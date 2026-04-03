@@ -28,7 +28,7 @@
 
 ## キュー（優先順）
 
-1. uLoopMCP + Claude Code で Unity 自律開発サイクルを実現する方法
+1. uLoopMCP + Claude Code で Unity 自律開発サイクルを実現する方法（次回優先）
 3. Unity Memory Profiler 実践ワークフロー：GC Alloc 撲滅からメモリリーク根絶まで
 4. Unity GPU Instancing 完全実装：DrawMeshInstanced から RenderMeshIndirect まで段階的に理解する
 5. Unity ECS × ゲームキャラクター実装：OOP 設計からの段階移行実践ガイド
@@ -46,4 +46,5 @@
 | 2026-04-01-claude-md-ascii-diagram-output | Claude Codeの出力が読めない問題をCLAUDE.mdのASCII図ルールで解決した | 2026-04-01 |
 | 2026-04-02-claude-code-notion-mcp-root-page-automation | Claude Code × Notion MCP でルートページ整理を自動化する | 2026-04-02 |
 | 2026-04-02-claude-code-gmail-calendar-mcp-ai-secretary | Claude Code × Gmail/Calendar MCP でAI秘書を実現する | 2026-04-02 |
+| 2026-04-03-unity-architecture-ai-code-instruction | MonoBehaviourベタ書きを卒業したい人へ：AIに設計パターンを指示してUnityコードを整理する方法 | 2026-04-03 |
 

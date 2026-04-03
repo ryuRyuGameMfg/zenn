@@ -1,12 +1,12 @@
 {
   "mode": "create",
   "iteration": 2,
-  "status": "idle",
+  "status": "executing",
   "last_run": "2026-04-03T08:00:03Z",
   "current_article": {
-    "slug": "2026-04-01-claude-md-ascii-diagram-output",
-    "title": "Claude Codeの出力が読めない問題をCLAUDE.mdのASCII図ルールで解決した",
-    "topic": "CLAUDE.md ASCII図解出力"
+    "slug": "2026-04-03-unity-architecture-ai-code-instruction",
+    "title": "MonoBehaviourベタ書きを卒業したい人へ：AIに設計パターンを指示してUnityコードを整理する方法",
+    "topic": "Unity MonoBehaviour脱却 × AIアーキテクチャ指示術"
   },
   "consecutive_errors": 0,
   "scheduled_publish": [
