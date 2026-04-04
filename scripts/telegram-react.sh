@@ -1,4 +1,6 @@
 #!/bin/bash
-export WORK_DIR="$HOME/repository/zenn-engine"
-export SYSTEM_PROMPT_FILE="$HOME/.claude/prompts/telegram/system.md"
-exec "$HOME/.claude/scripts/telegram-react-core.sh" "$@"
+# telegram-react.sh - zenn-engine Telegram 応答（ラッパー）
+# CONFIG_SH経由でtelegram-react-runner.shに委譲
+
+export CONFIG_SH="${CONFIG_SH:-$HOME/.claude/bots/zenn-engine/config.sh}"
+exec bash "$HOME/.claude/bots/lib/telegram-react-runner.sh" "$@"
