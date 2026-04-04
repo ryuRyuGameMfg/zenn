@@ -1,8 +1,8 @@
 {
   "mode": "create",
   "iteration": 2,
-  "status": "reviewing",
-  "last_run": "2026-04-03T08:00:03Z",
+  "status": "idle",
+  "last_run": "2026-04-04T08:00:05Z",
   "current_article": {
     "slug": "2026-04-03-unity-architecture-ai-code-instruction",
     "title": "MonoBehaviourベタ書きを卒業したい人へ：AIに設計パターンを指示してUnityコードを整理する方法",
@@ -10,11 +10,6 @@
   },
   "consecutive_errors": 0,
   "scheduled_publish": [
-    {
-      "slug": "2026-03-30-claude-code-launchd-autonomous-agent",
-      "scheduled_date": "2026-04-04T08:00:00Z",
-      "status": "scheduled"
-    },
     {
       "slug": "2026-03-31-why-humans-dislike-ai-design",
       "scheduled_date": "2026-04-05T08:00:00Z",
