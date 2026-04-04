@@ -1,12 +1,12 @@
 {
-  "mode": "create",
+  "mode": "improve",
   "iteration": 2,
-  "status": "idle",
-  "last_run": "2026-04-04T08:00:05Z",
+  "status": "completed",
+  "last_run": "2026-04-04T09:00:00Z",
   "current_article": {
-    "slug": "2026-04-03-unity-architecture-ai-code-instruction",
-    "title": "MonoBehaviourベタ書きを卒業したい人へ：AIに設計パターンを指示してUnityコードを整理する方法",
-    "topic": "Unity MonoBehaviour脱却 × AIアーキテクチャ指示術"
+    "slug": "",
+    "title": "",
+    "topic": ""
   },
   "consecutive_errors": 0,
   "scheduled_publish": [

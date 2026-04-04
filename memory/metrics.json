@@ -1,14 +1,14 @@
 {
-  "last_updated": "2026-03-27",
-  "collected_at": "2026-03-27T08:00:00Z",
+  "last_updated": "2026-04-04",
+  "collected_at": "2026-04-04T09:00:00Z",
   "profile": {
     "username": "ryuryu_game",
     "follower_count": 37,
     "following_count": 0,
-    "articles_count": 29,
+    "articles_count": 42,
     "books_count": 1,
     "total_liked_count": 350,
-    "note": "published articles on Zenn（local articles/ に68ファイルあるが未公開分含む）"
+    "note": "total_liked_count はユーザーAPIの値。記事スキ合計は189（差分161はZennの内部集計差異の可能性）"
   },
   "okr_snapshot": {
     "o1_followers": {
@@ -19,19 +19,31 @@
     "o2_monthly_pv": {
       "target": 10000,
       "current": null,
-      "note": "Zenn API では PV非公開のため未取得"
+      "note": "Zenn API では PV非公開のため未取得。OKRをスキ数ベースに統一済み（STRATEGY.md参照）"
     },
     "o3_like_rate": {
       "target_pct": 5.0,
       "total_likes": 350,
-      "published_articles": 29,
-      "avg_likes_per_article": 12.1,
-      "note": "PV未取得のためスキ率計算不可。平均スキ数/記事は12.1"
+      "published_articles": 42,
+      "avg_likes_per_article": 8.33,
+      "note": "PV未取得のためスキ率計算不可。平均スキ数/記事は8.33"
     }
   },
   "competitor_trends": {
-    "collected_at": "2026-03-27",
+    "collected_at": "2026-04-04",
     "top_themes": [
+      {
+        "theme": "Unity vs Unreal比較・ゲームエンジン選定",
+        "avg_likes": 22,
+        "trend": "人気継続",
+        "notes": "エンジン選定系は検索流入が安定。比較記事・初心者向け解説が高評価"
+      },
+      {
+        "theme": "Claude Code自動化（スキル/スケジューラー・業務自動化）",
+        "avg_likes": 18,
+        "trend": "急増中",
+        "notes": "スキル上位表示・クロスポスト配信・業務フロー自動化がキーワード"
+      },
       {
         "theme": "AI x Unity Vibe Coding（Claude/Gemini MCP連携）",
         "avg_likes": 22,
@@ -43,12 +55,6 @@
         "avg_likes": 18,
         "trend": "安定",
         "notes": "公式情報まとめ系。LTSロードマップ・DOTS推奨"
-      },
-      {
-        "theme": "非エンジニア向け AI 参入体験記",
-        "avg_likes": 15,
-        "trend": "上昇",
-        "notes": "再現性高い体験談は拡散されやすい"
       }
     ],
     "notable_articles": [
@@ -78,5 +84,64 @@
       }
     ]
   },
-  "articles": []
+  "rewrite_candidates": [
+    {
+      "slug": "indie-dev-requirements-mermaid-design",
+      "title": "個人開発の要件定義を30分で終わらせるMermaid設計術",
+      "likes": 0,
+      "published_at": "2026-02-21",
+      "reason": "0スキ・公開30日以上経過"
+    },
+    {
+      "slug": "2026-01-23-unity-ai-3d-model-generation",
+      "title": "Unity AIで3Dモデル生成を試した結果、開発時間が3時間短縮された話",
+      "likes": 0,
+      "published_at": "2026-02-18",
+      "reason": "0スキ・公開30日以上経過"
+    }
+  ],
+  "articles": [
+    {"slug": "2026-02-25-7-unity-csharp", "title": "【7ルール】Unity C#による柔軟なロジック分離テクニック", "likes": 0, "published_at": "2026-04-03"},
+    {"slug": "2026-03-28-zenn-github-actions-auto-deploy", "title": "Zenn × GitHub Actions で自動デプロイを設定する方法【textlint + PR プレビュー対応】", "likes": 0, "published_at": "2026-03-29"},
+    {"slug": "2026-03-28-univrm-lipsync-implementation", "title": "UniVRM 2.0 で口パク（リップシンク）を実装する方法【VRM 1.0対応】", "likes": 0, "published_at": "2026-03-28"},
+    {"slug": "2026-03-26-unity-claude-code-auto-test-generation", "title": "Unity × Claude Code で自動テスト生成を実装する方法", "likes": 0, "published_at": "2026-03-27"},
+    {"slug": "claude-code-skill-display-order", "title": "Claude Codeで自作スキルを上位表示させる方法", "likes": 0, "published_at": "2026-03-15"},
+    {"slug": "ai-game-animation-revolution-2days-to-1hour", "title": "AIがゲームアニメーション制作を2日→1時間に変える", "likes": 0, "published_at": "2026-03-14"},
+    {"slug": "ai-character-7-use-cases-2026", "title": "AIキャラクターは何に使われてる? 7事例を徹底調査してみた", "likes": 0, "published_at": "2026-03-11"},
+    {"slug": "claude-beginner-full-automation-guide", "title": "Claudeって何？AIで仕事が楽になるって本当？完全自動化ガイド", "likes": 0, "published_at": "2026-03-10"},
+    {"slug": "ai-driven-narrative-design-llm-dynamic-story", "title": "AIドリブンなナラティブデザイン - LLMで動的ストーリーを実装する", "likes": 0, "published_at": "2026-03-08"},
+    {"slug": "indie-dev-requirements-mermaid-design", "title": "個人開発の要件定義を30分で終わらせるMermaid設計術", "likes": 0, "published_at": "2026-02-21"},
+    {"slug": "2026-01-23-unity-ai-3d-model-generation", "title": "Unity AIで3Dモデル生成を試した結果、開発時間が3時間短縮された話", "likes": 0, "published_at": "2026-02-18"},
+    {"slug": "2026-01-23-gpu-resident-drawer-unity6", "title": "Unity 6 GPU Resident Drawerで実現する高速レンダリング", "likes": 0, "published_at": "2026-02-18"},
+    {"slug": "4aa2919b625181", "title": "Claude Code上限に悩まない！実践的なコンテキストエンジニアリング", "likes": 0, "published_at": "2026-01-24"},
+    {"slug": "2026-01-24-claude-code", "title": "Claude Code上限に悩まない！実践的なコンテキストエンジニアリング", "likes": 0, "published_at": "2026-01-24"},
+    {"slug": "dd7322dde7fecd", "title": "タスクを「管理しない」という選択 ― ClaudeCodeが変える仕事の常識", "likes": 0, "published_at": "2026-01-23"},
+    {"slug": "2026-01-23-management-claude-code", "title": "タスクを「管理しない」という選択 ― ClaudeCodeが変える仕事の常識", "likes": 0, "published_at": "2026-01-23"},
+    {"slug": "01f28742eef652", "title": "Claude活用10倍に。記事も日報も経理も『全自動化する戦略会議室システム』", "likes": 0, "published_at": "2026-01-13"},
+    {"slug": "2026-01-13-claude-10-article-automation", "title": "Claude活用10倍に。記事も日報も経理も『全自動化する戦略会議室システム』", "likes": 0, "published_at": "2026-01-13"},
+    {"slug": "276c96a9938958", "title": "Claude Code: スキルを/検索から非表示にする方法", "likes": 0, "published_at": "2026-01-10"},
+    {"slug": "2026-01-10-claude-code-method", "title": "Claude Code: スキルを/検索から非表示にする方法", "likes": 0, "published_at": "2026-01-10"},
+    {"slug": "8d3c6d659f2293", "title": "UnityにおけるMonoBehaviourとPureC#の違い｜AI開発時代の必須知識", "likes": 0, "published_at": "2026-01-08"},
+    {"slug": "2026-01-08-unity-monobehaviour-csharp", "title": "UnityにおけるMonoBehaviourとPureC#の違い｜AI開発時代の必須知識", "likes": 0, "published_at": "2026-01-08"},
+    {"slug": "183b5fb40301d5", "title": "AI組織化でMainとSubが協働する3層設計｜全ての開発をコマンド経由で実行してみる", "likes": 0, "published_at": "2026-01-05"},
+    {"slug": "2026-01-05-ai-m-ai-n-sub-3-design-development", "title": "AI組織化でMainとSubが協働する3層設計｜全ての開発をコマンド経由で実行してみる", "likes": 0, "published_at": "2026-01-05"},
+    {"slug": "4fd68ec72cb406", "title": "【純粋なロジック設計】Unity C#で実践する副作用のないプログラミング", "likes": 10, "published_at": "2025-03-22"},
+    {"slug": "de962e6675c9d8", "title": "関数型デザインパターン: Unity C#で実装する柔軟なコード設計の秘訣", "likes": 10, "published_at": "2025-03-19"},
+    {"slug": "af16977920f361", "title": "信頼性向上のためのtry/catch/finallyの活用 ― Unity C#で信頼性の高いゲームロジックを構築する", "likes": 3, "published_at": "2025-03-18"},
+    {"slug": "bdc84f9b3d210f", "title": "【軽量データ】structで軽量データを ― Unity C#でパフォーマンス重視のゲーム設計", "likes": 9, "published_at": "2025-03-15"},
+    {"slug": "e0cb9691b32320", "title": "【可読性向上】コードの可読性を追求 ― Unityで書くリーダブルなC#コードの秘訣", "likes": 9, "published_at": "2025-03-09"},
+    {"slug": "f294464adfa94f", "title": "【8原則】SOLID実践で目指すUnity C#堅牢ゲームアーキテクチャ", "likes": 11, "published_at": "2025-03-03"},
+    {"slug": "178944d61e0fae", "title": "【7ルール】Unity C#による柔軟なロジック分離テクニック", "likes": 12, "published_at": "2025-03-02"},
+    {"slug": "1d824bf8916c36", "title": "Unity C#で実現！アクションRPGのアイテムドロップ管理をLINQで高速化する方法", "likes": 6, "published_at": "2025-02-27"},
+    {"slug": "1420c90c011460", "title": "Unityエンジニア必見！Observer Patternでシンプルに解決するイベントシステムの作り方", "likes": 7, "published_at": "2025-02-25"},
+    {"slug": "c885e7524d553b", "title": "【Unity C#】Gizmosで3D空間を徹底デバッグ!?隠れた不具合を見える化する技術", "likes": 5, "published_at": "2025-02-23"},
+    {"slug": "e452464931b0ce", "title": "Unity C#で実践！デザインパターン5選で作る堅牢かつ拡張性の高いゲームシステム", "likes": 32, "published_at": "2025-02-22"},
+    {"slug": "ad635d8b9a8f43", "title": "Unityエンジニア必見！Fluent Interfaceで実現するコード革命―シンプル＆エレガントな開発術", "likes": 8, "published_at": "2025-02-17"},
+    {"slug": "334d4e76182284", "title": "初心者でも作れる！\"使い捨てUnityイベント\"で開発効率を爆上げする方法", "likes": 8, "published_at": "2025-02-14"},
+    {"slug": "5c323d05ba6e02", "title": "Unity！「Rigidbody × Collider 最適化」で当たり判定を究極に高めるテクニック", "likes": 5, "published_at": "2025-02-03"},
+    {"slug": "ef64c64f1d5f56", "title": "Unity初心者必見！C#で効率UPする5つの小技", "likes": 15, "published_at": "2025-01-30"},
+    {"slug": "029524183c77d9", "title": "Unityエディタ拡張で実現する開発効率の爆上げテクニック", "likes": 21, "published_at": "2025-01-27"},
+    {"slug": "291ce3a3bf95ee", "title": "Unityの `Awake()` と `Start()` をどう使い分ける？  迷ったらこう使え初期化の極意", "likes": 11, "published_at": "2025-01-26"},
+    {"slug": "7f717d158e8231", "title": "【Unity×Cursor】AI開発時代におけるプログラム設計の新常識！脱Monobehaviour!?", "likes": 7, "published_at": "2025-01-21"}
+  ]
 }
