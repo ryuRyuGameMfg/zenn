@@ -16,9 +16,10 @@
       "filename": "2026-03-31-why-humans-dislike-ai-design.md",
       "title": "なぜ人間はAIデザインを嫌うのか：バイアスと実質的傾向の2方向分析【Unity UI実装例付き】",
       "scheduled_at": "2026-04-04T08:00:00.000Z",
-      "status": "queued",
+      "status": "failed",
       "queued_at": "2026-03-31T07:36:37.895Z",
-      "priority": 2
+      "priority": 2,
+      "last_publish_error": "Command failed: git commit -m \"zenn: publish \"なぜ人間はAIデザインを嫌うのか：バイアスと実質的傾向の2方向分析【Unity UI実装例付き】\"\""
     },
     {
       "filepath": "articles/2026-04-01-unity-official-mcp-complete-guide.md",
