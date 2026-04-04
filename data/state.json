@@ -1,7 +1,7 @@
 {
-  "mode": "analyze",
+  "mode": "improve",
   "iteration": 2,
-  "status": "idle",
+  "status": "completed",
   "last_run": "2026-04-04T08:13:07Z",
   "current_article": {
     "slug": "",
