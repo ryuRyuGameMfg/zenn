@@ -19,7 +19,7 @@
 import { readFileSync, writeFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { execSync } from 'child_process';
+import { execSync, spawnSync } from 'child_process';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT_DIR = join(__dirname, '..');
@@ -157,11 +157,14 @@ async function publishArticle(entry, dryRun = false) {
     log(`published: true に更新しました`);
 
     // 4. Git add + commit + push
-    execSync(`git add ${entry.filepath}`, { cwd: ROOT_DIR, stdio: 'inherit' });
+    spawnSync('git', ['add', entry.filepath], { cwd: ROOT_DIR, stdio: 'inherit' });
     log('git add 完了');
 
     const commitMessage = `zenn: publish "${entry.title}"`;
-    execSync(`git commit -m "${commitMessage}"`, { cwd: ROOT_DIR, stdio: 'inherit' });
+    const commitResult = spawnSync('git', ['commit', '-m', commitMessage], { cwd: ROOT_DIR, stdio: 'inherit' });
+    if (commitResult.status !== 0) {
+      throw new Error(`git commit failed with exit code ${commitResult.status}`);
+    }
     log('git commit 完了');
 
     execSync('git push origin main', { cwd: ROOT_DIR, stdio: 'inherit' });

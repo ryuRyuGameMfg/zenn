@@ -6,20 +6,22 @@
       "filename": "2026-03-30-claude-code-launchd-autonomous-agent.md",
       "title": "OpenClawのAPI料金に疲れた人へ：Claude Code × macOS launchd で月額固定の自律AIエージェントを自作する",
       "scheduled_at": "2026-04-03T08:00:00.000Z",
-      "status": "failed",
+      "status": "published",
       "queued_at": "2026-03-31T07:36:37.895Z",
       "priority": 1,
-      "last_publish_error": "Command failed: git commit -m \"zenn: publish \"OpenClawのAPI料金に疲れた人へ：Claude Code × macOS launchd で月額固定の自律AIエージェントを自作する\"\""
+      "published_at": "2026-04-04T09:00:00.000Z",
+      "published_url": "https://zenn.dev/ryuryu_game/articles/2026-03-30-claude-code-launchd-autonomous-agent"
     },
     {
       "filepath": "articles/2026-03-31-why-humans-dislike-ai-design.md",
       "filename": "2026-03-31-why-humans-dislike-ai-design.md",
       "title": "なぜ人間はAIデザインを嫌うのか：バイアスと実質的傾向の2方向分析【Unity UI実装例付き】",
       "scheduled_at": "2026-04-04T08:00:00.000Z",
-      "status": "failed",
+      "status": "published",
       "queued_at": "2026-03-31T07:36:37.895Z",
       "priority": 2,
-      "last_publish_error": "Command failed: git commit -m \"zenn: publish \"なぜ人間はAIデザインを嫌うのか：バイアスと実質的傾向の2方向分析【Unity UI実装例付き】\"\""
+      "published_at": "2026-04-04T09:00:00.000Z",
+      "published_url": "https://zenn.dev/ryuryu_game/articles/2026-03-31-why-humans-dislike-ai-design"
     },
     {
       "filepath": "articles/2026-04-01-unity-official-mcp-complete-guide.md",
