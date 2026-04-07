@@ -7,10 +7,9 @@
     <key>ProgramArguments</key>
     <array>
         <string>/bin/bash</string>
-        <string>/Users/okamotoryuya/repository/zenn-engine/scripts/telegram-daily-report.sh</string>
+        <string>/Users/okamotoryuya/.claude/bots/lib/daily-report-core.sh</string>
+        <string>/Users/okamotoryuya/.claude/bots/zenn-engine/config.sh</string>
     </array>
-    <key>WorkingDirectory</key>
-    <string>/Users/okamotoryuya/repository/zenn-engine</string>
     <key>StartCalendarInterval</key>
     <dict>
         <key>Hour</key><integer>9</integer>
