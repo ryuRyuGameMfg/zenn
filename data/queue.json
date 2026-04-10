@@ -28,9 +28,11 @@
       "filename": "2026-04-01-unity-official-mcp-complete-guide.md",
       "title": "Unity公式が本気で作ったAI連携：Claude/Cursorと直結する新時代の開発フロー",
       "scheduled_at": "2026-04-10T08:00:00.000Z",
-      "status": "queued",
+      "status": "published",
       "queued_at": "2026-04-02T08:00:00.000Z",
-      "priority": 3
+      "priority": 3,
+      "published_at": "2026-04-10T08:59:18.845Z",
+      "published_url": "https://zenn.dev/ryuRyuGameMfg/articles/2026-04-01-unity-official-mcp-complete-guide"
     },
     {
       "filepath": "articles/2026-04-02-uloopmcp-community-attention.md",
