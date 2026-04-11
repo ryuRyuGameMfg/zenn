@@ -3,7 +3,7 @@ title: "非公式なのに公式を超えた？uLoopMCPがコミュニティで�
 emoji: "🔥"
 type: "tech"
 topics: ["unity", "ai", "mcp", "claude", "automation"]
-published: false
+published: true
 ---
 
 ## はじめに：「非公式なのに注目される」異例の事態
