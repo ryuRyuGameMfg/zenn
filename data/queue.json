@@ -39,9 +39,11 @@
       "filename": "2026-04-02-uloopmcp-community-attention.md",
       "title": "非公式なのに公式を超えた？uLoopMCPがコミュニティで熱狂される理由",
       "scheduled_at": "2026-04-11T08:00:00.000Z",
-      "status": "queued",
+      "status": "published",
       "queued_at": "2026-04-02T08:00:00.000Z",
-      "priority": 4
+      "priority": 4,
+      "published_at": "2026-04-11T08:59:21.656Z",
+      "published_url": "https://zenn.dev/ryuRyuGameMfg/articles/2026-04-02-uloopmcp-community-attention"
     },
     {
       "filepath": "articles/2026-04-01-claude-md-ascii-diagram-output.md",
