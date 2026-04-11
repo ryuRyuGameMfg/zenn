@@ -7,23 +7,17 @@
     <key>ProgramArguments</key>
     <array>
         <string>/bin/bash</string>
-        <string>/Users/okamotoryuya/repository/zenn-engine/zenn-engine.sh</string>
+        <string>/Users/okamotoryuya/.claude/bots/lib/engine-runner-core.sh</string>
+        <string>/Users/okamotoryuya/.claude/bots/zenn-engine/config.sh</string>
     </array>
     <key>WorkingDirectory</key>
     <string>/Users/okamotoryuya/repository/zenn-engine</string>
     <key>StartCalendarInterval</key>
-    <array>
-        <dict>
-            <key>Weekday</key><integer>5</integer>
-            <key>Hour</key><integer>17</integer>
-            <key>Minute</key><integer>0</integer>
-        </dict>
-        <dict>
-            <key>Weekday</key><integer>6</integer>
-            <key>Hour</key><integer>17</integer>
-            <key>Minute</key><integer>0</integer>
-        </dict>
-    </array>
+    <dict>
+        <key>Weekday</key><integer>2</integer>
+        <key>Hour</key><integer>1</integer>
+        <key>Minute</key><integer>0</integer>
+    </dict>
     <key>StandardOutPath</key>
     <string>/Users/okamotoryuya/repository/zenn-engine/logs/launchd-stdout.log</string>
     <key>StandardErrorPath</key>

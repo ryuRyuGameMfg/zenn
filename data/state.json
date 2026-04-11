@@ -56,5 +56,23 @@
       "topic": "Zenn × GitHub Actions 自動デプロイ",
       "date": "2026-03-28"
     }
-  ]
+  ],
+  "kpi": {
+    "name": "累計フォロワー数",
+    "previous": 0,
+    "current": 37,
+    "target": 100,
+    "baseline": 37,
+    "achievement_pct": 0,
+    "delta": 0,
+    "trend": "unknown",
+    "measured_at": ""
+  },
+  "last_action": "",
+  "last_action_result": "",
+  "forbidden_actions": [],
+  "stagnant": false,
+  "stagnant_count": 0,
+  "last_learn_at": "",
+  "cycle_count": 0
 }
