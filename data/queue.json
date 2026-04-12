@@ -143,6 +143,15 @@
       "status": "queued",
       "queued_at": "2026-04-03T08:00:00.000Z",
       "priority": 15
+    },
+    {
+      "filepath": "articles/2026-04-13-unity-scriptableobject-5-patterns.md",
+      "filename": "2026-04-13-unity-scriptableobject-5-patterns.md",
+      "title": "ScriptableObjectで変わるゲームデータ設計5パターン【Unity】",
+      "scheduled_at": "2026-05-23T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-13T00:00:00.000Z",
+      "priority": 16
     }
   ],
   "schedule": {

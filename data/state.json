@@ -1,8 +1,8 @@
 {
-  "mode": "create",
+  "mode": "analyze",
   "iteration": 3,
-  "status": "reviewing",
-  "last_run": "2026-04-04T08:13:07Z",
+  "status": "idle",
+  "last_run": "2026-04-13T00:00:00Z",
   "current_article": {
     "slug": "",
     "title": "",
@@ -55,21 +55,29 @@
       "title": "Zenn × GitHub Actions で自動デプロイを設定する方法【textlint + PR プレビュー対応】",
       "topic": "Zenn × GitHub Actions 自動デプロイ",
       "date": "2026-03-28"
+    },
+    {
+      "iteration": 3,
+      "mode": "create",
+      "slug": "2026-04-13-unity-scriptableobject-5-patterns",
+      "title": "ScriptableObjectで変わるゲームデータ設計5パターン【Unity】",
+      "topic": "ScriptableObject 設計パターン5選（N選×設計、2026年空白テーマ）",
+      "date": "2026-04-13"
     }
   ],
   "kpi": {
     "name": "累計フォロワー数",
-    "previous": 0,
+    "previous": 37,
     "current": 37,
     "target": 100,
-    "baseline": 37,
-    "achievement_pct": 0,
+    "baseline": 0,
+    "achievement_pct": 37,
     "delta": 0,
-    "trend": "unknown",
-    "measured_at": ""
+    "trend": "stable",
+    "measured_at": "2026-04-12T16:00:05Z"
   },
-  "last_action": "",
-  "last_action_result": "",
+  "last_action": "create: 2026-04-13-unity-scriptableobject-5-patterns（N選×設計パターン、0スキ問題対策）",
+  "last_action_result": "articles/2026-04-13-unity-scriptableobject-5-patterns.md 保存完了（published: false、queue待ち）",
   "forbidden_actions": [],
   "stagnant": false,
   "stagnant_count": 0,
