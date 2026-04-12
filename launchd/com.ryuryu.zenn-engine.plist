@@ -14,7 +14,6 @@
     <string>/Users/okamotoryuya/repository/zenn-engine</string>
     <key>StartCalendarInterval</key>
     <dict>
-        <key>Weekday</key><integer>2</integer>
         <key>Hour</key><integer>1</integer>
         <key>Minute</key><integer>0</integer>
     </dict>
