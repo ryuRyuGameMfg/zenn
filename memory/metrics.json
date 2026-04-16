@@ -1,14 +1,14 @@
 {
-  "last_updated": "2026-04-04",
-  "collected_at": "2026-04-04T09:00:00Z",
+  "last_updated": "2026-04-17",
+  "collected_at": "2026-04-17T00:00:00Z",
   "profile": {
     "username": "ryuryu_game",
     "follower_count": 37,
     "following_count": 0,
-    "articles_count": 42,
+    "articles_count": 47,
     "books_count": 1,
-    "total_liked_count": 350,
-    "note": "total_liked_count はユーザーAPIの値。記事スキ合計は189（差分161はZennの内部集計差異の可能性）"
+    "total_liked_count": 349,
+    "note": "total_liked_count はユーザーAPIの値。記事スキ合計は188（2026年記事は全て0スキ）"
   },
   "okr_snapshot": {
     "o1_followers": {
@@ -19,15 +19,28 @@
     "o2_monthly_pv": {
       "target": 10000,
       "current": null,
-      "note": "Zenn API では PV非公開のため未取得。OKRをスキ数ベースに統一済み（STRATEGY.md参照）"
+      "note": "Zenn API では PV非公開のため未取得。OKRをスキ数ベースに統一済み"
     },
     "o3_like_rate": {
       "target_pct": 5.0,
-      "total_likes": 350,
-      "published_articles": 42,
-      "avg_likes_per_article": 8.33,
-      "note": "PV未取得のためスキ率計算不可。平均スキ数/記事は8.33"
+      "total_likes": 349,
+      "published_articles": 47,
+      "avg_likes_per_article": 7.43,
+      "avg_likes_2025_only": 10.44,
+      "note": "2026年記事は全て0スキ（47記事中18記事のみスキあり）。2025年記事18本の平均は10.44"
     }
+  },
+  "key_insight_2026_04_17": {
+    "critical": "2026年0スキ問題の主因は「2025年記事の重複投稿」",
+    "detail": "2026年にスラッグを変えて再公開した記事（e.g. 2026-02-25-8-solid-unity-csharp-game）が2025年オリジナル記事（f294464adfa94f: 11スキ）と競合。Zennの重複コンテンツにより検索流入なし。",
+    "genuine_0_like_articles": [
+      "2026-03-26-unity-claude-code-auto-test-generation",
+      "2026-03-28-univrm-lipsync-implementation",
+      "2026-03-30-claude-code-launchd-autonomous-agent",
+      "indie-dev-requirements-mermaid-design",
+      "ai-driven-narrative-design-llm-dynamic-story"
+    ],
+    "action": "improve モードで重複記事の削除またはリライト方針を策定"
   },
   "competitor_trends": {
     "collected_at": "2026-04-04",
@@ -90,18 +103,26 @@
       "title": "個人開発の要件定義を30分で終わらせるMermaid設計術",
       "likes": 0,
       "published_at": "2026-02-21",
-      "reason": "0スキ・公開30日以上経過"
+      "reason": "0スキ・公開30日以上・非重複記事。タイトルを「N選」形式に変換で改善余地あり",
+      "priority": 1
     },
     {
-      "slug": "2026-01-23-unity-ai-3d-model-generation",
-      "title": "Unity AIで3Dモデル生成を試した結果、開発時間が3時間短縮された話",
+      "slug": "ai-driven-narrative-design-llm-dynamic-story",
+      "title": "AIドリブンなナラティブデザイン - LLMで動的ストーリーを実装する",
       "likes": 0,
-      "published_at": "2026-02-18",
-      "reason": "0スキ・公開30日以上経過"
+      "published_at": "2026-03-08",
+      "reason": "0スキ・公開30日以上・非重複記事。コードサンプル不足の可能性",
+      "priority": 2
     }
   ],
   "articles": [
-    {"slug": "2026-02-25-7-unity-csharp", "title": "【7ルール】Unity C#による柔軟なロジック分離テクニック", "likes": 0, "published_at": "2026-04-03"},
+    {"slug": "2026-04-13-unity-scriptableobject-5-patterns", "title": "ScriptableObjectで変わるゲームデータ設計5パターン【Unity】", "likes": 0, "published_at": "draft", "note": "queue: 2026-05-23公開予定"},
+    {"slug": "2026-02-25-unity-csharp-5-game-system", "title": "Unity C#で実践！デザインパターン5選で作る堅牢かつ拡張性の高いゲームシステム", "likes": 0, "published_at": "2026-04-13", "note": "重複: e452464931b0ce(32スキ)の再公開"},
+    {"slug": "2026-02-25-unity-awake-start", "title": "Unityの `Awake()` と `Start()` をどう使い分ける？迷ったらこう使え初期化の極意", "likes": 0, "published_at": "2026-04-11", "note": "重複: 291ce3a3bf95ee(11スキ)の再公開"},
+    {"slug": "2026-02-25-trycatchfinally-unity-csharp-game", "title": "信頼性向上のためのtry/catch/finallyの活用 ― Unity C#で信頼性の高いゲームロジックを構築する", "likes": 0, "published_at": "2026-04-10", "note": "重複: af16977920f361(3スキ)の再公開"},
+    {"slug": "2026-02-25-design-unity-csharp", "title": "【純粋なロジック設計】Unity C#で実践する副作用のないプログラミング", "likes": 0, "published_at": "2026-04-07", "note": "重複: 4fd68ec72cb406(9スキ)の再公開"},
+    {"slug": "2026-02-25-8-solid-unity-csharp-game", "title": "【8原則】SOLID実践で目指すUnity C#堅牢ゲームアーキテクチャ", "likes": 0, "published_at": "2026-04-04", "note": "重複: f294464adfa94f(11スキ)の再公開"},
+    {"slug": "2026-02-25-7-unity-csharp", "title": "【7ルール】Unity C#による柔軟なロジック分離テクニック", "likes": 0, "published_at": "2026-04-03", "note": "重複: 178944d61e0fae(12スキ)の再公開"},
     {"slug": "2026-03-28-zenn-github-actions-auto-deploy", "title": "Zenn × GitHub Actions で自動デプロイを設定する方法【textlint + PR プレビュー対応】", "likes": 0, "published_at": "2026-03-29"},
     {"slug": "2026-03-28-univrm-lipsync-implementation", "title": "UniVRM 2.0 で口パク（リップシンク）を実装する方法【VRM 1.0対応】", "likes": 0, "published_at": "2026-03-28"},
     {"slug": "2026-03-26-unity-claude-code-auto-test-generation", "title": "Unity × Claude Code で自動テスト生成を実装する方法", "likes": 0, "published_at": "2026-03-27"},
@@ -114,18 +135,18 @@
     {"slug": "2026-01-23-unity-ai-3d-model-generation", "title": "Unity AIで3Dモデル生成を試した結果、開発時間が3時間短縮された話", "likes": 0, "published_at": "2026-02-18"},
     {"slug": "2026-01-23-gpu-resident-drawer-unity6", "title": "Unity 6 GPU Resident Drawerで実現する高速レンダリング", "likes": 0, "published_at": "2026-02-18"},
     {"slug": "4aa2919b625181", "title": "Claude Code上限に悩まない！実践的なコンテキストエンジニアリング", "likes": 0, "published_at": "2026-01-24"},
-    {"slug": "2026-01-24-claude-code", "title": "Claude Code上限に悩まない！実践的なコンテキストエンジニアリング", "likes": 0, "published_at": "2026-01-24"},
+    {"slug": "2026-01-24-claude-code", "title": "Claude Code上限に悩まない！実践的なコンテキストエンジニアリング（重複）", "likes": 0, "published_at": "2026-01-24"},
     {"slug": "dd7322dde7fecd", "title": "タスクを「管理しない」という選択 ― ClaudeCodeが変える仕事の常識", "likes": 0, "published_at": "2026-01-23"},
-    {"slug": "2026-01-23-management-claude-code", "title": "タスクを「管理しない」という選択 ― ClaudeCodeが変える仕事の常識", "likes": 0, "published_at": "2026-01-23"},
+    {"slug": "2026-01-23-management-claude-code", "title": "タスクを「管理しない」という選択（重複）", "likes": 0, "published_at": "2026-01-23"},
     {"slug": "01f28742eef652", "title": "Claude活用10倍に。記事も日報も経理も『全自動化する戦略会議室システム』", "likes": 0, "published_at": "2026-01-13"},
-    {"slug": "2026-01-13-claude-10-article-automation", "title": "Claude活用10倍に。記事も日報も経理も『全自動化する戦略会議室システム』", "likes": 0, "published_at": "2026-01-13"},
+    {"slug": "2026-01-13-claude-10-article-automation", "title": "Claude活用10倍に（重複）", "likes": 0, "published_at": "2026-01-13"},
     {"slug": "276c96a9938958", "title": "Claude Code: スキルを/検索から非表示にする方法", "likes": 0, "published_at": "2026-01-10"},
-    {"slug": "2026-01-10-claude-code-method", "title": "Claude Code: スキルを/検索から非表示にする方法", "likes": 0, "published_at": "2026-01-10"},
+    {"slug": "2026-01-10-claude-code-method", "title": "Claude Code: スキルを/検索から非表示にする方法（重複）", "likes": 0, "published_at": "2026-01-10"},
     {"slug": "8d3c6d659f2293", "title": "UnityにおけるMonoBehaviourとPureC#の違い｜AI開発時代の必須知識", "likes": 0, "published_at": "2026-01-08"},
-    {"slug": "2026-01-08-unity-monobehaviour-csharp", "title": "UnityにおけるMonoBehaviourとPureC#の違い｜AI開発時代の必須知識", "likes": 0, "published_at": "2026-01-08"},
+    {"slug": "2026-01-08-unity-monobehaviour-csharp", "title": "UnityにおけるMonoBehaviourとPureC#の違い（重複）", "likes": 0, "published_at": "2026-01-08"},
     {"slug": "183b5fb40301d5", "title": "AI組織化でMainとSubが協働する3層設計｜全ての開発をコマンド経由で実行してみる", "likes": 0, "published_at": "2026-01-05"},
-    {"slug": "2026-01-05-ai-m-ai-n-sub-3-design-development", "title": "AI組織化でMainとSubが協働する3層設計｜全ての開発をコマンド経由で実行してみる", "likes": 0, "published_at": "2026-01-05"},
-    {"slug": "4fd68ec72cb406", "title": "【純粋なロジック設計】Unity C#で実践する副作用のないプログラミング", "likes": 10, "published_at": "2025-03-22"},
+    {"slug": "2026-01-05-ai-m-ai-n-sub-3-design-development", "title": "AI組織化（重複）", "likes": 0, "published_at": "2026-01-05"},
+    {"slug": "4fd68ec72cb406", "title": "【純粋なロジック設計】Unity C#で実践する副作用のないプログラミング", "likes": 9, "published_at": "2025-03-22"},
     {"slug": "de962e6675c9d8", "title": "関数型デザインパターン: Unity C#で実装する柔軟なコード設計の秘訣", "likes": 10, "published_at": "2025-03-19"},
     {"slug": "af16977920f361", "title": "信頼性向上のためのtry/catch/finallyの活用 ― Unity C#で信頼性の高いゲームロジックを構築する", "likes": 3, "published_at": "2025-03-18"},
     {"slug": "bdc84f9b3d210f", "title": "【軽量データ】structで軽量データを ― Unity C#でパフォーマンス重視のゲーム設計", "likes": 9, "published_at": "2025-03-15"},
@@ -141,7 +162,7 @@
     {"slug": "5c323d05ba6e02", "title": "Unity！「Rigidbody × Collider 最適化」で当たり判定を究極に高めるテクニック", "likes": 5, "published_at": "2025-02-03"},
     {"slug": "ef64c64f1d5f56", "title": "Unity初心者必見！C#で効率UPする5つの小技", "likes": 15, "published_at": "2025-01-30"},
     {"slug": "029524183c77d9", "title": "Unityエディタ拡張で実現する開発効率の爆上げテクニック", "likes": 21, "published_at": "2025-01-27"},
-    {"slug": "291ce3a3bf95ee", "title": "Unityの `Awake()` と `Start()` をどう使い分ける？  迷ったらこう使え初期化の極意", "likes": 11, "published_at": "2025-01-26"},
+    {"slug": "291ce3a3bf95ee", "title": "Unityの `Awake()` と `Start()` をどう使い分ける？迷ったらこう使え初期化の極意", "likes": 11, "published_at": "2025-01-26"},
     {"slug": "7f717d158e8231", "title": "【Unity×Cursor】AI開発時代におけるプログラム設計の新常識！脱Monobehaviour!?", "likes": 7, "published_at": "2025-01-21"}
   ]
 }
