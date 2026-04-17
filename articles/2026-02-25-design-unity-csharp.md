@@ -3,7 +3,7 @@ title: "【純粋なロジック設計】Unity C#で実践する副作用のな�
 emoji: "✨"
 type: "tech"
 topics: ["csharp","unity"]
-published: true
+published: false
 ---
 
 # [](#%E3%80%90%E7%B4%94%E7%B2%8B%E3%81%AA%E3%83%AD%E3%82%B8%E3%83%83%E3%82%AF%E8%A8%AD%E8%A8%88%E3%80%91unity-c%23%E3%81%A7%E5%AE%9F%E8%B7%B5%E3%81%99%E3%82%8B%E5%89%AF%E4%BD%9C%E7%94%A8%E3%81%AE%E3%81%AA%E3%81%84%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0)【純粋なロジック設計】Unity C#で実践する副作用のないプログラミング

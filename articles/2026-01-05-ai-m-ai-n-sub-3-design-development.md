@@ -8,7 +8,7 @@ topics:
   - "コンテキストエンジニアリング"
   - "agentskills"
   - "ai組織化"
-published: true
+published: false
 published_at: "2026-01-05 20:03"
 ---
 

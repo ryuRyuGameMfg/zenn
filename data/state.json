@@ -1,8 +1,8 @@
 {
-  "mode": "rewrite",
-  "iteration": 3,
+  "mode": "create",
+  "iteration": 4,
   "status": "idle",
-  "last_run": "2026-04-17T07:00:00Z",
+  "last_run": "2026-04-18T00:00:00Z",
   "current_article": {
     "slug": "",
     "title": "",
@@ -74,19 +74,20 @@
     "achievement_pct": 37,
     "delta": 0,
     "trend": "stable",
-    "measured_at": "2026-04-17T04:09:59Z"
+    "measured_at": "2026-04-17T16:00:04Z"
   },
-  "last_action": "improve: 2026-04-17 重複記事対策方針策定 + テーマキュー5件補充（CoreCLR/ECS/並列開発等）",
-  "last_action_result": "analyze モード完了。結果をまとめます。\n\n```text\n┌─────────────────────────────────────────────────┐\n│  KPI計測完了 - iter03_analyze                    │\n└─────────────────────────────────────────────────┘\n\nKPI現在値（2026-04-17）\n  フォロワー数: 37（前回比 ±0）\n  記事数:       47（+5増加）\n  total_likes:  349（-1微減）\n  avg_likes:    7.43/記事（全体）/ 10.44/記事（2025年記事のみ）\n\n┌──────────────────────────────────────────────────┐\n│ 重大発見: 0スキ問題の根本原因 = 重複記事         │\n└──────────────────────────────────────────────────┘\n\n2026年公開記事のうち少なくとも6本が2025年記事の再公開\n\n  重複例:\n  ┌───────────────────────────────────┬────────┬──────────────┐\n  │ 2026年スラッグ（0スキ）           │ 元記事 │ 元記事スキ数 │\n  ├───────────────────────────────────┼────────┼──────────────┤\n  │ 2026-02-25-unity-csharp-5-game    │ e45246 │ 32スキ       │\n  │ 2026-02-25-7-unity-csharp         │ 178944 │ 12スキ       │\n  │ 2026-02-25-8-solid-unity-csharp   │ f29446 │ 11スキ       │\n  │ 2026-02-25-unity-awake-start      │ 291ce3 │ 11スキ       │\n  │ 2026-02-25-design-unity-csharp    │ 4fd68e │  9スキ       │\n  │ 2026-02-25-trycatchfinally-unity  │ af1697 │  3スキ       │\n  └───────────────────────────────────┴────────┴──────────────┘\n\nKPI改善根拠（なぜanalyzeがKPI改善に繋がるか）\n  根本原因が不明なままcreateを繰り返しても0スキが続く。\n  今回の計測で「重複記事問題」を特定したことで、\n  次サイクル（improve）での戦略的対処が可能になった。\n\n後処理\n  metrics.json: 47記事分のデータで更新完了\n  state.json: analyze → improve に遷移\n  git commit: 0799358\n```\n\n**次サイクル（improve）** では、重複記事の処理方針策定と insights.md のキュー補充を実行します。",
+  "last_action": "rewrite: 2026-04-18 重複10本unpublish + 新規記事作成（uLoopMCP × Claude Code）",
+  "last_action_result": "rewrite モード完了 — iter03_rewrite / 重複10本をpublished:falseに変更しavg_likes 7.43→9.4(+26%)改善見込み / 新規記事2026-04-18-uloopmcp-claude-code-unity-autonomous-loop.md作成(published:false)",
   "forbidden_actions": [
     "create: 2026-04-13-unity-scriptableobject-5-patterns（N選×設計パターン、0スキ問題対策）",
-    "analyze: 2026-04-17 metrics更新（47記事・フォロワー37・0スキ根本原因特定: 重複記事問題）"
+    "analyze: 2026-04-17 metrics更新（47記事・フォロワー37・0スキ根本原因特定: 重複記事問題）",
+    "improve: 2026-04-17 重複記事対策方針策定 + テーマキュー5件補充（CoreCLR/ECS/並列開発等）"
   ],
-  "stagnant": false,
+  "stagnant": true,
   "stagnant_count": 0,
   "last_learn_at": "2026-04-12T16:13:38Z",
   "cycle_count": 0,
   "last_assess_result": "no_improve",
-  "last_assess_at": "2026-04-16T16:04:47Z",
-  "no_improve_count": 2
+  "last_assess_at": "2026-04-17T04:14:19Z",
+  "no_improve_count": 3
 }
