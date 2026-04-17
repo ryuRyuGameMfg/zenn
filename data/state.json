@@ -1,8 +1,8 @@
 {
-  "mode": "improve",
+  "mode": "rewrite",
   "iteration": 3,
   "status": "idle",
-  "last_run": "2026-04-17T00:00:00Z",
+  "last_run": "2026-04-17T07:00:00Z",
   "current_article": {
     "slug": "",
     "title": "",
@@ -74,18 +74,19 @@
     "achievement_pct": 37,
     "delta": 0,
     "trend": "stable",
-    "measured_at": "2026-04-16T16:00:05Z"
+    "measured_at": "2026-04-17T04:09:59Z"
   },
-  "last_action": "analyze: 2026-04-17 metrics更新（47記事・フォロワー37・0スキ根本原因特定: 重複記事問題）",
-  "last_action_result": "## 完了報告\n\n今サイクルの実行結果をまとめます。\n\n```text\n┌─────────────────────────────────────────────────┐\n│  KPI改善アクション完了 - iter03_create           │\n└─────────────────────────────────────────────────┘\n\n実行アクション\n  選定理由: 0スキ問題 → N選×設計パターン形式に転換\n  採用テーマ: insights.md item 7（2026年空白テーマ）\n\n  記事: ScriptableObjectで変わるゲームデータ設計5パターン【Unity】\n  スラッグ: 2026-04-13-unity-scriptableobject-5-patterns\n  文字数: 約8,847字 / コードブロック: 15個 / Mermaid: 1図\n\nKPI改善根拠\n  ┌─────────────────┬───────────┬──────────┐\n  │ 形式            │ 実績スキ  │ 今回採用 │\n  ├─────────────────┼───────────┼──────────┤\n  │ N選×設計パターン │ 最高32スキ│ ✓        │\n  │ AI系記事（2026）│ 0スキ     │ 非採用   │\n  └─────────────────┴───────────┴──────────┘\n\n品質修正（Phase 9で検出・修正済み）\n  HIGH: CircleCastAll → OverlapCircleAll（動作不良修正）\n  HIGH: using UnityEngine.Events; 追加（コンパイルエラー防止）\n  FACT: GDC 2017 → Unite Austin 2017（事実訂正）\n  LINK: 403 URL削除（unity.com/how-to/runtime-set）\n\n後処理\n  git push: 完了（commit 5f5f6cc）\n  queue.json: priority 16 / 2026-05-23 公開予定\n  state.json: create → analyze（次サイクルへ遷移）\n  insights.md: item 7 済みマーク\n```\n\n**次サイクル（analyze）** では、公開済み記事のスキ数・PVを計測してmetrics.jsonを更新します。",
+  "last_action": "improve: 2026-04-17 重複記事対策方針策定 + テーマキュー5件補充（CoreCLR/ECS/並列開発等）",
+  "last_action_result": "analyze モード完了。結果をまとめます。\n\n```text\n┌─────────────────────────────────────────────────┐\n│  KPI計測完了 - iter03_analyze                    │\n└─────────────────────────────────────────────────┘\n\nKPI現在値（2026-04-17）\n  フォロワー数: 37（前回比 ±0）\n  記事数:       47（+5増加）\n  total_likes:  349（-1微減）\n  avg_likes:    7.43/記事（全体）/ 10.44/記事（2025年記事のみ）\n\n┌──────────────────────────────────────────────────┐\n│ 重大発見: 0スキ問題の根本原因 = 重複記事         │\n└──────────────────────────────────────────────────┘\n\n2026年公開記事のうち少なくとも6本が2025年記事の再公開\n\n  重複例:\n  ┌───────────────────────────────────┬────────┬──────────────┐\n  │ 2026年スラッグ（0スキ）           │ 元記事 │ 元記事スキ数 │\n  ├───────────────────────────────────┼────────┼──────────────┤\n  │ 2026-02-25-unity-csharp-5-game    │ e45246 │ 32スキ       │\n  │ 2026-02-25-7-unity-csharp         │ 178944 │ 12スキ       │\n  │ 2026-02-25-8-solid-unity-csharp   │ f29446 │ 11スキ       │\n  │ 2026-02-25-unity-awake-start      │ 291ce3 │ 11スキ       │\n  │ 2026-02-25-design-unity-csharp    │ 4fd68e │  9スキ       │\n  │ 2026-02-25-trycatchfinally-unity  │ af1697 │  3スキ       │\n  └───────────────────────────────────┴────────┴──────────────┘\n\nKPI改善根拠（なぜanalyzeがKPI改善に繋がるか）\n  根本原因が不明なままcreateを繰り返しても0スキが続く。\n  今回の計測で「重複記事問題」を特定したことで、\n  次サイクル（improve）での戦略的対処が可能になった。\n\n後処理\n  metrics.json: 47記事分のデータで更新完了\n  state.json: analyze → improve に遷移\n  git commit: 0799358\n```\n\n**次サイクル（improve）** では、重複記事の処理方針策定と insights.md のキュー補充を実行します。",
   "forbidden_actions": [
-    "create: 2026-04-13-unity-scriptableobject-5-patterns（N選×設計パターン、0スキ問題対策）"
+    "create: 2026-04-13-unity-scriptableobject-5-patterns（N選×設計パターン、0スキ問題対策）",
+    "analyze: 2026-04-17 metrics更新（47記事・フォロワー37・0スキ根本原因特定: 重複記事問題）"
   ],
   "stagnant": false,
   "stagnant_count": 0,
   "last_learn_at": "2026-04-12T16:13:38Z",
   "cycle_count": 0,
   "last_assess_result": "no_improve",
-  "last_assess_at": "2026-04-12T16:13:38Z",
-  "no_improve_count": 1
+  "last_assess_at": "2026-04-16T16:04:47Z",
+  "no_improve_count": 2
 }

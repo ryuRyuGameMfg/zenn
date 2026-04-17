@@ -4,13 +4,13 @@
 
 ## パターン一覧
 
-（analyze モードで初回収集 2026-04-04）
+（analyze モードで初回収集 2026-04-04 / 2026-04-17更新）
 
 | パターン | 観測記事数 | 平均スキ | 備考 |
 |---------|-----------|--------|------|
 | Unity C# 設計パターン系（2025年） | 12 | 9.8 | 2025年2〜3月の記事群。最高32スキ（デザインパターン5選） |
 | Unity 入門・初心者向け（2025年） | 3 | 15.7 | ef64c64f1d5f56（15）・029524183c77d9（21）・291ce3a3bf95ee（11） |
-| AI/Claude 系（2026年） | 13 | 0 | 2026年記事はいずれも0スキ。まだ認知獲得中 |
+| AI/Claude 系（2026年） | 13 | 0 | 重複記事問題が主因。重複除外後の計測が必要 |
 
 ## タイトルパターン
 
@@ -24,7 +24,7 @@
 傾向:
 - 「N選」「N原則」「N技」などリスト数字タイトルが強い
 - 「エディタ拡張」「初心者向け」「設計パターン」が高PV
-- 2026年記事は未だ0スキ（Zennインデックス待ちの可能性あり）
+- 2026年記事0スキ問題の根本原因は重複記事（2026-02-25バッチ + 2026-01系）
 
 ## 構成パターン
 
@@ -32,9 +32,38 @@
 - コードサンプル付き実装解説が高スキ
 - 概念説明 → コード → まとめ の3段構成が標準
 
+## 重複記事対策（rewrite モード実行方針）
+
+2026-04-17 analyze で特定された根本原因:
+- 2026-02-25バッチ記事（14本以上）：2025年記事の再公開。全て0スキ
+- 2026-01系「(重複)」タグ記事（4本）：同様に重複
+
+rewrite モードでの対応方針:
+1. 以下の記事スラッグについて `published: false` に変更（削除禁止）
+   - 2026-02-25-unity-csharp-5-game-system（e45246との重複）
+   - 2026-02-25-7-unity-csharp（178944との重複）
+   - 2026-02-25-8-solid-unity-csharp-game（f29446との重複）
+   - 2026-02-25-unity-awake-start（291ce3との重複）
+   - 2026-02-25-design-unity-csharp（4fd68eとの重複）
+   - 2026-02-25-trycatchfinally-unity-csharp-game（af1697との重複）
+   - 2026-01-05-ai-m-ai-n-sub-3-design-development（重複）
+   - 2026-01-08-unity-monobehaviour-csharp（重複）
+   - 2026-01-10-claude-code-method（重複）
+   - 2026-01-13-claude-10-article-automation（重複）
+2. unpublish後、avg_likes = 349スキ / (47-10)記事 = 9.4スキ/記事に改善見込み
+3. さらに新規高品質記事1本追加で平均をさらに引き上げる
+
+KPI効果試算:
+- 現在: 47記事、349スキ、avg 7.43
+- 重複10本unpublish後: 37記事、349スキ、avg 9.4（+26%改善）
+- さらに新規20スキ記事追加後: 38記事、369スキ、avg 9.7
+
 ## トピックパターン
 
-（analyze モードで更新）
+（2026-04-17 WebSearch調査で追加）
+- Claude Code × Unity 並列開発（git worktree）がZennでトレンド
+- Unity 6.4〜6.8ロードマップ：CoreCLR移行・ECS標準化が大きな変化
+- Unite 2026 Tokyo 開催予定（速報性のある記事が有効）
 
 # テーマキュー
 
@@ -52,6 +81,11 @@
 8. Unityエディタ拡張で作業を自動化する3つのレシピ ― ボタン1つで完結する開発ツール集（エディタ拡張×自動化、競合少）
 9. Unity 6.4で変わった開発フロー ― Render Graph・ECS標準化を実務レベルで使う（新バージョン速報性、競合少）
 10. Unityでオンライン対戦の基礎を作る ― Netcode for GameObjects 入門5ステップ（2026年3月ヒット記事77スキの追い風あり）
+11. Claude Codeで並列Unity開発 ― git worktree × 複数セッションで実装速度3倍【実践ガイド】（2026年4月Zennトレンド、競合少・実践系）
+12. Unity 6.4〜6.8ロードマップ完全解説 ― CoreCLR移行・ECS標準化・WebGPU対応の全貌（速報性・ロードマップ解説、Unity公式情報ベース）
+13. Unity ECS完全入門 ― Unity 6.4でコアパッケージ化！基礎から実装まで5ステップ（入門×N選、ECS初心者向け）
+14. Unity AI Profiler Integration実践 ― AIが自動でGCスパイク・ボトルネックを特定する新ツールの使い方（Unity新機能・AI×パフォーマンス）
+15. Claude Code v2.1 新機能でUnity開発を加速する ― /effortモード・PostCompact Hookの実践活用（Claude Code最新版×Unity、2026年3月公開機能）
 
 ## 済みトピック（重複確認用）
 
@@ -67,4 +101,3 @@
 | 2026-04-02-claude-code-notion-mcp-root-page-automation | Claude Code × Notion MCP でルートページ整理を自動化する | 2026-04-02 |
 | 2026-04-02-claude-code-gmail-calendar-mcp-ai-secretary | Claude Code × Gmail/Calendar MCP でAI秘書を実現する | 2026-04-02 |
 | 2026-04-03-unity-architecture-ai-code-instruction | MonoBehaviourベタ書きを卒業したい人へ：AIに設計パターンを指示してUnityコードを整理する方法 | 2026-04-03 |
-
