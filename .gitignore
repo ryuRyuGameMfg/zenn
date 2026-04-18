@@ -17,3 +17,6 @@ logs/
 memory/hot/
 memory/warm/
 memory/cold/
+
+# Claude Code local state
+.claude/
