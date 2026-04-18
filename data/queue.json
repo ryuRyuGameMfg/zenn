@@ -158,8 +158,8 @@
       "priority": 10
     },
     {
-      "filepath": "articles/2026-04-18-uloopmcp-claude-code-unity-autonomous-loop.md",
-      "filename": "2026-04-18-uloopmcp-claude-code-unity-autonomous-loop.md",
+      "filepath": "articles/2026-04-18-uloopmcp-claude-code-unity-auto-loop.md",
+      "filename": "2026-04-18-uloopmcp-claude-code-unity-auto-loop.md",
       "title": "uLoopMCP + Claude Code で Unity 自律開発サイクルを実現する方法",
       "scheduled_at": "2026-07-03T08:00:00.000Z",
       "status": "queued",
