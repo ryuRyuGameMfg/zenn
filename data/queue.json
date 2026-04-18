@@ -171,6 +171,15 @@
       "status": "queued",
       "queued_at": "2026-04-17T17:00:02.096Z",
       "priority": 11
+    },
+    {
+      "filepath": "articles/2026-04-19-unity-csharp-beginner-traps-5.md",
+      "filename": "2026-04-19-unity-csharp-beginner-traps-5.md",
+      "title": "Unity C#でやりがちな「初心者の罠」5選 ― ファイル名・ライフサイクル・null参照を完全解説",
+      "scheduled_at": "2026-07-04T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-18T17:00:05.104Z",
+      "priority": 18
     }
   ],
   "schedule": {
@@ -181,6 +190,6 @@
     "time": "17:00",
     "timezone": "Asia/Tokyo"
   },
-  "last_scan": "2026-04-17T17:00:02.096Z",
+  "last_scan": "2026-04-18T17:00:05.104Z",
   "last_publish": "2026-04-17T08:26:28.427Z"
 }
