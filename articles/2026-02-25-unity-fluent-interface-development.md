@@ -12,7 +12,7 @@ Unityエンジニアの皆さん、日々の開発現場で「コードが複雑
 
 メソッドチェーンとは、オブジェクトの各メソッドが自身を返すことで、連続して呼び出しを行える設計手法です。これにより、従来の分散した処理を1行または連続した行で記述でき、コード全体が直感的に理解しやすくなります。
 
-[https://qiita.com/dhq\_boiler/items/61752b74db5f1fa6dfd5](https://qiita.com/dhq_boiler/items/61752b74db5f1fa6dfd5)
+https://qiita.com/dhq_boiler/items/61752b74db5f1fa6dfd5
 
 ## [](#fluent-interface%E3%81%AE%E6%A6%82%E8%A6%81)Fluent Interfaceの概要
 
@@ -147,8 +147,10 @@ Fluent Interfaceは、単なる記法の一つに留まらず、今後のコー�
 ╭━━━━━━━━━━━━━━━━━━╮  
 　まずは、チェック！無料相談も受付中！  
 ╰━ｖ━━━━━━━━━━━━━━━━╯  
-▼ AIキャラクターで接客・配信を自動化 ▼  
-[https://coconala.com/services/3327092](https://coconala.com/services/3327092)
+▼ AIキャラクターで接客・配信を自動化 ▼
 
-ゲーム開発のご相談：  
-[https://coconala.com/services/2610064](https://coconala.com/services/2610064)
+https://coconala.com/services/3327092
+
+ゲーム開発のご相談：
+
+https://coconala.com/services/2610064

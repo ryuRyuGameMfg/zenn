@@ -24,8 +24,9 @@ Unityでゲームを作っていると、イベントまわりのコードが膨
 
 ### [](#disposable%E5%AE%9F%E8%A3%85%E3%81%AE%E5%BF%9C%E7%94%A8)Disposable実装の応用
 
-C#には`IDisposable`というインターフェースがあり、`Dispose()`メソッドを呼び出すことでリソースを安全に破棄する仕組みがあります。以下のリンクでも、このDisposable実装を使ったイベントのメモリリーク防止方法が紹介されています。  
-[https://shikaku-sh.hatenablog.com/entry/c-sharp-prevent-memory-leak-by-disposable](https://shikaku-sh.hatenablog.com/entry/c-sharp-prevent-memory-leak-by-disposable)
+C#には`IDisposable`というインターフェースがあり、`Dispose()`メソッドを呼び出すことでリソースを安全に破棄する仕組みがあります。以下のリンクでも、このDisposable実装を使ったイベントのメモリリーク防止方法が紹介されています。
+
+https://shikaku-sh.hatenablog.com/entry/c-sharp-prevent-memory-leak-by-disposable
 
 記事では、`Subscribe`と`Dispose`を組み合わせた例が解説されており、**イベント購読をスマートに終了する**ことで、不要なリスナーを残さないようにするテクニックが示されています。
 
@@ -88,8 +89,9 @@ public class DisposableEvent
 
 Unity特有の**コルーチン**を使う場面でも、使い捨てイベントと相性が良いです。例えばコルーチンで一定時間後にイベント発火し、その後自動で`Dispose()`するなどの運用が可能。
 
-より詳しいコルーチンの活用法は下記リンク先でも解説されています。  
-[https://zenn.dev/ryuryu\_game/articles/b65109c90933cc](https://zenn.dev/ryuryu_game/articles/b65109c90933cc)
+より詳しいコルーチンの活用法は下記リンク先でも解説されています。
+
+https://zenn.dev/ryuryu_game/articles/b65109c90933cc
 
 敵の湧き処理やアニメーション演出、UIフェードなど、**短期で使い終わる処理**に対して使い捨てイベントで購読し、処理が終われば安全に破棄すると、イベントリスナーが無駄に残らない環境を作れます。
 
@@ -124,8 +126,9 @@ public class EventConsumer : MonoBehaviour
 
 ## [](#unirx%E3%82%84idisposable%E3%81%A7%E3%83%A9%E3%82%AF%E3%81%AB%E5%AE%9F%E8%A3%85)UniRxやIDisposableでラクに実装
 
-使い捨てイベントは、**Observerパターン**と親和性が高いです。たとえばUniRxなどを使えば、イベント購読のたびに`IDisposable`が得られ、破棄タイミングを明確にできる仕組みがあります。  
-[https://qiita.com/Cova8bitdot/items/632782ad5264baf6a366](https://qiita.com/Cova8bitdot/items/632782ad5264baf6a366)
+使い捨てイベントは、**Observerパターン**と親和性が高いです。たとえばUniRxなどを使えば、イベント購読のたびに`IDisposable`が得られ、破棄タイミングを明確にできる仕組みがあります。
+
+https://qiita.com/Cova8bitdot/items/632782ad5264baf6a366
 
 \*\*「ラムダ式でサクッと書ける」\*\*ところもメリットで、UniRxの`Subscribe()`と同じ感覚で、自分だけのDisposableイベントを作ることも可能です。
 
@@ -190,16 +193,19 @@ Unityのイベントを使い捨て方式で運用すれば、**メモリリー�
 
 さらに詳しいサンプルや応用を知りたい方は、下記リンクも参考にしてください。
 
-[https://shikaku-sh.hatenablog.com/entry/c-sharp-prevent-memory-leak-by-disposable](https://shikaku-sh.hatenablog.com/entry/c-sharp-prevent-memory-leak-by-disposable)  
-[https://qiita.com/Cova8bitdot/items/632782ad5264baf6a366](https://qiita.com/Cova8bitdot/items/632782ad5264baf6a366)
+https://shikaku-sh.hatenablog.com/entry/c-sharp-prevent-memory-leak-by-disposable
+
+https://qiita.com/Cova8bitdot/items/632782ad5264baf6a366
 
 **最後に**、使い捨てイベントは初心者でも「ちょっと試してみよう」と導入しやすいのが魅力です。コードの可読性と堅牢性を同時に上げたいなら、ぜひ「Disposableなイベント」を取り入れてみてください。短期で役目を終える処理を安全に破棄し、開発効率を爆上げしていきましょう。
 
 ╭━━━━━━━━━━━━━━━━━━╮  
 　まずは、チェック！無料相談も受付中！  
 ╰━ｖ━━━━━━━━━━━━━━━━╯  
-▼ AIキャラクターで接客・配信を自動化 ▼  
-[https://coconala.com/services/3327092](https://coconala.com/services/3327092)
+▼ AIキャラクターで接客・配信を自動化 ▼
 
-ゲーム開発のご相談：  
-[https://coconala.com/services/2610064](https://coconala.com/services/2610064)
+https://coconala.com/services/3327092
+
+ゲーム開発のご相談：
+
+https://coconala.com/services/2610064

@@ -20,8 +20,9 @@ Gizmosは、エディタのシーンビュー上にデバッグ用の図形、�
 -   シーン上に直接テキスト情報を表示できる
 -   オブジェクトごとに描画の表示・非表示を制御可能
 
-より詳しい設定方法は公式ドキュメントも参照してください。  
-[https://docs.unity3d.com/ja/2019.4/Manual/GizmosMenu.html](https://docs.unity3d.com/ja/2019.4/Manual/GizmosMenu.html)
+より詳しい設定方法は公式ドキュメントも参照してください。
+
+https://docs.unity3d.com/ja/2019.4/Manual/GizmosMenu.html
 
 ### [](#%E3%82%B7%E3%83%BC%E3%83%B3%E4%B8%8A%E3%81%AB%E6%8F%8F%E7%94%BB%E3%81%99%E3%82%8B%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%B3%E3%83%BC%E3%83%89)シーン上に描画するサンプルコード
 
@@ -64,8 +65,9 @@ public class SampleGizmosText : MonoBehaviour
 このサンプルでは、`UnityEditor.Handles.Label`を利用して、シーン上に「CheckPoint」というテキストを表示しています。
 :::
 
-GizmosやHandlesを使った描画テクニックの詳細は、以下のリンクも参考にしてください。  
-[https://raspberly.hateblo.jp/entry/UnitySceneGizmos](https://raspberly.hateblo.jp/entry/UnitySceneGizmos)
+GizmosやHandlesを使った描画テクニックの詳細は、以下のリンクも参考にしてください。
+
+https://raspberly.hateblo.jp/entry/UnitySceneGizmos
 
 ## [](#3d%E7%A9%BA%E9%96%93%E3%83%87%E3%83%90%E3%83%83%E3%82%B0%E3%81%AE%E5%BF%9C%E7%94%A8%E3%83%86%E3%82%AF%E3%83%8B%E3%83%83%E3%82%AF)3D空間デバッグの応用テクニック
 
@@ -85,8 +87,9 @@ GizmosやHandlesを使った描画テクニックの詳細は、以下のリン�
 2.  ルート編集を直感的に行える（クリックやドラッグで調整）
 3.  インタラクション可能領域を円や立体図形で表現
 
-シーンビュー上で直接移動経路を編集する方法については、こちらも参考になります。  
-[https://ryo620.org/post/unity-editor-extending-03](https://ryo620.org/post/unity-editor-extending-03)
+シーンビュー上で直接移動経路を編集する方法については、こちらも参考になります。
+
+https://ryo620.org/post/unity-editor-extending-03
 
 ## [](#%E7%89%A9%E7%90%86%E6%BC%94%E7%AE%97%E3%81%AE%E7%8A%B6%E6%85%8B%E3%82%92%E8%A6%8B%E3%81%88%E3%82%8B%E5%8C%96%E3%81%99%E3%82%8B)物理演算の状態を見える化する
 
@@ -96,13 +99,15 @@ GizmosやHandlesを使った描画テクニックの詳細は、以下のリン�
 -   トリガーの範囲が意図した通りか
 -   静的・動的コライダーの重なり状況
 
-これらの詳細な設定方法は、公式ドキュメントを確認してください。  
-[https://docs.unity3d.com/ja/2022.3/Manual/PhysicsDebugVisualization.html](https://docs.unity3d.com/ja/2022.3/Manual/PhysicsDebugVisualization.html)
+これらの詳細な設定方法は、公式ドキュメントを確認してください。
+
+https://docs.unity3d.com/ja/2022.3/Manual/PhysicsDebugVisualization.html
 
 ## [](#meta-horizon%E5%90%91%E3%81%91debuggizmos%E3%81%AE%E5%AE%9F%E8%B7%B5)Meta Horizon向けDebugGizmosの実践
 
-Meta HorizonプラットフォームでのVR体験を構築する場合、DebugGizmosを活用すると、手の衝突判定やインタラクションの可視化が容易になり、問題発生時の原因究明がスムーズになります。具体的な実装例は以下のリンクで紹介されています。  
-[https://developers.meta.com/horizon/documentation/unity/unity-isdk-debug-gizmos/?locale=ja\_JP](https://developers.meta.com/horizon/documentation/unity/unity-isdk-debug-gizmos/?locale=ja_JP)
+Meta HorizonプラットフォームでのVR体験を構築する場合、DebugGizmosを活用すると、手の衝突判定やインタラクションの可視化が容易になり、問題発生時の原因究明がスムーズになります。具体的な実装例は以下のリンクで紹介されています。
+
+https://developers.meta.com/horizon/documentation/unity/unity-isdk-debug-gizmos/?locale=ja_JP
 
 !
 
@@ -159,14 +164,17 @@ public class PathDebug : MonoBehaviour
 
 -   参考記事
 
-[https://raspberly.hateblo.jp/entry/UnitySceneGizmos](https://raspberly.hateblo.jp/entry/UnitySceneGizmos)  
-[https://ryo620.org/post/unity-editor-extending-03](https://ryo620.org/post/unity-editor-extending-03)
+https://raspberly.hateblo.jp/entry/UnitySceneGizmos
+
+https://ryo620.org/post/unity-editor-extending-03
 
 -   公式リファレンス
 
-[https://docs.unity3d.com/ja/2022.3/Manual/PhysicsDebugVisualization.html](https://docs.unity3d.com/ja/2022.3/Manual/PhysicsDebugVisualization.html)  
-[https://docs.unity3d.com/ja/2019.4/Manual/GizmosMenu.html](https://docs.unity3d.com/ja/2019.4/Manual/GizmosMenu.html)  
-[https://developers.meta.com/horizon/documentation/unity/unity-isdk-debug-gizmos/?locale=ja\_JP](https://developers.meta.com/horizon/documentation/unity/unity-isdk-debug-gizmos/?locale=ja_JP)
+https://docs.unity3d.com/ja/2022.3/Manual/PhysicsDebugVisualization.html
+
+https://docs.unity3d.com/ja/2019.4/Manual/GizmosMenu.html
+
+https://developers.meta.com/horizon/documentation/unity/unity-isdk-debug-gizmos/?locale=ja_JP
 
 !
 
@@ -175,8 +183,10 @@ public class PathDebug : MonoBehaviour
 ╭━━━━━━━━━━━━━━━━━━╮  
 　まずは、チェック！無料相談も受付中！  
 ╰━ｖ━━━━━━━━━━━━━━━━╯  
-▼ AIキャラクターで接客・配信を自動化 ▼  
-[https://coconala.com/services/3327092](https://coconala.com/services/3327092)
+▼ AIキャラクターで接客・配信を自動化 ▼
 
-ゲーム開発のご相談：  
-[https://coconala.com/services/2610064](https://coconala.com/services/2610064)
+https://coconala.com/services/3327092
+
+ゲーム開発のご相談：
+
+https://coconala.com/services/2610064

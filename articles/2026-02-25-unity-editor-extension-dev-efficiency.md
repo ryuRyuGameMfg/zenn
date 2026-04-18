@@ -8,8 +8,9 @@ published: true
 
 開発の現場では、日々のルーチン作業や煩雑なオペレーションをいかに効率化するかが大きな課題になります。そこで**効果的**なのが、エディタ拡張による“開発効率の爆上げ”です。コードエディタやUnityなどの開発ツールを自分好みに拡張することで、手間のかかる手順を自動化したり、わかりやすいUIで操作できるようにしたりできるため、プロジェクト全体の生産性を向上させることが期待できます。
 
-**Unityの基本操作からC#スクリプトの基礎まで、やさしく学べる入門チュートリアルはこちら**  
-[https://zenn.dev/ryuryu\_game/books/fd28de9d8e963a/viewer/0570af](https://zenn.dev/ryuryu_game/books/fd28de9d8e963a/viewer/0570af)
+**Unityの基本操作からC#スクリプトの基礎まで、やさしく学べる入門チュートリアルはこちら**
+
+https://zenn.dev/ryuryu_game/books/fd28de9d8e963a/viewer/0570af
 
 # [](#%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF%E6%8B%A1%E5%BC%B5%E3%81%A8%E3%81%AF%E4%BD%95%E3%81%8B)エディタ拡張とは何か
 
@@ -23,8 +24,9 @@ published: true
     -   拡張機能の不具合によるパフォーマンス低下のリスク
     -   互換性問題やバージョンアップの対応が必要になる
 
-開発をスムーズに進めるためには、拡張の導入メリットとデメリットを把握して運用することが大切です。エディタ拡張の導入や活用戦略、リスク管理に関しては、次のリンクにも有益な情報があります。  
-[https://tech-colony.com/archives/4267](https://tech-colony.com/archives/4267)
+開発をスムーズに進めるためには、拡張の導入メリットとデメリットを把握して運用することが大切です。エディタ拡張の導入や活用戦略、リスク管理に関しては、次のリンクにも有益な情報があります。
+
+https://tech-colony.com/archives/4267
 
 # [](#unity%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF%E6%8B%A1%E5%BC%B5%E3%81%A7%E9%96%8B%E7%99%BA%E5%8A%B9%E7%8E%87%E3%82%92%E9%AB%98%E3%82%81%E3%82%8B)Unityエディタ拡張で開発効率を高める
 
@@ -37,11 +39,13 @@ Unityのエディタ拡張は、**日々の手間を大幅に削減**できる�
 -   **パラメータ設定用ウィンドウ**  
     NPCやゲームアイテムのステータスをまとめて調整し、シーンに反映させる。
 
-こうした事例は下記のリンクにも豊富に紹介されていますので、より実践的なアイデアが欲しい方は参考にしてみてください。  
-[https://learning.unity3d.jp/8858/](https://learning.unity3d.jp/8858/)
+こうした事例は下記のリンクにも豊富に紹介されていますので、より実践的なアイデアが欲しい方は参考にしてみてください。
 
-エディタ拡張でゲーム開発における繰り返し作業を効率化する具体的な例が、こちらの動画でも紹介されています。  
-[https://www.youtube.com/watch?v=P4AIgRtFM4A](https://www.youtube.com/watch?v=P4AIgRtFM4A)
+https://learning.unity3d.jp/8858/
+
+エディタ拡張でゲーム開発における繰り返し作業を効率化する具体的な例が、こちらの動画でも紹介されています。
+
+https://www.youtube.com/watch?v=P4AIgRtFM4A
 
 # [](#%E7%9F%A5%E3%81%A3%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84unity%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF%E6%8B%A1%E5%BC%B5%E3%81%AEtips)知っておきたいUnityエディタ拡張のTips
 
@@ -289,8 +293,9 @@ public class RuntimeChangesSaver : Editor
 
 これらのTipsとサンプルを組み合わせることで、**Unityでのゲーム開発フローを大幅にスピードアップ**できます。再生時間の短縮はもちろん、プレビュー作業の効率化やパラメータの自動保存など、細かな部分を詰めるほどプロジェクト全体の開発体験が向上していきます。エディタ拡張の可能性を活かして、より快適で生産性の高いUnityライフを送りましょう。
 
-このようなテクニックは、日々の開発で実行→修正→再ビルドの繰り返しを効率化するカギとなります。具体的な方法は以下の記事にも詳しく載っているのでチェックしてみてください。  
-[https://qiita.com/Yamara/items/ea07874d2c410877db61](https://qiita.com/Yamara/items/ea07874d2c410877db61)
+このようなテクニックは、日々の開発で実行→修正→再ビルドの繰り返しを効率化するカギとなります。具体的な方法は以下の記事にも詳しく載っているのでチェックしてみてください。
+
+https://qiita.com/Yamara/items/ea07874d2c410877db61
 
 # [](#%E3%81%BE%E3%81%A8%E3%82%81)まとめ
 
@@ -298,11 +303,13 @@ Unityの属性を活用すれば、**インスペクターの利便性を格段�
 
 ## [](#%E3%81%95%E3%82%89%E3%81%AB%E6%8B%A1%E5%BC%B5%E3%81%AB%E5%BD%B9%E7%AB%8B%E3%81%A4%E6%83%85%E5%A0%B1%E3%82%92%E5%BE%97%E3%82%8B%E3%81%AB%E3%81%AF)さらに拡張に役立つ情報を得るには
 
-エディタ拡張を一歩進めたい場合、シーン中のGizmosを活用して可視化デバッグを行う方法もあります。移動ルートやコライダーの範囲を視覚的に確認し、エディタ上で直接編集するテクニックは次のURLで紹介されています。  
-[https://ryo620.org/post/unity-editor-extending-03](https://ryo620.org/post/unity-editor-extending-03)
+エディタ拡張を一歩進めたい場合、シーン中のGizmosを活用して可視化デバッグを行う方法もあります。移動ルートやコライダーの範囲を視覚的に確認し、エディタ上で直接編集するテクニックは次のURLで紹介されています。
 
-また、物理挙動やコライダー設定を可視化する際には以下の公式マニュアルも有用です。  
-[https://docs.unity3d.com/ja/2022.3/Manual/PhysicsDebugVisualization.html](https://docs.unity3d.com/ja/2022.3/Manual/PhysicsDebugVisualization.html)
+https://ryo620.org/post/unity-editor-extending-03
+
+また、物理挙動やコライダー設定を可視化する際には以下の公式マニュアルも有用です。
+
+https://docs.unity3d.com/ja/2022.3/Manual/PhysicsDebugVisualization.html
 
 こうしたGizmosやデバッグ機能との連携で、さらに**無駄の少ない開発**が実現できます。
 
@@ -315,8 +322,9 @@ Unityの属性を活用すれば、**インスペクターの利便性を格段�
 -   **チームでの共有**  
     チーム開発であれば、拡張設定をリポジトリ内で共有する仕組みを整えましょう。個人ごとに設定が異なると、動作環境に差が出てしまいます。
 
-これらの注意点や導入手順は、以下の資料でも触れられています。  
-[https://tech-colony.com/archives/4267](https://tech-colony.com/archives/4267)
+これらの注意点や導入手順は、以下の資料でも触れられています。
+
+https://tech-colony.com/archives/4267
 
 ## [](#%E3%81%BE%E3%81%A8%E3%82%81%EF%BC%9A%E6%8B%A1%E5%BC%B5%E3%81%A7%E2%80%9C%E6%89%8B%E6%88%BB%E3%82%8A%E2%80%9D%E3%81%8B%E3%82%89%E8%A7%A3%E6%94%BE%E3%81%95%E3%82%8C%E3%82%88%E3%81%86)まとめ：拡張で“手戻り”から解放されよう
 
@@ -335,8 +343,10 @@ Unityの属性を活用すれば、**インスペクターの利便性を格段�
 ╭━━━━━━━━━━━━━━━━━━╮  
 　まずは、チェック！無料相談も受付中！  
 ╰━ｖ━━━━━━━━━━━━━━━━╯  
-▼ AIキャラクターで接客・配信を自動化 ▼  
-[https://coconala.com/services/3327092](https://coconala.com/services/3327092)
+▼ AIキャラクターで接客・配信を自動化 ▼
 
-ゲーム開発のご相談：  
-[https://coconala.com/services/2610064](https://coconala.com/services/2610064)
+https://coconala.com/services/3327092
+
+ゲーム開発のご相談：
+
+https://coconala.com/services/2610064

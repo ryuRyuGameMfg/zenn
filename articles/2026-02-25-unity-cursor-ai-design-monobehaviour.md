@@ -124,7 +124,7 @@ public class GameSettings : ScriptableObject
 }
 ```
 
-[https://zenn.dev/ryuryu\_game/articles/fb4dacb67cd3b9](https://zenn.dev/ryuryu_game/articles/fb4dacb67cd3b9)
+https://zenn.dev/ryuryu_game/articles/fb4dacb67cd3b9
 
 ## [](#step3%3A-factory%E3%82%84repository%E3%81%A7%E3%83%AD%E3%82%B8%E3%83%83%E3%82%AF%E3%82%92%E9%9B%86%E4%B8%AD)Step3: FactoryやRepositoryでロジックを集中
 
@@ -178,8 +178,10 @@ public class Inventory
 ╭━━━━━━━━━━━━━━━━━━╮  
 　まずは、チェック！無料相談も受付中！  
 ╰━ｖ━━━━━━━━━━━━━━━━╯  
-▼ AIキャラクターで接客・配信を自動化 ▼  
-[https://coconala.com/services/3327092](https://coconala.com/services/3327092)
+▼ AIキャラクターで接客・配信を自動化 ▼
 
-ゲーム開発のご相談：  
-[https://coconala.com/services/2610064](https://coconala.com/services/2610064)
+https://coconala.com/services/3327092
+
+ゲーム開発のご相談：
+
+https://coconala.com/services/2610064

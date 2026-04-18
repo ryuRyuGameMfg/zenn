@@ -1523,5 +1523,6 @@ Unity C#における柔軟なロジック分離は、プロジェクトの成長
 * * *
 
 **ゲーム開発のご相談はこちら**  
-Unity開発やAI統合に関するご相談を承っています  
-[https://coconala.com/services/2610064](https://coconala.com/services/2610064)
+Unity開発やAI統合に関するご相談を承っています
+
+https://coconala.com/services/2610064

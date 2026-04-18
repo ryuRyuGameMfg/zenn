@@ -67,7 +67,7 @@ public class Enemy {
 2.  わからないところは**Discordで質問OK**！💬 仲間と一緒に進めよう！
 3.  **完全無料**でUnityの基礎が身につく、初心者向けオンライン講座です！
 
-[https://unity.super.site/](https://unity.super.site/)
+https://unity.super.site/
 
 ## [](#2.-%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3)2\. コマンドパターン
 
@@ -109,8 +109,9 @@ public class Player {
 }
 ```
 
-この手法を用いることで、入力の履歴を管理し、操作の取り消し機能をシンプルに実装できます。詳細な解説は、Qiitaの記事も参考にしてください。  
-[https://qiita.com/automation2025/items/ffc14b85ad134457d215](https://qiita.com/automation2025/items/ffc14b85ad134457d215)
+この手法を用いることで、入力の履歴を管理し、操作の取り消し機能をシンプルに実装できます。詳細な解説は、Qiitaの記事も参考にしてください。
+
+https://qiita.com/automation2025/items/ffc14b85ad134457d215
 
 ## [](#3.-%E3%82%AA%E3%83%96%E3%82%B6%E3%83%BC%E3%83%90%E3%83%BC%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3)3\. オブザーバーパターン
 
@@ -159,7 +160,7 @@ public class UIObserver : IObserver {
 2.  わからないところは**Discordで質問OK**！💬 仲間と一緒に進めよう！
 3.  **完全無料**でUnityの基礎が身につく、初心者向けオンライン講座です！
 
-[https://unity.super.site/](https://unity.super.site/)
+https://unity.super.site/
 
 ## [](#4.-%E3%82%B7%E3%83%B3%E3%82%B0%E3%83%AB%E3%83%88%E3%83%B3%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3)4\. シングルトンパターン
 
@@ -192,8 +193,9 @@ public class GameManager {
 }
 ```
 
-シングルトンパターンは、システム全体で一貫性のある管理が求められる部分において、その利点を最大限に発揮します。より詳しい解説は、Zennの記事も参考にしてください。  
-[https://zenn.dev/twugo/books/21cb3a6515e7b8/viewer/24c429](https://zenn.dev/twugo/books/21cb3a6515e7b8/viewer/24c429)
+シングルトンパターンは、システム全体で一貫性のある管理が求められる部分において、その利点を最大限に発揮します。より詳しい解説は、Zennの記事も参考にしてください。
+
+https://zenn.dev/twugo/books/21cb3a6515e7b8/viewer/24c429
 
 ## [](#5.-%E3%83%95%E3%82%A1%E3%82%B5%E3%83%BC%E3%83%89%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3)5\. ファサードパターン
 
@@ -242,8 +244,9 @@ public class SceneController {
 }
 ```
 
-ファサードパターンは、複数のコンポーネントを統合する際に、呼び出し側の負担を大幅に軽減できるため、特に大規模なプロジェクトで効果を発揮します。詳細な解説については、Unity DOTSとオブジェクト指向設計を解説した記事も参考にしてください。  
-[https://zenn.dev/ken\_okabe/articles/2024-06-03-unity-oo](https://zenn.dev/ken_okabe/articles/2024-06-03-unity-oo)
+ファサードパターンは、複数のコンポーネントを統合する際に、呼び出し側の負担を大幅に軽減できるため、特に大規模なプロジェクトで効果を発揮します。詳細な解説については、Unity DOTSとオブジェクト指向設計を解説した記事も参考にしてください。
+
+https://zenn.dev/ken_okabe/articles/2024-06-03-unity-oo
 
 ## [](#unity%E5%88%9D%E5%BF%83%E8%80%85%E3%81%B8%E3%80%82%E9%80%B1%E6%9C%AB3%E6%97%A5%E3%81%A7%E3%82%B2%E3%83%BC%E3%83%A0%E9%96%8B%E7%99%BA%E4%BA%BA%E7%94%9F%E3%82%92%E5%A7%8B%E3%82%81%E3%82%88%E3%81%86%F0%9F%91%88-2)Unity初心者へ。[週末3日でゲーム開発人生を始めよう](https://unity.super.site/)👈
 
@@ -251,7 +254,7 @@ public class SceneController {
 2.  わからないところは**Discordで質問OK**！💬 仲間と一緒に進めよう！
 3.  **完全無料**でUnityの基礎が身につく、初心者向けオンライン講座です！
 
-[https://unity.super.site/](https://unity.super.site/)
+https://unity.super.site/
 
 ## [](#unity-c%23%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%81%AE%E3%83%A1%E3%83%AA%E3%83%83%E3%83%88)Unity C#におけるデザインパターンのメリット
 
@@ -278,9 +281,11 @@ Tips
 各パターンの実装例を試行する際は、小規模なプロトタイプで動作確認を行い、問題点や改善点を洗い出すとよいでしょう。実際のプロジェクトに適用する前に、チーム内で設計のレビューを実施することも効果的です。
 :::
 
-また、設計図やクラス図などのビジュアル資料を活用することで、複雑な関係性を整理しやすくなります。Qiitaや夜中にUnityの提供する図解は、その一助となるでしょう。  
-[https://qiita.com/automation2025/items/ffc14b85ad134457d215](https://qiita.com/automation2025/items/ffc14b85ad134457d215)  
-[https://www.midnightunity.net/design-pattern-observer/](https://www.midnightunity.net/design-pattern-observer/)
+また、設計図やクラス図などのビジュアル資料を活用することで、複雑な関係性を整理しやすくなります。Qiitaや夜中にUnityの提供する図解は、その一助となるでしょう。
+
+https://qiita.com/automation2025/items/ffc14b85ad134457d215
+
+https://www.midnightunity.net/design-pattern-observer/
 
 ## [](#%E3%81%BE%E3%81%A8%E3%82%81)まとめ
 
@@ -290,8 +295,10 @@ Tips
 ╭━━━━━━━━━━━━━━━━━━╮  
 　まずは、チェック！無料相談も受付中！  
 ╰━ｖ━━━━━━━━━━━━━━━━╯  
-▼ AIキャラクターで接客・配信を自動化 ▼  
-[https://coconala.com/services/3327092](https://coconala.com/services/3327092)
+▼ AIキャラクターで接客・配信を自動化 ▼
 
-ゲーム開発のご相談：  
-[https://coconala.com/services/2610064](https://coconala.com/services/2610064)
+https://coconala.com/services/3327092
+
+ゲーム開発のご相談：
+
+https://coconala.com/services/2610064

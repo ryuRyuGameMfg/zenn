@@ -39,11 +39,13 @@ void SomeMethod()
 ```
 
 万が一メソッド名を変更しても、`nameof`によって文字列が自動的に更新されるため、書き換え忘れのバグを防げます。  
-C# 6.0以降で導入された機能なので、Unityが使うC#バージョンとの互換性をチェックしておくと安心です。公式マニュアルはこちら。  
-[https://docs.unity3d.com/Manual/CSharpCompiler.html](https://docs.unity3d.com/Manual/CSharpCompiler.html)
+C# 6.0以降で導入された機能なので、Unityが使うC#バージョンとの互換性をチェックしておくと安心です。公式マニュアルはこちら。
 
-また、C#のバージョン履歴や細かなアップデート内容はMicrosoft公式ドキュメントを確認すると分かりやすいでしょう。  
-[https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history)
+https://docs.unity3d.com/Manual/CSharpCompiler.html
+
+また、C#のバージョン履歴や細かなアップデート内容はMicrosoft公式ドキュメントを確認すると分かりやすいでしょう。
+
+https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history
 
 ## [](#2.-%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%83%8F%E3%83%B3%E3%83%89%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3%E3%81%A7%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E3%81%99%E3%81%A3%E3%81%8D%E3%82%8A)2\. ショートハンドプロパティでコードをすっきり
 
@@ -125,8 +127,9 @@ foreach (var enemy in strongEnemies)
 }
 ```
 
-ただし、LINQは実行コストがやや高めなので、毎フレーム呼び出すようなリアルタイム処理には不向きです。**コレクション操作をまとめて行いたい**ときに使うのがベターと言えます。より詳しい解説は以下のリンクも参考にしてみてください。  
-[https://zenn.dev/ryuryu\_game/articles/5dfedf28aedb9f](https://zenn.dev/ryuryu_game/articles/5dfedf28aedb9f)
+ただし、LINQは実行コストがやや高めなので、毎フレーム呼び出すようなリアルタイム処理には不向きです。**コレクション操作をまとめて行いたい**ときに使うのがベターと言えます。より詳しい解説は以下のリンクも参考にしてみてください。
+
+https://zenn.dev/ryuryu_game/articles/5dfedf28aedb9f
 
 ## [](#6.-%E6%8B%A1%E5%BC%B5%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E3%81%A7%E7%8B%AC%E8%87%AA%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E3%82%92%E8%BF%BD%E5%8A%A0)6\. 拡張メソッドで独自メソッドを追加
 
@@ -179,19 +182,23 @@ C#の小技を活用していくと、「もっと汎用的にまとめたい」
 
 **C#の特徴を活かすだけで、Unity上でのスクリプトが劇的に書きやすくなる**のは驚きです。最初は「わざわざこんな書き方をする意味あるの？」と思うかもしれませんが、プロジェクト規模が大きくなるほどこうした差が出てきます。
 
-小さなプロジェクトで試しながら、自分に合ったスタイルを見つけてみてください。UnityではシーンにGizmosを使ってデバッグ表示するなど、エディタ側の機能もいろいろ工夫できます。たとえば下記URLでは、Gizmosの活用例が紹介されています。  
-[https://raspberly.hateblo.jp/entry/UnitySceneGizmos](https://raspberly.hateblo.jp/entry/UnitySceneGizmos)
+小さなプロジェクトで試しながら、自分に合ったスタイルを見つけてみてください。UnityではシーンにGizmosを使ってデバッグ表示するなど、エディタ側の機能もいろいろ工夫できます。たとえば下記URLでは、Gizmosの活用例が紹介されています。
 
-また、C#の基礎をざっと見直したい方は、動画解説も参考になるでしょう。  
-[https://www.youtube.com/watch?v=ONW2mg\_n6Xw](https://www.youtube.com/watch?v=ONW2mg_n6Xw)
+https://raspberly.hateblo.jp/entry/UnitySceneGizmos
+
+また、C#の基礎をざっと見直したい方は、動画解説も参考になるでしょう。
+
+https://www.youtube.com/watch?v=ONW2mg_n6Xw
 
 「ちょっとの工夫」で大きく作業効率が変わるのがゲーム開発の面白いところ。ぜひ積極的に取り入れてみてください。
 
 ╭━━━━━━━━━━━━━━━━━━╮  
 　まずは、チェック！無料相談も受付中！  
 ╰━ｖ━━━━━━━━━━━━━━━━╯  
-▼ AIキャラクターで接客・配信を自動化 ▼  
-[https://coconala.com/services/3327092](https://coconala.com/services/3327092)
+▼ AIキャラクターで接客・配信を自動化 ▼
 
-ゲーム開発のご相談：  
-[https://coconala.com/services/2610064](https://coconala.com/services/2610064)
+https://coconala.com/services/3327092
+
+ゲーム開発のご相談：
+
+https://coconala.com/services/2610064

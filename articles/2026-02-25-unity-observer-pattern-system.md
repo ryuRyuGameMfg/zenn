@@ -15,8 +15,9 @@ Observer Patternは、あるオブジェクト（Subject）の状態変化を、
 -   Subjectは、イベントの発行者としての役割を担い、状態変化が発生した際に登録されたObserverに通知を送信する。
 -   Observerは、Subjectからの通知を受け取り、各自の処理を実行する。
 
-Observer Patternの採用により、システム全体の保守性や再利用性が向上し、新たな機能追加も容易になります。詳細な実装方法は、以下のURLも参照してください。  
-[https://unity.com/ja/how-to/create-modular-and-maintainable-code-observer-pattern](https://unity.com/ja/how-to/create-modular-and-maintainable-code-observer-pattern)
+Observer Patternの採用により、システム全体の保守性や再利用性が向上し、新たな機能追加も容易になります。詳細な実装方法は、以下のURLも参照してください。
+
+https://unity.com/ja/how-to/create-modular-and-maintainable-code-observer-pattern
 
 ## [](#unity%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8Bobserver-pattern%E3%81%AE%E5%AE%9F%E8%A3%85%E4%BE%8B)UnityにおけるObserver Patternの実装例
 
@@ -46,8 +47,9 @@ public class Character : MonoBehaviour {
 }
 ```
 
-このコードでは、キャラクターが死亡すると`onDeath`イベントが発火し、イベントに登録された全てのObserverが通知を受け取ります。詳細な解説と実装例については、以下のQiita記事も参考にしてください。  
-[https://qiita.com/Cova8bitdot/items/632782ad5264baf6a366](https://qiita.com/Cova8bitdot/items/632782ad5264baf6a366)
+このコードでは、キャラクターが死亡すると`onDeath`イベントが発火し、イベントに登録された全てのObserverが通知を受け取ります。詳細な解説と実装例については、以下のQiita記事も参考にしてください。
+
+https://qiita.com/Cova8bitdot/items/632782ad5264baf6a366
 
 ### [](#ui%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%A8observer-pattern%E3%81%AE%E9%80%A3%E6%90%BA)UIボタンとObserver Patternの連携
 
@@ -75,8 +77,9 @@ public class ButtonEvent : MonoBehaviour {
 }
 ```
 
-この例では、ボタンがクリックされると`onButtonClick`イベントが発火し、登録された複数のアクションが実行されます。具体的な実装例やインスペクターからの設定方法については、以下のQiita記事をご覧ください。  
-[https://qiita.com/kiku09020/items/c10dbdeec253142e59fc](https://qiita.com/kiku09020/items/c10dbdeec253142e59fc)
+この例では、ボタンがクリックされると`onButtonClick`イベントが発火し、登録された複数のアクションが実行されます。具体的な実装例やインスペクターからの設定方法については、以下のQiita記事をご覧ください。
+
+https://qiita.com/kiku09020/items/c10dbdeec253142e59fc
 
 ## [](#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E9%80%9A%E7%9F%A5%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E8%A8%AD%E8%A8%88%E3%81%A8%E3%81%9D%E3%81%AE%E3%83%A1%E3%83%AA%E3%83%83%E3%83%88)イベント通知システムの設計とそのメリット
 
@@ -86,8 +89,9 @@ Observer Patternを利用したイベントシステムの設計は、以下の�
 -   新たなイベントや処理の追加が容易になり、システムの拡張性が向上する。
 -   コンポーネント間の依存関係が低減するため、デバッグやテストがしやすくなる。
 
-これらのメリットにより、複雑なUnityプロジェクトでも堅牢で柔軟なイベントシステムを実現できるようになります。実際の実装例や詳細な解説は、Soft Rimeの記事も参考にしてください。  
-[https://soft-rime.com/post-12075/](https://soft-rime.com/post-12075/)
+これらのメリットにより、複雑なUnityプロジェクトでも堅牢で柔軟なイベントシステムを実現できるようになります。実際の実装例や詳細な解説は、Soft Rimeの記事も参考にしてください。
+
+https://soft-rime.com/post-12075/
 
 ## [](#%E5%85%B7%E4%BD%93%E7%9A%84%E3%81%AA%E5%AE%9F%E8%A3%85%E4%BE%8B%E3%81%A8%E5%9B%B3%E8%A7%A3)具体的な実装例と図解
 
@@ -115,7 +119,7 @@ Observer Patternの導入は、システム全体の**疎結合**を実現し、
 
 さらに、以下の動画も視覚的に実装方法を学ぶのに役立ちます。
 
-[https://www.youtube.com/watch?v=Z3N6C54EDaQ](https://www.youtube.com/watch?v=Z3N6C54EDaQ)
+https://www.youtube.com/watch?v=Z3N6C54EDaQ
 
 ## [](#%E3%81%BE%E3%81%A8%E3%82%81%E3%81%A8%E4%BB%8A%E5%BE%8C%E3%81%AE%E5%B1%95%E6%9C%9B)まとめと今後の展望
 
@@ -129,8 +133,10 @@ Observer Patternを用いたイベントシステムは、Unityプロジェク�
 ╭━━━━━━━━━━━━━━━━━━╮  
 　まずは、チェック！無料相談も受付中！  
 ╰━ｖ━━━━━━━━━━━━━━━━╯  
-▼ AIキャラクターで接客・配信を自動化 ▼  
-[https://coconala.com/services/3327092](https://coconala.com/services/3327092)
+▼ AIキャラクターで接客・配信を自動化 ▼
 
-ゲーム開発のご相談：  
-[https://coconala.com/services/2610064](https://coconala.com/services/2610064)
+https://coconala.com/services/3327092
+
+ゲーム開発のご相談：
+
+https://coconala.com/services/2610064
