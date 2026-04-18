@@ -1,10 +1,14 @@
 ---
-title: "Unity 6 GPU Resident Drawerで実現する高速レンダリング"
+title: "Unity 6 GPU Resident DrawerでDrawCall 99.7%削減｜URP/HDRP設定と計測結果"
 emoji: "⚡"
 type: "tech"
 topics: ["Unity", "パフォーマンス", "GPU", "Unity6", "レンダリング"]
 published: true
 ---
+
+## 結論から言うと
+
+**GPU Resident DrawerはCPUによるドローコール処理をGPUに移譲し、35,000オブジェクトのシーンでDrawCallを43,500件→128件（99.7%削減）まで圧縮できる。** URP環境ではForward+への切り替えとSRP Batcher有効化を含む5ステップで有効化でき、Frame Debuggerの「Hybrid Batch Group」表示で動作確認できる。本記事ではURP/HDRP別の設定手順、実測ベンチマーク、トラブルシューティングを実践的にまとめる。
 
 ## はじめに
 
@@ -44,7 +48,7 @@ BatchRendererGroupは、インスタンス化されたドローコールを介�
 - パフォーマンス最適化に関心がある開発者
 - 大規模シーンを扱うプロジェクト担当者
 
-## システム要件とプラットフォーム対応
+## 1. システム要件とプラットフォーム対応
 
 GPU Resident Drawerは、Unityの最新レンダリング最適化技術ですが、利用には厳密なシステム要件を満たす必要があります。本セクションでは、必須要件、プラットフォーム対応状況、GameObject互換性の3つの観点から詳しく解説します。
 
@@ -277,7 +281,7 @@ https://docs.unity3d.com/Manual/urp/gpu-resident-drawer.html
 
 https://docs.unity3d.com/6000.0/Documentation/Manual/urp/make-object-compatible-gpu-rendering.html
 
-## 実装手順 - URP/HDRP設定ガイド
+## 2. 実装手順 - URP/HDRP設定ガイド
 
 GPU Resident DrawerをUnity 6で有効化する手順を、ステップバイステップで解説します。URP(Universal Render Pipeline)とHDRP(High Definition Render Pipeline)それぞれの設定方法を説明します。
 
@@ -588,7 +592,7 @@ Unity Discussionsでのコミュニティサポート:
 https://discussions.unity.com/
 :::
 
-## パフォーマンスベンチマーク
+## 3. パフォーマンスベンチマーク
 
 実際のシーンでGPU Resident Drawerがどれほどの効果を発揮するか、実測データで検証します。
 
@@ -717,7 +721,7 @@ GPU Resident Drawerが最も効果を発揮するシーン特性を整理しま�
 
 次のセクションでは、GPU Occlusion Cullingとの連携について解説します。
 
-## GPU Occlusion Cullingとの連携
+## 4. GPU Occlusion Cullingとの連携
 
 GPU Resident Drawerと組み合わせることで、さらなるパフォーマンス向上が期待できるGPU Occlusion Cullingについて解説します。
 
@@ -818,7 +822,7 @@ GPU Resident DrawerとGPU Occlusion Cullingを併用すると:
 により、CPUとGPUの両方で大幅なパフォーマンス向上が期待できます。特に、オープンワールドゲームや大規模シミュレーションでは、両機能の組み合わせが不可欠です。
 :::
 
-## まとめ - ベストプラクティス
+## 5. まとめ - ベストプラクティス
 
 GPU Resident DrawerはUnity 6で導入された強力なパフォーマンス最適化機能です。本記事のポイントを振り返ります。
 
@@ -977,7 +981,7 @@ GPU Resident Drawerは、適切に使用すれば大幅なパフォーマンス�
 
 Unity 6の新機能として、今後さらなる改善が期待されます。公式ドキュメントやコミュニティの最新情報を常にチェックし、最適な使い方を模索していくことが重要です。
 
-## 参考資料
+## 6. 参考資料
 
 本記事の執筆にあたり、以下の情報源を参考にしました。
 
@@ -1007,3 +1011,5 @@ Unity 6の新機能として、今後さらなる改善が期待されます。�
 **互換性・問題報告**:
 - [Unity 6 GPU Resident Drawer GPU Occlusion Culling compatibility with Android](https://discussions.unity.com/t/unity-6-gpu-resident-drawer-gpu-occlusion-cullling-compatibility-with-android/1539448)
 - [Enabling GPU Resident Drawer = Completely unstable editor](https://discussions.unity.com/t/enabling-gpu-resident-drawer-completely-unstable-editor/1512943)
+
+この記事が参考になったら **いいね** をお願いします。
