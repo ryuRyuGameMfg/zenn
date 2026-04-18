@@ -3,20 +3,20 @@
 <plist version="1.0">
 <dict>
   <key>Label</key>
-  <string>com.ryuryu.zenn-telegram-poll</string>
+  <string>com.ryuryu.zenn-agent-telegram-poll</string>
   <key>ProgramArguments</key>
   <array>
     <string>/bin/bash</string>
     <string>/Users/okamotoryuya/.claude/scripts/telegram-daemon-core.sh</string>
-    <string>/Users/okamotoryuya/.claude/bots/zenn-engine/config.sh</string>
+    <string>/Users/okamotoryuya/.claude/bots/zenn-agent/config.sh</string>
   </array>
   <key>KeepAlive</key>
   <true/>
   <key>RunAtLoad</key>
   <true/>
   <key>StandardOutPath</key>
-  <string>/Users/okamotoryuya/repository/zenn-engine/telegram/runtime/daemon.log</string>
+  <string>/Users/okamotoryuya/repository/zenn-agent/telegram/runtime/daemon.log</string>
   <key>StandardErrorPath</key>
-  <string>/Users/okamotoryuya/repository/zenn-engine/telegram/runtime/daemon.log</string>
+  <string>/Users/okamotoryuya/repository/zenn-agent/telegram/runtime/daemon.log</string>
 </dict>
 </plist>

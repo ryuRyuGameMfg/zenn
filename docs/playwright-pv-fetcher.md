@@ -22,7 +22,7 @@ Playwright MCP を使用してZennダッシュボードからPV統計を自動�
 ```
 [土曜 analyze モード実行]
          ↓
-[zenn-engine.sh]
+[zenn-agent.sh]
          ↓
 [prompts/mode-analyze.md] → Claude が以下を実行:
          ↓
@@ -72,7 +72,7 @@ export ZENN_EMAIL="your-github-email@example.com"
 export ZENN_PASSWORD="your-github-password"
 
 # 2. スクリプト実行
-cd ~/repository/zenn-engine/scripts
+cd ~/repository/zenn-agent/scripts
 node fetch-zenn-analytics.mjs
 
 # 3. スクリーンショット確認
@@ -113,7 +113,7 @@ open /tmp/zenn-dashboard.png
 
 毎週土曜17:00に以下が自動実行されます:
 
-1. `zenn-engine.sh` が `mode-analyze.md` を実行
+1. `zenn-agent.sh` が `mode-analyze.md` を実行
 2. Claude が Playwright スクリプトを呼び出し
 3. スクリーンショット取得 → LLM解析 → metrics.json 更新
 4. 土曜レポート生成 → Telegram 通知
@@ -147,7 +147,7 @@ Cannot find module 'playwright'
 
 **解決策**:
 ```bash
-cd ~/repository/zenn-engine
+cd ~/repository/zenn-agent
 npm install playwright
 ```
 

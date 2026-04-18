@@ -3,24 +3,22 @@
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.ryuryu.zenn-engine</string>
+    <string>com.ryuryu.zenn-agent-daily-report</string>
     <key>ProgramArguments</key>
     <array>
         <string>/bin/bash</string>
-        <string>/Users/okamotoryuya/.claude/bots/lib/engine-runner-core.sh</string>
-        <string>/Users/okamotoryuya/.claude/bots/zenn-engine/config.sh</string>
+        <string>/Users/okamotoryuya/.claude/bots/lib/daily-report-core.sh</string>
+        <string>/Users/okamotoryuya/.claude/bots/zenn-agent/config.sh</string>
     </array>
-    <key>WorkingDirectory</key>
-    <string>/Users/okamotoryuya/repository/zenn-engine</string>
     <key>StartCalendarInterval</key>
     <dict>
-        <key>Hour</key><integer>1</integer>
+        <key>Hour</key><integer>9</integer>
         <key>Minute</key><integer>0</integer>
     </dict>
     <key>StandardOutPath</key>
-    <string>/Users/okamotoryuya/repository/zenn-engine/logs/launchd-stdout.log</string>
+    <string>/Users/okamotoryuya/repository/zenn-agent/logs/daily-report-stdout.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/okamotoryuya/repository/zenn-engine/logs/launchd-stderr.log</string>
+    <string>/Users/okamotoryuya/repository/zenn-agent/logs/daily-report-stderr.log</string>
     <key>RunAtLoad</key>
     <false/>
     <key>EnvironmentVariables</key>

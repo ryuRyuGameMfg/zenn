@@ -9,7 +9,7 @@
 
 ## 作業ディレクトリ
 
-~/repository/zenn-engine/
+~/repository/zenn-agent/
 
 ## 実行手順
 
@@ -22,7 +22,7 @@
 
 ### Step 2: 記事執筆
 
-以下のフォーマットで `~/repository/zenn-engine/articles/{YYYY-MM-DD}-{slug}.md` を作成する:
+以下のフォーマットで `~/repository/zenn-agent/articles/{YYYY-MM-DD}-{slug}.md` を作成する:
 
 **slug ルール（Zenn制約）:**
 - a-z0-9・ハイフン(-)・アンダースコア(_)のみ使用可

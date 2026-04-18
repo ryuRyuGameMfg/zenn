@@ -22,7 +22,7 @@ https://ai-tsu-ru.com/openrouter-complete-guide/
 
 「もっとシンプルに、**Claude Code のサブスクリプション（月額固定）** だけで自分の MacBook で動かせないか？」
 
-そう思って作ったのが本記事で紹介するシステムです。実際にこの記事自体が、そのシステム（zenn-engine）によって自律生成・管理されています。
+そう思って作ったのが本記事で紹介するシステムです。実際にこの記事自体が、そのシステム（zenn-agent）によって自律生成・管理されています。
 
 ---
 
@@ -35,7 +35,7 @@ https://ai-tsu-ru.com/openrouter-complete-guide/
 │  macOS launchd（スケジューラ）               │
 │  └─ 毎週金曜 17:00 に自動起動              │
 └──────────────┬──────────────────────────────┘
-               │ bash zenn-engine.sh
+               │ bash zenn-agent.sh
                ▼
 ┌─────────────────────────────────────────────┐
 │  Claude Code ヘッドレスモード               │
@@ -82,11 +82,11 @@ https://platform.claude.com/docs/ja/about-claude/pricing
 `cron` の macOS 版です。`~/Library/LaunchAgents/` に plist ファイルを置くだけで、指定した時刻にスクリプトを自動実行できます。
 
 ```xml
-<!-- com.ryuryu.zenn-engine.plist（抜粋） -->
+<!-- com.ryuryu.zenn-agent.plist（抜粋） -->
 <key>ProgramArguments</key>
 <array>
   <string>/bin/bash</string>
-  <string>/Users/yourname/repository/zenn-engine/zenn-engine.sh</string>
+  <string>/Users/yourname/repository/zenn-agent/zenn-agent.sh</string>
 </array>
 <key>StartCalendarInterval</key>
 <array>
@@ -101,8 +101,8 @@ https://platform.claude.com/docs/ja/about-claude/pricing
 登録と起動はターミナルから2行で完了します。
 
 ```bash
-cp com.ryuryu.zenn-engine.plist ~/Library/LaunchAgents/
-launchctl load ~/Library/LaunchAgents/com.ryuryu.zenn-engine.plist
+cp com.ryuryu.zenn-agent.plist ~/Library/LaunchAgents/
+launchctl load ~/Library/LaunchAgents/com.ryuryu.zenn-agent.plist
 ```
 
 n8n や Make.com などの外部ワークフローツールは一切不要です。launchd の設定方法・plist の書き方について詳しくはこちら：
@@ -125,7 +125,7 @@ echo "$prompt" | claude -p --allowedTools "Read,Write,Edit,Bash,Glob,Grep"
 ```markdown
 <!-- CLAUDE.md の例 -->
 ## 操作制約
-- 操作可能範囲: ~/repository/zenn-engine/ 内のみ
+- 操作可能範囲: ~/repository/zenn-agent/ 内のみ
 - articles/ 内の既存ファイルは削除禁止
 - git push は articles/ への変更がある場合のみ実行
 ```

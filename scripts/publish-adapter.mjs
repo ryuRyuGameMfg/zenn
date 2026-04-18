@@ -1,7 +1,7 @@
 /**
- * publish-adapter.mjs (zenn-engine版)
+ * publish-adapter.mjs (zenn-agent版)
  *
- * zenn-engine固有の公開ロジック（frontmatter更新 + Git push）。
+ * zenn-agent固有の公開ロジック（frontmatter更新 + Git push）。
  * ~/.claude/bots/lib/publish-core.mjs が要求するアダプターインターフェースを実装する。
  */
 
@@ -44,7 +44,7 @@ function writeArticle(filepath, content) {
 export default {
   getWorkDir: () => ROOT_DIR,
 
-  getConfigPath: () => `/Users/okamotoryuya/.claude/bots/zenn-engine/config.sh`,
+  getConfigPath: () => `/Users/okamotoryuya/.claude/bots/zenn-agent/config.sh`,
 
   getCommitPrefix: () => 'zenn',
 

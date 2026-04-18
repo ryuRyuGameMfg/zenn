@@ -3,25 +3,22 @@
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.ryuryu.zenn-auto-queue</string>
+    <string>com.ryuryu.zenn-agent-publish-daemon</string>
     <key>ProgramArguments</key>
     <array>
         <string>/usr/local/bin/node</string>
-        <string>/Users/okamotoryuya/repository/zenn-engine/scripts/auto-queue.mjs</string>
+        <string>/Users/okamotoryuya/repository/zenn-agent/scripts/publish-daemon.mjs</string>
     </array>
     <key>WorkingDirectory</key>
-    <string>/Users/okamotoryuya/repository/zenn-engine</string>
-    <key>StartCalendarInterval</key>
-    <dict>
-        <key>Hour</key>
-        <integer>2</integer>
-        <key>Minute</key>
-        <integer>0</integer>
-    </dict>
+    <string>/Users/okamotoryuya/repository/zenn-agent</string>
+    <key>KeepAlive</key>
+    <true/>
+    <key>RunAtLoad</key>
+    <true/>
     <key>StandardOutPath</key>
-    <string>/Users/okamotoryuya/repository/zenn-engine/logs/auto-queue-stdout.log</string>
+    <string>/Users/okamotoryuya/repository/zenn-agent/logs/publish-daemon-stdout.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/okamotoryuya/repository/zenn-engine/logs/auto-queue-stderr.log</string>
+    <string>/Users/okamotoryuya/repository/zenn-agent/logs/publish-daemon-stderr.log</string>
     <key>EnvironmentVariables</key>
     <dict>
         <key>PATH</key>
@@ -29,5 +26,7 @@
         <key>TZ</key>
         <string>Asia/Tokyo</string>
     </dict>
+    <key>ThrottleInterval</key>
+    <integer>60</integer>
 </dict>
 </plist>

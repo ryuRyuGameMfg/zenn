@@ -1,7 +1,7 @@
 /**
- * auto-queue-adapter.mjs (zenn-engine版)
+ * auto-queue-adapter.mjs (zenn-agent版)
  *
- * zenn-engine固有のスキャンロジック。
+ * zenn-agent固有のスキャンロジック。
  * ~/.claude/bots/lib/auto-queue-core.mjs が要求するアダプターインターフェースを実装する。
  */
 
@@ -81,7 +81,7 @@ function readArticle(filename) {
 export default {
   getWorkDir: () => ROOT_DIR,
 
-  getConfigPath: () => `/Users/okamotoryuya/.claude/bots/zenn-engine/config.sh`,
+  getConfigPath: () => `/Users/okamotoryuya/.claude/bots/zenn-agent/config.sh`,
 
   getGitStageArgs: () => 'data/queue.json',
 

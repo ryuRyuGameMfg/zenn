@@ -1,4 +1,4 @@
-# MEMORY - zenn-engine
+# MEMORY - zenn-agent
 
 ## メモリ構造
 

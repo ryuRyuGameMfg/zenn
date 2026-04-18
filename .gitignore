@@ -20,3 +20,6 @@ memory/cold/
 
 # Claude Code local state
 .claude/
+
+# Telegram runtime (daemon PID/log)
+telegram/runtime/
