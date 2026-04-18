@@ -80,28 +80,34 @@
       "filepath": "articles/ubisoft-chord-pbr-material-generation-oss.md",
       "filename": "ubisoft-chord-pbr-material-generation-oss.md",
       "title": "UbisoftがPBR生成AIをOSS公開 - CHORDの全貌と使い方",
-      "scheduled_at": "2026-04-25T08:00:00.000Z",
-      "status": "queued",
+      "scheduled_at": "2026-03-27T08:00:00.000Z",
+      "status": "published",
       "queued_at": "2026-04-02T12:00:00.000Z",
-      "priority": 2
+      "priority": 2,
+      "published_at": "2026-03-27T08:00:00.000Z",
+      "published_url": "https://zenn.dev/ryuRyuGameMfg/articles/ubisoft-chord-pbr-material-generation-oss"
     },
     {
       "filepath": "articles/comfyui-game-assets-indie-dev-guide.md",
       "filename": "comfyui-game-assets-indie-dev-guide.md",
       "title": "ComfyUIでゲーム素材を量産する - インディー開発者向け実践ガイド",
-      "scheduled_at": "2026-05-01T08:00:00.000Z",
-      "status": "queued",
+      "scheduled_at": "2026-03-21T08:00:00.000Z",
+      "status": "published",
       "queued_at": "2026-04-02T12:00:00.000Z",
-      "priority": 3
+      "priority": 3,
+      "published_at": "2026-03-21T08:00:00.000Z",
+      "published_url": "https://zenn.dev/ryuRyuGameMfg/articles/comfyui-game-assets-indie-dev-guide"
     },
     {
       "filepath": "articles/nvidia-audio2face-3d-opensource-guide.md",
       "filename": "nvidia-audio2face-3d-opensource-guide.md",
       "title": "NVIDIA Audio2Face-3Dがオープンソース化 - 実装ガイド",
-      "scheduled_at": "2026-05-02T08:00:00.000Z",
-      "status": "queued",
+      "scheduled_at": "2026-03-22T08:00:00.000Z",
+      "status": "published",
       "queued_at": "2026-04-02T12:00:00.000Z",
-      "priority": 4
+      "priority": 4,
+      "published_at": "2026-03-22T08:00:00.000Z",
+      "published_url": "https://zenn.dev/ryuRyuGameMfg/articles/nvidia-audio2face-3d-opensource-guide"
     },
     {
       "filepath": "articles/2026-04-02-notion-mcp-root-page-automation.md",
