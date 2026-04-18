@@ -10,6 +10,7 @@ topics:
   - "ai組織化"
 published: false
 published_at: "2026-01-05 20:03"
+archived: true
 ---
 
 ## はじめに

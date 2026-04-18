@@ -122,11 +122,18 @@ export default {
     log('git add 完了');
 
     const commitMessage = `zenn: publish "${entry.title}"`;
-    const commitResult = spawnSync('git', ['commit', '-m', commitMessage], { cwd: ROOT_DIR, stdio: 'inherit' });
+    const commitResult = spawnSync('git', ['commit', '-m', commitMessage], { cwd: ROOT_DIR, stdio: 'pipe' });
     if (commitResult.status !== 0) {
-      throw new Error(`git commit failed with exit code ${commitResult.status}`);
+      const stderr = commitResult.stderr?.toString() ?? '';
+      const stdout = commitResult.stdout?.toString() ?? '';
+      if (stderr.includes('nothing to commit') || stdout.includes('nothing to commit')) {
+        log('git commit スキップ: 変更なし（既に published: true）');
+      } else {
+        throw new Error(`git commit failed with exit code ${commitResult.status}: ${stderr}`);
+      }
+    } else {
+      log('git commit 完了');
     }
-    log('git commit 完了');
 
     execSync('git push origin main', { cwd: ROOT_DIR, stdio: 'inherit' });
     log('git push 完了');

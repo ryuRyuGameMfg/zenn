@@ -4,6 +4,7 @@ emoji: "📖"
 type: "tech"
 topics: ["csharp","unity","初期化","awake","start"]
 published: false
+archived: true
 ---
 
 Unityでは、ゲームオブジェクトやスクリプトの初期化を行う代表的なメソッドとして **`Awake()`** と **`Start()`** があります。一見似たような役割に見えますが、**呼ばれるタイミング**と**想定されている用途**が少し異なるため、うまく使い分けることで開発効率や可読性を向上できます。

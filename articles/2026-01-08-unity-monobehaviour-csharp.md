@@ -9,6 +9,7 @@ topics:
   - "monobehaviour"
 published: false
 published_at: "2026-01-08 20:04"
+archived: true
 ---
 
 

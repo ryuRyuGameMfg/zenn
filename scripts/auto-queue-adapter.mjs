@@ -66,6 +66,7 @@ function readArticle(filename) {
       filepath: `articles/${filename}`,
       title: frontmatter.title || filename.replace(/\.md$/, ''),
       published: frontmatter.published !== false,
+      archived: frontmatter.archived === true,
       emoji: frontmatter.emoji || '📝',
       type: frontmatter.type || 'tech',
       topics: frontmatter.topics || [],
@@ -97,6 +98,7 @@ export default {
         if (!article) continue;
 
         if (article.published) continue;
+        if (article.archived) continue;
 
         const alreadyQueued = queue.queue.some(q => q.filepath === article.filepath);
         if (alreadyQueued) continue;

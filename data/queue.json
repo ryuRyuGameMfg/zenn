@@ -61,9 +61,11 @@
       "filename": "claude-md-7-failure-patterns-2026.md",
       "title": "CLAUDE.mdで失敗しまくった7つのパターンと解決策【2026年版】",
       "scheduled_at": "2026-04-18T08:00:00.000Z",
-      "status": "queued",
+      "status": "published",
       "queued_at": "2026-04-02T12:00:00.000Z",
-      "priority": 6
+      "priority": 6,
+      "published_at": "2026-04-02T12:00:00.000Z",
+      "published_url": "https://zenn.dev/ryuRyuGameMfg/articles/claude-md-7-failure-patterns-2026"
     },
     {
       "filepath": "articles/claude-code-security-5-layers-real-config.md",
@@ -72,7 +74,7 @@
       "scheduled_at": "2026-04-24T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-02T12:00:00.000Z",
-      "priority": 7
+      "priority": 1
     },
     {
       "filepath": "articles/ubisoft-chord-pbr-material-generation-oss.md",
@@ -81,7 +83,7 @@
       "scheduled_at": "2026-04-25T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-02T12:00:00.000Z",
-      "priority": 8
+      "priority": 2
     },
     {
       "filepath": "articles/comfyui-game-assets-indie-dev-guide.md",
@@ -90,7 +92,7 @@
       "scheduled_at": "2026-05-01T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-02T12:00:00.000Z",
-      "priority": 9
+      "priority": 3
     },
     {
       "filepath": "articles/nvidia-audio2face-3d-opensource-guide.md",
@@ -99,7 +101,7 @@
       "scheduled_at": "2026-05-02T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-02T12:00:00.000Z",
-      "priority": 10
+      "priority": 4
     },
     {
       "filepath": "articles/2026-04-02-notion-mcp-root-page-automation.md",
@@ -108,7 +110,7 @@
       "scheduled_at": "2026-05-08T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-02T16:00:00.000Z",
-      "priority": 11
+      "priority": 5
     },
     {
       "filepath": "articles/2026-04-02-gmail-calendar-mcp-ai-secretary.md",
@@ -117,7 +119,7 @@
       "scheduled_at": "2026-05-09T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-02T16:00:00.000Z",
-      "priority": 12
+      "priority": 6
     },
     {
       "filepath": "articles/claude-code-security-5-defense-layers.md",
@@ -126,7 +128,7 @@
       "scheduled_at": "2026-05-15T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-02T17:00:05.317Z",
-      "priority": 13
+      "priority": 7
     },
     {
       "filepath": "articles/claude-md-ascii-diagram-rules.md",
@@ -135,7 +137,7 @@
       "scheduled_at": "2026-05-16T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-02T17:00:05.317Z",
-      "priority": 14
+      "priority": 8
     },
     {
       "filepath": "articles/2026-04-03-unity-architecture-ai-code-instruction.md",
@@ -144,7 +146,7 @@
       "scheduled_at": "2026-05-17T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-03T08:00:00.000Z",
-      "priority": 15
+      "priority": 9
     },
     {
       "filepath": "articles/2026-04-13-unity-scriptableobject-5-patterns.md",
@@ -153,97 +155,7 @@
       "scheduled_at": "2026-05-23T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-13T00:00:00.000Z",
-      "priority": 16
-    },
-    {
-      "filepath": "articles/2026-01-05-ai-m-ai-n-sub-3-design-development.md",
-      "filename": "2026-01-05-ai-m-ai-n-sub-3-design-development.md",
-      "title": "AI組織化でMainとSubが協働する3層設計｜全ての開発をコマンド経由で実行してみる",
-      "scheduled_at": "2026-05-29T08:00:00.000Z",
-      "status": "queued",
-      "queued_at": "2026-04-17T17:00:02.096Z",
-      "priority": 17
-    },
-    {
-      "filepath": "articles/2026-01-08-unity-monobehaviour-csharp.md",
-      "filename": "2026-01-08-unity-monobehaviour-csharp.md",
-      "title": "UnityにおけるMonoBehaviourとPureC#の違い｜AI開発時代の必須知識",
-      "scheduled_at": "2026-05-30T08:00:00.000Z",
-      "status": "queued",
-      "queued_at": "2026-04-17T17:00:02.096Z",
-      "priority": 18
-    },
-    {
-      "filepath": "articles/2026-01-10-claude-code-method.md",
-      "filename": "2026-01-10-claude-code-method.md",
-      "title": "Claude Code: スキルを/検索から非表示にする方法",
-      "scheduled_at": "2026-06-05T08:00:00.000Z",
-      "status": "queued",
-      "queued_at": "2026-04-17T17:00:02.096Z",
-      "priority": 19
-    },
-    {
-      "filepath": "articles/2026-01-13-claude-10-article-automation.md",
-      "filename": "2026-01-13-claude-10-article-automation.md",
-      "title": "Claude活用10倍に。記事も日報も経理も『全自動化する戦略会議室システム』",
-      "scheduled_at": "2026-06-06T08:00:00.000Z",
-      "status": "queued",
-      "queued_at": "2026-04-17T17:00:02.096Z",
-      "priority": 20
-    },
-    {
-      "filepath": "articles/2026-02-25-7-unity-csharp.md",
-      "filename": "2026-02-25-7-unity-csharp.md",
-      "title": "【7ルール】Unity C#による柔軟なロジック分離テクニック",
-      "scheduled_at": "2026-06-12T08:00:00.000Z",
-      "status": "queued",
-      "queued_at": "2026-04-17T17:00:02.096Z",
-      "priority": 21
-    },
-    {
-      "filepath": "articles/2026-02-25-8-solid-unity-csharp-game.md",
-      "filename": "2026-02-25-8-solid-unity-csharp-game.md",
-      "title": "【8原則】SOLID実践で目指すUnity C#堅牢ゲームアーキテクチャ",
-      "scheduled_at": "2026-06-13T08:00:00.000Z",
-      "status": "queued",
-      "queued_at": "2026-04-17T17:00:02.096Z",
-      "priority": 22
-    },
-    {
-      "filepath": "articles/2026-02-25-design-unity-csharp.md",
-      "filename": "2026-02-25-design-unity-csharp.md",
-      "title": "【純粋なロジック設計】Unity C#で実践する副作用のないプログラミング",
-      "scheduled_at": "2026-06-19T08:00:00.000Z",
-      "status": "queued",
-      "queued_at": "2026-04-17T17:00:02.096Z",
-      "priority": 23
-    },
-    {
-      "filepath": "articles/2026-02-25-trycatchfinally-unity-csharp-game.md",
-      "filename": "2026-02-25-trycatchfinally-unity-csharp-game.md",
-      "title": "信頼性向上のためのtry/catch/finallyの活用 ― Unity C#で信頼性の高いゲームロジックを構築する",
-      "scheduled_at": "2026-06-20T08:00:00.000Z",
-      "status": "queued",
-      "queued_at": "2026-04-17T17:00:02.096Z",
-      "priority": 24
-    },
-    {
-      "filepath": "articles/2026-02-25-unity-awake-start.md",
-      "filename": "2026-02-25-unity-awake-start.md",
-      "title": "Unityの `Awake()` と `Start()` をどう使い分ける？  迷ったらこう使え初期化の極意",
-      "scheduled_at": "2026-06-26T08:00:00.000Z",
-      "status": "queued",
-      "queued_at": "2026-04-17T17:00:02.096Z",
-      "priority": 25
-    },
-    {
-      "filepath": "articles/2026-02-25-unity-csharp-5-game-system.md",
-      "filename": "2026-02-25-unity-csharp-5-game-system.md",
-      "title": "Unity C#で実践！デザインパターン5選で作る堅牢かつ拡張性の高いゲームシステム",
-      "scheduled_at": "2026-06-27T08:00:00.000Z",
-      "status": "queued",
-      "queued_at": "2026-04-17T17:00:02.096Z",
-      "priority": 26
+      "priority": 10
     },
     {
       "filepath": "articles/2026-04-18-uloopmcp-claude-code-unity-autonomous-loop.md",
@@ -252,7 +164,7 @@
       "scheduled_at": "2026-07-03T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-17T17:00:02.096Z",
-      "priority": 27
+      "priority": 11
     }
   ],
   "schedule": {
@@ -264,5 +176,5 @@
     "timezone": "Asia/Tokyo"
   },
   "last_scan": "2026-04-17T17:00:02.096Z",
-  "last_publish": null
+  "last_publish": "2026-04-17T08:26:28.427Z"
 }

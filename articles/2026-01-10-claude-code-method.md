@@ -8,6 +8,7 @@ topics:
   - "agentskills"
 published: false
 published_at: "2026-01-10 17:00"
+archived: true
 ---
 
 

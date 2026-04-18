@@ -10,6 +10,7 @@ topics:
   - "コンテキストエンジニアリング"
 published: false
 published_at: "2026-01-13 18:00"
+archived: true
 ---
 
 # Claude Code、実はこんなことまでできる

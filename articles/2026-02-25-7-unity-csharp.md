@@ -4,6 +4,7 @@ emoji: "👋"
 type: "tech"
 topics: ["csharp","unity","コード"]
 published: false
+archived: true
 ---
 
 # [](#unity-c%23%E3%81%AB%E3%82%88%E3%82%8B%E6%9F%94%E8%BB%9F%E3%81%AA%E3%83%AD%E3%82%B8%E3%83%83%E3%82%AF%E5%88%86%E9%9B%A2%E3%83%86%E3%82%AF%E3%83%8B%E3%83%83%E3%82%AF7%E9%81%B8)Unity C#による柔軟なロジック分離テクニック7選
