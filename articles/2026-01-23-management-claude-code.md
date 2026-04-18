@@ -8,8 +8,9 @@ topics:
   - "claude"
   - "aiエージェント"
   - "claudecode"
-published: true
+published: false
 published_at: "2026-01-23 17:30"
+archived: true
 ---
 
 ## あなたは毎朝、タスクの整理に何分使っていますか？
