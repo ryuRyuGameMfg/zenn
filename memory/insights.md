@@ -71,12 +71,12 @@ KPI効果試算:
 
 ## キュー（優先順）
 
-1. uLoopMCP + Claude Code で Unity 自律開発サイクルを実現する方法（次回優先）
+1. ~~uLoopMCP + Claude Code で Unity 自律開発サイクルを実現する方法~~ 済み→ 2026-04-18
 2. Unity Memory Profiler 実践ワークフロー：GC Alloc 撲滅からメモリリーク根絶まで
 3. Unity GPU Instancing 完全実装：DrawMeshInstanced から RenderMeshIndirect まで段階的に理解する
 4. Unity ECS × ゲームキャラクター実装：OOP 設計からの段階移行実践ガイド
 5. Unity 6.3 Platform Toolkit でマルチプラットフォーム対応を1コードベースで実現する
-6. Unity C#でやりがちな「初心者の罠」5選 ― ファイル名・ライフサイクル・null参照を完全解説（入門×N選、20スキ超見込み）
+6. ~~Unity C#でやりがちな「初心者の罠」5選 ― ファイル名・ライフサイクル・null参照を完全解説~~ 済み→ 2026-04-19（iter04_create、高PVパターン採用）
 7. ~~ScriptableObjectを使いこなす5つの実践パターン ― ゲームデータ設計の決定版（設計系×N選、2026年空白テーマ）~~ 済み→ 2026-04-13
 8. Unityエディタ拡張で作業を自動化する3つのレシピ ― ボタン1つで完結する開発ツール集（エディタ拡張×自動化、競合少）
 9. Unity 6.4で変わった開発フロー ― Render Graph・ECS標準化を実務レベルで使う（新バージョン速報性、競合少）
