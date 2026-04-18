@@ -1,5 +1,5 @@
 ---
-title: "Unity AIで3Dモデル生成を試した結果、開発時間が3時間短縮された話"
+title: "Unity AI Betaで3Dモデル生成｜開発時間3時間短縮の実践フローと活用シーン3選"
 emoji: "🤖"
 type: "tech"
 topics: ["unity", "ai", "gamedev", "3dmodel"]
@@ -12,7 +12,11 @@ published: true
 この記事では、Unity AI Beta 2026を使って3Dモデルを自動生成し、実際に開発時間がどれだけ短縮されたかを検証しました。セットアップから実践、品質評価、活用シーンまで、実務的なノウハウをまとめています。
 :::
 
-## 導入：なぜUnity AI Betaが革新的なのか
+## 結論から言うと
+
+**Unity AI Beta 2026はテキストプロンプトから1分以内に3Dモデルを生成できる**。手動制作の3時間を1分に圧縮し、RPCキャラ量産・プロトタイピング・リアルタイム生成という3つの実務シーンで96%の時間短縮を実現した。セットアップ・プロンプト設計・品質評価の全フローを本記事でまとめている。
+
+## ステップ1: なぜUnity AI Betaが革新的なのか
 
 Unity AI Beta 2026は、ゲーム開発の現場に大きな変化をもたらす可能性を持っています。従来、3Dモデルの製作には以下のような課題がありました：
 
@@ -41,7 +45,7 @@ Unity AI Betaはこれらの課題をAIの力で解決し、テキストプロ�
 
 ---
 
-## セットアップ：環境構築から初回実行まで
+## ステップ2: セットアップ：環境構築から初回実行まで
 
 ### 必要な環境
 
@@ -123,7 +127,7 @@ Unity AI Betaを利用するには、Unity公式サイトでAPIキーを取得�
 
 ---
 
-## 実践：プロンプトから3Dモデル生成まで
+## ステップ3: 実践：プロンプトから3Dモデル生成まで
 
 ### プロンプト設計の3つのコツ
 
@@ -239,7 +243,7 @@ Parameters:
 
 ---
 
-## 品質評価：生成モデルの実用性を検証
+## ステップ4: 品質評価：生成モデルの実用性を検証
 
 ### 生成品質の定量分析
 
@@ -303,7 +307,7 @@ Unity AI Betaと従来の3D制作方法を比較しました：
 
 ---
 
-## 活用シーン：実務での応用例3選
+## ステップ5: 活用シーン：実務での応用例3選
 
 ### シーン1: RPGのNPCアセット量産
 
@@ -403,7 +407,7 @@ public class ProceduralDungeonGenerator : MonoBehaviour
 
 ---
 
-## 失敗事例と対策：知見から学ぶ
+## ステップ6: 失敗事例と対策：知見から学ぶ
 
 ### よくある失敗3パターン
 
@@ -458,7 +462,7 @@ Texture Resolution: 2048（ほぼ最適）
 
 ---
 
-## まとめ：Unity AI Betaの可能性と今後
+## まとめ: Unity AI Betaの可能性と今後
 
 ### 本記事で検証したこと
 
@@ -499,3 +503,5 @@ Unity AI Betaはまだベータ版です。今後のアップデートで期待�
 - [Unity Discussions - Unity AI Beta 2026](https://discussions.unity.com/t/unity-ai-beta-2026-3d-model-generation/)
 - [GitHub サンプルコード](https://github.com/Unity-Technologies/Unity-AI-Beta-Samples)
 - [ゲームメーカーズ - Unity AI機能解説](https://gamemakers.jp/article/2026/01/unity-ai-beta-features/)
+
+この記事が参考になったら **いいね** をお願いします。
