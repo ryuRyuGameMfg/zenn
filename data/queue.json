@@ -72,9 +72,11 @@
       "filename": "claude-code-security-5-layers-real-config.md",
       "title": "Claude Codeで機密情報漏洩ゼロを実現した5層セキュリティ設計【実設定公開】",
       "scheduled_at": "2026-04-19T08:00:00.000Z",
-      "status": "queued",
+      "status": "published",
       "queued_at": "2026-04-02T12:00:00.000Z",
-      "priority": 1
+      "priority": 1,
+      "published_at": "2026-04-19T08:57:38.994Z",
+      "published_url": "https://zenn.dev/ryuRyuGameMfg/articles/claude-code-security-5-layers-real-config"
     },
     {
       "filepath": "articles/ubisoft-chord-pbr-material-generation-oss.md",
