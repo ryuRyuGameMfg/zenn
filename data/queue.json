@@ -71,7 +71,7 @@
       "filepath": "articles/claude-code-security-5-layers-real-config.md",
       "filename": "claude-code-security-5-layers-real-config.md",
       "title": "Claude Codeで機密情報漏洩ゼロを実現した5層セキュリティ設計【実設定公開】",
-      "scheduled_at": "2026-04-24T08:00:00.000Z",
+      "scheduled_at": "2026-04-19T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-02T12:00:00.000Z",
       "priority": 1
@@ -113,7 +113,7 @@
       "filepath": "articles/2026-04-02-notion-mcp-root-page-automation.md",
       "filename": "2026-04-02-notion-mcp-root-page-automation.md",
       "title": "Claude Code × Notion MCP でルートページ整理を自動化する",
-      "scheduled_at": "2026-05-08T08:00:00.000Z",
+      "scheduled_at": "2026-04-24T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-02T16:00:00.000Z",
       "priority": 5
@@ -122,7 +122,7 @@
       "filepath": "articles/2026-04-02-gmail-calendar-mcp-ai-secretary.md",
       "filename": "2026-04-02-gmail-calendar-mcp-ai-secretary.md",
       "title": "Claude Code × Gmail/Calendar MCP でAI秘書を実現する",
-      "scheduled_at": "2026-05-09T08:00:00.000Z",
+      "scheduled_at": "2026-04-25T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-02T16:00:00.000Z",
       "priority": 6
@@ -131,7 +131,7 @@
       "filepath": "articles/claude-code-security-5-defense-layers.md",
       "filename": "claude-code-security-5-defense-layers.md",
       "title": "Claude Codeの機密情報漏洩を防ぐ5つのHooksセキュリティ設計",
-      "scheduled_at": "2026-05-15T08:00:00.000Z",
+      "scheduled_at": "2026-04-26T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-02T17:00:05.317Z",
       "priority": 7
@@ -140,7 +140,7 @@
       "filepath": "articles/claude-md-ascii-diagram-rules.md",
       "filename": "claude-md-ascii-diagram-rules.md",
       "title": "CLAUDE.mdでASCII図ルールを定義したらAI出力が劇的に変わった",
-      "scheduled_at": "2026-05-16T08:00:00.000Z",
+      "scheduled_at": "2026-05-01T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-02T17:00:05.317Z",
       "priority": 8
@@ -149,7 +149,7 @@
       "filepath": "articles/2026-04-03-unity-architecture-ai-code-instruction.md",
       "filename": "2026-04-03-unity-architecture-ai-code-instruction.md",
       "title": "MonoBehaviourベタ書きを卒業したい人へ：AIに設計パターンを指示してUnityコードを整理する方法",
-      "scheduled_at": "2026-05-17T08:00:00.000Z",
+      "scheduled_at": "2026-05-02T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-03T08:00:00.000Z",
       "priority": 9
@@ -158,7 +158,7 @@
       "filepath": "articles/2026-04-13-unity-scriptableobject-5-patterns.md",
       "filename": "2026-04-13-unity-scriptableobject-5-patterns.md",
       "title": "ScriptableObjectで変わるゲームデータ設計5パターン【Unity】",
-      "scheduled_at": "2026-05-23T08:00:00.000Z",
+      "scheduled_at": "2026-05-03T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-13T00:00:00.000Z",
       "priority": 10
@@ -167,7 +167,7 @@
       "filepath": "articles/2026-04-18-uloopmcp-claude-code-unity-auto-loop.md",
       "filename": "2026-04-18-uloopmcp-claude-code-unity-auto-loop.md",
       "title": "uLoopMCP + Claude Code で Unity 自律開発サイクルを実現する方法",
-      "scheduled_at": "2026-07-03T08:00:00.000Z",
+      "scheduled_at": "2026-05-08T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-17T17:00:02.096Z",
       "priority": 11
@@ -176,7 +176,7 @@
       "filepath": "articles/2026-04-19-unity-csharp-beginner-traps-5.md",
       "filename": "2026-04-19-unity-csharp-beginner-traps-5.md",
       "title": "Unity C#でやりがちな「初心者の罠」5選 ― ファイル名・ライフサイクル・null参照を完全解説",
-      "scheduled_at": "2026-07-04T08:00:00.000Z",
+      "scheduled_at": "2026-05-09T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-18T17:00:05.104Z",
       "priority": 18
@@ -184,6 +184,7 @@
   ],
   "schedule": {
     "weekday": [
+      0,
       5,
       6
     ],
