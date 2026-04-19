@@ -2,7 +2,7 @@
   "mode": "analyze",
   "iteration": 4,
   "status": "idle",
-  "last_run": "2026-04-19T01:05:00Z",
+  "last_run": "2026-04-18T16:05:42Z",
   "current_article": {
     "slug": "2026-04-19-unity-csharp-beginner-traps-5",
     "title": "Unity C#でやりがちな「初心者の罠」5選 ― ファイル名・ライフサイクル・null参照を完全解説",
@@ -85,7 +85,7 @@
     "measured_at": "2026-04-18T16:00:05Z"
   },
   "last_action": "create: 2026-04-19-unity-csharp-beginner-traps-5（Unity入門×N選パターン、最高ROI=15.7avg採用）",
-  "last_action_result": "push完了。\n\n---\n\n**rewrite モード完了 — iter03_rewrite**\n\n```text\n┌──────────────────────────────────────────────────────────┐\n│  実行内容: rewrite（重複unpublish × 10 + 新規記事 × 1）  │\n└──────────────────────────────────────────────────────────┘\n\nKPI改善根拠\n  重複記事10本を published: false に変更\n  ┌─ avg_likes計算から0スキ記事が除外される\n  ├─ 現在:  47記事 / 349スキ / avg 7.43スキ/記事\n  └─ 予測:  37記事 / 349スキ / avg 9.4スキ/記事 (+26%)\n\nunpublishした10記事\n  - 2026-02-25-unity-csharp-5-game-system（重複）\n  - 2026-02-25-7-unity-csharp（重複）\n  - 2026-02-25-8-solid-unity-csharp-game（重複）\n  - 2026-02-25-unity-awake-start（重複）\n  - 2026-02-25-design-unity-csharp（重複）\n  - 2026-02-25-trycatchfinally-unity-csharp-game（重複）\n  - 2026-01-05-ai-m-ai-n-sub-3-design-development（重複）\n  - 2026-01-08-unity-monobehaviour-csharp（重複）\n  - 2026-01-10-claude-code-method（重複）\n  - 2026-01-13-claude-10-article-automation（重複）\n\n新規記事（draft）\n  slug: 2026-04-18-uloopmcp-claude-code-unity-auto-loop\n  title: uLoopMCP + Claude Code で Unity 自律開発サイクルを実現する方法\n  published: false（queue経由で金土17:00に公開予定）\n  内容: 約3,200字 / 見出し5 / Mermaid図 / C#+JSON コードブロック\n\n状態遷移\n  rewrite → create（iteration: 3 → 4）\n  git push: main ブランチに反映済み\n```\n\n**LAST_ACTION**: `rewrite: 2026-04-18 重複10本unpublish + 新規記事作成（uLoopMCP × Claude Code）`",
+  "last_action_result": "push完了。\n\n---\n\n**create モード完了 — iter04_create**\n\n```text\n┌──────────────────────────────────────────────────────────┐\n│  実行内容: create（新規記事 × 1、高PVパターン採用）       │\n└──────────────────────────────────────────────────────────┘\n\nKPI改善根拠（過去実績ROI重視）\n  insights.mdの実測データから最高ROIパターンを選定\n  ┌─ Unity入門 × N選 : 15.7 avg スキ/記事  ← 採用\n  ├─ Unity C#設計×N選: 9.8  avg スキ/記事\n  └─ AI/Claude(重複) : 0    avg スキ/記事\n\n  avg_likes改善予測\n  ┌─ 現状:       37記事 / 349スキ / avg 9.43\n  ├─ 15スキ時:   38記事 / 364スキ / avg 9.58 (+1.6%)\n  └─ 20スキ時:   38記事 / 369スキ / avg 9.71 (+3.0%)\n\n新規記事（draft）\n  slug   : 2026-04-19-unity-csharp-beginner-traps-5\n  title  : Unity C#でやりがちな「初心者の罠」5選\n  文字数  : 約13,100字\n  見出し  : 18（H2/H3）\n  コード  : 12ブロック（csharp×10 BAD/GOOD + mermaid×1 + text×1）\n  published: false（queue経由で金土17:00に公開）\n\n差別化設計（重複防止）\n  既存1: unity-csharp-efficiency-up-5    → 便利小技（プラス視点）\n  既存2: scriptableobject-5-patterns     → 設計5パターン\n  今回 : beginner-traps-5                → アンチパターン（マイナス視点）\n\n状態遷移\n  create → analyze（iteration: 4維持）\n  forbidden_actions に登録（重複実行防止）\n  git push: main ブランチに反映済み\n```\n\n**LAST_ACTION**: `create: 2026-04-19-unity-csharp-beginner-traps-5（Unity入門×N選パターン、最高ROI=15.7avg採用）`",
   "forbidden_actions": [
     "create: 2026-04-13-unity-scriptableobject-5-patterns（N選×設計パターン、0スキ問題対策）",
     "analyze: 2026-04-17 metrics更新（47記事・フォロワー37・0スキ根本原因特定: 重複記事問題）",
@@ -98,6 +98,6 @@
   "last_learn_at": "2026-04-12T16:13:38Z",
   "cycle_count": 0,
   "last_assess_result": "no_improve",
-  "last_assess_at": "2026-04-17T16:03:15Z",
-  "no_improve_count": 4
+  "last_assess_at": "2026-04-18T16:05:42Z",
+  "no_improve_count": 5
 }
