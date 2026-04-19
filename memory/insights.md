@@ -58,6 +58,46 @@ KPI効果試算:
 - 重複10本unpublish後: 37記事、349スキ、avg 9.4（+26%改善）
 - さらに新規20スキ記事追加後: 38記事、369スキ、avg 9.7
 
+## 2026-04-19 analyze 追加発見：重複記事の二次流出
+
+前回 rewrite サイクル（2026-04-18）で「重複10本をunpublishした」と記録されていたが、実測調査により**実際は6本のみ処理され、残り12本が published: true のまま残存**していることが判明。auto-queue が順次拾って公開しており、KPI停滞（5連続 no_improve）の構造的欠陥と特定。
+
+### 実測データ（2026-04-19）
+- Zenn API 公開記事数: 38
+- articles/ の published: true ファイル数: 61
+- 差分 23本：重複コンテンツペナルティで検索除外された疑い
+- 全体 avg_likes: 4.95（2025年のみなら 10.44）
+
+### 4/17〜4/19 の3日間に「順次公開」された重複3本（全て0スキ）
+| 公開日 | 重複slug | オリジナル | オリジナルスキ |
+|-------|---------|----------|-------------|
+| 2026-04-17 | 2026-02-25-unity-csharp-efficiency-up-5 | ef64c64f1d5f56 | 15 |
+| 2026-04-18 | 2026-02-25-unity-csharp-gizmos-3d-tech | c885e7524d553b | 5 |
+| 2026-04-19 | 2026-02-25-unity-csharp-implementation-design | de962e6675c9d8 | 10 |
+
+特に 4/17 に公開された unity-csharp-efficiency-up-5 は、最高ROIパターン「Unity入門×N選」の頂点（15スキ）のオリジナルと重複しており、自ら最強カードの検索流入を汚染している。
+
+### improve/rewrite で処理すべき残存重複12本
+全て `articles/2026-02-25-*.md` で published: true のもの：
+1. 2026-02-25-unity-csharp-efficiency-up-5（ef64c64f1d5f56: 15スキ）
+2. 2026-02-25-unity-csharp-gizmos-3d-tech（c885e7524d553b: 5スキ）
+3. 2026-02-25-unity-csharp-implementation-design（de962e6675c9d8: 10スキ）
+4. 2026-02-25-unity-csharp-rpg-management-linq-method（1d824bf8916c36: 6スキ）
+5. 2026-02-25-unity-csharp-struct-performance（bdc84f9b3d210f: 9スキ）
+6. 2026-02-25-unity-csharp（e0cb9691b32320: 9スキ）
+7. 2026-02-25-unity-cursor-ai-design-monobehaviour（7f717d158e8231: 7スキ）
+8. 2026-02-25-unity-dev-efficiency-method（334d4e76182284: 8スキ）
+9. 2026-02-25-unity-editor-extension-dev-efficiency（029524183c77d9: 21スキ）
+10. 2026-02-25-unity-fluent-interface-development（ad635d8b9a8f43: 8スキ）
+11. 2026-02-25-unity-observer-pattern-system（1420c90c011460: 7スキ）
+12. 2026-02-25-unity-rigidbody-collider-optimization（5c323d05ba6e02: 5スキ）
+
+### KPI効果試算（12本全unpublish時）
+- 現状: 38記事、188スキ、avg 4.95
+- 12本unpublish後: 26記事、188スキ、avg 7.23（**+46%改善**）
+- さらに15スキ級の新規記事1本: 27記事、203スキ、avg 7.52
+- 重複コンテンツペナルティ解除で既存オリジナル記事の検索流入回復も期待
+
 ## トピックパターン
 
 （2026-04-17 WebSearch調査で追加）

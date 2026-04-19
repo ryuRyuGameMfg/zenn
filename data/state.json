@@ -1,12 +1,12 @@
 {
-  "mode": "analyze",
+  "mode": "improve",
   "iteration": 4,
   "status": "idle",
-  "last_run": "2026-04-18T16:05:42Z",
+  "last_run": "2026-04-19T16:45:00Z",
   "current_article": {
-    "slug": "2026-04-19-unity-csharp-beginner-traps-5",
-    "title": "Unity C#でやりがちな「初心者の罠」5選 ― ファイル名・ライフサイクル・null参照を完全解説",
-    "topic": "Unity入門×N選（最高ROIパターン 15.7 avg スキ/記事）"
+    "slug": "",
+    "title": "",
+    "topic": ""
   },
   "consecutive_errors": 0,
   "scheduled_publish": [
@@ -71,6 +71,14 @@
       "title": "Unity C#でやりがちな「初心者の罠」5選 ― ファイル名・ライフサイクル・null参照を完全解説",
       "topic": "Unity入門×N選（最高ROIパターン 15.7 avg スキ/記事）",
       "date": "2026-04-19"
+    },
+    {
+      "iteration": 4,
+      "mode": "analyze",
+      "slug": "metrics-update-2026-04-19",
+      "title": "analyze: 重複記事二次流出問題を特定",
+      "topic": "KPI停滞の根本原因特定：published:true 重複12本残存 + auto-queue順次公開",
+      "date": "2026-04-19"
     }
   ],
   "kpi": {
@@ -82,22 +90,23 @@
     "achievement_pct": 37,
     "delta": 0,
     "trend": "stable",
-    "measured_at": "2026-04-18T16:00:05Z"
+    "measured_at": "2026-04-19T16:45:00Z"
   },
-  "last_action": "create: 2026-04-19-unity-csharp-beginner-traps-5（Unity入門×N選パターン、最高ROI=15.7avg採用）",
-  "last_action_result": "push完了。\n\n---\n\n**create モード完了 — iter04_create**\n\n```text\n┌──────────────────────────────────────────────────────────┐\n│  実行内容: create（新規記事 × 1、高PVパターン採用）       │\n└──────────────────────────────────────────────────────────┘\n\nKPI改善根拠（過去実績ROI重視）\n  insights.mdの実測データから最高ROIパターンを選定\n  ┌─ Unity入門 × N選 : 15.7 avg スキ/記事  ← 採用\n  ├─ Unity C#設計×N選: 9.8  avg スキ/記事\n  └─ AI/Claude(重複) : 0    avg スキ/記事\n\n  avg_likes改善予測\n  ┌─ 現状:       37記事 / 349スキ / avg 9.43\n  ├─ 15スキ時:   38記事 / 364スキ / avg 9.58 (+1.6%)\n  └─ 20スキ時:   38記事 / 369スキ / avg 9.71 (+3.0%)\n\n新規記事（draft）\n  slug   : 2026-04-19-unity-csharp-beginner-traps-5\n  title  : Unity C#でやりがちな「初心者の罠」5選\n  文字数  : 約13,100字\n  見出し  : 18（H2/H3）\n  コード  : 12ブロック（csharp×10 BAD/GOOD + mermaid×1 + text×1）\n  published: false（queue経由で金土17:00に公開）\n\n差別化設計（重複防止）\n  既存1: unity-csharp-efficiency-up-5    → 便利小技（プラス視点）\n  既存2: scriptableobject-5-patterns     → 設計5パターン\n  今回 : beginner-traps-5                → アンチパターン（マイナス視点）\n\n状態遷移\n  create → analyze（iteration: 4維持）\n  forbidden_actions に登録（重複実行防止）\n  git push: main ブランチに反映済み\n```\n\n**LAST_ACTION**: `create: 2026-04-19-unity-csharp-beginner-traps-5（Unity入門×N選パターン、最高ROI=15.7avg採用）`",
+  "last_action": "analyze: 2026-04-19 metrics更新（articles_count 47→38、avg_likes 7.43→4.95、published:true重複12本残存を特定）",
+  "last_action_result": "analyze完了。Zenn API (38記事/188スキ/avg 4.95) と articles/ディレクトリ (published:true=61本) の突合で重大欠陥を特定。前回rewriteで10本unpublishした記録に反し、実際は6本のみ処理・12本残存。4/17〜4/19にオリジナル15/5/10スキの重複3本がauto-queueで順次公開され全て0スキ。improve モードで12本一括処理方針を策定する必要あり。KPI試算: 12本unpublishで avg_likes 4.95→7.23 (+46%) 改善見込み。",
   "forbidden_actions": [
     "create: 2026-04-13-unity-scriptableobject-5-patterns（N選×設計パターン、0スキ問題対策）",
     "analyze: 2026-04-17 metrics更新（47記事・フォロワー37・0スキ根本原因特定: 重複記事問題）",
     "improve: 2026-04-17 重複記事対策方針策定 + テーマキュー5件補充（CoreCLR/ECS/並列開発等）",
     "rewrite: 2026-04-18 重複10本unpublish + 新規記事作成（uLoopMCP × Claude Code）",
-    "create: 2026-04-19-unity-csharp-beginner-traps-5（Unity入門×N選パターン、最高ROI=15.7avg採用）"
+    "create: 2026-04-19-unity-csharp-beginner-traps-5（Unity入門×N選パターン、最高ROI=15.7avg採用）",
+    "analyze: 2026-04-19 metrics更新（articles_count 47→38、avg_likes 7.43→4.95、published:true重複12本残存を特定）"
   ],
   "stagnant": true,
-  "stagnant_count": 0,
+  "stagnant_count": 1,
   "last_learn_at": "2026-04-12T16:13:38Z",
   "cycle_count": 0,
-  "last_assess_result": "no_improve",
-  "last_assess_at": "2026-04-18T16:05:42Z",
+  "last_assess_result": "analyze_complete",
+  "last_assess_at": "2026-04-19T16:45:00Z",
   "no_improve_count": 5
 }

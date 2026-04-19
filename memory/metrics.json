@@ -1,14 +1,14 @@
 {
-  "last_updated": "2026-04-17",
-  "collected_at": "2026-04-17T00:00:00Z",
+  "last_updated": "2026-04-19",
+  "collected_at": "2026-04-19T16:30:00Z",
   "profile": {
     "username": "ryuryu_game",
     "follower_count": 37,
     "following_count": 0,
-    "articles_count": 47,
+    "articles_count": 38,
     "books_count": 1,
     "total_liked_count": 349,
-    "note": "total_liked_count はユーザーAPIの値。記事スキ合計は188（2026年記事は全て0スキ）"
+    "note": "Zenn APIは38記事を返すが、articles/ディレクトリには published:true が61ファイル存在。差分23本は重複コンテンツペナルティで検索除外された疑い"
   },
   "okr_snapshot": {
     "o1_followers": {
@@ -24,10 +24,10 @@
     "o3_like_rate": {
       "target_pct": 5.0,
       "total_likes": 349,
-      "published_articles": 47,
-      "avg_likes_per_article": 7.43,
+      "published_articles": 38,
+      "avg_likes_per_article": 4.95,
       "avg_likes_2025_only": 10.44,
-      "note": "2026年記事は全て0スキ（47記事中18記事のみスキあり）。2025年記事18本の平均は10.44"
+      "note": "2026年記事は全て0スキ。記事一覧合計スキは188/38記事。2025年記事18本の平均は10.44だが、2026年追加分が全て0スキのため全体平均は4.95に低下"
     }
   },
   "key_insight_2026_04_17": {
@@ -41,6 +41,26 @@
       "ai-driven-narrative-design-llm-dynamic-story"
     ],
     "action": "improve モードで重複記事の削除またはリライト方針を策定"
+  },
+  "key_insight_2026_04_19": {
+    "critical": "rewriteサイクルでの重複記事unpublishが不完全。12本が published: true のまま残存し、auto-queueが4/17〜4/19に3本を順次公開（全て0スキ、オリジナル15/5/10スキ）",
+    "root_cause": "前回rewriteで処理された重複は6本のみ。articles/ 内の 2026-02-25-*.md 12本が未処理のまま残存している",
+    "kpi_impact": "全体avg_likes 4.95（2025年のみ10.44）。重複記事を全てunpublishすれば avg_likes = 188/(38-3)=5.37 まで改善可能",
+    "action_required": "improveモードで12本の一括unpublish方針を策定、rewriteモードで実行",
+    "duplicate_published_true_remaining": [
+      "2026-02-25-unity-csharp-efficiency-up-5",
+      "2026-02-25-unity-csharp-gizmos-3d-tech",
+      "2026-02-25-unity-csharp-implementation-design",
+      "2026-02-25-unity-csharp-rpg-management-linq-method",
+      "2026-02-25-unity-csharp-struct-performance",
+      "2026-02-25-unity-csharp",
+      "2026-02-25-unity-cursor-ai-design-monobehaviour",
+      "2026-02-25-unity-dev-efficiency-method",
+      "2026-02-25-unity-editor-extension-dev-efficiency",
+      "2026-02-25-unity-fluent-interface-development",
+      "2026-02-25-unity-observer-pattern-system",
+      "2026-02-25-unity-rigidbody-collider-optimization"
+    ]
   },
   "competitor_trends": {
     "collected_at": "2026-04-04",
@@ -116,6 +136,9 @@
     }
   ],
   "articles": [
+    {"slug": "2026-02-25-unity-csharp-implementation-design", "title": "関数型デザインパターン: Unity C#で実装する柔軟なコード設計の秘訣（重複）", "likes": 0, "published_at": "2026-04-19", "note": "重複: de962e6675c9d8(10スキ)の再公開。rewrite対象"},
+    {"slug": "2026-02-25-unity-csharp-gizmos-3d-tech", "title": "【Unity C#】Gizmosで3D空間を徹底デバッグ!?隠れた不具合を見える化する技術（重複）", "likes": 0, "published_at": "2026-04-18", "note": "重複: c885e7524d553b(5スキ)の再公開。rewrite対象"},
+    {"slug": "2026-02-25-unity-csharp-efficiency-up-5", "title": "Unity初心者必見！C#で効率UPする5つの小技（重複）", "likes": 0, "published_at": "2026-04-17", "note": "重複: ef64c64f1d5f56(15スキ)の再公開。rewrite対象"},
     {"slug": "2026-04-13-unity-scriptableobject-5-patterns", "title": "ScriptableObjectで変わるゲームデータ設計5パターン【Unity】", "likes": 0, "published_at": "draft", "note": "queue: 2026-05-23公開予定"},
     {"slug": "2026-02-25-unity-csharp-5-game-system", "title": "Unity C#で実践！デザインパターン5選で作る堅牢かつ拡張性の高いゲームシステム", "likes": 0, "published_at": "2026-04-13", "note": "重複: e452464931b0ce(32スキ)の再公開"},
     {"slug": "2026-02-25-unity-awake-start", "title": "Unityの `Awake()` と `Start()` をどう使い分ける？迷ったらこう使え初期化の極意", "likes": 0, "published_at": "2026-04-11", "note": "重複: 291ce3a3bf95ee(11スキ)の再公開"},
