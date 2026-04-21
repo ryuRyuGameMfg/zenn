@@ -1,1 +1,21 @@
-{"followers": 37, "likes": 189}
+{
+  "followers": 37,
+  "likes": 349,
+  "articles_count": 36,
+  "monthly_increase": 0,
+  "last_updated": "2026-04-22",
+  "history": [
+    {
+      "date": "2026-04-21",
+      "followers": 37,
+      "likes": 349,
+      "articles": 36
+    },
+    {
+      "date": "2026-04-22",
+      "followers": 37,
+      "likes": 349,
+      "articles": 36
+    }
+  ]
+}
