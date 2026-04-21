@@ -2,7 +2,7 @@
 title: "LLMで動的ストーリーを実装する4つのナラティブ設計パターン【Unity/UE対応】"
 emoji: "📖"
 type: "tech"
-topics: ["gamedev", "ai", "narrative", "llm", "unity"]
+topics: ["claudecode", "mcp", "unity", "ai", "llm"]
 published: true
 published_at: 2026-03-08 18:00
 ---

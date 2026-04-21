@@ -1,8 +1,8 @@
 ---
-title: "個人開発者がMermaid設計で30分短縮した5つの要件定義テクニック"
+title: "Claude Code × Mermaid で個人開発の要件定義を30分に短縮する5つの設計術"
 emoji: "🗺"
 type: "tech"
-topics: ["個人開発", "要件定義", "mermaid", "設計", "ドキュメント"]
+topics: ["claudecode", "claude", "mermaid", "個人開発", "要件定義"]
 published: true
 ---
 
