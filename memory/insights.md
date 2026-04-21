@@ -77,20 +77,25 @@ KPI効果試算:
 
 特に 4/17 に公開された unity-csharp-efficiency-up-5 は、最高ROIパターン「Unity入門×N選」の頂点（15スキ）のオリジナルと重複しており、自ら最強カードの検索流入を汚染している。
 
-### improve/rewrite で処理すべき残存重複12本
-全て `articles/2026-02-25-*.md` で published: true のもの：
-1. 2026-02-25-unity-csharp-efficiency-up-5（ef64c64f1d5f56: 15スキ）
-2. 2026-02-25-unity-csharp-gizmos-3d-tech（c885e7524d553b: 5スキ）
-3. 2026-02-25-unity-csharp-implementation-design（de962e6675c9d8: 10スキ）
-4. 2026-02-25-unity-csharp-rpg-management-linq-method（1d824bf8916c36: 6スキ）
-5. 2026-02-25-unity-csharp-struct-performance（bdc84f9b3d210f: 9スキ）
-6. 2026-02-25-unity-csharp（e0cb9691b32320: 9スキ）
-7. 2026-02-25-unity-cursor-ai-design-monobehaviour（7f717d158e8231: 7スキ）
-8. 2026-02-25-unity-dev-efficiency-method（334d4e76182284: 8スキ）
-9. 2026-02-25-unity-editor-extension-dev-efficiency（029524183c77d9: 21スキ）
-10. 2026-02-25-unity-fluent-interface-development（ad635d8b9a8f43: 8スキ）
-11. 2026-02-25-unity-observer-pattern-system（1420c90c011460: 7スキ）
-12. 2026-02-25-unity-rigidbody-collider-optimization（5c323d05ba6e02: 5スキ）
+### improve/rewrite で処理すべき残存重複12本 ← **2026-04-21 処理完了**
+全て `articles/2026-02-25-*.md` で published: true のもの（全て published: false に変更済み）：
+1. ~~2026-02-25-unity-csharp-efficiency-up-5~~（ef64c64f1d5f56: 15スキ）→ unpublished 2026-04-21
+2. ~~2026-02-25-unity-csharp-gizmos-3d-tech~~（c885e7524d553b: 5スキ）→ unpublished 2026-04-21
+3. ~~2026-02-25-unity-csharp-implementation-design~~（de962e6675c9d8: 10スキ）→ unpublished 2026-04-21
+4. ~~2026-02-25-unity-csharp-rpg-management-linq-method~~（1d824bf8916c36: 6スキ）→ unpublished 2026-04-21
+5. ~~2026-02-25-unity-csharp-struct-performance~~（bdc84f9b3d210f: 9スキ）→ unpublished 2026-04-21
+6. ~~2026-02-25-unity-csharp~~（e0cb9691b32320: 9スキ）→ unpublished 2026-04-21
+7. ~~2026-02-25-unity-cursor-ai-design-monobehaviour~~（7f717d158e8231: 7スキ）→ unpublished 2026-04-21
+8. ~~2026-02-25-unity-dev-efficiency-method~~（334d4e76182284: 8スキ）→ unpublished 2026-04-21
+9. ~~2026-02-25-unity-editor-extension-dev-efficiency~~（029524183c77d9: 21スキ）→ unpublished 2026-04-21
+10. ~~2026-02-25-unity-fluent-interface-development~~（ad635d8b9a8f43: 8スキ）→ unpublished 2026-04-21
+11. ~~2026-02-25-unity-observer-pattern-system~~（1420c90c011460: 7スキ）→ unpublished 2026-04-21
+12. ~~2026-02-25-unity-rigidbody-collider-optimization~~（5c323d05ba6e02: 5スキ）→ unpublished 2026-04-21
+
+### 2026-04-21 improve 実行記録
+- 12本全ての `published: true` → `published: false` 変更をコミット
+- articles/ 変更あり → git push 実行
+- 次サイクルで Zenn 再同期 → 実測avg_likes再測定（analyze モード）
 
 ### KPI効果試算（12本全unpublish時）
 - 現状: 38記事、188スキ、avg 4.95

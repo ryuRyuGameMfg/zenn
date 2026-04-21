@@ -3,7 +3,7 @@ title: "【Unity C#】Gizmosで3D空間を徹底デバッグ!?隠れた不具合
 emoji: "🕌"
 type: "tech"
 topics: ["csharp","unity","tips","デバッグ","gizmos"]
-published: true
+published: false
 ---
 
 Unityでの3Dゲーム開発では、シーン上のオブジェクトの配置、移動経路、さらには物理挙動など、普段は見えにくい内部処理が隠れた不具合の原因となることがあります。本記事では、Gizmosを活用してこれらの情報を「見える化」し、効率的にデバッグするための手法を解説します。Gizmosの基本機能から、カメラとの距離に応じた描画調整、NPCのルート可視化、物理演算デバッグ、さらにはMeta Horizon向けの拡張機能まで、実践的なテクニックを幅広くご紹介します。

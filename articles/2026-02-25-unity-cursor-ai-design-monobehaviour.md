@@ -3,7 +3,7 @@ title: "【Unity×Cursor】AI開発時代におけるプログラム設計の新
 emoji: "👋"
 type: "idea"
 topics: ["ai","csharp","unity","設計","cursor"]
-published: true
+published: false
 ---
 
 # [](#monobehaviour%E3%81%AF%E2%80%9Cview%E3%82%AF%E3%83%A9%E3%82%B9%E2%80%9D%EF%BC%9F)MonoBehaviourは“Viewクラス”？

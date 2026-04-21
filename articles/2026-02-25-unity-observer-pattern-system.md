@@ -3,7 +3,7 @@ title: "Unityエンジニア必見！Observer Patternでシンプルに解決す
 emoji: "😊"
 type: "tech"
 topics: ["csharp","unity","tips","observer","イベント駆動"]
-published: true
+published: false
 ---
 
 Unityプロジェクトにおいて、複雑なイベント通知やオブジェクト間の通信は、開発の大きな課題となります。Observer Patternを導入することで、各コンポーネント間の依存関係を最小限に抑え、柔軟で拡張性の高いイベントシステムを実現できます。本記事では、Observer Patternの基本概念から具体的な実装例、さらには実務で役立つTipsまで、幅広く解説します。参考資料として、以下のリンク先を随所に活用しています。

@@ -3,7 +3,7 @@ title: "【軽量データ】structで軽量データを ― Unity C#でパフ�
 emoji: "📌"
 type: "tech"
 topics: ["csharp","unity"]
-published: true
+published: false
 ---
 
 Unityでのゲーム開発において、パフォーマンスの最適化は非常に重要です。特に、大量のデータを扱う際には、データ構造の選択がパフォーマンスに大きく影響します。本記事では、C#の`struct`を使用して軽量データを管理する方法と、その利点について詳しく解説します。

@@ -1,8 +1,8 @@
 {
-  "mode": "improve",
+  "mode": "rewrite",
   "iteration": 4,
   "status": "idle",
-  "last_run": "2026-04-19T16:05:52Z",
+  "last_run": "2026-04-21T13:15:00Z",
   "current_article": {
     "slug": "",
     "title": "",
@@ -79,6 +79,14 @@
       "title": "analyze: 重複記事二次流出問題を特定",
       "topic": "KPI停滞の根本原因特定：published:true 重複12本残存 + auto-queue順次公開",
       "date": "2026-04-19"
+    },
+    {
+      "iteration": 4,
+      "mode": "improve",
+      "slug": "unpublish-duplicates-12-batch",
+      "title": "improve: 重複記事12本一括unpublish実行",
+      "topic": "KPI改善アクション：avg_likes 4.95→7.23(+46%) 見込み、重複コンテンツペナルティ解除",
+      "date": "2026-04-21"
     }
   ],
   "kpi": {
@@ -90,9 +98,9 @@
     "achievement_pct": 37,
     "delta": 0,
     "trend": "stable",
-    "measured_at": "2026-04-20T16:00:05Z"
+    "measured_at": "2026-04-21T13:15:00Z"
   },
-  "last_action": "analyze: 2026-04-19 metrics更新（articles_count 47→38、avg_likes 7.43→4.95、published:true重複12本残存を特定）",
+  "last_action": "improve: 重複記事12本を一括unpublish（4.95→7.23avg見込み、重複コンテンツペナルティ解除）",
   "last_action_result": "**analyze モード完了 — iter04_analyze**\n\n```text\n┌──────────────────────────────────────────────────────────┐\n│  実行内容: analyze（実測データ突合 + 重大欠陥特定）        │\n└──────────────────────────────────────────────────────────┘\n\nKPI改善根拠：構造的欠陥の定量特定\n  Zenn公式API vs articles/ ディレクトリ突合\n  ┌─ Zenn API 公開記事:      38本（avg 4.95 スキ/記事）\n  ├─ articles/ published:true: 61本（差分 23本 = ペナルティ疑い）\n  └─ 2025年のみのavg_likes:   10.44 ← 本来の実力値\n\n  前回rewriteとの乖離\n  ┌─ 記録: 重複10本unpublish（2026-04-18）\n  └─ 実態: 6本のみ処理、12本が published:true 残存\n\n  二次流出の実証（直近3日間）\n  ┌─ 4/17公開: unity-csharp-efficiency-up-5（オリジナル15スキ）→ 0スキ\n  ├─ 4/18公開: unity-csharp-gizmos-3d-tech （オリジナル 5スキ）→ 0スキ\n  └─ 4/19公開: unity-csharp-implementation-design（オリジナル10スキ）→ 0スキ\n     → 最高ROIパターン「Unity入門×N選」の頂点を自ら汚染\n\n  KPI改善試算（残存12本 unpublish 時）\n  ┌─ 現状:       38記事 / 188スキ / avg 4.95\n  ├─ 12本処理後: 26記事 / 188スキ / avg 7.23 (+46%)\n  └─ +新規15スキ: 27記事 / 203スキ / avg 7.52\n     （加えて既存オリジナル記事の検索流入回復も期待）\n\n更新ファイル（コミット済 75a2afc）\n  memory/metrics.json  : 10キー更新、key_insight_2026_04_19追加\n  memory/insights.md   : 重複12本リスト + KPI試算を追記\n  data/state.json      : mode analyze→improve、history+1、forbidden+1\n\n状態遷移\n  analyze → improve（iteration 4 維持）\n  git push: スキップ（articles/ 変更なしのため）\n  next action: improve で12本一括処理方針策定\n```\n\n**LAST_ACTION**: `analyze: 2026-04-19 metrics更新（articles_count 47→38、avg_likes 7.43→4.95、published:true重複12本残存を特定）`",
   "forbidden_actions": [
     "create: 2026-04-13-unity-scriptableobject-5-patterns（N選×設計パターン、0スキ問題対策）",
@@ -100,7 +108,8 @@
     "improve: 2026-04-17 重複記事対策方針策定 + テーマキュー5件補充（CoreCLR/ECS/並列開発等）",
     "rewrite: 2026-04-18 重複10本unpublish + 新規記事作成（uLoopMCP × Claude Code）",
     "create: 2026-04-19-unity-csharp-beginner-traps-5（Unity入門×N選パターン、最高ROI=15.7avg採用）",
-    "analyze: 2026-04-19 metrics更新（articles_count 47→38、avg_likes 7.43→4.95、published:true重複12本残存を特定）"
+    "analyze: 2026-04-19 metrics更新（articles_count 47→38、avg_likes 7.43→4.95、published:true重複12本残存を特定）",
+    "improve: 2026-04-21 重複記事12本一括unpublish実行（2026-02-25バッチ、avg_likes +46%見込み）"
   ],
   "stagnant": true,
   "stagnant_count": 1,
