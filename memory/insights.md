@@ -126,7 +126,7 @@ KPI効果試算:
 8. Unityエディタ拡張で作業を自動化する3つのレシピ ― ボタン1つで完結する開発ツール集（エディタ拡張×自動化、競合少）
 9. Unity 6.4で変わった開発フロー ― Render Graph・ECS標準化を実務レベルで使う（新バージョン速報性、競合少）
 10. Unityでオンライン対戦の基礎を作る ― Netcode for GameObjects 入門5ステップ（2026年3月ヒット記事77スキの追い風あり）
-11. Claude Codeで並列Unity開発 ― git worktree × 複数セッションで実装速度3倍【実践ガイド】（2026年4月Zennトレンド、競合少・実践系）
+11. ~~Claude Codeで並列Unity開発 ― git worktree × 複数セッションで実装速度3倍【実践ガイド】~~ 済み→ 2026-04-23（iter05_create、claudecodeタグクラスタ増強戦略）
 12. Unity 6.4〜6.8ロードマップ完全解説 ― CoreCLR移行・ECS標準化・WebGPU対応の全貌（速報性・ロードマップ解説、Unity公式情報ベース）
 13. Unity ECS完全入門 ― Unity 6.4でコアパッケージ化！基礎から実装まで5ステップ（入門×N選、ECS初心者向け）
 14. Unity AI Profiler Integration実践 ― AIが自動でGCスパイク・ボトルネックを特定する新ツールの使い方（Unity新機能・AI×パフォーマンス）

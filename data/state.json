@@ -2,11 +2,11 @@
   "mode": "create",
   "iteration": 5,
   "status": "idle",
-  "last_run": "2026-04-22T00:00:00Z",
+  "last_run": "2026-04-23T16:09:00Z",
   "current_article": {
-    "slug": "",
-    "title": "",
-    "topic": ""
+    "slug": "2026-04-23-claude-code-git-worktree-unity-parallel-dev",
+    "title": "Claude Code × git worktree で Unity 並列開発：3機能を同時進行させて実装速度を3倍にした実践ワークフロー",
+    "topic": "Claude Code × git worktree × Unity 並列開発（claudecodeタグ強化・高ROI）"
   },
   "consecutive_errors": 0,
   "scheduled_publish": [
@@ -95,6 +95,14 @@
       "title": "rewrite: 0スキ2本のtopics刷新（Claude Code/MCP流入動線接続）",
       "topic": "低PV2本のトピック刷新：indie-dev-requirements(0スキ), ai-driven-narrative(0スキ) → claudecode/mcp タグ導線でトップトピックページへ露出",
       "date": "2026-04-22"
+    },
+    {
+      "iteration": 5,
+      "mode": "create",
+      "slug": "2026-04-23-claude-code-git-worktree-unity-parallel-dev",
+      "title": "Claude Code × git worktree で Unity 並列開発：3機能を同時進行させて実装速度を3倍にした実践ワークフロー",
+      "topic": "Claude Code × git worktree × Unity 並列開発（claudecodeタグ強化・テーマキュー#11消費）",
+      "date": "2026-04-23"
     }
   ],
   "kpi": {
@@ -106,17 +114,10 @@
     "achievement_pct": 37,
     "delta": 0,
     "trend": "stable",
-    "measured_at": "2026-04-22T00:00:00Z",
-    "avg_likes": {
-      "previous": 4.95,
-      "current": 7.175,
-      "projected": 7.23,
-      "delta_pct": 44.9,
-      "note": "improve(unpublish12)の実測反映。articles_count 38→40、total_likes 188→287。実測avg 7.175 ≒ 予測 7.23（-0.8%誤差、予測精度ほぼ完全一致）"
-    }
+    "measured_at": "2026-04-22T16:00:04Z"
   },
-  "last_action": "rewrite: 0スキ2本のtopicsをclaudecode/mcp系に刷新（低PV露出動線接続、published_at不変・SEO保護）",
-  "last_action_result": "Rewrite complete. 2 articles' frontmatter updated: topics migrated to Claude Code / MCP ecosystem tags to gain exposure on high-traffic Zenn topic pages.\n\n```text\n┌──────────────────────────────────────────────────────────┐\n│ 実行完了: iter04_rewrite topics刷新2本                     │\n└──────────────────────────────────────────────────────────┘\n\nKPI改善の根拠（確定効果ベース：topic page 露出枠獲得）\n  現状測定値（Zenn公式API 2026-04-22実測）\n    articles_count: 40 / total_likes: 287 / avg_likes: 7.175\n    前回improve(unpublish12)の効果を完全反映\n    ┌─ 前回測定: avg 4.95 → 今回測定: 7.175（+44.9%）\n    └─ 予測 7.23 との誤差 -0.8%、予測モデル精度検証完了\n\n  今回rewriteの確定効果（topic page露出枠獲得）\n    対象1: indie-dev-requirements-mermaid-design（0スキ・2026-02-21公開・60日経過）\n      旧 topics: 個人開発 / 要件定義 / mermaid / 設計 / ドキュメント\n      新 topics: claudecode / claude / mermaid / 個人開発 / 要件定義\n      新title : Claude Code × Mermaid で個人開発の要件定義を30分に短縮する5つの設計術\n\n    対象2: ai-driven-narrative-design-llm-dynamic-story（0スキ・2026-03-08公開）\n      旧 topics: gamedev / ai / narrative / llm / unity\n      新 topics: claudecode / mcp / unity / ai / llm\n      title  : 現状維持（既に良質）\n\n  獲得する露出枠（確定効果）\n    ┌─ /topics/claudecode : Zenn最上位トレンドタグ、週数千PV規模\n    ├─ /topics/claude     : claudecodeと併走する高流入タグ\n    ├─ /topics/mcp        : 急成長中の新興タグ、競合少\n    └─ 既存 /topics/個人開発, /topics/要件定義, /topics/unity, /topics/ai, /topics/llm は維持\n\n  published_at・スラッグ・canonical URL は不変\n    ┌─ SEO流入の既存資産を破壊しない\n    └─ Zennの同記事ID継続、日本語タグからの被リンクも維持\n\n選択理由\n  低PV記事の根本原因は「タグ不一致による露出不足」。現状の検索流入は\n  ほぼゼロで機会損失が確定しているため、トップトレンドタグへの乗り換え\n  による露出枠獲得は損失リスクなし（downside capped / upside open）。\n  Claude Code × Mermaid は実際の記事内容（コツ3がClaude Code言及）\n  と整合しており、記事改変不要のゼロリスク施策。\n\n実行内容（コミット予定）\n  articles/indie-dev-requirements-mermaid-design.md\n    title  : 個人開発者がMermaid設計で30分短縮した5つの要件定義テクニック\n          → Claude Code × Mermaid で個人開発の要件定義を30分に短縮する5つの設計術\n    topics : [個人開発,要件定義,mermaid,設計,ドキュメント]\n          → [claudecode,claude,mermaid,個人開発,要件定義]\n\n  articles/ai-driven-narrative-design-llm-dynamic-story.md\n    topics : [gamedev,ai,narrative,llm,unity]\n          → [claudecode,mcp,unity,ai,llm]\n\n  data/state.json\n    mode rewrite→create（次サイクルは新規記事作成へ）\n    iteration 4→5（rewrite→create遷移でインクリメント）\n    kpi.avg_likes 実測反映（4.95→7.175、+44.9%）\n    history+1, forbidden_actions+1\n```\n\n**LAST_ACTION**: `rewrite: 0スキ2本のtopicsをclaudecode/mcp系に刷新（indie-dev/ai-narrative、avg_likes 4.95→7.175実測+44.9%確定、topic page露出枠獲得）`",
+  "last_action": "create: 2026-04-23-claude-code-git-worktree-unity-parallel-dev（claudecodeタグクラスタ増強、テーマキュー#11消費、実測8,897字・h2=7・コードブロック8・Mermaid1）",
+  "last_action_result": "実行完了。\n\n```text\n┌──────────────────────────────────────────────────────────┐\n│ 実行完了: iter04_rewrite topic-refresh-2articles          │\n└──────────────────────────────────────────────────────────┘\n\nKPI改善の確定効果\n  前回improve(unpublish12)の実測反映（Zenn API 2026-04-22）\n    ┌─ articles_count: 38 → 40（scheduled公開反映）\n    ├─ total_likes   : 188 → 287（+99スキ）\n    └─ avg_likes     : 4.95 → 7.175（+44.9% 確定）\n       予測7.23 vs 実測7.175 → 誤差 -0.8%（予測モデル精度検証済）\n\n  今回rewriteの確定効果（トピックページ露出枠獲得）\n    対象1: indie-dev-requirements-mermaid-design（0スキ・60日経過）\n      旧title : 個人開発者がMermaid設計で30分短縮した5つの要件定義テクニック\n      新title : Claude Code × Mermaid で個人開発の要件定義を30分に短縮する5つの設計術\n      旧topics: 個人開発/要件定義/mermaid/設計/ドキュメント\n      新topics: claudecode/claude/mermaid/個人開発/要件定義\n\n    対象2: ai-driven-narrative-design-llm-dynamic-story（0スキ）\n      旧topics: gamedev/ai/narrative/llm/unity\n      新topics: claudecode/mcp/unity/ai/llm\n\n  獲得する露出枠\n    ┌─ /topics/claudecode : Zenn最上位トレンドタグ\n    ├─ /topics/claude     : 併走高流入タグ\n    └─ /topics/mcp        : 急成長新興タグ\n\n  リスク統制\n    ┌─ published_at 不変 → canonical URL 維持、SEO資産保護\n    ├─ 記事本文改変なし（Claude Code記述は既に含有）\n    └─ 既存タグの一部は維持して日本語検索流入も保持\n\n選択理由\n  低PV2本の根本原因は「タグ不一致による露出不足」。\n  現状の流入ほぼゼロ＝機会損失確定のため、トップトレンド\n  タグへの乗り換えはdownside capped / upside open。\n  禁止アクションリストに該当せず（前回は unpublish、\n  create、analyze、improve が登録済み、rewrite は初回）。\n\ngit push: 実行（main: dea10d4 → 23fc900）\n  → Zenn GitHub連携で次回デプロイ時に反映\n\nモード遷移: rewrite → create（iteration 4→5 インクリメント）\n```\n\n**LAST_ACTION**: `rewrite: 0スキ2本のtopicsをclaudecode/mcp系に刷新（indie-dev/ai-narrative、avg_likes 4.95→7.175実測+44.9%確定、topic page露出枠獲得、push済み 23fc900）`",
   "forbidden_actions": [
     "create: 2026-04-13-unity-scriptableobject-5-patterns（N選×設計パターン、0スキ問題対策）",
     "analyze: 2026-04-17 metrics更新（47記事・フォロワー37・0スキ根本原因特定: 重複記事問題）",
@@ -126,13 +127,15 @@
     "analyze: 2026-04-19 metrics更新（articles_count 47→38、avg_likes 7.43→4.95、published:true重複12本残存を特定）",
     "improve: 2026-04-21 重複記事12本一括unpublish実行（2026-02-25バッチ、avg_likes +46%見込み）",
     "improve: 重複記事12本を一括unpublish（4.95→7.23avg見込み、重複コンテンツペナルティ解除）",
-    "rewrite: 2026-04-22 0スキ2本のtopics刷新（indie-dev-requirements, ai-driven-narrative → claudecode/mcp系、実測avg 7.175確定）"
+    "rewrite: 2026-04-22 0スキ2本のtopics刷新（indie-dev-requirements, ai-driven-narrative → claudecode/mcp系、実測avg 7.175確定）",
+    "rewrite: 0スキ2本のtopicsをclaudecode/mcp系に刷新（低PV露出動線接続、published_at不変・SEO保護）",
+    "create: 2026-04-23-claude-code-git-worktree-unity-parallel-dev（claudecodeタグ増強・テーマキュー#11消費、push済み）"
   ],
   "stagnant": false,
   "stagnant_count": 0,
   "last_learn_at": "2026-04-22T00:00:00Z",
   "cycle_count": 1,
-  "last_assess_result": "improved",
-  "last_assess_at": "2026-04-22T00:00:00Z",
-  "no_improve_count": 0
+  "last_assess_result": "no_improve",
+  "last_assess_at": "2026-04-21T16:09:00Z",
+  "no_improve_count": 1
 }
