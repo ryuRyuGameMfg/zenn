@@ -1,9 +1,15 @@
 {
   "followers": 37,
   "likes": 349,
-  "articles_count": 36,
+  "likes_api_visible": 248,
+  "likes_unpublished_sum": 101,
+  "articles_count_api": 42,
+  "articles_published_true_file": 49,
+  "articles_published_false_file": 33,
+  "articles_api_file_diff": 7,
   "monthly_increase": 0,
-  "last_updated": "2026-04-23",
+  "last_updated": "2026-04-24",
+  "note_2026_04_24": "累計スキ349=プロファイル表示(真値・変化なし)。API返却248は現在公開中のみ。差分101は4/21にunpublishした12本(合計約110スキ)の除外を正確に反映。articles/のpublished:true 49本 vs API 42本=差分7本は重複ペナルティで検索除外の疑い(improve対象候補)。2026年記事19本は引き続き全て0スキ(根本課題)。",
   "history": [
     {
       "date": "2026-04-21",
@@ -21,7 +27,16 @@
       "date": "2026-04-23",
       "followers": 37,
       "likes": 349,
-      "articles": 36
+      "articles": 37
+    },
+    {
+      "date": "2026-04-24",
+      "followers": 37,
+      "likes": 349,
+      "likes_api": 248,
+      "articles_api": 42,
+      "articles_file_published_true": 49,
+      "note": "unpublish 12本分(-101スキ)がAPIから正しく除外。プロファイル349は変化なし"
     }
   ]
 }

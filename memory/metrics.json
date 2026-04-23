@@ -1,20 +1,24 @@
 {
-  "last_updated": "2026-04-19",
-  "collected_at": "2026-04-19T16:30:00Z",
+  "last_updated": "2026-04-24",
+  "collected_at": "2026-04-24T00:00:00Z",
   "profile": {
     "username": "ryuryu_game",
     "follower_count": 37,
     "following_count": 0,
-    "articles_count": 38,
+    "articles_count_profile": 37,
+    "articles_count_api": 42,
     "books_count": 1,
-    "total_liked_count": 349,
-    "note": "Zenn APIは38記事を返すが、articles/ディレクトリには published:true が61ファイル存在。差分23本は重複コンテンツペナルティで検索除外された疑い"
+    "total_liked_count_profile": 349,
+    "total_liked_count_api": 248,
+    "diff_note": "API-プロファイル差: likes 349-248=101（4/21 unpublish 12本分≒110の反映）、articles 42-37=5（Zennリスト更新遅延 or rewrite2本の再クロール復活）。articles/のpublished:true=49、API非表示=7本（重複ペナルティ継続の疑い）"
   },
   "okr_snapshot": {
     "o1_followers": {
       "target": 1000,
       "current": 37,
-      "progress_pct": 3.7
+      "progress_pct": 3.7,
+      "stagnation_weeks": 4,
+      "note": "4/19→4/24: フォロワー変化なし。4週間停滞継続"
     },
     "o2_monthly_pv": {
       "target": 10000,
@@ -23,11 +27,12 @@
     },
     "o3_like_rate": {
       "target_pct": 5.0,
-      "total_likes": 349,
-      "published_articles": 38,
-      "avg_likes_per_article": 4.95,
+      "total_likes_profile": 349,
+      "total_likes_api": 248,
+      "published_articles_api": 42,
+      "avg_likes_api_basis": 5.9,
       "avg_likes_2025_only": 10.44,
-      "note": "2026年記事は全て0スキ。記事一覧合計スキは188/38記事。2025年記事18本の平均は10.44だが、2026年追加分が全て0スキのため全体平均は4.95に低下"
+      "note": "API基準 avg 248/42=5.9。4/19時点の4.95から+19%改善（unpublish 12本の効果）。2025年18本(188スキ/18=10.44)は変化なし。2026年19本は引き続き全て0スキ。差分60スキは非表示記事5本分(API未返却の公開記事)に存在"
     }
   },
   "key_insight_2026_04_17": {
@@ -41,6 +46,20 @@
       "ai-driven-narrative-design-llm-dynamic-story"
     ],
     "action": "improve モードで重複記事の削除またはリライト方針を策定"
+  },
+  "key_insight_2026_04_24": {
+    "critical": "前回 improve (unpublish 12本) は API 側で正しく反映。101スキ分が API 集計から除外され、avg_likes 4.95→5.9 (+19%) に改善",
+    "observation": {
+      "profile_vs_api_divergence": "プロファイル表示349は過去累計(unpublish分も含む)・API返却248は現在公開中のみ。乖離101は unpublish 12本の合計約110スキの正確な反映",
+      "api_list_42_vs_file_49": "API返却42記事 vs articles/ published:true 49ファイル = 差分7本は API 非表示。重複ペナルティ継続の疑い（improve対象候補）",
+      "rewrite_topic_refresh_effect": "4/22 に刷新した2本(indie-dev, ai-narrative)は依然0スキ。topics刷新効果は2日経過時点では観測不能 or 効果薄。より長期観測が必要",
+      "2026_zero_likes_continuity": "2026年19本は全て0スキ継続。根本課題として残存"
+    },
+    "next_action_candidates": [
+      "improve: API非表示7本の特定と unpublish/リライト戦略策定（重複ペナルティ継続の可能性）",
+      "improve: 2026年0スキ19本の救済戦略 - タイトル刷新、既存高スキ記事との相互リンク追加",
+      "improve: テーマキュー点検・高PV確度の高い新トピック補充（Unity Memory Profiler #2、Netcode #10、ECS実装 #13等の優先度再評価）"
+    ]
   },
   "key_insight_2026_04_19": {
     "critical": "rewriteサイクルでの重複記事unpublishが不完全。12本が published: true のまま残存し、auto-queueが4/17〜4/19に3本を順次公開（全て0スキ、オリジナル15/5/10スキ）",
