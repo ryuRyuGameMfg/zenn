@@ -3,7 +3,7 @@ title: "Claude Code × Notion MCP でルートページ整理を自動化する"
 emoji: "📋"
 type: "tech"
 topics: ["claude", "notion", "mcp", "automation", "ai"]
-published: false
+published: true
 ---
 
 ## なぜ Notion MCP が必要なのか
