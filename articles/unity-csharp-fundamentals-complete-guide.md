@@ -3,7 +3,7 @@ title: "Unity C#基礎を1記事で総復習 - ライフサイクルからラム
 emoji: "📘"
 type: "tech"
 topics: ["unity", "csharp", "gamedev", "beginners", "dotnet"]
-published: true
+published: false
 published_at: 2026-03-30 18:00
 ---
 

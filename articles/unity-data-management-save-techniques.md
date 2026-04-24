@@ -3,7 +3,7 @@ title: "Unityのデータ管理完全ガイド - JSON/PlayerPrefs/暗号化/LINQ
 emoji: "🗄️"
 type: "tech"
 topics: ["unity", "csharp", "json", "gamedev", "security"]
-published: true
+published: false
 published_at: 2026-04-02 18:00
 ---
 

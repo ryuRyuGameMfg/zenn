@@ -3,7 +3,7 @@ title: "Unityで使えるデザインパターン実践 - Factory/Observer/State
 emoji: "🏗"
 type: "tech"
 topics: ["unity", "csharp", "designpattern", "gamedev", "architecture"]
-published: true
+published: false
 published_at: 2026-04-01 18:00
 ---
 

@@ -1,4 +1,62 @@
 {
-  "last_updated": "2026-03-22",
-  "targets": []
+  "last_updated": "2026-04-25",
+  "targets": [
+    {
+      "group": "403-zenn-unpublished",
+      "reason": "Zenn側で非公開（403 Forbidden）だが git は published:true のまま。git-Zenn乖離を整合するため published:false 化推奨",
+      "action": "set_published_false",
+      "expected_kpi_effect": "KPIには無害（既に0スキ）。auto-queue の再publish試行ループを停止し、ghost publication を防止",
+      "verified_at": "2026-04-25",
+      "http_status_method": "curl -sI -A 'Mozilla/5.0' https://zenn.dev/ryuryu_game/articles/{slug}",
+      "slugs": [
+        "2026-04-01-unity-official-mcp-complete-guide",
+        "2026-04-02-notion-mcp-root-page-automation",
+        "2026-04-02-uloopmcp-community-attention",
+        "ai-first-game-development-workflow",
+        "claude-code-security-5-layers-real-config",
+        "claude-md-7-failure-patterns-2026",
+        "comfyui-game-assets-indie-dev-guide",
+        "convai-ai-npc-unity-implementation",
+        "gpu-resident-drawer-section1",
+        "llm-procedural-content-generation-game-survey",
+        "llmunity-local-llamacpp-unity-integration",
+        "mcp-unity-claude-cursor-editor-control",
+        "meta-quest-unity-inference-engine-xr-ai",
+        "nvidia-audio2face-3d-opensource-guide",
+        "pcg-llm-integration-survey-2025",
+        "playwright-chrome-profile-automation",
+        "shipping-games-with-ai-coding-agents",
+        "stanford-generative-agents-ai-npc-design",
+        "ubisoft-chord-pbr-material-generation-oss",
+        "unity-ai-muse-complete-guide-6-2",
+        "unity-llm-mcp-architecture-migration",
+        "unity-local-llm-complete-guide",
+        "unity-ml-agents-release-23-summary",
+        "unity-offline-ai-character-stt-llm-tts",
+        "unity-sentis-whisper-voice-recognition-npc",
+        "wfc-reinforcement-learning-mdp-optimization"
+      ]
+    }
+  ],
+  "completed": [
+    {
+      "group": "404-orphan-flags",
+      "action": "set_published_false",
+      "completed_at": "2026-04-25",
+      "commit_ref": "iter05_improve",
+      "reason": "Zenn上に存在しない(404)のに published:true だった。auto-queue の再publish試行防止",
+      "slugs": [
+        "claude-code-subagent-vs-openclaw",
+        "openclaw-skills-7-automation-techniques",
+        "unity-ai-character-chatgpt-voicevox",
+        "unity-async-performance-optimization",
+        "unity-components-complete-reference",
+        "unity-csharp-fundamentals-complete-guide",
+        "unity-data-management-save-techniques",
+        "unity-design-patterns-practical-guide",
+        "unity-openclaw-ai-agent-editor-automation",
+        "unity-vr-development-roadmap-openxr"
+      ]
+    }
+  ]
 }

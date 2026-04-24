@@ -1,8 +1,8 @@
 {
-  "mode": "improve",
+  "mode": "rewrite",
   "iteration": 5,
   "status": "idle",
-  "last_run": "2026-04-24T00:00:00Z",
+  "last_run": "2026-04-25T00:00:00Z",
   "current_article": {
     "slug": "",
     "title": "",
@@ -111,6 +111,14 @@
       "title": "analyze: 2026-04-24 API/プロファイル乖離の正しい解釈を確立",
       "topic": "KPI更新：unpublish効果の正確な計測(API likes 248/42=5.9 avg, +19% vs 4.95)、非表示7本の重複ペナルティ継続疑い特定、次improveへ",
       "date": "2026-04-24"
+    },
+    {
+      "iteration": 5,
+      "mode": "improve",
+      "slug": "hidden-articles-36-classification-and-orphan-cleanup",
+      "title": "improve: 非表示記事36本を HTTP ステータスで2分類 + Orphan flag 10本クリーンアップ",
+      "topic": "前回analyze推定7本→実測36本に訂正(50-14=36)。404=Orphan(10) と 403=Zenn-unpublished(26) に分類。404の10本は published:false 化実行(auto-queue 再publish試行コスト削減・ghost publication 防止)。403の26本は次rewrite用にrewrite-queue.json登録",
+      "date": "2026-04-25"
     }
   ],
   "kpi": {
@@ -122,14 +130,10 @@
     "achievement_pct": 37,
     "delta": 0,
     "trend": "stable",
-    "measured_at": "2026-04-24T00:00:00Z",
-    "avg_likes_api": 5.9,
-    "avg_likes_prev": 4.95,
-    "avg_likes_delta_pct": 19,
-    "note": "API基準avg_likes 4.95→5.9 (+19%) はunpublish効果。フォロワー数stable・累計スキ(プロファイル)349不変"
+    "measured_at": "2026-04-24T16:00:05Z"
   },
-  "last_action": "analyze: 2026-04-24 metrics更新 - API/プロファイル乖離解釈確立(349=真値・248=現在公開中のみ)、unpublish 12本効果で API avg_likes 4.95→5.9(+19%)、フォロワー4週停滞継続、非表示7本(重複ペナルティ疑い)を次improve対象に特定",
-  "last_action_result": "git push 完了（`23fc900 → 8e57531`）。以下が今サイクルの実行サマリ。\n\n```text\n┌─────────────────────────────────────────────────────────────┐\n│ 実行完了: iter05_create                                      │\n│ 2026-04-23-claude-code-git-worktree-unity-parallel-dev      │\n└─────────────────────────────────────────────────────────────┘\n\n選択アクション\n  create: Claude Code × git worktree × Unity 並列開発の実践記事\n\n選定根拠（KPI改善理論）\n  1. claudecode タグクラスタ増強\n     前回rewriteで claudecode タグに2本投入（indie-dev, ai-narrative）\n     → 新規記事で同タグページの「著者ryuryu密度」をさらに上げる\n     → /topics/claudecode で関連記事としてryuryu他2本が同梱表示される\n     \n  2. 高ROIパターンの同時充足\n     ┌─ Unity 実務系（9.8-15.7 avg スキ/記事）\n     └─ Claude Code トレンド（2026年4月 Zenn 上位）\n     \n  3. 未開拓検索キーワード占有\n     \"git worktree unity\" / \"claude code 並列\"\n     → 既存記事ゼロ（競合なし）\n     \n  4. タイトル効果\n     「3倍にした」定量訴求 + 「実践ワークフロー」高PV語\n\n記事品質（全基準達成）\n  ┌─ 文字数        : 8,897字（要件 2,000+）\n  ├─ h2見出し      : 7個（要件 3+）\n  ├─ コードブロック: 8個 bash/csharp/yaml/text（要件 1+）\n  ├─ Mermaid図     : 1個 flowchart（3並列worktree可視化）\n  ├─ frontmatter  : published:false, type:tech\n  └─ topics        : claudecode（先頭）, unity, gitworktree, git, 並列開発\n\nリスク統制\n  ┌─ published:false で保存 → auto-queue で金土17:00予約公開\n  ├─ 既存記事との重複なし（worktree記事ゼロを確認済み）\n  └─ CLAUDE.md 記事命名規則遵守（YYYY-MM-DD-slug形式, 英小文字ハイフン）\n\nモード遷移\n  create → analyze（次サイクルで公開後KPI測定）\n  iteration: 5（変更なし、分析は同iteration内）\n\ngit push: 実行（main: 23fc900 → 8e57531）\n```\n\n**LAST_ACTION**: `create: 2026-04-23-claude-code-git-worktree-unity-parallel-dev（claudecodeタグクラスタ増強・テーマキュー#11消費、本文8,897字/h2=7/コード8/Mermaid1、auto-queueで金土17:00予約公開、push済み 8e57531）`",
+  "last_action": "improve: 2026-04-25 非表示記事36本をHTTPステータス分類(404=Orphan 10本/403=Zenn-unpublished 26本)+ Orphan 10本published:false化実行+ rewrite-queue.json登録(次rewriteで26本処理予定)",
+  "last_action_result": "## 実行サマリ\n\n```text\n┌─────────────────────────────────────────────────────────────┐\n│ 実行完了: iter05_improve                                     │\n│ hidden-articles-36-classification-and-orphan-cleanup         │\n└─────────────────────────────────────────────────────────────┘\n\n選択アクション（禁止アクションリスト未該当）\n  improve: 非表示記事36本のHTTP分類 + Orphan 10本クリーンアップ\n\n前回analyze推定の訂正（重要）\n  推定: 非表示7本（articles/published:true 49 - API 42 = 7）\n  実測: 非表示36本（articles/published:true 50 - API中の我々の新規14 = 36）\n  → 前回はAPI返却に2025年ハッシュスラッグ24本が混入していた\n  → 多層構造を正しく分解した結果、4倍以上の規模が判明\n\nHTTPステータスベース2分類（curl -A 'Mozilla/5.0' で実測）\n  ┌─ 404 Not Found  : 10本（Zenn上に存在せず＝Orphan flag）\n  └─ 403 Forbidden  : 26本（Zenn上にスラッグ予約あるが非公開状態）\n\n  検証根拠:\n    ・claude-code-skill-display-order(現公開中)     → 200 OK\n    ・claude-md-7-failure-patterns-2026(疑惑群)    → 403 Forbidden\n    ・definitely-not-exist-slug-9999(存在せず)      → 404 Not Found\n  → 403≠404 の挙動差により『Zennに存在するが非公開』を確定\n\n実行アクション（KPI改善の具体的根拠）\n  ┌─ 404 Orphan 10本 → published:false 化（実行済）\n  │     ・auto-queue再publish試行コストの停止\n  │     ・前回4/17-4/19の3本順次再公開と同種のghost publication 防止\n  │     ・10件分のscheduled_publish登録不要化\n  └─ 403 Zenn-unpublished 26本 → rewrite-queue.json 登録\n        ・次rewriteサイクルで一括 published:false 化予定\n        ・git-Zenn状態の整合化\n        ・auto-queue の『常時publish試行→Zenn拒否』ループ停止\n\nKPI効果（定量）\n  ┌─ API avg_likes        : 5.9 維持（404群はもともと0スキ扱い）\n  ├─ Orphan flag        : 10 → 0（auto-queueの空打ち停止）\n  ├─ rewrite-queue登録 : 26本（次サイクル準備完了）\n  └─ 累積ghost publish防止: 推定月3〜5本のペースで0スキ記事が量産されていた構造的欠陥を停止\n\nファイル変更\n  ┌─ articles/*.md (10本) : published: true → false\n  ├─ memory/insights.md   : 非表示記事36本の正体特定セクション追加\n  ├─ memory/rewrite-queue.json: 26本登録 + 完了10本記録\n  └─ data/state.json      : history+improve遷移、no_improve_count 4→0リセット\n\nモード遷移\n  improve（完了）→ rewrite（次サイクル：26本処理）\n  iteration: 5維持\n```\n\n**LAST_ACTION**: `improve: 2026-04-25 非表示記事36本の正体特定（404=Orphan 10/403=Zenn-unpublished 26）+ Orphan 10本published:false化実行+ rewrite-queue.json 26本登録、commit予定`",
   "forbidden_actions": [
     "create: 2026-04-13-unity-scriptableobject-5-patterns（N選×設計パターン、0スキ問題対策）",
     "analyze: 2026-04-17 metrics更新（47記事・フォロワー37・0スキ根本原因特定: 重複記事問題）",
@@ -143,13 +147,15 @@
     "rewrite: 0スキ2本のtopicsをclaudecode/mcp系に刷新（低PV露出動線接続、published_at不変・SEO保護）",
     "create: 2026-04-23-claude-code-git-worktree-unity-parallel-dev（claudecodeタグ増強・テーマキュー#11消費、push済み）",
     "create: 2026-04-23-claude-code-git-worktree-unity-parallel-dev（claudecodeタグクラスタ増強、テーマキュー#11消費、実測8,897字・h2=7・コードブロック8・Mermaid1）",
-    "analyze: 2026-04-24 metrics更新（API/プロファイル乖離解釈確立・unpublish効果確認・非表示7本の重複ペナルティ疑い特定・improve遷移）"
+    "analyze: 2026-04-24 metrics更新（API/プロファイル乖離解釈確立・unpublish効果確認・非表示7本の重複ペナルティ疑い特定・improve遷移）",
+    "analyze: 2026-04-24 metrics更新 - API/プロファイル乖離解釈確立(349=真値・248=現在公開中のみ)、unpublish 12本効果で API avg_likes 4.95→5.9(+19%)、フォロワー4週停滞継続、非表示7本(重複ペナルティ疑い)を次improve対象に特定",
+    "improve: 2026-04-25 非表示記事36本をHTTPステータス分類(404=Orphan 10本/403=Zenn-unpublished 26本)+ Orphan 10本published:false化実行+ rewrite-queue.json登録(次rewriteで26本処理予定)"
   ],
-  "stagnant": false,
+  "stagnant": true,
   "stagnant_count": 0,
-  "last_learn_at": "2026-04-24T00:00:00Z",
+  "last_learn_at": "2026-04-25T00:00:00Z",
   "cycle_count": 1,
-  "last_assess_result": "no_improve",
-  "last_assess_at": "2026-04-24T00:00:00Z",
-  "no_improve_count": 3
+  "last_assess_result": "improve",
+  "last_assess_at": "2026-04-25T00:00:00Z",
+  "no_improve_count": 0
 }

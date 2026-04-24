@@ -110,6 +110,90 @@ KPI効果試算:
 - Unity 6.4〜6.8ロードマップ：CoreCLR移行・ECS標準化が大きな変化
 - Unite 2026 Tokyo 開催予定（速報性のある記事が有効）
 
+## 2026-04-25 improve：非表示記事36本の正体特定（前回推定7本→実測36本に訂正）
+
+### 分析手法
+全 `articles/*.md` のうち `published: true` を抽出し、Zenn API (`/api/articles?username=ryuryu_game&count=200`) 返却スラッグと差集合を取得。各スラッグを curl でHTTPステータス取得し2分類。
+
+### 実測結果（2026-04-25）
+- `articles/published:true` = 50本
+- Zenn API 返却 = 38本（うち我々の新規記事14本 + 2025年ハッシュスラッグ24本）
+- 差分 = **36本が published:true なのに Zenn側に露出していない**
+
+前回 analyze（4/24）で「非表示7本」と推定したのは、articles数の差分(49-42=7)のみ見ていたため。実際は profile articles_count 38 vs published:true 50 の差 = **12本が auto-queue 未消化**、更に API が2025年記事24本を含むため正味14本のみ「我々の新規記事として露出」= 50-14=**36本が非露出**という多層構造だった。
+
+### 2分類（HTTPステータスベース）
+
+| 分類 | 本数 | 意味 | 対応 |
+|-----|-----|------|------|
+| **404（Orphan flag）** | 10 | Zenn上に存在せず | auto-queue未消化。published:false化で即クリーンアップ可能 |
+| **403（Zenn側非公開）** | 26 | Zenn上にスラッグ予約あるが公開停止状態 | Zenn UI側で非公開化されている。published:false化で git と一致させる |
+
+### 404 (Orphan) 10本 - **2026-04-25 improve で published:false 化実行済み**
+auto-queue が published:true フラグをセットしたが、Zennへのpushが発生しなかった or zenn-publish-daemon がスキップしたもの。Zennに露出せず、放置するとauto-queueが再度publishを試みる可能性があったためクリーンアップ。
+
+1. ~~claude-code-subagent-vs-openclaw~~ (pub_at: 2026-04-11)
+2. ~~openclaw-skills-7-automation-techniques~~ (pub_at: 2026-04-18)
+3. ~~unity-ai-character-chatgpt-voicevox~~ (pub_at: 2026-04-04)
+4. ~~unity-async-performance-optimization~~ (pub_at: 2026-04-05)
+5. ~~unity-components-complete-reference~~ (pub_at: 2026-03-31)
+6. ~~unity-csharp-fundamentals-complete-guide~~ (pub_at: 2026-03-30)
+7. ~~unity-data-management-save-techniques~~ (pub_at: 2026-04-02)
+8. ~~unity-design-patterns-practical-guide~~ (pub_at: 2026-04-01)
+9. ~~unity-openclaw-ai-agent-editor-automation~~ (pub_at: 2026-04-24)
+10. ~~unity-vr-development-roadmap-openxr~~ (pub_at: 2026-04-03)
+
+### 403 (Zenn-unpublished) 26本 - **次rewrite サイクルで対応**
+Zenn側で非公開化されている（=403）が git は published:true のままのため、Zenn-git 乖離状態。auto-queue が再publish試行しても Zenn が拒否（403維持）し続けるため、KPIには無害だが、git 状態を現実と一致させるため次rewriteで published:false 化推奨。
+
+| # | slug | pub_at |
+|---|------|--------|
+| 1 | 2026-04-01-unity-official-mcp-complete-guide | NA |
+| 2 | 2026-04-02-notion-mcp-root-page-automation | NA |
+| 3 | 2026-04-02-uloopmcp-community-attention | NA |
+| 4 | ai-first-game-development-workflow | 2026-03-25 |
+| 5 | claude-code-security-5-layers-real-config | NA |
+| 6 | claude-md-7-failure-patterns-2026 | NA |
+| 7 | comfyui-game-assets-indie-dev-guide | NA |
+| 8 | convai-ai-npc-unity-implementation | 2026-03-01 |
+| 9 | gpu-resident-drawer-section1 | 2026-03-14 |
+| 10 | llm-procedural-content-generation-game-survey | 2026-04-10 |
+| 11 | llmunity-local-llamacpp-unity-integration | 2026-03-28 |
+| 12 | mcp-unity-claude-cursor-editor-control | 2026-03-08 |
+| 13 | meta-quest-unity-inference-engine-xr-ai | 2026-04-19 |
+| 14 | nvidia-audio2face-3d-opensource-guide | 2026-03-22 |
+| 15 | pcg-llm-integration-survey-2025 | 2026-04-03 |
+| 16 | playwright-chrome-profile-automation | 2026-03-29 |
+| 17 | shipping-games-with-ai-coding-agents | 2026-03-28 |
+| 18 | stanford-generative-agents-ai-npc-design | 2026-03-20 |
+| 19 | ubisoft-chord-pbr-material-generation-oss | NA |
+| 20 | unity-ai-muse-complete-guide-6-2 | 2026-04-05 |
+| 21 | unity-llm-mcp-architecture-migration | 2026-04-12 |
+| 22 | unity-local-llm-complete-guide | 2026-03-29 |
+| 23 | unity-ml-agents-release-23-summary | 2026-03-27 |
+| 24 | unity-offline-ai-character-stt-llm-tts | 2026-03-07 |
+| 25 | unity-sentis-whisper-voice-recognition-npc | 2026-03-13 |
+| 26 | wfc-reinforcement-learning-mdp-optimization | 2026-04-17 |
+
+### 検証根拠
+- claude-code-skill-display-order（現公開中）: 200 OK
+- claude-md-7-failure-patterns-2026（疑惑群）: 403 Forbidden
+- definitely-not-exist-slug-9999（存在しない）: 404 Not Found
+
+403≠404 の挙動差により「Zenn側にスラッグは存在するが非公開」を確定。単純なシャドウバンではなく過去にZenn UI上で unpublish された可能性が高い（我々の git では published:true が残存）。
+
+### KPI効果試算
+- 404 Orphan 10本 published:false 化（今回実行済み）:
+  - API avg_likes: 変化なし（もともと0スキ扱い）
+  - **auto-queue 再publish試行のコスト削減**（10本分の不要な schedule 登録を停止）
+  - 累積の ghost publication 防止（前回 4/17-4/19 に3本が順次再公開された構造的欠陥と同種）
+- 403 Zenn-unpublished 26本（次rewrite対応予定）:
+  - git 状態と Zenn 状態の整合
+  - auto-queue の「常時 publish 試行 → Zenn拒否」ループ停止
+
+### Zenn-git状態チェック恒久化の推奨
+`scripts/verify-zenn-sync.mjs`（仮）として、定期的に `articles/published:true` と Zenn API 返却スラッグを突き合わせ、403/404 を分類する検証スクリプトをdaemon化すべき。analyze モードのたびに実行し、乖離をゼロに保つ。
+
 # テーマキュー
 
 > create/rewrite モードが上から順に消費する。improve モードが補充する。

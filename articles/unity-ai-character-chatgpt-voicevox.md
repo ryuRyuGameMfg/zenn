@@ -3,7 +3,7 @@ title: "Unity × ChatGPT × VoiceVox - AIキャラクターをゼロから実装
 emoji: "🤖"
 type: "tech"
 topics: ["unity", "chatgpt", "voicevox", "ai", "gamedev"]
-published: true
+published: false
 published_at: 2026-04-04 18:00
 ---
 
