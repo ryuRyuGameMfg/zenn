@@ -393,6 +393,177 @@
       "status": "queued",
       "queued_at": "2026-04-24T17:00:05.108Z",
       "priority": 41
+    },
+    {
+      "filepath": "articles/2026-04-26-netcode-for-gameobjects-unity-online-5steps.md",
+      "filename": "2026-04-26-netcode-for-gameobjects-unity-online-5steps.md",
+      "title": "Unityでオンライン対戦を作る入門：Netcode for GameObjects 5ステップ",
+      "scheduled_at": "2026-08-01T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-25T17:00:01.095Z",
+      "priority": 42
+    },
+    {
+      "filepath": "articles/ai-first-game-development-workflow.md",
+      "filename": "ai-first-game-development-workflow.md",
+      "title": "AI-firstゲーム開発 - 開発期間3ヶ月→2週間を実現したワークフロー",
+      "scheduled_at": "2026-08-07T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-25T17:00:01.095Z",
+      "priority": 43
+    },
+    {
+      "filepath": "articles/convai-ai-npc-unity-implementation.md",
+      "filename": "convai-ai-npc-unity-implementation.md",
+      "title": "Convaiで作るAI NPC - UnityでLLM駆動キャラクターを実装する",
+      "scheduled_at": "2026-08-08T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-25T17:00:01.095Z",
+      "priority": 44
+    },
+    {
+      "filepath": "articles/gpu-resident-drawer-section1.md",
+      "filename": "gpu-resident-drawer-section1.md",
+      "title": "GPU Resident Drawer システム要件とプラットフォーム対応",
+      "scheduled_at": "2026-08-14T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-25T17:00:01.095Z",
+      "priority": 45
+    },
+    {
+      "filepath": "articles/llm-procedural-content-generation-game-survey.md",
+      "filename": "llm-procedural-content-generation-game-survey.md",
+      "title": "LLM時代のプロシージャル生成 - ゲームPCG全手法サーベイ",
+      "scheduled_at": "2026-08-15T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-25T17:00:01.095Z",
+      "priority": 46
+    },
+    {
+      "filepath": "articles/llmunity-local-llamacpp-unity-integration.md",
+      "filename": "llmunity-local-llamacpp-unity-integration.md",
+      "title": "LLMUnity入門 - Unityにローカルllama.cppを統合する",
+      "scheduled_at": "2026-08-21T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-25T17:00:01.095Z",
+      "priority": 47
+    },
+    {
+      "filepath": "articles/mcp-unity-claude-cursor-editor-control.md",
+      "filename": "mcp-unity-claude-cursor-editor-control.md",
+      "title": "mcp-unity: Claude/CursorからUnity Editorを操作する",
+      "scheduled_at": "2026-08-22T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-25T17:00:01.095Z",
+      "priority": 48
+    },
+    {
+      "filepath": "articles/meta-quest-unity-inference-engine-xr-ai.md",
+      "filename": "meta-quest-unity-inference-engine-xr-ai.md",
+      "title": "Meta Quest × Unity Inference Engine - XRデバイスでAI推論を動かす",
+      "scheduled_at": "2026-08-28T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-25T17:00:01.095Z",
+      "priority": 49
+    },
+    {
+      "filepath": "articles/pcg-llm-integration-survey-2025.md",
+      "filename": "pcg-llm-integration-survey-2025.md",
+      "title": "LLM時代のプロシージャル生成 - 全手法サーベイ翻訳",
+      "scheduled_at": "2026-08-29T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-25T17:00:01.095Z",
+      "priority": 50
+    },
+    {
+      "filepath": "articles/playwright-chrome-profile-automation.md",
+      "filename": "playwright-chrome-profile-automation.md",
+      "title": "PlaywrightとChrome Profileで実現する顧客管理自動化【実装コード付き】",
+      "scheduled_at": "2026-09-04T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-25T17:00:01.095Z",
+      "priority": 51
+    },
+    {
+      "filepath": "articles/shipping-games-with-ai-coding-agents.md",
+      "filename": "shipping-games-with-ai-coding-agents.md",
+      "title": "AIコーディングエージェントでゲームを出荷した話",
+      "scheduled_at": "2026-09-05T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-25T17:00:01.095Z",
+      "priority": 52
+    },
+    {
+      "filepath": "articles/stanford-generative-agents-ai-npc-design.md",
+      "filename": "stanford-generative-agents-ai-npc-design.md",
+      "title": "Stanford Generative Agents完全解説 - AI NPCの設計思想",
+      "scheduled_at": "2026-09-11T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-25T17:00:01.095Z",
+      "priority": 53
+    },
+    {
+      "filepath": "articles/unity-ai-muse-complete-guide-6-2.md",
+      "filename": "unity-ai-muse-complete-guide-6-2.md",
+      "title": "Unity AI（旧Muse）完全ガイド - Unity 6.2の新AIワークフロー",
+      "scheduled_at": "2026-09-12T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-25T17:00:01.095Z",
+      "priority": 54
+    },
+    {
+      "filepath": "articles/unity-llm-mcp-architecture-migration.md",
+      "filename": "unity-llm-mcp-architecture-migration.md",
+      "title": "UnityにLLMを埋め込む夢と現実 - MCPアーキテクチャへの移行記",
+      "scheduled_at": "2026-09-18T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-25T17:00:01.095Z",
+      "priority": 55
+    },
+    {
+      "filepath": "articles/unity-local-llm-complete-guide.md",
+      "filename": "unity-local-llm-complete-guide.md",
+      "title": "LLMUnityでAIキャラクターにローカルLLMを組み込んだ実装記録",
+      "scheduled_at": "2026-09-19T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-25T17:00:01.095Z",
+      "priority": 56
+    },
+    {
+      "filepath": "articles/unity-ml-agents-release-23-summary.md",
+      "filename": "unity-ml-agents-release-23-summary.md",
+      "title": "Unity ML-Agents Release 23 - 主要変更点と移行ガイド",
+      "scheduled_at": "2026-09-25T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-25T17:00:01.095Z",
+      "priority": 57
+    },
+    {
+      "filepath": "articles/unity-offline-ai-character-stt-llm-tts.md",
+      "filename": "unity-offline-ai-character-stt-llm-tts.md",
+      "title": "Unityでオフライン完結AIキャラを作る - STT→LLM→TTSパイプライン",
+      "scheduled_at": "2026-09-26T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-25T17:00:01.095Z",
+      "priority": 58
+    },
+    {
+      "filepath": "articles/unity-sentis-whisper-voice-recognition-npc.md",
+      "filename": "unity-sentis-whisper-voice-recognition-npc.md",
+      "title": "Unity Sentis × Whisperで音声認識NPCを作る",
+      "scheduled_at": "2026-10-02T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-25T17:00:01.096Z",
+      "priority": 59
+    },
+    {
+      "filepath": "articles/wfc-reinforcement-learning-mdp-optimization.md",
+      "filename": "wfc-reinforcement-learning-mdp-optimization.md",
+      "title": "WFCを強化学習で最適化する - MDP再定式化アプローチ",
+      "scheduled_at": "2026-10-03T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-25T17:00:01.096Z",
+      "priority": 60
     }
   ],
   "schedule": {
@@ -404,6 +575,6 @@
     "time": "17:00",
     "timezone": "Asia/Tokyo"
   },
-  "last_scan": "2026-04-24T17:00:05.108Z",
+  "last_scan": "2026-04-25T17:00:01.096Z",
   "last_publish": "2026-04-17T08:26:28.427Z"
 }
