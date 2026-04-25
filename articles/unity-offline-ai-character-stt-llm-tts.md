@@ -3,7 +3,7 @@ title: "Unityでオフライン完結AIキャラを作る - STT→LLM→TTSパ�
 emoji: "🔇"
 type: "tech"
 topics: ["unity", "llm", "whisper", "tts", "ai"]
-published: true
+published: false
 published_at: 2026-03-07 17:00
 ---
 

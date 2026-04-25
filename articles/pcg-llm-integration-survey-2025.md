@@ -3,7 +3,7 @@ title: "LLM時代のプロシージャル生成 - 全手法サーベイ翻訳"
 emoji: "🗺️"
 type: "tech"
 topics: ["ai", "pcg", "llm", "gamedev", "proceduralgeneration"]
-published: true
+published: false
 published_at: 2026-04-03 17:00
 ---
 

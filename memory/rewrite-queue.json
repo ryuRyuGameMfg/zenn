@@ -1,13 +1,32 @@
 {
-  "last_updated": "2026-04-25",
-  "targets": [
+  "last_updated": "2026-04-26",
+  "targets": [],
+  "completed": [
+    {
+      "group": "404-orphan-flags",
+      "action": "set_published_false",
+      "completed_at": "2026-04-25",
+      "commit_ref": "iter05_improve",
+      "reason": "Zenn上に存在しない(404)のに published:true だった。auto-queue の再publish試行防止",
+      "slugs": [
+        "claude-code-subagent-vs-openclaw",
+        "openclaw-skills-7-automation-techniques",
+        "unity-ai-character-chatgpt-voicevox",
+        "unity-async-performance-optimization",
+        "unity-components-complete-reference",
+        "unity-csharp-fundamentals-complete-guide",
+        "unity-data-management-save-techniques",
+        "unity-design-patterns-practical-guide",
+        "unity-openclaw-ai-agent-editor-automation",
+        "unity-vr-development-roadmap-openxr"
+      ]
+    },
     {
       "group": "403-zenn-unpublished",
-      "reason": "Zenn側で非公開（403 Forbidden）だが git は published:true のまま。git-Zenn乖離を整合するため published:false 化推奨",
       "action": "set_published_false",
-      "expected_kpi_effect": "KPIには無害（既に0スキ）。auto-queue の再publish試行ループを停止し、ghost publication を防止",
-      "verified_at": "2026-04-25",
-      "http_status_method": "curl -sI -A 'Mozilla/5.0' https://zenn.dev/ryuryu_game/articles/{slug}",
+      "completed_at": "2026-04-26",
+      "commit_ref": "iter05_rewrite",
+      "reason": "Zenn側で非公開（403 Forbidden）だが git は published:true のままだった。Zenn-git乖離を整合。auto-queue の再publish試行ループ停止",
       "slugs": [
         "2026-04-01-unity-official-mcp-complete-guide",
         "2026-04-02-notion-mcp-root-page-automation",
@@ -35,27 +54,6 @@
         "unity-offline-ai-character-stt-llm-tts",
         "unity-sentis-whisper-voice-recognition-npc",
         "wfc-reinforcement-learning-mdp-optimization"
-      ]
-    }
-  ],
-  "completed": [
-    {
-      "group": "404-orphan-flags",
-      "action": "set_published_false",
-      "completed_at": "2026-04-25",
-      "commit_ref": "iter05_improve",
-      "reason": "Zenn上に存在しない(404)のに published:true だった。auto-queue の再publish試行防止",
-      "slugs": [
-        "claude-code-subagent-vs-openclaw",
-        "openclaw-skills-7-automation-techniques",
-        "unity-ai-character-chatgpt-voicevox",
-        "unity-async-performance-optimization",
-        "unity-components-complete-reference",
-        "unity-csharp-fundamentals-complete-guide",
-        "unity-data-management-save-techniques",
-        "unity-design-patterns-practical-guide",
-        "unity-openclaw-ai-agent-editor-automation",
-        "unity-vr-development-roadmap-openxr"
       ]
     }
   ]

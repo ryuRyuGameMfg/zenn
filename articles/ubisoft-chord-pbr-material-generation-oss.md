@@ -3,7 +3,7 @@ title: "UbisoftがPBR生成AI「CHORD」をOSS公開 - 導入手順から実戦�
 emoji: "🎨"
 type: "tech"
 topics: ["ubisoft", "pbr", "comfyui", "ai", "gamedev"]
-published: true
+published: false
 ---
 
 ## はじめに

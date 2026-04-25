@@ -3,7 +3,7 @@ title: "AI-firstゲーム開発 - 開発期間3ヶ月→2週間を実現した�
 emoji: "🚀"
 type: "tech"
 topics: ["gamedev", "ai", "cursor", "claude", "indiedev"]
-published: true
+published: false
 published_at: 2026-03-25 18:00
 ---
 

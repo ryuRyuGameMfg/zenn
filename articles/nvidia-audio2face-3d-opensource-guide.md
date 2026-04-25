@@ -3,7 +3,7 @@ title: "NVIDIA Audio2Face-3Dがオープンソース化 - 実装ガイド"
 emoji: "🎭"
 type: "tech"
 topics: ["nvidia", "audio2face", "unity", "unrealengine", "ai"]
-published: true
+published: false
 published_at: 2026-03-22 17:00
 ---
 

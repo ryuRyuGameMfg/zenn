@@ -3,7 +3,7 @@ title: "WFCを強化学習で最適化する - MDP再定式化アプローチ"
 emoji: "🧩"
 type: "tech"
 topics: ["proceduralgeneration", "reinforcementlearning", "gamedev", "ai", "unity"]
-published: true
+published: false
 published_at: 2026-04-17 17:00
 ---
 

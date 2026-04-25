@@ -209,7 +209,7 @@ Zenn側で非公開化されている（=403）が git は published:true のま
 7. ~~ScriptableObjectを使いこなす5つの実践パターン ― ゲームデータ設計の決定版（設計系×N選、2026年空白テーマ）~~ 済み→ 2026-04-13
 8. Unityエディタ拡張で作業を自動化する3つのレシピ ― ボタン1つで完結する開発ツール集（エディタ拡張×自動化、競合少）
 9. Unity 6.4で変わった開発フロー ― Render Graph・ECS標準化を実務レベルで使う（新バージョン速報性、競合少）
-10. Unityでオンライン対戦の基礎を作る ― Netcode for GameObjects 入門5ステップ（2026年3月ヒット記事77スキの追い風あり）
+10. ~~Unityでオンライン対戦の基礎を作る ― Netcode for GameObjects 入門5ステップ（2026年3月ヒット記事77スキの追い風あり）~~ 済み→ 2026-04-26（iter05_rewrite、入門×N選パターン採用・NGO 1.12.0）
 11. ~~Claude Codeで並列Unity開発 ― git worktree × 複数セッションで実装速度3倍【実践ガイド】~~ 済み→ 2026-04-23（iter05_create、claudecodeタグクラスタ増強戦略）
 12. Unity 6.4〜6.8ロードマップ完全解説 ― CoreCLR移行・ECS標準化・WebGPU対応の全貌（速報性・ロードマップ解説、Unity公式情報ベース）
 13. Unity ECS完全入門 ― Unity 6.4でコアパッケージ化！基礎から実装まで5ステップ（入門×N選、ECS初心者向け）
@@ -230,3 +230,4 @@ Zenn側で非公開化されている（=403）が git は published:true のま
 | 2026-04-02-claude-code-notion-mcp-root-page-automation | Claude Code × Notion MCP でルートページ整理を自動化する | 2026-04-02 |
 | 2026-04-02-claude-code-gmail-calendar-mcp-ai-secretary | Claude Code × Gmail/Calendar MCP でAI秘書を実現する | 2026-04-02 |
 | 2026-04-03-unity-architecture-ai-code-instruction | MonoBehaviourベタ書きを卒業したい人へ：AIに設計パターンを指示してUnityコードを整理する方法 | 2026-04-03 |
+| 2026-04-26-netcode-for-gameobjects-unity-online-5steps | Unityでオンライン対戦を作る入門：Netcode for GameObjects 5ステップ | 2026-04-26 |

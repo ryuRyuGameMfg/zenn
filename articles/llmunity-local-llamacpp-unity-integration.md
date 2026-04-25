@@ -3,7 +3,7 @@ title: "LLMUnity入門 - Unityにローカルllama.cppを統合する"
 emoji: "🦙"
 type: "tech"
 topics: ["unity", "llm", "llamacpp", "ai", "gamedev"]
-published: true
+published: false
 published_at: 2026-03-28 17:00
 ---
 

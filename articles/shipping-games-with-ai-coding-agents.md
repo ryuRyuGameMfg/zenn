@@ -3,7 +3,7 @@ title: "AIコーディングエージェントでゲームを出荷した話"
 emoji: "🚀"
 type: "tech"
 topics: ["ai", "cursor", "claudecode", "gamedev", "unity"]
-published: true
+published: false
 published_at: 2026-03-28 18:00
 ---
 

@@ -3,7 +3,7 @@ title: "Unity Sentis × Whisperで音声認識NPCを作る"
 emoji: "🎤"
 type: "tech"
 topics: ["unity", "sentis", "whisper", "ai", "npc"]
-published: true
+published: false
 published_at: 2026-03-13 17:00
 ---
 

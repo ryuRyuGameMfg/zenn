@@ -3,7 +3,7 @@ title: "ComfyUIでゲーム素材を量産する - インディー開発者向�
 emoji: "🎨"
 type: "tech"
 topics: ["comfyui", "gamedev", "ai", "stableDiffusion", "unity"]
-published: true
+published: false
 ---
 
 ## はじめに

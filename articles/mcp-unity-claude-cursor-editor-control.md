@@ -3,7 +3,7 @@ title: "mcp-unity: Claude/CursorからUnity Editorを操作する"
 emoji: "🔌"
 type: "tech"
 topics: ["unity", "mcp", "claude", "cursor", "ai"]
-published: true
+published: false
 published_at: 2026-03-08 17:00
 ---
 

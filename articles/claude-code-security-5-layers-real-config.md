@@ -3,7 +3,7 @@ title: "Claude Codeで機密情報漏洩ゼロを実現した5層セキュリテ
 emoji: "🛡"
 type: "tech"
 topics: ["claudecode", "security", "hooks", "bash", "devtools"]
-published: true
+published: false
 ---
 
 ## はじめに

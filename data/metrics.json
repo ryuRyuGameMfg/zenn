@@ -1,9 +1,9 @@
 {
   "followers": 37,
   "likes": 349,
-  "articles_count": 38,
+  "articles_count": 39,
   "monthly_increase": 0,
-  "last_updated": "2026-04-25",
+  "last_updated": "2026-04-26",
   "history": [
     {
       "date": "2026-04-21",
@@ -45,6 +45,18 @@
       "hidden_403_zenn_unpublished": 26,
       "note": "improve: HTTP分類で非表示36本の正体特定(404=Orphan 10/403=Zenn非公開 26)。Orphan 10本をpublished:false化実行、403 26本はrewrite-queue登録",
       "articles": 38
+    },
+    {
+      "date": "2026-04-26",
+      "followers": 37,
+      "likes": 349,
+      "articles_api": 39,
+      "articles_file_published_true_before": 40,
+      "articles_file_published_true_after": 14,
+      "cleanup_403_zenn_unpublished": 26,
+      "new_article_draft": "2026-04-26-netcode-for-gameobjects-unity-online-5steps",
+      "note": "rewrite: 26本 Zenn-git整合完了(published:false化)、新規記事作成(published:false)。Zenn API 39件は変動なし（403群は既にZenn側非公開）",
+      "articles": 39
     }
   ]
 }

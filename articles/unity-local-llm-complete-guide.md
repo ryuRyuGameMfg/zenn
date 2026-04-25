@@ -3,7 +3,7 @@ title: "LLMUnityでAIキャラクターにローカルLLMを組み込んだ実�
 emoji: "🧠"
 type: "tech"
 topics: ["unity", "llm", "llmunity", "csharp", "ai"]
-published: true
+published: false
 published_at: 2026-03-29 17:00
 ---
 

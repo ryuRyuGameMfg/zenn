@@ -3,7 +3,7 @@ title: "PlaywrightとChrome Profileで実現する顧客管理自動化【実装
 emoji: "🚀"
 type: "tech"
 topics: ["playwright", "typescript", "automation", "chrome", "scraping"]
-published: true
+published: false
 published_at: 2026-03-29 18:00
 ---
 

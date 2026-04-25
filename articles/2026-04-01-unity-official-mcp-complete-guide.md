@@ -3,7 +3,7 @@ title: "Unity公式が本気で作ったAI連携：Claude/Cursorと直結する�
 emoji: "🤖"
 type: "tech"
 topics: ["unity", "ai", "mcp", "claude", "cursor"]
-published: true
+published: false
 ---
 
 ## はじめに：Unity公式が「AI連携」に本気を出した背景

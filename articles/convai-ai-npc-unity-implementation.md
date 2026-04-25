@@ -3,7 +3,7 @@ title: "Convaiで作るAI NPC - UnityでLLM駆動キャラクターを実装す�
 emoji: "🤖"
 type: "tech"
 topics: ["unity", "convai", "npc", "ai", "gamedev"]
-published: true
+published: false
 published_at: 2026-03-01 17:00
 ---
 

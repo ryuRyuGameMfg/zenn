@@ -3,7 +3,7 @@ title: "UnityにLLMを埋め込む夢と現実 - MCPアーキテクチャへの�
 emoji: "🔄"
 type: "tech"
 topics: ["unity", "llm", "mcp", "ai", "gamedev"]
-published: true
+published: false
 published_at: 2026-04-12 17:00
 ---
 

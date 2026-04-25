@@ -3,7 +3,7 @@ title: "Unity ML-Agents Release 23 - 主要変更点と移行ガイド"
 emoji: "🤖"
 type: "tech"
 topics: ["unity", "mlagents", "reinforcementlearning", "ai", "gamedev"]
-published: true
+published: false
 published_at: 2026-03-27 18:00
 ---
 

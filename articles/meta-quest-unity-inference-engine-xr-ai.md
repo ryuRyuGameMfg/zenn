@@ -3,7 +3,7 @@ title: "Meta Quest × Unity Inference Engine - XRデバイスでAI推論を動�
 emoji: "🥽"
 type: "tech"
 topics: ["unity", "metaquest", "xr", "sentis", "ai"]
-published: true
+published: false
 published_at: 2026-04-19 17:00
 ---
 
