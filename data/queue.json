@@ -127,9 +127,11 @@
       "filename": "2026-04-02-gmail-calendar-mcp-ai-secretary.md",
       "title": "Claude Code × Gmail/Calendar MCP でAI秘書を実現する",
       "scheduled_at": "2026-04-25T08:00:00.000Z",
-      "status": "queued",
+      "status": "published",
       "queued_at": "2026-04-02T16:00:00.000Z",
-      "priority": 6
+      "priority": 6,
+      "published_at": "2026-04-25T08:07:15.315Z",
+      "published_url": "https://zenn.dev/ryuRyuGameMfg/articles/2026-04-02-gmail-calendar-mcp-ai-secretary"
     },
     {
       "filepath": "articles/claude-code-security-5-defense-layers.md",
