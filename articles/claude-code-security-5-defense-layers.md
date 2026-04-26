@@ -3,7 +3,7 @@ title: "Claude Codeの機密情報漏洩を防ぐ5つのHooksセキュリティ�
 emoji: "🛡"
 type: "tech"
 topics: ["claudecode", "security", "hooks", "bash", "devtools"]
-published: false
+published: true
 published_at: 2026-03-06 17:00
 ---
 
