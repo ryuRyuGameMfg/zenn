@@ -212,7 +212,7 @@ Zenn側で非公開化されている（=403）が git は published:true のま
 10. ~~Unityでオンライン対戦の基礎を作る ― Netcode for GameObjects 入門5ステップ（2026年3月ヒット記事77スキの追い風あり）~~ 済み→ 2026-04-26（iter05_rewrite、入門×N選パターン採用・NGO 1.12.0）
 11. ~~Claude Codeで並列Unity開発 ― git worktree × 複数セッションで実装速度3倍【実践ガイド】~~ 済み→ 2026-04-23（iter05_create、claudecodeタグクラスタ増強戦略）
 12. Unity 6.4〜6.8ロードマップ完全解説 ― CoreCLR移行・ECS標準化・WebGPU対応の全貌（速報性・ロードマップ解説、Unity公式情報ベース）
-13. Unity ECS完全入門 ― Unity 6.4でコアパッケージ化！基礎から実装まで5ステップ（入門×N選、ECS初心者向け）
+13. ~~Unity ECS完全入門 ― Unity 6.4でコアパッケージ化！基礎から実装まで5ステップ（入門×N選、ECS初心者向け）~~ 済み→ 2026-04-27（iter06_create、入門×N選パターン採用・Entities 6.4.0）
 14. Unity AI Profiler Integration実践 ― AIが自動でGCスパイク・ボトルネックを特定する新ツールの使い方（Unity新機能・AI×パフォーマンス）
 15. Claude Code v2.1 新機能でUnity開発を加速する ― /effortモード・PostCompact Hookの実践活用（Claude Code最新版×Unity、2026年3月公開機能）
 
@@ -231,3 +231,4 @@ Zenn側で非公開化されている（=403）が git は published:true のま
 | 2026-04-02-claude-code-gmail-calendar-mcp-ai-secretary | Claude Code × Gmail/Calendar MCP でAI秘書を実現する | 2026-04-02 |
 | 2026-04-03-unity-architecture-ai-code-instruction | MonoBehaviourベタ書きを卒業したい人へ：AIに設計パターンを指示してUnityコードを整理する方法 | 2026-04-03 |
 | 2026-04-26-netcode-for-gameobjects-unity-online-5steps | Unityでオンライン対戦を作る入門：Netcode for GameObjects 5ステップ | 2026-04-26 |
+| 2026-04-27-unity-ecs-beginner-5steps | Unity ECS入門：5ステップで学ぶDOTS実装ガイド | 2026-04-27 |
