@@ -3,7 +3,7 @@
   "likes": 349,
   "articles_count": 39,
   "monthly_increase": 0,
-  "last_updated": "2026-04-26",
+  "last_updated": "2026-04-27",
   "history": [
     {
       "date": "2026-04-21",
@@ -56,6 +56,12 @@
       "cleanup_403_zenn_unpublished": 26,
       "new_article_draft": "2026-04-26-netcode-for-gameobjects-unity-online-5steps",
       "note": "rewrite: 26本 Zenn-git整合完了(published:false化)、新規記事作成(published:false)。Zenn API 39件は変動なし（403群は既にZenn側非公開）",
+      "articles": 38
+    },
+    {
+      "date": "2026-04-27",
+      "followers": 37,
+      "likes": 349,
       "articles": 39
     }
   ]

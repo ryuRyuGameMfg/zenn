@@ -2,7 +2,7 @@
   "mode": "create",
   "iteration": 6,
   "status": "idle",
-  "last_run": "2026-04-26T05:00:00Z",
+  "last_run": "2026-04-25T16:16:38Z",
   "current_article": {
     "slug": "",
     "title": "",
@@ -146,10 +146,10 @@
     "achievement_pct": 37,
     "delta": 0,
     "trend": "stable",
-    "measured_at": "2026-04-26T05:00:00Z"
+    "measured_at": "2026-04-26T16:00:03Z"
   },
   "last_action": "rewrite: 2026-04-26 403-Zenn-unpublished 26本をpublished:false化（Zenn-git整合）+ 新規記事作成 2026-04-26-netcode-for-gameobjects-unity-online-5steps（入門×N選パターン・テーマキュー#10消費）、commit+push済み",
-  "last_action_result": "実行完了。以下、KPI改善アクションの実施内容です。\n\n## 実行サマリ\n\n```text\n┌─────────────────────────────────────────────────────────────┐\n│ 実行完了: iter05_improve                                     │\n│ hidden-articles-36-classification-and-orphan-cleanup         │\n└─────────────────────────────────────────────────────────────┘\n\n選択アクション（禁止アクションリスト未該当）\n  improve: 非表示記事36本のHTTP分類 + Orphan 10本クリーンアップ\n\n前回analyze推定の訂正（重要発見）\n  推定: 非表示7本（articles/published:true 49 - API 42 = 7）\n  実測: 非表示36本（articles/published:true 50 - API中の新規14 = 36）\n  → 前回はAPI返却に2025年ハッシュスラッグ24本が混入していた\n  → 多層構造を正しく分解し4倍以上の規模が判明\n\nHTTPステータスベース2分類（curl -A Mozilla/5.0 で実測）\n  ┌─ 404 Not Found  : 10本（Zenn上に存在せず＝Orphan flag）\n  └─ 403 Forbidden  : 26本（スラッグ予約あるがZenn側で非公開状態）\n\n  検証根拠:\n   ・claude-code-skill-display-order (公開中)       → 200 OK\n   ・claude-md-7-failure-patterns-2026 (疑惑群)   → 403 Forbidden\n   ・definitely-not-exist-slug-9999 (存在せず)      → 404 Not Found\n  → 403≠404 の挙動差により「Zennに存在するが非公開」を確定\n\n実行アクション（具体的KPI改善根拠）\n  ┌─ 404 Orphan 10本 → published:false 化（実行済）\n  │    ・auto-queue再publish試行コスト停止\n  │    ・前回4/17-4/19の3本順次再公開と同種の ghost publication 防止\n  │    ・10件分の scheduled_publish 登録不要化\n  └─ 403 Zenn-unpublished 26本 → rewrite-queue.json 登録\n       ・次rewriteサイクルで一括処理予定\n\nKPI効果（定量）\n  ┌─ articles/published:true : 50 → 40（-10本のOrphan除去）\n  ├─ API avg_likes          : 5.9 維持（404群はもともと0スキ扱い）\n  ├─ Orphan flag            : 10 → 0（auto-queue空打ち停止）\n  └─ 累積ghost publish防止  : 推定月3-5本ペースの0スキ記事量産停止\n\nファイル変更\n  ・articles/*.md (10本) : published: true → false\n  ・memory/insights.md   : 非表示36本の分類セクション追加\n  ・memory/rewrite-queue.json : 26本登録 + 完了10本記録\n  ・data/state.json      : improve遷移 + no_improve_count 4→0リセット\n  ・data/metrics.json    : hidden_404/403 指標追加\n\nモード遷移\n  improve（完了）→ rewrite（次サイクル：26本処理）\n\ngit: commit 76ebf1d → push 完了（articles/変更含む）\n```\n\n**LAST_ACTION**: `improve: 2026-04-25 非表示記事36本の正体特定（404=Orphan 10/403=Zenn-unpublished 26）+ Orphan 10本published:false化実行+ rewrite-queue.json 26本登録、commit 76ebf1d push済み`",
+  "last_action_result": "全工程完了。実行サマリーを報告します。\n\n---\n\n```text\n┌─────────────────────────────────────────────────────────────┐\n│ 実行完了: iter05_rewrite                                     │\n│ 403-cleanup-26 + create-netcode-ngo-5steps                  │\n└─────────────────────────────────────────────────────────────┘\n\n実行モード: rewrite（26本クリーンアップ + 新規1本作成）\n\n■ タスク1: 403-Zenn-unpublished 26本 published:false化\n\n  rewrite-queue.jsonの全26本を処理完了\n  Zenn側が非公開（403）なのにgitが published:true のままだった乖離を解消\n  ┌─ auto-queue の「publish試行 → Zenn拒否」ループを停止\n  └─ git状態がZenn実態と一致（保守性向上）\n\n  KPI効果: 直接改善なし（Zenn側は既に非公開）\n  　　　→ ゾンビ記事のクリーンアップ完了（累計36本の整理完結）\n\n■ タスク2: 新規記事作成\n\n  slug: 2026-04-26-netcode-for-gameobjects-unity-online-5steps\n  title: Unityでオンライン対戦を作る入門：Netcode for GameObjects 5ステップ\n\n  採用パターン:\n  ┌─ 入門×N選（5ステップ）= 15.7 avg（最高ROIパターン）\n  └─ テーマ#10消費: Netcode for GameObjects × 77スキ追い風\n\n  技術品質:\n  ┌─ C#コード: 5ファイル（NetworkManager/Player/Combat/Health/Connection）\n  ├─ Zenn記法: :::message ×4 / :::message alert ×1 / :::details ×1\n  ├─ Mermaid: flowchart（アーキテクチャ）+ sequenceDiagram（通信フロー）\n  └─ コードレビュー修正済み:\n       ・OnNetworkDespawn 追加（OnValueChangedリーク防止）\n       ・サーバー上でServerRpc呼び出し → 直接メソッド呼び出しに変更\n       ・NGO 2.x [Rpc]属性移行ガイドを:::message表で追加\n\n  published: false（zenn-auto-queueで次の金土17:00にスケジュール予定）\n\n■ 状態遷移\n\n  mode: rewrite → create\n  iteration: 5 → 6\n  commit: 48d09d7 → push完了（articles/変更含む）\n\n■ KPI根拠\n\n  直近パターン実績:\n  　Unity入門×N選 avg 15.7スキ（ef64c64f: 15スキ / ef64c: 21スキ）\n  　今回のNetcode記事は同パターン + トレンド追い風\n  　公開後に15スキ超で avg_likes 349/40 = 8.7 → (349+15)/41 = 8.9\n\n  テーマキュー残: #2/#3/#4/#5/#8/#9/#12/#13/#14/#15（10件）\n```\n\n**LAST_ACTION**: `rewrite: 2026-04-26 403-Zenn-unpublished 26本をpublished:false化（Zenn-git整合完了）+ 新規記事2026-04-26-netcode-for-gameobjects-unity-online-5steps作成（入門×N選パターン/NGO 1.12.0）、commit 48d09d7 push済み`",
   "forbidden_actions": [
     "create: 2026-04-13-unity-scriptableobject-5-patterns（N選×設計パターン、0スキ問題対策）",
     "analyze: 2026-04-17 metrics更新（47記事・フォロワー37・0スキ根本原因特定: 重複記事問題）",
@@ -166,13 +166,14 @@
     "analyze: 2026-04-24 metrics更新（API/プロファイル乖離解釈確立・unpublish効果確認・非表示7本の重複ペナルティ疑い特定・improve遷移）",
     "analyze: 2026-04-24 metrics更新 - API/プロファイル乖離解釈確立(349=真値・248=現在公開中のみ)、unpublish 12本効果で API avg_likes 4.95→5.9(+19%)、フォロワー4週停滞継続、非表示7本(重複ペナルティ疑い)を次improve対象に特定",
     "improve: 2026-04-25 非表示記事36本をHTTPステータス分類(404=Orphan 10本/403=Zenn-unpublished 26本)+ Orphan 10本published:false化実行+ rewrite-queue.json登録(次rewriteで26本処理予定)",
-    "rewrite: 2026-04-26 403-Zenn-unpublished 26本をpublished:false化（Zenn-git整合）+ 新規記事2026-04-26-netcode-for-gameobjects-unity-online-5steps作成（入門×N選パターン・テーマキュー#10消費）"
+    "rewrite: 2026-04-26 403-Zenn-unpublished 26本をpublished:false化（Zenn-git整合）+ 新規記事2026-04-26-netcode-for-gameobjects-unity-online-5steps作成（入門×N選パターン・テーマキュー#10消費）",
+    "rewrite: 2026-04-26 403-Zenn-unpublished 26本をpublished:false化（Zenn-git整合）+ 新規記事作成 2026-04-26-netcode-for-gameobjects-unity-online-5steps（入門×N選パターン・テーマキュー#10消費）、commit+push済み"
   ],
   "stagnant": true,
   "stagnant_count": 0,
   "last_learn_at": "2026-04-25T00:00:00Z",
   "cycle_count": 1,
   "last_assess_result": "no_improve",
-  "last_assess_at": "2026-04-24T16:11:34Z",
-  "no_improve_count": 2
+  "last_assess_at": "2026-04-25T16:16:38Z",
+  "no_improve_count": 3
 }
