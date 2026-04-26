@@ -138,9 +138,11 @@
       "filename": "claude-code-security-5-defense-layers.md",
       "title": "Claude Codeの機密情報漏洩を防ぐ5つのHooksセキュリティ設計",
       "scheduled_at": "2026-04-26T08:00:00.000Z",
-      "status": "queued",
+      "status": "published",
       "queued_at": "2026-04-02T17:00:05.317Z",
-      "priority": 7
+      "priority": 7,
+      "published_at": "2026-04-26T08:07:18.748Z",
+      "published_url": "https://zenn.dev/ryuRyuGameMfg/articles/claude-code-security-5-defense-layers"
     },
     {
       "filepath": "articles/claude-md-ascii-diagram-rules.md",
