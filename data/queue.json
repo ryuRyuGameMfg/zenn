@@ -601,6 +601,42 @@
       "queued_at": "2026-04-27T00:00:00.000Z",
       "priority": 14,
       "promoted_reason": "入門×N選高ROIパターン(15.7avg)。2026-10-04T08:00:00.000Zから前倒し。"
+    },
+    {
+      "filepath": "articles/2026-04-23-claude-code-worktree-unity-parallel-dev.md",
+      "filename": "2026-04-23-claude-code-worktree-unity-parallel-dev.md",
+      "title": "Claude Code × git worktree で Unity 並列開発：3機能を同時進行させて実装速度を3倍にした実践ワークフロー",
+      "scheduled_at": "2026-10-09T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-27T17:00:05.106Z",
+      "priority": 62
+    },
+    {
+      "filepath": "articles/2026-04-26-netcode-unity-online-5steps.md",
+      "filename": "2026-04-26-netcode-unity-online-5steps.md",
+      "title": "Unityでオンライン対戦を作る入門：Netcode for GameObjects 5ステップ",
+      "scheduled_at": "2026-10-10T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-27T17:00:05.106Z",
+      "priority": 63
+    },
+    {
+      "filepath": "articles/2026-04-27-claude-code-unity-uxml-auto-generate.md",
+      "filename": "2026-04-27-claude-code-unity-uxml-auto-generate.md",
+      "title": "Claude CodeでUnity UI Toolkit自動生成｜UXML/USS実践ガイド",
+      "scheduled_at": "2026-10-16T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-27T17:00:05.106Z",
+      "priority": 64
+    },
+    {
+      "filepath": "articles/2026-04-27-figma-mcp-unity-ui-toolkit-auto-convert.md",
+      "filename": "2026-04-27-figma-mcp-unity-ui-toolkit-auto-convert.md",
+      "title": "Figma MCP × Claude CodeでUnity UI Toolkitを8分で変換した実録",
+      "scheduled_at": "2026-10-17T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-27T17:00:05.106Z",
+      "priority": 65
     }
   ],
   "schedule": {
@@ -612,6 +648,6 @@
     "time": "17:00",
     "timezone": "Asia/Tokyo"
   },
-  "last_scan": "2026-04-25T17:00:01.096Z",
+  "last_scan": "2026-04-27T17:00:05.106Z",
   "last_publish": "2026-04-17T08:26:28.427Z"
 }
