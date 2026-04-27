@@ -194,108 +194,132 @@
       "filename": "2026-02-25-unity-csharp-efficiency-up-5.md",
       "title": "Unity初心者必見！C#で効率UPする5つの小技",
       "scheduled_at": "2026-05-15T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-23T05:07:09.494Z",
-      "priority": 19
+      "priority": 19,
+      "cancelled_reason": "duplicate_content: 2026-04-21にpublished:false化済み。重複コンテンツペナルティ防止のため再公開キャンセル。",
+      "cancelled_at": "2026-04-28T00:00:00.000Z"
     },
     {
       "filepath": "articles/2026-02-25-unity-csharp-gizmos-3d-tech.md",
       "filename": "2026-02-25-unity-csharp-gizmos-3d-tech.md",
       "title": "【Unity C#】Gizmosで3D空間を徹底デバッグ!?隠れた不具合を見える化する技術",
       "scheduled_at": "2026-05-16T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-23T05:07:09.494Z",
-      "priority": 20
+      "priority": 20,
+      "cancelled_reason": "duplicate_content: 2026-04-21にpublished:false化済み。重複コンテンツペナルティ防止のため再公開キャンセル。",
+      "cancelled_at": "2026-04-28T00:00:00.000Z"
     },
     {
       "filepath": "articles/2026-02-25-unity-csharp-implementation-design.md",
       "filename": "2026-02-25-unity-csharp-implementation-design.md",
       "title": "関数型デザインパターン: Unity C#で実装する柔軟なコード設計の秘訣",
       "scheduled_at": "2026-05-22T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-23T05:07:09.494Z",
-      "priority": 21
+      "priority": 21,
+      "cancelled_reason": "duplicate_content: 2026-04-21にpublished:false化済み。重複コンテンツペナルティ防止のため再公開キャンセル。",
+      "cancelled_at": "2026-04-28T00:00:00.000Z"
     },
     {
       "filepath": "articles/2026-02-25-unity-csharp-rpg-management-linq-method.md",
       "filename": "2026-02-25-unity-csharp-rpg-management-linq-method.md",
       "title": "Unity C#で実現！アクションRPGのアイテムドロップ管理をLINQで高速化する方法",
       "scheduled_at": "2026-05-23T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-23T05:07:09.494Z",
-      "priority": 22
+      "priority": 22,
+      "cancelled_reason": "duplicate_content: 2026-04-21にpublished:false化済み。重複コンテンツペナルティ防止のため再公開キャンセル。",
+      "cancelled_at": "2026-04-28T00:00:00.000Z"
     },
     {
       "filepath": "articles/2026-02-25-unity-csharp-struct-performance.md",
       "filename": "2026-02-25-unity-csharp-struct-performance.md",
       "title": "【軽量データ】structで軽量データを ― Unity C#でパフォーマンス重視のゲーム設計",
       "scheduled_at": "2026-05-29T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-23T05:07:09.494Z",
-      "priority": 23
+      "priority": 23,
+      "cancelled_reason": "duplicate_content: 2026-04-21にpublished:false化済み。重複コンテンツペナルティ防止のため再公開キャンセル。",
+      "cancelled_at": "2026-04-28T00:00:00.000Z"
     },
     {
       "filepath": "articles/2026-02-25-unity-csharp.md",
       "filename": "2026-02-25-unity-csharp.md",
       "title": "【可読性向上】コードの可読性を追求 ― Unityで書くリーダブルなC#コードの秘訣",
       "scheduled_at": "2026-05-30T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-23T05:07:09.495Z",
-      "priority": 24
+      "priority": 24,
+      "cancelled_reason": "duplicate_content: 2026-04-21にpublished:false化済み。重複コンテンツペナルティ防止のため再公開キャンセル。",
+      "cancelled_at": "2026-04-28T00:00:00.000Z"
     },
     {
       "filepath": "articles/2026-02-25-unity-cursor-ai-design-monobehaviour.md",
       "filename": "2026-02-25-unity-cursor-ai-design-monobehaviour.md",
       "title": "【Unity×Cursor】AI開発時代におけるプログラム設計の新常識！脱Monobehaviour!?",
       "scheduled_at": "2026-06-05T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-23T05:07:09.495Z",
-      "priority": 25
+      "priority": 25,
+      "cancelled_reason": "duplicate_content: 2026-04-21にpublished:false化済み。重複コンテンツペナルティ防止のため再公開キャンセル。",
+      "cancelled_at": "2026-04-28T00:00:00.000Z"
     },
     {
       "filepath": "articles/2026-02-25-unity-dev-efficiency-method.md",
       "filename": "2026-02-25-unity-dev-efficiency-method.md",
       "title": "初心者でも作れる！“使い捨てUnityイベント”で開発効率を爆上げする方法",
       "scheduled_at": "2026-06-06T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-23T05:07:09.495Z",
-      "priority": 26
+      "priority": 26,
+      "cancelled_reason": "duplicate_content: 2026-04-21にpublished:false化済み。重複コンテンツペナルティ防止のため再公開キャンセル。",
+      "cancelled_at": "2026-04-28T00:00:00.000Z"
     },
     {
       "filepath": "articles/2026-02-25-unity-editor-extension-dev-efficiency.md",
       "filename": "2026-02-25-unity-editor-extension-dev-efficiency.md",
       "title": "Unityエディタ拡張で実現する開発効率の爆上げテクニック",
       "scheduled_at": "2026-06-12T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-23T05:07:09.495Z",
-      "priority": 27
+      "priority": 27,
+      "cancelled_reason": "duplicate_content: 2026-04-21にpublished:false化済み。重複コンテンツペナルティ防止のため再公開キャンセル。",
+      "cancelled_at": "2026-04-28T00:00:00.000Z"
     },
     {
       "filepath": "articles/2026-02-25-unity-fluent-interface-development.md",
       "filename": "2026-02-25-unity-fluent-interface-development.md",
       "title": "Unityエンジニア必見！Fluent Interfaceで実現するコード革命―シンプル＆エレガントな開発術",
       "scheduled_at": "2026-06-13T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-23T05:07:09.495Z",
-      "priority": 28
+      "priority": 28,
+      "cancelled_reason": "duplicate_content: 2026-04-21にpublished:false化済み。重複コンテンツペナルティ防止のため再公開キャンセル。",
+      "cancelled_at": "2026-04-28T00:00:00.000Z"
     },
     {
       "filepath": "articles/2026-02-25-unity-observer-pattern-system.md",
       "filename": "2026-02-25-unity-observer-pattern-system.md",
       "title": "Unityエンジニア必見！Observer Patternでシンプルに解決するイベントシステムの作り方",
       "scheduled_at": "2026-06-19T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-23T05:07:09.495Z",
-      "priority": 29
+      "priority": 29,
+      "cancelled_reason": "duplicate_content: 2026-04-21にpublished:false化済み。重複コンテンツペナルティ防止のため再公開キャンセル。",
+      "cancelled_at": "2026-04-28T00:00:00.000Z"
     },
     {
       "filepath": "articles/2026-02-25-unity-rigidbody-collider-optimization.md",
       "filename": "2026-02-25-unity-rigidbody-collider-optimization.md",
       "title": "Unity！「Rigidbody × Collider 最適化」で当たり判定を究極に高めるテクニック",
       "scheduled_at": "2026-06-20T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-23T05:07:09.495Z",
-      "priority": 30
+      "priority": 30,
+      "cancelled_reason": "duplicate_content: 2026-04-21にpublished:false化済み。重複コンテンツペナルティ防止のため再公開キャンセル。",
+      "cancelled_at": "2026-04-28T00:00:00.000Z"
     },
     {
       "filepath": "articles/2026-04-23-claude-code-git-worktree-unity-parallel-dev.md",
@@ -400,10 +424,11 @@
       "filepath": "articles/2026-04-26-netcode-for-gameobjects-unity-online-5steps.md",
       "filename": "2026-04-26-netcode-for-gameobjects-unity-online-5steps.md",
       "title": "Unityでオンライン対戦を作る入門：Netcode for GameObjects 5ステップ",
-      "scheduled_at": "2026-08-01T08:00:00.000Z",
+      "scheduled_at": "2026-05-15T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-25T17:00:01.095Z",
-      "priority": 42
+      "priority": 12,
+      "promoted_reason": "入門×N選高ROIパターン(15.7avg)。2026-08-01T08:00:00.000Zから前倒し。"
     },
     {
       "filepath": "articles/ai-first-game-development-workflow.md",
@@ -571,10 +596,11 @@
       "filepath": "articles/2026-04-27-unity-ecs-beginner-5steps.md",
       "filename": "2026-04-27-unity-ecs-beginner-5steps.md",
       "title": "Unity ECS入門：5ステップで学ぶDOTS実装ガイド",
-      "scheduled_at": "2026-10-04T08:00:00.000Z",
+      "scheduled_at": "2026-05-22T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-27T00:00:00.000Z",
-      "priority": 61
+      "priority": 14,
+      "promoted_reason": "入門×N選高ROIパターン(15.7avg)。2026-10-04T08:00:00.000Zから前倒し。"
     }
   ],
   "schedule": {
