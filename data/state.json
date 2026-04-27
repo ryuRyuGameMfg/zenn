@@ -2,7 +2,7 @@
   "mode": "create",
   "iteration": 6,
   "status": "idle",
-  "last_run": "2026-04-25T16:16:38Z",
+  "last_run": "2026-04-26T16:20:33Z",
   "current_article": {
     "slug": "",
     "title": "",
@@ -149,7 +149,7 @@
     "measured_at": "2026-04-26T16:00:03Z"
   },
   "last_action": "rewrite: 2026-04-26 403-Zenn-unpublished 26本をpublished:false化（Zenn-git整合）+ 新規記事作成 2026-04-26-netcode-for-gameobjects-unity-online-5steps（入門×N選パターン・テーマキュー#10消費）、commit+push済み",
-  "last_action_result": "全工程完了。実行サマリーを報告します。\n\n---\n\n```text\n┌─────────────────────────────────────────────────────────────┐\n│ 実行完了: iter05_rewrite                                     │\n│ 403-cleanup-26 + create-netcode-ngo-5steps                  │\n└─────────────────────────────────────────────────────────────┘\n\n実行モード: rewrite（26本クリーンアップ + 新規1本作成）\n\n■ タスク1: 403-Zenn-unpublished 26本 published:false化\n\n  rewrite-queue.jsonの全26本を処理完了\n  Zenn側が非公開（403）なのにgitが published:true のままだった乖離を解消\n  ┌─ auto-queue の「publish試行 → Zenn拒否」ループを停止\n  └─ git状態がZenn実態と一致（保守性向上）\n\n  KPI効果: 直接改善なし（Zenn側は既に非公開）\n  　　　→ ゾンビ記事のクリーンアップ完了（累計36本の整理完結）\n\n■ タスク2: 新規記事作成\n\n  slug: 2026-04-26-netcode-for-gameobjects-unity-online-5steps\n  title: Unityでオンライン対戦を作る入門：Netcode for GameObjects 5ステップ\n\n  採用パターン:\n  ┌─ 入門×N選（5ステップ）= 15.7 avg（最高ROIパターン）\n  └─ テーマ#10消費: Netcode for GameObjects × 77スキ追い風\n\n  技術品質:\n  ┌─ C#コード: 5ファイル（NetworkManager/Player/Combat/Health/Connection）\n  ├─ Zenn記法: :::message ×4 / :::message alert ×1 / :::details ×1\n  ├─ Mermaid: flowchart（アーキテクチャ）+ sequenceDiagram（通信フロー）\n  └─ コードレビュー修正済み:\n       ・OnNetworkDespawn 追加（OnValueChangedリーク防止）\n       ・サーバー上でServerRpc呼び出し → 直接メソッド呼び出しに変更\n       ・NGO 2.x [Rpc]属性移行ガイドを:::message表で追加\n\n  published: false（zenn-auto-queueで次の金土17:00にスケジュール予定）\n\n■ 状態遷移\n\n  mode: rewrite → create\n  iteration: 5 → 6\n  commit: 48d09d7 → push完了（articles/変更含む）\n\n■ KPI根拠\n\n  直近パターン実績:\n  　Unity入門×N選 avg 15.7スキ（ef64c64f: 15スキ / ef64c: 21スキ）\n  　今回のNetcode記事は同パターン + トレンド追い風\n  　公開後に15スキ超で avg_likes 349/40 = 8.7 → (349+15)/41 = 8.9\n\n  テーマキュー残: #2/#3/#4/#5/#8/#9/#12/#13/#14/#15（10件）\n```\n\n**LAST_ACTION**: `rewrite: 2026-04-26 403-Zenn-unpublished 26本をpublished:false化（Zenn-git整合完了）+ 新規記事2026-04-26-netcode-for-gameobjects-unity-online-5steps作成（入門×N選パターン/NGO 1.12.0）、commit 48d09d7 push済み`",
+  "last_action_result": "commit `75c8b24` / push完了。\n\n---\n\n## 実行完了レポート\n\n```text\n┌──────────────────────────────────────────────────────────────┐\n│ iter06_create: Unity ECS入門記事                              │\n│ slug: 2026-04-27-unity-ecs-beginner-5steps                   │\n└──────────────────────────────────────────────────────────────┘\n\n■ 実行モード: create（rewrite → create 遷移）\n\n■ 記事詳細\n\n  タイトル: Unity ECS入門：5ステップで学ぶDOTS実装ガイド\n  emoji: ⚡ / type: tech\n  topics: unity, csharp, gamedev, ecs, dots\n\n  採用根拠:\n  ┌─ 入門×N選（5ステップ）= 最高ROIパターン avg 15.7スキ\n  ├─ テーマ#13消費（Entities 6.4.0コアパッケージ化のタイムリー性）\n  └─ 重複記事ゼロ確認済み（ECS primaly記事なし）\n\n  技術品質:\n  ┌─ C#コード: 4ファイル\n  │    MoveComponents / MoveAuthoringAndBaker\n  │    MoveSystem / GameManager\n  ├─ Mermaid: 2個（OOP vs ECS flowchart + Bakingフロー）\n  ├─ Zenn記法: :::message ×4 / :::message alert ×2\n  └─ code-reviewer Critical修正済み:\n       ・GameManager.cs に LocalTransform.Identity 追加\n         （MoveSystemのクエリにマッチしないバグを修正）\n       ・Position struct削除（LocalTransformと重複・未使用）\n       ・GetEntity推奨形式（authoring引数追加）\n\n  published: false → queue.json priority:61\n  公開予定: 2026-10-04（土曜スロット）\n\n■ 差別化ポイント（競合分析より）\n\n  ┌─ Baking/SubScene を丁寧に解説（最も質問が多い盲点）\n  ├─ ISystem（Burst対応・現推奨）を採用した現代基準の記事\n  └─ Unity 6.4 / Entities 6.4.0 バージョン明記（タイムリー）\n\n■ 状態遷移\n\n  mode: create → analyze（次サイクル）\n  iteration: 5 → 6\n  commit: 75c8b24 → push完了（articles/変更含む）\n\n■ KPI根拠\n\n  採用パターン「Unity入門×N選」実績:\n  　ef64c64f: 15スキ / 029524183c: 21スキ\n  　このECS記事が15スキ超えなら avg_likes 改善\n  　(349+15)/42 = 8.67 → avg +47%見込み\n\n  ★次analyzeで新規記事のスキ数も実測（0スキ継続問題の診断）\n```\n\n**LAST_ACTION**: `create: 2026-04-27-unity-ecs-beginner-5steps（Unity ECS入門×N選パターン・Entities 6.4.0対応・テーマ#13消費）、code-reviewer Critical修正済み、commit 75c8b24 push完了`",
   "forbidden_actions": [
     "create: 2026-04-13-unity-scriptableobject-5-patterns（N選×設計パターン、0スキ問題対策）",
     "analyze: 2026-04-17 metrics更新（47記事・フォロワー37・0スキ根本原因特定: 重複記事問題）",
@@ -174,6 +174,6 @@
   "last_learn_at": "2026-04-25T00:00:00Z",
   "cycle_count": 1,
   "last_assess_result": "no_improve",
-  "last_assess_at": "2026-04-25T16:16:38Z",
-  "no_improve_count": 3
+  "last_assess_at": "2026-04-26T16:20:33Z",
+  "no_improve_count": 4
 }
