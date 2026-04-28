@@ -215,6 +215,11 @@ Zenn側で非公開化されている（=403）が git は published:true のま
 13. ~~Unity ECS完全入門 ― Unity 6.4でコアパッケージ化！基礎から実装まで5ステップ（入門×N選、ECS初心者向け）~~ 済み→ 2026-04-27（iter06_create、入門×N選パターン採用・Entities 6.4.0）
 14. Unity AI Profiler Integration実践 ― AIが自動でGCスパイク・ボトルネックを特定する新ツールの使い方（Unity新機能・AI×パフォーマンス）
 15. Claude Code v2.1 新機能でUnity開発を加速する ― /effortモード・PostCompact Hookの実践活用（Claude Code最新版×Unity、2026年3月公開機能）
+16. Unity Shader Graph 入門5選 ― マテリアル表現の基礎からゲームエフェクト実装まで完全ガイド（Shader Graph初心者多い・競合少・入門×N選パターン）
+17. Unity Input System 完全入門 ― 旧InputManagerから乗り換える5ステップ（Input System移行検索多い・入門×N選パターン）
+18. Unityでスマホ向けに最適化する5つの実践テクニック ― Profiler活用・バッチング・テクスチャ圧縮を網羅（モバイル最適化は実需高い・実践×N選パターン）
+19. Unity Timeline & Cinemachine入門 ― カットシーン・ゲーム演出を作る5ステップ（演出系は競合少・入門×N選パターン）
+20. Unity 2Dゲーム入門5ステップ ― タイルマップ・Rigidbody2D・Animator完全実装ガイド（2D入門は最大ボリュームゾーン・入門×N選パターン）
 
 ## 済みトピック（重複確認用）
 

@@ -335,90 +335,100 @@
       "filename": "claude-code-subagent-vs-openclaw.md",
       "title": "Claude Code SubAgent vs OpenClaw 設計思想比較",
       "scheduled_at": "2026-06-27T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-24T17:00:05.108Z",
-      "priority": 32
+      "priority": 32,
+      "cancelled_at": "2026-04-29T00:00:00Z"
     },
     {
       "filepath": "articles/openclaw-skills-7-automation-techniques.md",
       "filename": "openclaw-skills-7-automation-techniques.md",
       "title": "OpenClaw Skillsで実現する7つの自動化テクニック",
       "scheduled_at": "2026-07-03T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-24T17:00:05.108Z",
-      "priority": 33
+      "priority": 33,
+      "cancelled_at": "2026-04-29T00:00:00Z"
     },
     {
       "filepath": "articles/unity-ai-character-chatgpt-voicevox.md",
       "filename": "unity-ai-character-chatgpt-voicevox.md",
       "title": "Unity × ChatGPT × VoiceVox - AIキャラクターをゼロから実装する",
       "scheduled_at": "2026-07-04T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-24T17:00:05.108Z",
-      "priority": 34
+      "priority": 34,
+      "cancelled_at": "2026-04-29T00:00:00Z"
     },
     {
       "filepath": "articles/unity-async-performance-optimization.md",
       "filename": "unity-async-performance-optimization.md",
       "title": "Unity非同期処理とパフォーマンス最適化 - コルーチン/async/DOTS/ObjectPool",
       "scheduled_at": "2026-07-10T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-24T17:00:05.108Z",
-      "priority": 35
+      "priority": 35,
+      "cancelled_at": "2026-04-29T00:00:00Z"
     },
     {
       "filepath": "articles/unity-components-complete-reference.md",
       "filename": "unity-components-complete-reference.md",
       "title": "Unity主要コンポーネント大全 - RigidbodyからAudioSourceまで一気に理解する",
       "scheduled_at": "2026-07-11T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-24T17:00:05.108Z",
-      "priority": 36
+      "priority": 36,
+      "cancelled_at": "2026-04-29T00:00:00Z"
     },
     {
       "filepath": "articles/unity-csharp-fundamentals-complete-guide.md",
       "filename": "unity-csharp-fundamentals-complete-guide.md",
       "title": "Unity C#基礎を1記事で総復習 - ライフサイクルからラムダ式まで",
       "scheduled_at": "2026-07-17T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-24T17:00:05.108Z",
-      "priority": 37
+      "priority": 37,
+      "cancelled_at": "2026-04-29T00:00:00Z"
     },
     {
       "filepath": "articles/unity-data-management-save-techniques.md",
       "filename": "unity-data-management-save-techniques.md",
       "title": "Unityのデータ管理完全ガイド - JSON/PlayerPrefs/暗号化/LINQまで",
       "scheduled_at": "2026-07-18T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-24T17:00:05.108Z",
-      "priority": 38
+      "priority": 38,
+      "cancelled_at": "2026-04-29T00:00:00Z"
     },
     {
       "filepath": "articles/unity-design-patterns-practical-guide.md",
       "filename": "unity-design-patterns-practical-guide.md",
       "title": "Unityで使えるデザインパターン実践 - Factory/Observer/Stateを現場で活かす",
       "scheduled_at": "2026-07-24T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-24T17:00:05.108Z",
-      "priority": 39
+      "priority": 39,
+      "cancelled_at": "2026-04-29T00:00:00Z"
     },
     {
       "filepath": "articles/unity-openclaw-ai-agent-editor-automation.md",
       "filename": "unity-openclaw-ai-agent-editor-automation.md",
       "title": "Unity×OpenClaw実践：AIエージェントでエディタを自動操作する方法",
       "scheduled_at": "2026-07-25T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-24T17:00:05.108Z",
-      "priority": 40
+      "priority": 40,
+      "cancelled_at": "2026-04-29T00:00:00Z"
     },
     {
       "filepath": "articles/unity-vr-development-roadmap-openxr.md",
       "filename": "unity-vr-development-roadmap-openxr.md",
       "title": "Unity VR開発ロードマップ - OpenXRからMeta Quest実機デプロイまで",
       "scheduled_at": "2026-07-31T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-24T17:00:05.108Z",
-      "priority": 41
+      "priority": 41,
+      "cancelled_at": "2026-04-29T00:00:00Z"
     },
     {
       "filepath": "articles/2026-04-26-netcode-for-gameobjects-unity-online-5steps.md",
@@ -435,162 +445,180 @@
       "filename": "ai-first-game-development-workflow.md",
       "title": "AI-firstゲーム開発 - 開発期間3ヶ月→2週間を実現したワークフロー",
       "scheduled_at": "2026-08-07T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-25T17:00:01.095Z",
-      "priority": 43
+      "priority": 43,
+      "cancelled_at": "2026-04-29T00:00:00Z"
     },
     {
       "filepath": "articles/convai-ai-npc-unity-implementation.md",
       "filename": "convai-ai-npc-unity-implementation.md",
       "title": "Convaiで作るAI NPC - UnityでLLM駆動キャラクターを実装する",
       "scheduled_at": "2026-08-08T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-25T17:00:01.095Z",
-      "priority": 44
+      "priority": 44,
+      "cancelled_at": "2026-04-29T00:00:00Z"
     },
     {
       "filepath": "articles/gpu-resident-drawer-section1.md",
       "filename": "gpu-resident-drawer-section1.md",
       "title": "GPU Resident Drawer システム要件とプラットフォーム対応",
       "scheduled_at": "2026-08-14T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-25T17:00:01.095Z",
-      "priority": 45
+      "priority": 45,
+      "cancelled_at": "2026-04-29T00:00:00Z"
     },
     {
       "filepath": "articles/llm-procedural-content-generation-game-survey.md",
       "filename": "llm-procedural-content-generation-game-survey.md",
       "title": "LLM時代のプロシージャル生成 - ゲームPCG全手法サーベイ",
       "scheduled_at": "2026-08-15T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-25T17:00:01.095Z",
-      "priority": 46
+      "priority": 46,
+      "cancelled_at": "2026-04-29T00:00:00Z"
     },
     {
       "filepath": "articles/llmunity-local-llamacpp-unity-integration.md",
       "filename": "llmunity-local-llamacpp-unity-integration.md",
       "title": "LLMUnity入門 - Unityにローカルllama.cppを統合する",
       "scheduled_at": "2026-08-21T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-25T17:00:01.095Z",
-      "priority": 47
+      "priority": 47,
+      "cancelled_at": "2026-04-29T00:00:00Z"
     },
     {
       "filepath": "articles/mcp-unity-claude-cursor-editor-control.md",
       "filename": "mcp-unity-claude-cursor-editor-control.md",
       "title": "mcp-unity: Claude/CursorからUnity Editorを操作する",
       "scheduled_at": "2026-08-22T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-25T17:00:01.095Z",
-      "priority": 48
+      "priority": 48,
+      "cancelled_at": "2026-04-29T00:00:00Z"
     },
     {
       "filepath": "articles/meta-quest-unity-inference-engine-xr-ai.md",
       "filename": "meta-quest-unity-inference-engine-xr-ai.md",
       "title": "Meta Quest × Unity Inference Engine - XRデバイスでAI推論を動かす",
       "scheduled_at": "2026-08-28T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-25T17:00:01.095Z",
-      "priority": 49
+      "priority": 49,
+      "cancelled_at": "2026-04-29T00:00:00Z"
     },
     {
       "filepath": "articles/pcg-llm-integration-survey-2025.md",
       "filename": "pcg-llm-integration-survey-2025.md",
       "title": "LLM時代のプロシージャル生成 - 全手法サーベイ翻訳",
       "scheduled_at": "2026-08-29T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-25T17:00:01.095Z",
-      "priority": 50
+      "priority": 50,
+      "cancelled_at": "2026-04-29T00:00:00Z"
     },
     {
       "filepath": "articles/playwright-chrome-profile-automation.md",
       "filename": "playwright-chrome-profile-automation.md",
       "title": "PlaywrightとChrome Profileで実現する顧客管理自動化【実装コード付き】",
       "scheduled_at": "2026-09-04T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-25T17:00:01.095Z",
-      "priority": 51
+      "priority": 51,
+      "cancelled_at": "2026-04-29T00:00:00Z"
     },
     {
       "filepath": "articles/shipping-games-with-ai-coding-agents.md",
       "filename": "shipping-games-with-ai-coding-agents.md",
       "title": "AIコーディングエージェントでゲームを出荷した話",
       "scheduled_at": "2026-09-05T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-25T17:00:01.095Z",
-      "priority": 52
+      "priority": 52,
+      "cancelled_at": "2026-04-29T00:00:00Z"
     },
     {
       "filepath": "articles/stanford-generative-agents-ai-npc-design.md",
       "filename": "stanford-generative-agents-ai-npc-design.md",
       "title": "Stanford Generative Agents完全解説 - AI NPCの設計思想",
       "scheduled_at": "2026-09-11T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-25T17:00:01.095Z",
-      "priority": 53
+      "priority": 53,
+      "cancelled_at": "2026-04-29T00:00:00Z"
     },
     {
       "filepath": "articles/unity-ai-muse-complete-guide-6-2.md",
       "filename": "unity-ai-muse-complete-guide-6-2.md",
       "title": "Unity AI（旧Muse）完全ガイド - Unity 6.2の新AIワークフロー",
       "scheduled_at": "2026-09-12T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-25T17:00:01.095Z",
-      "priority": 54
+      "priority": 54,
+      "cancelled_at": "2026-04-29T00:00:00Z"
     },
     {
       "filepath": "articles/unity-llm-mcp-architecture-migration.md",
       "filename": "unity-llm-mcp-architecture-migration.md",
       "title": "UnityにLLMを埋め込む夢と現実 - MCPアーキテクチャへの移行記",
       "scheduled_at": "2026-09-18T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-25T17:00:01.095Z",
-      "priority": 55
+      "priority": 55,
+      "cancelled_at": "2026-04-29T00:00:00Z"
     },
     {
       "filepath": "articles/unity-local-llm-complete-guide.md",
       "filename": "unity-local-llm-complete-guide.md",
       "title": "LLMUnityでAIキャラクターにローカルLLMを組み込んだ実装記録",
       "scheduled_at": "2026-09-19T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-25T17:00:01.095Z",
-      "priority": 56
+      "priority": 56,
+      "cancelled_at": "2026-04-29T00:00:00Z"
     },
     {
       "filepath": "articles/unity-ml-agents-release-23-summary.md",
       "filename": "unity-ml-agents-release-23-summary.md",
       "title": "Unity ML-Agents Release 23 - 主要変更点と移行ガイド",
       "scheduled_at": "2026-09-25T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-25T17:00:01.095Z",
-      "priority": 57
+      "priority": 57,
+      "cancelled_at": "2026-04-29T00:00:00Z"
     },
     {
       "filepath": "articles/unity-offline-ai-character-stt-llm-tts.md",
       "filename": "unity-offline-ai-character-stt-llm-tts.md",
       "title": "Unityでオフライン完結AIキャラを作る - STT→LLM→TTSパイプライン",
       "scheduled_at": "2026-09-26T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-25T17:00:01.095Z",
-      "priority": 58
+      "priority": 58,
+      "cancelled_at": "2026-04-29T00:00:00Z"
     },
     {
       "filepath": "articles/unity-sentis-whisper-voice-recognition-npc.md",
       "filename": "unity-sentis-whisper-voice-recognition-npc.md",
       "title": "Unity Sentis × Whisperで音声認識NPCを作る",
       "scheduled_at": "2026-10-02T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-25T17:00:01.096Z",
-      "priority": 59
+      "priority": 59,
+      "cancelled_at": "2026-04-29T00:00:00Z"
     },
     {
       "filepath": "articles/wfc-reinforcement-learning-mdp-optimization.md",
       "filename": "wfc-reinforcement-learning-mdp-optimization.md",
       "title": "WFCを強化学習で最適化する - MDP再定式化アプローチ",
       "scheduled_at": "2026-10-03T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-25T17:00:01.096Z",
-      "priority": 60
+      "priority": 60,
+      "cancelled_at": "2026-04-29T00:00:00Z"
     },
     {
       "filepath": "articles/2026-04-27-unity-ecs-beginner-5steps.md",
@@ -607,18 +635,20 @@
       "filename": "2026-04-23-claude-code-worktree-unity-parallel-dev.md",
       "title": "Claude Code × git worktree で Unity 並列開発：3機能を同時進行させて実装速度を3倍にした実践ワークフロー",
       "scheduled_at": "2026-10-09T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-27T17:00:05.106Z",
-      "priority": 62
+      "priority": 62,
+      "cancelled_at": "2026-04-29T00:00:00Z"
     },
     {
       "filepath": "articles/2026-04-26-netcode-unity-online-5steps.md",
       "filename": "2026-04-26-netcode-unity-online-5steps.md",
       "title": "Unityでオンライン対戦を作る入門：Netcode for GameObjects 5ステップ",
       "scheduled_at": "2026-10-10T08:00:00.000Z",
-      "status": "queued",
+      "status": "cancelled",
       "queued_at": "2026-04-27T17:00:05.106Z",
-      "priority": 63
+      "priority": 63,
+      "cancelled_at": "2026-04-29T00:00:00Z"
     },
     {
       "filepath": "articles/2026-04-27-claude-code-unity-uxml-auto-generate.md",

@@ -3,7 +3,7 @@
   "likes": 349,
   "articles_count": 40,
   "monthly_increase": 0,
-  "last_updated": "2026-04-28",
+  "last_updated": "2026-04-29",
   "history": [
     {
       "date": "2026-04-21",
@@ -72,6 +72,12 @@
       "articles_api": 40,
       "avg_likes_profile": 8.73,
       "note": "analyze: フォロワー37(横ばい)、スキ349(横ばい)、記事40。queue重複12本キャンセル実行・ECS/NGO記事を5月前倒し。"
+    },
+    {
+      "date": "2026-04-29",
+      "followers": 37,
+      "likes": 349,
+      "articles": 40
     }
   ]
 }
