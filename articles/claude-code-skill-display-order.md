@@ -2,7 +2,7 @@
 title: "Claude Codeで自作スキルを上位表示する4つのコツ【配置例付き】"
 emoji: "📋"
 type: "tech"
-topics: ["claude", "cli", "カスタマイズ", "productivity", "automation"]
+topics: ["claudecode", "anthropic", "ai", "skill", "tips"]
 published: true
 published_at: 2026-03-15 17:00
 ---

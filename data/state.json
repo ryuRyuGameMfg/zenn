@@ -1,8 +1,8 @@
 {
-  "mode": "rewrite",
-  "iteration": 6,
+  "mode": "create",
+  "iteration": 7,
   "status": "idle",
-  "last_run": "2026-04-29T00:00:00Z",
+  "last_run": "2026-04-30T00:00:00Z",
   "current_article": {
     "slug": "",
     "title": "",
@@ -143,6 +143,22 @@
       "title": "analyze: 2026-04-28 queue重複12本キャンセル + ECS/NGO前倒し",
       "topic": "KPI横ばい(フォロワー37,スキ349,記事40)継続。重複12本再公開リスクをキャンセルで排除。高ROI記事をMay公開前倒し(ECS:Oct→5/22, NGO:Aug→5/15)",
       "date": "2026-04-28"
+    },
+    {
+      "iteration": 6,
+      "mode": "improve",
+      "slug": "queue-30-cancel-themekeyue-5",
+      "title": "improve: 2026-04-29 queue30件キャンセル + テーマキュー#16-20補充",
+      "topic": "404 Orphan 10+403 Zenn-unpublished 18+重複2をキャンセル、入門×N選パターン5件追加",
+      "date": "2026-04-29"
+    },
+    {
+      "iteration": 6,
+      "mode": "rewrite",
+      "slug": "topic-refresh-claude-2articles",
+      "title": "rewrite: 0スキclaude記事2本のtopics正規化（claude-code → claudecode、不正タグ修正）",
+      "topic": "PV下位2本リライト：claude-beginner-full-automation-guide(50d 0スキ・無効タグclaude-code)、claude-code-skill-display-order(45d 0スキ・claudecodeタグ欠落)。両者ともcanonical claudecodeタグへ統一しSEO露出を回復",
+      "date": "2026-04-30"
     }
   ],
   "kpi": {
@@ -154,10 +170,10 @@
     "achievement_pct": 37,
     "delta": 0,
     "trend": "stable",
-    "measured_at": "2026-04-28T16:00:05Z"
+    "measured_at": "2026-04-29T16:00:05Z"
   },
-  "last_action": "improve: 2026-04-29 queue30件キャンセル（404 Orphan 10+403 Zenn-unpublished 18+重複2）+ テーマキュー5件補充（#16〜#20、入門×N選パターン）",
-  "last_action_result": "## iter06_analyze 実行完了\n\n```text\n┌──────────────────────────────────────────────────────────────┐\n│ iter06_analyze: 2026-04-28 KPI計測 + queue緊急修正           │\n│ commit: 2f0e1d2                                              │\n└──────────────────────────────────────────────────────────────┘\n\n■ KPI実測値（2026-04-28）\n  フォロワー: 37 / 目標100 (37%) — 横ばい継続\n  スキ合計:   349              — 横ばい継続\n  公開記事:   40               — 先週比 +1\n\n■ 緊急発見 → 即時対応済み\n\n  【問題】queue.json に重複記事12本が status:queued のまま残存\n           2026-05-15〜06-20 に順次再公開される危険があった\n           （2026-04-21 に published:false 化したが queue 未更新）\n\n  【対応】12本を status:cancelled に変更（再公開ループ完全遮断）\n\n■ 高ROI記事の公開前倒し\n\n  記事              変更前       変更後     短縮\n  ──────────────────────────────────────────────\n  NGO (netcode)    2026-08-01  2026-05-15  77日\n  ECS (beginner)   2026-10-04  2026-05-22 135日\n\n■ 5月確定公開スケジュール\n\n  05-01  claude-md-ascii-diagram-rules\n  05-02  unity-architecture-ai-code-instruction\n  05-03  scriptableobject-5-patterns\n  05-08  uloopmcp-claude-code-unity-auto-loop\n  05-09  unity-csharp-beginner-traps-5    ←入門×N選 (ROI高)\n  05-15  netcode-for-gameobjects          ←入門×N選 (ROI高)\n  05-22  unity-ecs-beginner-5steps        ←入門×N選 (ROI高)\n\n■ KPI改善根拠\n\n  重複キャンセル効果:\n  └─ 0スキ記事が公開されなくなる → avg_likes 保護\n\n  前倒し効果:\n  └─ 入門×N選パターン (15.7 avg) が5月中に2本追加公開\n  └─ 仮に各15スキ: (349+30)/42 = 9.02 avg (+0.29/記事)\n\n■ 状態遷移\n  mode: create → improve（次サイクル）\n  commit: 2f0e1d2（data/のみ変更、push不要）\n```\n\n**LAST_ACTION**: `analyze: 2026-04-28 KPI計測（フォロワー37/スキ349/記事40横ばい）+ 緊急queue整理（重複12本キャンセル・ECS 10/4→5/22・NGO 8/1→5/15前倒し）、commit 2f0e1d2`",
+  "last_action": "rewrite: 2026-04-30 0スキclaude記事2本のtopics正規化（claude-beginner-full-automation-guide: claude-code無効タグ→claudecode / claude-code-skill-display-order: claudecodeタグ欠落→追加）",
+  "last_action_result": "完了。実行結果をまとめる。\n\n---\n\n## iter06_improve 実行完了\n\n```text\n┌──────────────────────────────────────────────────────────────┐\n│ iter06_improve: 2026-04-29 queue 30件キャンセル              │\n│ commit: c35c911（data/ + memory/のみ、push不要）             │\n└──────────────────────────────────────────────────────────────┘\n\n■ 問題\n  queue.json に published:false 記事30件が status:queued のまま残存\n  6月〜10月に順次公開 → 全て0スキでavg_likes 汚染リスク\n\n■ キャンセル詳細（30件）\n  404 Orphan × 10本（claude-code-subagent-vs-openclaw 等）\n  403 Zenn-unpublished × 18本（ai-first-game-dev 〜 wfc-reinforcement 等）\n  重複記事 × 2本（claude-code-worktree / netcode-unity-online）\n\n■ queue 状態（更新後）\n  queued:    10件（5月7件 + git-worktree06/26 + UXML10/16 + Figma10/17）\n  cancelled: 42件（今回30 + 既存12）\n  published: 13件\n\n■ テーマキュー補充（#16〜#20）\n  16. Unity Shader Graph 入門5選\n  17. Unity Input System 完全入門 5ステップ\n  18. Unityスマホ最適化 5つの実践テクニック\n  19. Unity Timeline & Cinemachine 入門 5ステップ\n  20. Unity 2Dゲーム入門 5ステップ\n  ※全て入門×N選パターン（実績avg 15.7スキ）\n\n■ KPI改善根拠\n  0スキ記事30本の再公開を恒久遮断\n  → avg_likes の分母が増えるリスクをゼロに\n  5月確定3本（beginner-traps/NGO/ECS）は高ROIパターン\n  → 仮に各15スキ: (349+45)/43 ≒ 9.2スキ/記事（+5%改善）\n\n■ 状態遷移\n  mode: improve → rewrite（次サイクル）\n```\n\n**LAST_ACTION**: `improve: 2026-04-29 queue30件キャンセル（404 Orphan 10+403 Zenn-unpublished 18+重複2）+ テーマキュー5件補充（#16〜#20）、commit c35c911`",
   "forbidden_actions": [
     "create: 2026-04-13-unity-scriptableobject-5-patterns（N選×設計パターン、0スキ問題対策）",
     "analyze: 2026-04-17 metrics更新（47記事・フォロワー37・0スキ根本原因特定: 重複記事問題）",
@@ -177,13 +193,15 @@
     "rewrite: 2026-04-26 403-Zenn-unpublished 26本をpublished:false化（Zenn-git整合）+ 新規記事2026-04-26-netcode-for-gameobjects-unity-online-5steps作成（入門×N選パターン・テーマキュー#10消費）",
     "rewrite: 2026-04-26 403-Zenn-unpublished 26本をpublished:false化（Zenn-git整合）+ 新規記事作成 2026-04-26-netcode-for-gameobjects-unity-online-5steps（入門×N選パターン・テーマキュー#10消費）、commit+push済み",
     "analyze: 2026-04-28 KPI計測 + queue重複12本キャンセル + ECS/NGO記事5月前倒し",
-    "analyze: 2026-04-28 KPI計測（フォロワー37/スキ349/記事40横ばい）+ 緊急queue整理（重複12本キャンセル・ECS 10/4→5/22・NGO 8/1→5/15前倒し）"
+    "analyze: 2026-04-28 KPI計測（フォロワー37/スキ349/記事40横ばい）+ 緊急queue整理（重複12本キャンセル・ECS 10/4→5/22・NGO 8/1→5/15前倒し）",
+    "improve: 2026-04-29 queue30件キャンセル（404 Orphan 10+403 Zenn-unpublished 18+重複2）+ テーマキュー5件補充（#16〜#20、入門×N選パターン）",
+    "rewrite: 2026-04-30 claude記事2本topics正規化（claude-beginner-full-automation-guide / claude-code-skill-display-order → canonical claudecode タグ統一、SEO露出回復）"
   ],
   "stagnant": true,
   "stagnant_count": 0,
   "last_learn_at": "2026-04-25T00:00:00Z",
   "cycle_count": 1,
   "last_assess_result": "no_improve",
-  "last_assess_at": "2026-04-27T16:07:36Z",
-  "no_improve_count": 5
+  "last_assess_at": "2026-04-28T16:07:43Z",
+  "no_improve_count": 6
 }

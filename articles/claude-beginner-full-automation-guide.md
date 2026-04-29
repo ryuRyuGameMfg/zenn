@@ -2,7 +2,7 @@
 title: "Claude完全ガイド｜AI自動化で業務を5倍速にする5つの実例【初心者向け】"
 emoji: "🤖"
 type: "tech"
-topics: ["claude", "claude-code", "初心者", "自動化", "ai"]
+topics: ["claudecode", "anthropic", "ai", "automation", "tutorial"]
 published: true
 published_at: 2026-03-10 18:00
 ---
