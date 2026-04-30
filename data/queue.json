@@ -667,6 +667,15 @@
       "status": "queued",
       "queued_at": "2026-04-27T17:00:05.106Z",
       "priority": 65
+    },
+    {
+      "filepath": "articles/2026-05-01-unity-input-system-beginner-5steps.md",
+      "filename": "2026-05-01-unity-input-system-beginner-5steps.md",
+      "title": "Unity Input System入門：旧InputManagerから移行する5ステップ",
+      "scheduled_at": "2026-10-23T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-04-30T17:00:05.119Z",
+      "priority": 66
     }
   ],
   "schedule": {
@@ -678,6 +687,6 @@
     "time": "17:00",
     "timezone": "Asia/Tokyo"
   },
-  "last_scan": "2026-04-27T17:00:05.106Z",
+  "last_scan": "2026-04-30T17:00:05.119Z",
   "last_publish": "2026-04-17T08:26:28.427Z"
 }
