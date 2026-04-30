@@ -2,7 +2,7 @@
   "mode": "create",
   "iteration": 7,
   "status": "idle",
-  "last_run": "2026-04-30T00:00:00Z",
+  "last_run": "2026-04-29T16:04:50Z",
   "current_article": {
     "slug": "",
     "title": "",
@@ -170,10 +170,10 @@
     "achievement_pct": 37,
     "delta": 0,
     "trend": "stable",
-    "measured_at": "2026-04-29T16:00:05Z"
+    "measured_at": "2026-04-30T16:00:06Z"
   },
   "last_action": "rewrite: 2026-04-30 0スキclaude記事2本のtopics正規化（claude-beginner-full-automation-guide: claude-code無効タグ→claudecode / claude-code-skill-display-order: claudecodeタグ欠落→追加）",
-  "last_action_result": "完了。実行結果をまとめる。\n\n---\n\n## iter06_improve 実行完了\n\n```text\n┌──────────────────────────────────────────────────────────────┐\n│ iter06_improve: 2026-04-29 queue 30件キャンセル              │\n│ commit: c35c911（data/ + memory/のみ、push不要）             │\n└──────────────────────────────────────────────────────────────┘\n\n■ 問題\n  queue.json に published:false 記事30件が status:queued のまま残存\n  6月〜10月に順次公開 → 全て0スキでavg_likes 汚染リスク\n\n■ キャンセル詳細（30件）\n  404 Orphan × 10本（claude-code-subagent-vs-openclaw 等）\n  403 Zenn-unpublished × 18本（ai-first-game-dev 〜 wfc-reinforcement 等）\n  重複記事 × 2本（claude-code-worktree / netcode-unity-online）\n\n■ queue 状態（更新後）\n  queued:    10件（5月7件 + git-worktree06/26 + UXML10/16 + Figma10/17）\n  cancelled: 42件（今回30 + 既存12）\n  published: 13件\n\n■ テーマキュー補充（#16〜#20）\n  16. Unity Shader Graph 入門5選\n  17. Unity Input System 完全入門 5ステップ\n  18. Unityスマホ最適化 5つの実践テクニック\n  19. Unity Timeline & Cinemachine 入門 5ステップ\n  20. Unity 2Dゲーム入門 5ステップ\n  ※全て入門×N選パターン（実績avg 15.7スキ）\n\n■ KPI改善根拠\n  0スキ記事30本の再公開を恒久遮断\n  → avg_likes の分母が増えるリスクをゼロに\n  5月確定3本（beginner-traps/NGO/ECS）は高ROIパターン\n  → 仮に各15スキ: (349+45)/43 ≒ 9.2スキ/記事（+5%改善）\n\n■ 状態遷移\n  mode: improve → rewrite（次サイクル）\n```\n\n**LAST_ACTION**: `improve: 2026-04-29 queue30件キャンセル（404 Orphan 10+403 Zenn-unpublished 18+重複2）+ テーマキュー5件補充（#16〜#20）、commit c35c911`",
+  "last_action_result": "## iter06_rewrite 実行完了\n\n```text\n┌──────────────────────────────────────────────────────────────┐\n│ iter06_rewrite: 0スキ claude記事2本 topics正規化             │\n│ commit: 616d445（push済み）                                  │\n└──────────────────────────────────────────────────────────────┘\n\n■ 選定（PV下位10%・30日経過）\n  全40記事中、0スキ18本が30日以上経過。うち claudecode クラスタ\n  直系コンテンツでタグ不正/欠落の2本を選定。\n\n■ 修正詳細（topicsのみ・本文/published_at 不変）\n  ① claude-beginner-full-automation-guide.md（50d, 0スキ）\n     Before: [\"claude\", \"claude-code\", \"初心者\", \"自動化\", \"ai\"]\n     After:  [\"claudecode\", \"anthropic\", \"ai\", \"automation\", \"tutorial\"]\n     → \"claude-code\"（ハイフン付き）はZenn無効タグだった\n  \n  ② claude-code-skill-display-order.md（45d, 0スキ）\n     Before: [\"claude\", \"cli\", \"カスタマイズ\", \"productivity\", \"automation\"]\n     After:  [\"claudecode\", \"anthropic\", \"ai\", \"skill\", \"tips\"]\n     → タイトルに「Claude Code」を含むのに claudecode タグ欠落\n\n■ KPI改善根拠\n  iter04 同パターン実績：indie-dev/ai-narrative の topic刷新で\n  avg_likes 4.95→7.175（+46%）達成済み\n  \n  今回は claudecode クラスタ直系2本を canonical タグ統一\n  → /topics/claudecode ページから検索流入が回復見込み\n  → 既存 claudecode タグ記事数 5本→7本でクラスタリング強化\n  → 仮に各5スキ獲得: avg_likes 8.73 → 8.98（+0.25）\n  → 本文不変のためSEO履歴は完全保護\n\n■ 状態遷移\n  mode: rewrite → create（次サイクル）\n  iteration: 6 → 7\n```\n\n**LAST_ACTION**: `rewrite: 2026-04-30 0スキclaude記事2本のtopics正規化（claude-beginner-full-automation-guide: claude-code無効タグ→claudecode / claude-code-skill-display-order: claudecodeタグ欠落→追加）、commit 616d445 push済み`",
   "forbidden_actions": [
     "create: 2026-04-13-unity-scriptableobject-5-patterns（N選×設計パターン、0スキ問題対策）",
     "analyze: 2026-04-17 metrics更新（47記事・フォロワー37・0スキ根本原因特定: 重複記事問題）",
@@ -195,13 +195,14 @@
     "analyze: 2026-04-28 KPI計測 + queue重複12本キャンセル + ECS/NGO記事5月前倒し",
     "analyze: 2026-04-28 KPI計測（フォロワー37/スキ349/記事40横ばい）+ 緊急queue整理（重複12本キャンセル・ECS 10/4→5/22・NGO 8/1→5/15前倒し）",
     "improve: 2026-04-29 queue30件キャンセル（404 Orphan 10+403 Zenn-unpublished 18+重複2）+ テーマキュー5件補充（#16〜#20、入門×N選パターン）",
-    "rewrite: 2026-04-30 claude記事2本topics正規化（claude-beginner-full-automation-guide / claude-code-skill-display-order → canonical claudecode タグ統一、SEO露出回復）"
+    "rewrite: 2026-04-30 claude記事2本topics正規化（claude-beginner-full-automation-guide / claude-code-skill-display-order → canonical claudecode タグ統一、SEO露出回復）",
+    "rewrite: 2026-04-30 0スキclaude記事2本のtopics正規化（claude-beginner-full-automation-guide: claude-code無効タグ→claudecode / claude-code-skill-display-order: claudecodeタグ欠落→追加）"
   ],
   "stagnant": true,
   "stagnant_count": 0,
   "last_learn_at": "2026-04-25T00:00:00Z",
   "cycle_count": 1,
   "last_assess_result": "no_improve",
-  "last_assess_at": "2026-04-28T16:07:43Z",
-  "no_improve_count": 6
+  "last_assess_at": "2026-04-29T16:04:50Z",
+  "no_improve_count": 7
 }
