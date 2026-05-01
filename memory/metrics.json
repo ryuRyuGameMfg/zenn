@@ -1,38 +1,40 @@
 {
-  "last_updated": "2026-04-24",
-  "collected_at": "2026-04-24T00:00:00Z",
+  "last_updated": "2026-05-02",
+  "collected_at": "2026-05-02T09:00:00+09:00",
   "profile": {
     "username": "ryuryu_game",
     "follower_count": 37,
     "following_count": 0,
-    "articles_count_profile": 37,
-    "articles_count_api": 42,
+    "articles_count_profile": 40,
+    "articles_count_api": 40,
     "books_count": 1,
     "total_liked_count_profile": 349,
-    "total_liked_count_api": 248,
-    "diff_note": "API-プロファイル差: likes 349-248=101（4/21 unpublish 12本分≒110の反映）、articles 42-37=5（Zennリスト更新遅延 or rewrite2本の再クロール復活）。articles/のpublished:true=49、API非表示=7本（重複ペナルティ継続の疑い）"
+    "total_liked_count_api": 187,
+    "diff_note": "プロファイル349は unpublish 分含む累計。API 187 / 40記事 = avg 4.68。先月比（248/42=5.9）からavgが低下：queue が 0スキ旧ドラフトを順次公開したため"
   },
   "okr_snapshot": {
     "o1_followers": {
-      "target": 1000,
+      "target": 100,
       "current": 37,
-      "progress_pct": 3.7,
-      "stagnation_weeks": 4,
-      "note": "4/19→4/24: フォロワー変化なし。4週間停滞継続"
+      "progress_pct": 37.0,
+      "stagnation_weeks": 6,
+      "note": "4/24→5/02: フォロワー変化なし。6週間停滞継続。queue公開記事が0スキのため新規流入なし"
     },
     "o2_monthly_pv": {
       "target": 10000,
       "current": null,
-      "note": "Zenn API では PV非公開のため未取得。OKRをスキ数ベースに統一済み"
+      "note": "Zenn API では PV非公開のため未取得"
     },
     "o3_like_rate": {
       "target_pct": 5.0,
       "total_likes_profile": 349,
-      "total_likes_api": 248,
-      "published_articles_api": 42,
-      "avg_likes_api_basis": 5.9,
-      "avg_likes_2025_only": 10.44,
-      "note": "API基準 avg 248/42=5.9。4/19時点の4.95から+19%改善（unpublish 12本の効果）。2025年18本(188スキ/18=10.44)は変化なし。2026年19本は引き続き全て0スキ。差分60スキは非表示記事5本分(API未返却の公開記事)に存在"
+      "total_likes_api": 187,
+      "published_articles_api": 40,
+      "avg_likes_api_basis": 4.68,
+      "avg_likes_trend": "DOWN",
+      "avg_likes_prev": 5.9,
+      "avg_likes_delta": -1.22,
+      "note": "avg 5.9→4.68（-21%）。queue旧ドラフトの順次公開で0スキ記事が増加。改善には queue スケジュール最適化が急務"
     }
   },
   "key_insight_2026_04_17": {
@@ -60,6 +62,28 @@
       "improve: 2026年0スキ19本の救済戦略 - タイトル刷新、既存高スキ記事との相互リンク追加",
       "improve: テーマキュー点検・高PV確度の高い新トピック補充（Unity Memory Profiler #2、Netcode #10、ECS実装 #13等の優先度再評価）"
     ]
+  },
+  "key_insight_2026_05_02": {
+    "critical": "queue スケジュール問題: 最高ROI記事（入門×N選）が数ヶ月後に予約されている",
+    "queue_status_summary": {
+      "total_queued": 10,
+      "priority_articles_delayed": [
+        {"slug": "2026-05-01-unity-input-system-beginner-5steps", "scheduled": "2026-10-23", "pattern": "入門×N選 avg15.7スキ", "urgency": "CRITICAL"},
+        {"slug": "2026-04-23-claude-code-git-worktree-unity-parallel-dev", "scheduled": "2026-06-26", "pattern": "claudecodeタグ", "urgency": "HIGH"},
+        {"slug": "2026-04-27-claude-code-unity-uxml-auto-generate", "scheduled": "2026-10-16", "urgency": "HIGH"},
+        {"slug": "2026-04-27-figma-mcp-unity-ui-toolkit-auto-convert", "scheduled": "2026-10-17", "urgency": "HIGH"}
+      ],
+      "immediate_queue": [
+        {"slug": "2026-04-03-unity-architecture-ai-code-instruction", "scheduled": "2026-05-02", "priority": "LOW"},
+        {"slug": "2026-04-13-unity-scriptableobject-5-patterns", "scheduled": "2026-05-03", "priority": "MEDIUM"},
+        {"slug": "2026-04-18-uloopmcp-claude-code-unity-auto-loop", "scheduled": "2026-05-08", "priority": "HIGH"},
+        {"slug": "2026-04-19-unity-csharp-beginner-traps-5", "scheduled": "2026-05-09", "priority": "HIGH"},
+        {"slug": "2026-04-26-netcode-for-gameobjects-unity-online-5steps", "scheduled": "2026-05-15", "priority": "HIGH"},
+        {"slug": "2026-04-27-unity-ecs-beginner-5steps", "scheduled": "2026-05-22", "priority": "HIGH"}
+      ]
+    },
+    "root_cause_avg_drop": "queue が 0スキ旧ドラフト（2026-03-28〜2026-04-03 作成記事）を週2本ペースで公開しており、avg_likes が 5.9→4.68（-21%）に低下。高品質な新規記事（入門×N選パターン）は Oct まで遅延予約されているため即効性なし",
+    "action_required": "improve モードで queue スケジュールを最適化: Input System（Oct23→早期枠）+ Oct16/17の2本を前倒し"
   },
   "key_insight_2026_04_19": {
     "critical": "rewriteサイクルでの重複記事unpublishが不完全。12本が published: true のまま残存し、auto-queueが4/17〜4/19に3本を順次公開（全て0スキ、オリジナル15/5/10スキ）",
