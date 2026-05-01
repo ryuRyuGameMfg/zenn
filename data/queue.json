@@ -149,9 +149,10 @@
       "filename": "claude-md-ascii-diagram-rules.md",
       "title": "CLAUDE.mdでASCII図ルールを定義したらAI出力が劇的に変わった",
       "scheduled_at": "2026-05-01T08:00:00.000Z",
-      "status": "queued",
+      "status": "failed",
       "queued_at": "2026-04-02T17:00:05.317Z",
-      "priority": 8
+      "priority": 8,
+      "last_publish_error": "git commit failed with exit code 1: "
     },
     {
       "filepath": "articles/2026-04-03-unity-architecture-ai-code-instruction.md",
