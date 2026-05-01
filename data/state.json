@@ -173,7 +173,7 @@
     "measured_at": "2026-05-01T16:00:05Z"
   },
   "last_action": "rewrite: 2026-04-30 0スキclaude記事2本のtopics正規化（claude-beginner-full-automation-guide: claude-code無効タグ→claudecode / claude-code-skill-display-order: claudecodeタグ欠落→追加）",
-  "last_action_result": "完了です。\n\n---\n\n## iter07_create 実行完了\n\n```text\n┌─────────────────────────────────────────────────────────────┐\n│ iter07_create: Unity Input System入門記事 新規作成          │\n│ commit: bfe1c8b（push済み）                                 │\n└─────────────────────────────────────────────────────────────┘\n```\n\n**作成記事**\n- slug: `2026-05-01-unity-input-system-beginner-5steps`\n- タイトル: Unity Input System入門：旧InputManagerから移行する5ステップ\n- topics: [unity, csharp, gamedev, game, unitytips]\n- 文字数: 約2,800字 / コードブロック3本 / Mermaid図1本\n\n**KPI改善根拠**\n\n| 指標 | 根拠 |\n|------|------|\n| 入門×N選パターン | 自記事実績avg 15.7スキ（最高ROI） |\n| Unity Input System | 移行検索需要が高く競合少 |\n| unitytipsタグ | 新規タグ露出で追加流入狙い |\n| 5ステップ構成 | 「N選/Nステップ」タイトルは一貫して高CTR |\n\n**品質チェック修正（5箇所）**\n- OnJump: `InputValue`引数なし化（Button型のstarted挙動に合致）\n- OnCollisionStay → OnCollisionEnter（Rigidbodyスリープ問題回避）\n- buttonSouth: Nintendo Switch=Bボタン注記追加\n- バージョン: 1.19.0 → 「1.8以降」に安全側修正\n- topics: `inputsystem`（Zenn未確認タグ）→ `unitytips`\n\n**LAST_ACTION**: `create: 2026-05-01 Unity Input System入門記事（入門×N選パターン・avg 15.7スキ最高ROI採用、5ステップ構成・コード3本・Mermaid1本、commit bfe1c8b push済み）`",
+  "last_action_result": "**iter08_analyze 完了。**\n\n```text\n┌─────────────────────────────────────────────────────────────┐\n│ iter08_analyze: KPI実測 + metrics.json更新                   │\n│ commit: 2b3f638 + a57376b（push不要: articles/変更なし）     │\n└─────────────────────────────────────────────────────────────┘\n```\n\n## KPI実測結果（2026-05-02）\n\n| 指標 | 前回(4/24) | 今回(5/02) | 変化 |\n|------|-----------|-----------|------|\n| フォロワー | 37 | 37 | 停滞6週 |\n| API記事数 | 42 | 40 | -2本（unpublish反映） |\n| API総スキ | 248 | 187 | -61 |\n| avg_likes | 5.90 | **4.68** | **-21%** |\n\n## 重大発見: queueスケジュール問題\n\navg低下の根本原因が判明した：\n\n```text\n【悪循環】\n 旧ドラフト（0スキ確実）が週2本ペースで queue から公開\n          ↓\n avg_likes が 5.9 → 4.68 に低下（-21%）\n          ↓\n 一方、最高ROI記事（Input System）は 2026-10-23 に遅延予約\n```\n\n| slug | scheduled | 緊急度 |\n|------|-----------|-------|\n| unity-input-system（入門×N選 avg15.7） | **2026-10-23** | CRITICAL |\n| claude-code-git-worktree | 2026-06-26 | HIGH |\n| claude-code-unity-uxml | 2026-10-16 | HIGH |\n| figma-mcp-unity-ui | 2026-10-17 | HIGH |\n\n**LAST_ACTION**: `analyze: 2026-05-02 KPI実測（avg 5.9→4.68 -21%、フォロワー37停滞6週）+ queue遅延問題特定（Input System Oct23→即時前倒し必要、旧ドラフト公開が avg 低下の根本原因）`\n\n---\n\n次サイクル（improve）で **queueスケジュールの最適化**（Input System を5月中旬以内に前倒し）を実行することで avg_likes の回復が見込まれる。",
   "forbidden_actions": [
     "create: 2026-04-13-unity-scriptableobject-5-patterns（N選×設計パターン、0スキ問題対策）",
     "analyze: 2026-04-17 metrics更新（47記事・フォロワー37・0スキ根本原因特定: 重複記事問題）",
@@ -203,6 +203,6 @@
   "last_learn_at": "2026-04-25T00:00:00Z",
   "cycle_count": 1,
   "last_assess_result": "no_improve",
-  "last_assess_at": "2026-04-30T16:12:34Z",
-  "no_improve_count": 8
+  "last_assess_at": "2026-05-01T16:05:19Z",
+  "no_improve_count": 9
 }
