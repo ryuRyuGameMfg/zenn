@@ -2,7 +2,7 @@
   "mode": "create",
   "iteration": 7,
   "status": "idle",
-  "last_run": "2026-04-29T16:04:50Z",
+  "last_run": "2026-04-30T16:12:35Z",
   "current_article": {
     "slug": "",
     "title": "",
@@ -170,10 +170,10 @@
     "achievement_pct": 37,
     "delta": 0,
     "trend": "stable",
-    "measured_at": "2026-04-30T16:00:06Z"
+    "measured_at": "2026-05-01T16:00:05Z"
   },
   "last_action": "rewrite: 2026-04-30 0スキclaude記事2本のtopics正規化（claude-beginner-full-automation-guide: claude-code無効タグ→claudecode / claude-code-skill-display-order: claudecodeタグ欠落→追加）",
-  "last_action_result": "## iter06_rewrite 実行完了\n\n```text\n┌──────────────────────────────────────────────────────────────┐\n│ iter06_rewrite: 0スキ claude記事2本 topics正規化             │\n│ commit: 616d445（push済み）                                  │\n└──────────────────────────────────────────────────────────────┘\n\n■ 選定（PV下位10%・30日経過）\n  全40記事中、0スキ18本が30日以上経過。うち claudecode クラスタ\n  直系コンテンツでタグ不正/欠落の2本を選定。\n\n■ 修正詳細（topicsのみ・本文/published_at 不変）\n  ① claude-beginner-full-automation-guide.md（50d, 0スキ）\n     Before: [\"claude\", \"claude-code\", \"初心者\", \"自動化\", \"ai\"]\n     After:  [\"claudecode\", \"anthropic\", \"ai\", \"automation\", \"tutorial\"]\n     → \"claude-code\"（ハイフン付き）はZenn無効タグだった\n  \n  ② claude-code-skill-display-order.md（45d, 0スキ）\n     Before: [\"claude\", \"cli\", \"カスタマイズ\", \"productivity\", \"automation\"]\n     After:  [\"claudecode\", \"anthropic\", \"ai\", \"skill\", \"tips\"]\n     → タイトルに「Claude Code」を含むのに claudecode タグ欠落\n\n■ KPI改善根拠\n  iter04 同パターン実績：indie-dev/ai-narrative の topic刷新で\n  avg_likes 4.95→7.175（+46%）達成済み\n  \n  今回は claudecode クラスタ直系2本を canonical タグ統一\n  → /topics/claudecode ページから検索流入が回復見込み\n  → 既存 claudecode タグ記事数 5本→7本でクラスタリング強化\n  → 仮に各5スキ獲得: avg_likes 8.73 → 8.98（+0.25）\n  → 本文不変のためSEO履歴は完全保護\n\n■ 状態遷移\n  mode: rewrite → create（次サイクル）\n  iteration: 6 → 7\n```\n\n**LAST_ACTION**: `rewrite: 2026-04-30 0スキclaude記事2本のtopics正規化（claude-beginner-full-automation-guide: claude-code無効タグ→claudecode / claude-code-skill-display-order: claudecodeタグ欠落→追加）、commit 616d445 push済み`",
+  "last_action_result": "完了です。\n\n---\n\n## iter07_create 実行完了\n\n```text\n┌─────────────────────────────────────────────────────────────┐\n│ iter07_create: Unity Input System入門記事 新規作成          │\n│ commit: bfe1c8b（push済み）                                 │\n└─────────────────────────────────────────────────────────────┘\n```\n\n**作成記事**\n- slug: `2026-05-01-unity-input-system-beginner-5steps`\n- タイトル: Unity Input System入門：旧InputManagerから移行する5ステップ\n- topics: [unity, csharp, gamedev, game, unitytips]\n- 文字数: 約2,800字 / コードブロック3本 / Mermaid図1本\n\n**KPI改善根拠**\n\n| 指標 | 根拠 |\n|------|------|\n| 入門×N選パターン | 自記事実績avg 15.7スキ（最高ROI） |\n| Unity Input System | 移行検索需要が高く競合少 |\n| unitytipsタグ | 新規タグ露出で追加流入狙い |\n| 5ステップ構成 | 「N選/Nステップ」タイトルは一貫して高CTR |\n\n**品質チェック修正（5箇所）**\n- OnJump: `InputValue`引数なし化（Button型のstarted挙動に合致）\n- OnCollisionStay → OnCollisionEnter（Rigidbodyスリープ問題回避）\n- buttonSouth: Nintendo Switch=Bボタン注記追加\n- バージョン: 1.19.0 → 「1.8以降」に安全側修正\n- topics: `inputsystem`（Zenn未確認タグ）→ `unitytips`\n\n**LAST_ACTION**: `create: 2026-05-01 Unity Input System入門記事（入門×N選パターン・avg 15.7スキ最高ROI採用、5ステップ構成・コード3本・Mermaid1本、commit bfe1c8b push済み）`",
   "forbidden_actions": [
     "create: 2026-04-13-unity-scriptableobject-5-patterns（N選×設計パターン、0スキ問題対策）",
     "analyze: 2026-04-17 metrics更新（47記事・フォロワー37・0スキ根本原因特定: 重複記事問題）",
@@ -203,6 +203,6 @@
   "last_learn_at": "2026-04-25T00:00:00Z",
   "cycle_count": 1,
   "last_assess_result": "no_improve",
-  "last_assess_at": "2026-04-29T16:04:50Z",
-  "no_improve_count": 7
+  "last_assess_at": "2026-04-30T16:12:34Z",
+  "no_improve_count": 8
 }
