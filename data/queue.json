@@ -159,9 +159,11 @@
       "filename": "2026-04-03-unity-architecture-ai-code-instruction.md",
       "title": "MonoBehaviourベタ書きを卒業したい人へ：AIに設計パターンを指示してUnityコードを整理する方法",
       "scheduled_at": "2026-05-02T08:00:00.000Z",
-      "status": "queued",
+      "status": "published",
       "queued_at": "2026-04-03T08:00:00.000Z",
-      "priority": 9
+      "priority": 9,
+      "published_at": "2026-05-02T08:26:58.798Z",
+      "published_url": "https://zenn.dev/ryuRyuGameMfg/articles/2026-04-03-unity-architecture-ai-code-instruction"
     },
     {
       "filepath": "articles/2026-04-13-unity-scriptableobject-5-patterns.md",
