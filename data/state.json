@@ -1,8 +1,8 @@
 {
-  "mode": "create",
+  "mode": "improve",
   "iteration": 7,
   "status": "idle",
-  "last_run": "2026-04-30T16:12:35Z",
+  "last_run": "2026-05-03T00:00:00Z",
   "current_article": {
     "slug": "",
     "title": "",
@@ -159,6 +159,14 @@
       "title": "rewrite: 0スキclaude記事2本のtopics正規化（claude-code → claudecode、不正タグ修正）",
       "topic": "PV下位2本リライト：claude-beginner-full-automation-guide(50d 0スキ・無効タグclaude-code)、claude-code-skill-display-order(45d 0スキ・claudecodeタグ欠落)。両者ともcanonical claudecodeタグへ統一しSEO露出を回復",
       "date": "2026-04-30"
+    },
+    {
+      "iteration": 7,
+      "mode": "improve",
+      "slug": "queue-schedule-optimization-may",
+      "title": "improve: queueスケジュール最適化（高ROI記事4本前倒し）",
+      "topic": "Input System(avg15.7期待)をOct23→May23へCRITICAL前倒し。UXML/FigmaMCP/git-worktreeも5-6月集中。avg_likes 4.68→6.0以上回復見込み",
+      "date": "2026-05-03"
     }
   ],
   "kpi": {
@@ -170,9 +178,9 @@
     "achievement_pct": 37,
     "delta": 0,
     "trend": "stable",
-    "measured_at": "2026-05-01T16:00:05Z"
+    "measured_at": "2026-05-02T16:00:05Z"
   },
-  "last_action": "rewrite: 2026-04-30 0スキclaude記事2本のtopics正規化（claude-beginner-full-automation-guide: claude-code無効タグ→claudecode / claude-code-skill-display-order: claudecodeタグ欠落→追加）",
+  "last_action": "improve: 2026-05-03 queueスケジュール最適化（Input System Oct23→May23 CRITICAL前倒し、UXML Oct16→May29、FigmaMCP Oct17→May30、git-worktree Jun26→Jun05）",
   "last_action_result": "**iter08_analyze 完了。**\n\n```text\n┌─────────────────────────────────────────────────────────────┐\n│ iter08_analyze: KPI実測 + metrics.json更新                   │\n│ commit: 2b3f638 + a57376b（push不要: articles/変更なし）     │\n└─────────────────────────────────────────────────────────────┘\n```\n\n## KPI実測結果（2026-05-02）\n\n| 指標 | 前回(4/24) | 今回(5/02) | 変化 |\n|------|-----------|-----------|------|\n| フォロワー | 37 | 37 | 停滞6週 |\n| API記事数 | 42 | 40 | -2本（unpublish反映） |\n| API総スキ | 248 | 187 | -61 |\n| avg_likes | 5.90 | **4.68** | **-21%** |\n\n## 重大発見: queueスケジュール問題\n\navg低下の根本原因が判明した：\n\n```text\n【悪循環】\n 旧ドラフト（0スキ確実）が週2本ペースで queue から公開\n          ↓\n avg_likes が 5.9 → 4.68 に低下（-21%）\n          ↓\n 一方、最高ROI記事（Input System）は 2026-10-23 に遅延予約\n```\n\n| slug | scheduled | 緊急度 |\n|------|-----------|-------|\n| unity-input-system（入門×N選 avg15.7） | **2026-10-23** | CRITICAL |\n| claude-code-git-worktree | 2026-06-26 | HIGH |\n| claude-code-unity-uxml | 2026-10-16 | HIGH |\n| figma-mcp-unity-ui | 2026-10-17 | HIGH |\n\n**LAST_ACTION**: `analyze: 2026-05-02 KPI実測（avg 5.9→4.68 -21%、フォロワー37停滞6週）+ queue遅延問題特定（Input System Oct23→即時前倒し必要、旧ドラフト公開が avg 低下の根本原因）`\n\n---\n\n次サイクル（improve）で **queueスケジュールの最適化**（Input System を5月中旬以内に前倒し）を実行することで avg_likes の回復が見込まれる。",
   "forbidden_actions": [
     "create: 2026-04-13-unity-scriptableobject-5-patterns（N選×設計パターン、0スキ問題対策）",
@@ -196,11 +204,12 @@
     "analyze: 2026-04-28 KPI計測（フォロワー37/スキ349/記事40横ばい）+ 緊急queue整理（重複12本キャンセル・ECS 10/4→5/22・NGO 8/1→5/15前倒し）",
     "improve: 2026-04-29 queue30件キャンセル（404 Orphan 10+403 Zenn-unpublished 18+重複2）+ テーマキュー5件補充（#16〜#20、入門×N選パターン）",
     "rewrite: 2026-04-30 claude記事2本topics正規化（claude-beginner-full-automation-guide / claude-code-skill-display-order → canonical claudecode タグ統一、SEO露出回復）",
-    "rewrite: 2026-04-30 0スキclaude記事2本のtopics正規化（claude-beginner-full-automation-guide: claude-code無効タグ→claudecode / claude-code-skill-display-order: claudecodeタグ欠落→追加）"
+    "rewrite: 2026-04-30 0スキclaude記事2本のtopics正規化（claude-beginner-full-automation-guide: claude-code無効タグ→claudecode / claude-code-skill-display-order: claudecodeタグ欠落→追加）",
+    "improve: 2026-05-03 queueスケジュール最適化（Input System Oct23→May23 CRITICAL前倒し、UXML Oct16→May29、FigmaMCP Oct17→May30、git-worktree Jun26→Jun05）"
   ],
   "stagnant": true,
   "stagnant_count": 0,
-  "last_learn_at": "2026-04-25T00:00:00Z",
+  "last_learn_at": "2026-05-01T16:08:04Z",
   "cycle_count": 1,
   "last_assess_result": "no_improve",
   "last_assess_at": "2026-05-01T16:05:19Z",

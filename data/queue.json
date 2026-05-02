@@ -328,10 +328,11 @@
       "filepath": "articles/2026-04-23-claude-code-git-worktree-unity-parallel-dev.md",
       "filename": "2026-04-23-claude-code-git-worktree-unity-parallel-dev.md",
       "title": "Claude Code × git worktree で Unity 並列開発：3機能を同時進行させて実装速度を3倍にした実践ワークフロー",
-      "scheduled_at": "2026-06-26T08:00:00.000Z",
+      "scheduled_at": "2026-06-05T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-23T05:07:09.495Z",
-      "priority": 31
+      "priority": 31,
+      "promoted_reason": "claudecodeタグ記事。HIGH前倒し: 2026-06-26→2026-06-05。git worktreeはclaudecodeタグクラスタの核心テーマ。"
     },
     {
       "filepath": "articles/claude-code-subagent-vs-openclaw.md",
@@ -657,28 +658,31 @@
       "filepath": "articles/2026-04-27-claude-code-unity-uxml-auto-generate.md",
       "filename": "2026-04-27-claude-code-unity-uxml-auto-generate.md",
       "title": "Claude CodeでUnity UI Toolkit自動生成｜UXML/USS実践ガイド",
-      "scheduled_at": "2026-10-16T08:00:00.000Z",
+      "scheduled_at": "2026-05-29T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-27T17:00:05.106Z",
-      "priority": 64
+      "priority": 64,
+      "promoted_reason": "claudecodeタグ記事。HIGH前倒し: 2026-10-16→2026-05-29。5月末claudecodeクラスタ強化。"
     },
     {
       "filepath": "articles/2026-04-27-figma-mcp-unity-ui-toolkit-auto-convert.md",
       "filename": "2026-04-27-figma-mcp-unity-ui-toolkit-auto-convert.md",
       "title": "Figma MCP × Claude CodeでUnity UI Toolkitを8分で変換した実録",
-      "scheduled_at": "2026-10-17T08:00:00.000Z",
+      "scheduled_at": "2026-05-30T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-27T17:00:05.106Z",
-      "priority": 65
+      "priority": 65,
+      "promoted_reason": "claudecodeタグ記事。HIGH前倒し: 2026-10-17→2026-05-30。figma-mcp×Unityは差別化テーマ。"
     },
     {
       "filepath": "articles/2026-05-01-unity-input-system-beginner-5steps.md",
       "filename": "2026-05-01-unity-input-system-beginner-5steps.md",
       "title": "Unity Input System入門：旧InputManagerから移行する5ステップ",
-      "scheduled_at": "2026-10-23T08:00:00.000Z",
+      "scheduled_at": "2026-05-23T08:00:00.000Z",
       "status": "queued",
       "queued_at": "2026-04-30T17:00:05.119Z",
-      "priority": 66
+      "priority": 66,
+      "promoted_reason": "高ROI入門×N選パターン(期待avg15.7)。CRITICAL前倒し: 2026-10-23→2026-05-23。avg_likes回復（4.68→6.0以上見込み）のため最優先。"
     }
   ],
   "schedule": {
