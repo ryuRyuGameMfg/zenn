@@ -3,7 +3,7 @@ title: "MonoBehaviourベタ書きを卒業したい人へ：AIに設計パター
 emoji: "🏗️"
 type: "tech"
 topics: ["Unity", "CSharp", "AI", "設計パターン"]
-published: false
+published: true
 ---
 
 ## はじめに：MonoBehaviourが育ちすぎた問題
