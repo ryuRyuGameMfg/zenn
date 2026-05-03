@@ -3,7 +3,7 @@ title: "ScriptableObjectで変わるゲームデータ設計5パターン【Unit
 emoji: "📦"
 type: "tech"
 topics: ["unity", "csharp", "gamedev", "designpattern", "scriptableobject"]
-published: false
+published: true
 ---
 
 ## はじめに
