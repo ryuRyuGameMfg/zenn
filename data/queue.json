@@ -149,10 +149,11 @@
       "filename": "claude-md-ascii-diagram-rules.md",
       "title": "CLAUDE.mdでASCII図ルールを定義したらAI出力が劇的に変わった",
       "scheduled_at": "2026-05-01T08:00:00.000Z",
-      "status": "failed",
+      "status": "cancelled",
       "queued_at": "2026-04-02T17:00:05.317Z",
       "priority": 8,
-      "last_publish_error": "git commit failed with exit code 1: "
+      "cancelled_reason": "duplicate_content: 2026-04-17公開済みの2026-04-01-claude-md-ascii-diagram-output.mdと同テーマ（CLAUDE.md×ASCII図ルール）の重複コンテンツ。両方published:trueだと重複ペナルティが発生するため。",
+      "cancelled_at": "2026-05-04T00:00:00.000Z"
     },
     {
       "filepath": "articles/2026-04-03-unity-architecture-ai-code-instruction.md",
@@ -685,6 +686,16 @@
       "queued_at": "2026-04-30T17:00:05.119Z",
       "priority": 66,
       "promoted_reason": "高ROI入門×N選パターン(期待avg15.7)。CRITICAL前倒し: 2026-10-23→2026-05-23。avg_likes回復（4.68→6.0以上見込み）のため最優先。"
+    },
+    {
+      "filepath": "articles/2026-05-04-unity-memory-profiler-5steps.md",
+      "filename": "2026-05-04-unity-memory-profiler-5steps.md",
+      "title": "Unityのメモリリークを5ステップで解決する方法：Memory Profiler入門ガイド",
+      "scheduled_at": "2026-06-13T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-05-04T00:00:00.000Z",
+      "priority": 67,
+      "promoted_reason": "入門×N選パターン(avg15.7スキ実績)。Unityパフォーマンス系は初心者〜中級者の需要が高い。6/5のgit-worktree記事の翌週に配置。"
     }
   ],
   "schedule": {

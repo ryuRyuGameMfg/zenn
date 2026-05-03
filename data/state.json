@@ -2,7 +2,7 @@
   "mode": "improve",
   "iteration": 7,
   "status": "idle",
-  "last_run": "2026-05-03T00:00:00Z",
+  "last_run": "2026-05-02T16:06:23Z",
   "current_article": {
     "slug": "",
     "title": "",
@@ -178,10 +178,10 @@
     "achievement_pct": 37,
     "delta": 0,
     "trend": "stable",
-    "measured_at": "2026-05-02T16:00:05Z"
+    "measured_at": "2026-05-03T16:40:24Z"
   },
   "last_action": "improve: 2026-05-03 queueスケジュール最適化（Input System Oct23→May23 CRITICAL前倒し、UXML Oct16→May29、FigmaMCP Oct17→May30、git-worktree Jun26→Jun05）",
-  "last_action_result": "**iter08_analyze 完了。**\n\n```text\n┌─────────────────────────────────────────────────────────────┐\n│ iter08_analyze: KPI実測 + metrics.json更新                   │\n│ commit: 2b3f638 + a57376b（push不要: articles/変更なし）     │\n└─────────────────────────────────────────────────────────────┘\n```\n\n## KPI実測結果（2026-05-02）\n\n| 指標 | 前回(4/24) | 今回(5/02) | 変化 |\n|------|-----------|-----------|------|\n| フォロワー | 37 | 37 | 停滞6週 |\n| API記事数 | 42 | 40 | -2本（unpublish反映） |\n| API総スキ | 248 | 187 | -61 |\n| avg_likes | 5.90 | **4.68** | **-21%** |\n\n## 重大発見: queueスケジュール問題\n\navg低下の根本原因が判明した：\n\n```text\n【悪循環】\n 旧ドラフト（0スキ確実）が週2本ペースで queue から公開\n          ↓\n avg_likes が 5.9 → 4.68 に低下（-21%）\n          ↓\n 一方、最高ROI記事（Input System）は 2026-10-23 に遅延予約\n```\n\n| slug | scheduled | 緊急度 |\n|------|-----------|-------|\n| unity-input-system（入門×N選 avg15.7） | **2026-10-23** | CRITICAL |\n| claude-code-git-worktree | 2026-06-26 | HIGH |\n| claude-code-unity-uxml | 2026-10-16 | HIGH |\n| figma-mcp-unity-ui | 2026-10-17 | HIGH |\n\n**LAST_ACTION**: `analyze: 2026-05-02 KPI実測（avg 5.9→4.68 -21%、フォロワー37停滞6週）+ queue遅延問題特定（Input System Oct23→即時前倒し必要、旧ドラフト公開が avg 低下の根本原因）`\n\n---\n\n次サイクル（improve）で **queueスケジュールの最適化**（Input System を5月中旬以内に前倒し）を実行することで avg_likes の回復が見込まれる。",
+  "last_action_result": "完了。git push不要（articles/変更なし）。\n\n---\n\n```text\n┌──────────────────────────────────────────────────────────────┐\n│ iter09_improve 完了                                          │\n│ commit: ef5beef                                              │\n└──────────────────────────────────────────────────────────────┘\n```\n\n## 実行内容: queueスケジュール最適化（4本前倒し）\n\n| slug | 変更前 | 変更後 | 優先度 |\n|------|--------|--------|--------|\n| unity-input-system-beginner-5steps | 2026-10-23 | **2026-05-23** | CRITICAL |\n| claude-code-unity-uxml-auto-generate | 2026-10-16 | **2026-05-29** | HIGH |\n| figma-mcp-unity-ui-toolkit-auto-convert | 2026-10-17 | **2026-05-30** | HIGH |\n| claude-code-git-worktree-unity-parallel-dev | 2026-06-26 | **2026-06-05** | HIGH |\n\n## KPI改善根拠\n\n```text\n【改善メカニズム】\n  現状: 旧ドラフト（0スキ確実）を週2本ペースで公開\n          → avg 5.9 → 4.68（-21%）\n\n  今回: 高ROI記事を5月に集中投下\n    [5/23] Input System（入門×N選、期待avg 15.7）  ← CRITICAL\n    [5/29] UXML自動生成（claudecodeタグ）\n    [5/30] Figma MCP変換（claudecodeタグ）\n    [6/05] git worktree（claudecodeタグ）\n\n  見込み: 6月計測時点で avg_likes 4.68 → 6.0以上\n```\n\n**LAST_ACTION**: `improve: 2026-05-03 queueスケジュール最適化（Input System Oct23→May23 CRITICAL前倒し、UXML Oct16→May29、FigmaMCP Oct17→May30、git-worktree Jun26→Jun05）`",
   "forbidden_actions": [
     "create: 2026-04-13-unity-scriptableobject-5-patterns（N選×設計パターン、0スキ問題対策）",
     "analyze: 2026-04-17 metrics更新（47記事・フォロワー37・0スキ根本原因特定: 重複記事問題）",
@@ -212,6 +212,6 @@
   "last_learn_at": "2026-05-01T16:08:04Z",
   "cycle_count": 1,
   "last_assess_result": "no_improve",
-  "last_assess_at": "2026-05-01T16:05:19Z",
-  "no_improve_count": 9
+  "last_assess_at": "2026-05-02T16:06:23Z",
+  "no_improve_count": 10
 }

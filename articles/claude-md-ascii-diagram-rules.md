@@ -3,7 +3,7 @@ title: "CLAUDE.mdでASCII図ルールを定義したらAI出力が劇的に変�
 emoji: "📐"
 type: "tech"
 topics: ["claudecode", "claude", "ai", "llm", "prompt-engineering"]
-published: true
+published: false
 published_at: 2026-02-27 17:00
 ---
 

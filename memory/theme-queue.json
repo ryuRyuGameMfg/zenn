@@ -1,4 +1,45 @@
 {
-  "last_updated": "2026-03-22",
-  "themes": []
+  "last_updated": "2026-05-04",
+  "themes": [
+    {
+      "id": 21,
+      "title": "Unity 6.x 新機能5選：ゲーム開発者が今すぐ試すべきアップデート",
+      "pattern": "入門×N選",
+      "expected_avg_likes": 15.7,
+      "topics": ["unity", "gamedev", "unity6"],
+      "status": "pending"
+    },
+    {
+      "id": 22,
+      "title": "Unity Addressables入門：アセット管理を5ステップで整理する方法",
+      "pattern": "入門×N選",
+      "expected_avg_likes": 15.7,
+      "topics": ["unity", "csharp", "gamedev"],
+      "status": "pending"
+    },
+    {
+      "id": 23,
+      "title": "Claude Code × Unity UIデバッグ：5分で画面崩れを特定するワークフロー",
+      "pattern": "Claude Code×Unity",
+      "expected_avg_likes": 18.0,
+      "topics": ["unity", "claudecode", "gamedev", "debug"],
+      "status": "pending"
+    },
+    {
+      "id": 24,
+      "title": "Unity NavMesh入門：AI敵キャラクターの経路探索を5ステップで実装する",
+      "pattern": "入門×N選",
+      "expected_avg_likes": 15.7,
+      "topics": ["unity", "csharp", "gamedev", "ai"],
+      "status": "pending"
+    },
+    {
+      "id": 25,
+      "title": "Unityのビルドサイズを30%削減した5つの最適化テクニック",
+      "pattern": "入門×N選",
+      "expected_avg_likes": 15.7,
+      "topics": ["unity", "csharp", "gamedev", "performance"],
+      "status": "pending"
+    }
+  ]
 }

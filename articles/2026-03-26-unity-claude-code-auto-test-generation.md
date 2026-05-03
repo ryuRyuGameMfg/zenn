@@ -2,7 +2,7 @@
 title: "Unity × Claude Code で自動テスト生成を実装する方法"
 emoji: "🧪"
 type: "tech"
-topics: ["Unity", "ClaudeCode", "テスト", "AI", "自動化"]
+topics: ["unity", "claudecode", "csharp", "test", "ai"]
 published: true
 ---
 

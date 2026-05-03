@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0",
+  "iteration": 10,
+  "mode": "create",
+  "last_updated": "2026-05-04T00:00:00.000Z",
+  "consecutive_errors": 0,
+  "current_article": {
+    "slug": "",
+    "title": "",
+    "topic": ""
+  },
+  "last_action": "rewrite: 2026-05-04 topics修正×2（unity-claude-code-auto-test: ClaudeCode→claudecode, claude-md-ascii-diagram-rules: published:false化）+ 新規記事作成（unity-memory-profiler-5steps）+ theme-queue補充5件(#21〜#25)"
+}
