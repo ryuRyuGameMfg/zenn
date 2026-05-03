@@ -170,9 +170,11 @@
       "filename": "2026-04-13-unity-scriptableobject-5-patterns.md",
       "title": "ScriptableObjectで変わるゲームデータ設計5パターン【Unity】",
       "scheduled_at": "2026-05-03T08:00:00.000Z",
-      "status": "queued",
+      "status": "published",
       "queued_at": "2026-04-13T00:00:00.000Z",
-      "priority": 10
+      "priority": 10,
+      "published_at": "2026-05-03T08:27:02.158Z",
+      "published_url": "https://zenn.dev/ryuRyuGameMfg/articles/2026-04-13-unity-scriptableobject-5-patterns"
     },
     {
       "filepath": "articles/2026-04-18-uloopmcp-claude-code-unity-auto-loop.md",
