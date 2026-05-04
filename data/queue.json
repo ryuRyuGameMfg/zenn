@@ -696,6 +696,15 @@
       "queued_at": "2026-05-04T00:00:00.000Z",
       "priority": 67,
       "promoted_reason": "入門×N選パターン(avg15.7スキ実績)。Unityパフォーマンス系は初心者〜中級者の需要が高い。6/5のgit-worktree記事の翌週に配置。"
+    },
+    {
+      "filepath": "articles/2026-05-05-unity-6-new-features-5.md",
+      "filename": "2026-05-05-unity-6-new-features-5.md",
+      "title": "Unity 6.x 新機能5選：ゲーム開発者が今すぐ試すべきアップデート",
+      "scheduled_at": "2026-06-19T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-05-04T17:00:05.098Z",
+      "priority": 68
     }
   ],
   "schedule": {
@@ -707,6 +716,6 @@
     "time": "17:00",
     "timezone": "Asia/Tokyo"
   },
-  "last_scan": "2026-04-30T17:00:05.119Z",
+  "last_scan": "2026-05-04T17:00:05.098Z",
   "last_publish": "2026-04-17T08:26:28.427Z"
 }
