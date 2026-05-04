@@ -1,13 +1,15 @@
 {
-  "last_updated": "2026-05-04",
+  "last_updated": "2026-05-05",
   "themes": [
     {
       "id": 21,
       "title": "Unity 6.x 新機能5選：ゲーム開発者が今すぐ試すべきアップデート",
       "pattern": "入門×N選",
       "expected_avg_likes": 15.7,
-      "topics": ["unity", "gamedev", "unity6"],
-      "status": "pending"
+      "topics": ["unity", "gamedev", "csharp", "unity6"],
+      "status": "consumed",
+      "consumed_at": "2026-05-05",
+      "article_slug": "2026-05-05-unity-6-new-features-5"
     },
     {
       "id": 22,
