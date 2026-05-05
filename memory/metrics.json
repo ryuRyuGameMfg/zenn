@@ -1,24 +1,24 @@
 {
-  "last_updated": "2026-05-02",
-  "collected_at": "2026-05-02T09:00:00+09:00",
+  "last_updated": "2026-05-06",
+  "collected_at": "2026-05-06T10:00:00+09:00",
   "profile": {
     "username": "ryuryu_game",
     "follower_count": 37,
     "following_count": 0,
-    "articles_count_profile": 40,
-    "articles_count_api": 40,
+    "articles_count_profile": 42,
+    "articles_count_api": 42,
     "books_count": 1,
     "total_liked_count_profile": 349,
-    "total_liked_count_api": 187,
-    "diff_note": "プロファイル349は unpublish 分含む累計。API 187 / 40記事 = avg 4.68。先月比（248/42=5.9）からavgが低下：queue が 0スキ旧ドラフトを順次公開したため"
+    "total_liked_count_api": 188,
+    "diff_note": "プロファイル349はunpublish分含む累計。API 188 / 42記事 = avg 4.48。前回比（187/40=4.68）からavgが低下：5/2・5/3公開記事が0スキのため"
   },
   "okr_snapshot": {
     "o1_followers": {
       "target": 100,
       "current": 37,
       "progress_pct": 37.0,
-      "stagnation_weeks": 6,
-      "note": "4/24→5/02: フォロワー変化なし。6週間停滞継続。queue公開記事が0スキのため新規流入なし"
+      "stagnation_weeks": 7,
+      "note": "5/02→5/06: フォロワー変化なし。7週間停滞継続。0スキ記事の順次公開が続いており新規流入なし"
     },
     "o2_monthly_pv": {
       "target": 10000,
@@ -28,14 +28,34 @@
     "o3_like_rate": {
       "target_pct": 5.0,
       "total_likes_profile": 349,
-      "total_likes_api": 187,
-      "published_articles_api": 40,
-      "avg_likes_api_basis": 4.68,
+      "total_likes_api": 188,
+      "published_articles_api": 42,
+      "avg_likes_api_basis": 4.476,
       "avg_likes_trend": "DOWN",
-      "avg_likes_prev": 5.9,
-      "avg_likes_delta": -1.22,
-      "note": "avg 5.9→4.68（-21%）。queue旧ドラフトの順次公開で0スキ記事が増加。改善には queue スケジュール最適化が急務"
+      "avg_likes_prev": 4.68,
+      "avg_likes_delta": -0.20,
+      "note": "avg 4.68→4.48（-4.3%）。5/2・5/3公開の0スキ記事2本追加で分母拡大。5/8〜5/23に入門×N選高ROI記事5本公開予定で改善見込み"
     }
+  },
+  "key_insight_2026_05_06": {
+    "critical": "avg_likes 4.68→4.48（-4.3%）: 5/2・5/3公開の0スキ記事2本追加が原因。一時的な低下。",
+    "observation": {
+      "new_0_like_articles": [
+        {"slug": "2026-04-03-unity-architecture-ai-code-instruction", "published_at": "2026-05-02", "likes": 0},
+        {"slug": "2026-04-13-unity-scriptableobject-5-patterns", "published_at": "2026-05-03", "likes": 0}
+      ],
+      "upcoming_high_roi_articles": [
+        {"slug": "2026-04-18-uloopmcp-claude-code-unity-auto-loop", "scheduled": "2026-05-08", "pattern": "HIGH"},
+        {"slug": "2026-04-19-unity-csharp-beginner-traps-5", "scheduled": "2026-05-09", "pattern": "入門×N選"},
+        {"slug": "2026-04-26-netcode-for-gameobjects-unity-online-5steps", "scheduled": "2026-05-15", "pattern": "入門×N選"},
+        {"slug": "2026-04-27-unity-ecs-beginner-5steps", "scheduled": "2026-05-22", "pattern": "入門×N選"},
+        {"slug": "2026-05-01-unity-input-system-beginner-5steps", "scheduled": "2026-05-23", "pattern": "入門×N選 CRITICAL"}
+      ],
+      "theme_queue_remaining": 4,
+      "follower_stagnation_weeks": 7
+    },
+    "forecast": "5/8〜5/23に入門×N選5本が連続公開されると、avg_likes は 5.0〜6.0以上に改善見込み。フォロワー獲得には継続的な露出増加が必要。",
+    "next_action": "improve: theme-queue#22以降の消費計画確認 + 0スキ記事救済策の再評価（フォロワー獲得施策との優先度整理）"
   },
   "key_insight_2026_04_17": {
     "critical": "2026年0スキ問題の主因は「2025年記事の重複投稿」",
