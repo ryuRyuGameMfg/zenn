@@ -1,13 +1,13 @@
 {
   "version": "1.0.0",
   "iteration": 10,
-  "mode": "improve",
-  "last_updated": "2026-05-06T01:00:00.000Z",
+  "mode": "rewrite",
+  "last_updated": "2026-05-07T01:00:00.000Z",
   "consecutive_errors": 0,
   "current_article": {
     "slug": "",
     "title": "",
     "topic": ""
   },
-  "last_action": "analyze: 2026-05-06 KPI計測（フォロワー37停滞7週/avg_likes 4.48 DOWN -4.3%/API記事42本/5月高ROI記事5本queue確認）"
+  "last_action": "improve: 2026-05-07 テーマキュー補充5件追加（#22 Unity AI MCP Server/#23 Unity AI入門/#24 Gemini Vibe Coding/#25 CLI Loop/#26 Android XR）+ rewrite遷移"
 }
