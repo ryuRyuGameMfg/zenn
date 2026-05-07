@@ -3,7 +3,7 @@
   "likes": 349,
   "articles_count": 42,
   "monthly_increase": 0,
-  "last_updated": "2026-05-07",
+  "last_updated": "2026-05-08",
   "history": [
     {
       "date": "2026-04-21",
@@ -126,6 +126,13 @@
       "followers": 37,
       "likes": 349,
       "articles": 42
+    },
+    {
+      "date": "2026-05-08",
+      "followers": 37,
+      "likes": 349,
+      "articles": 43,
+      "note": "rewrite: iter11 テーマキュー#22消費・新規記事作成（unity-ai-mcp-server-claude-code-5steps、CRITICAL優先・入門×N選・mcp/claudecode/unity）"
     }
   ]
 }

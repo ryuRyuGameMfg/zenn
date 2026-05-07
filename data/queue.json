@@ -705,6 +705,16 @@
       "status": "queued",
       "queued_at": "2026-05-04T17:00:05.098Z",
       "priority": 68
+    },
+    {
+      "filepath": "articles/2026-05-08-unity-ai-mcp-server-claude-code-5steps.md",
+      "filename": "2026-05-08-unity-ai-mcp-server-claude-code-5steps.md",
+      "title": "Unity AI MCP Server入門：Claude Codeと5ステップで連携",
+      "scheduled_at": "2026-06-20T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-05-08T01:00:00.000Z",
+      "priority": 69,
+      "promoted_reason": "CRITICAL: Unity AI MCP Server公式対応(2026/05)直後。入門×N選パターン(期待avg15.7)。claudecode/mcp/unityクラスタ強化。Zennブルーオーシャン先行記事。"
     }
   ],
   "schedule": {

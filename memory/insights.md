@@ -24,11 +24,9 @@
 
 ## テーマキュー（未消費）
 
-### #22 - Unity AI MCP Server入門 [CRITICAL]
-- タイトル案: `Unity AI MCP Server入門：Claude CodeやCursorをUnityエディタに繋ぐ5ステップ`
-- 根拠: Unity AIが2026/05にMCP Server公式対応。Claude Code×MCP×Unity入門×N選の掛け算。Zenn先行可能
-- topics: unity, claudecode, mcp, csharp, game-development
-- 参考: https://innovatopia.jp/ai/ai-news/100803/
+### #22 - Unity AI MCP Server入門 [DONE: 2026-05-08]
+- 作成済み: `2026-05-08-unity-ai-mcp-server-claude-code-5steps.md`
+- queue: 2026-06-20公開予定 (priority 69)
 
 ### #23 - Unity AI エディタ内AIエージェント入門 [HIGH]
 - タイトル案: `Unity AI入門：エディタ内AIエージェントでゲーム開発を10倍速にする5つの使い方`
