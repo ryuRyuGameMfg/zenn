@@ -2,7 +2,7 @@
   "mode": "analyze",
   "iteration": 10,
   "status": "idle",
-  "last_run": "2026-05-05T16:06:26Z",
+  "last_run": "2026-05-06T16:06:01Z",
   "current_article": {
     "slug": "2026-05-05-unity-6-new-features-5",
     "title": "Unity 6.x 新機能5選：ゲーム開発者が今すぐ試すべきアップデート",
@@ -186,10 +186,10 @@
     "achievement_pct": 37,
     "delta": 0,
     "trend": "stable",
-    "measured_at": "2026-05-06T16:00:06Z"
+    "measured_at": "2026-05-07T16:00:05Z"
   },
   "last_action": "create: 2026-05-05-unity-6-new-features-5（theme-queue #21消費、入門×N選 期待avg 15.7、Unity6新機能5選 GPU Resident Drawer/APV/Render Graph/STP/Sentis、3920字/h2=8/codeblock=6/Mermaid=1）",
-  "last_action_result": "コミット完了 (a9c2424)。articles/ 変更なしのため push スキップ。\n\n---\n\n## iter10_analyze 完了\n\n```text\n┌─────────────────────────────────────────────────────────────┐\n│ iter10_analyze 完了 / commit: a9c2424 (no push)             │\n└─────────────────────────────────────────────────────────────┘\n```\n\n### KPI計測結果\n\n| 指標 | 前回(5/2) | 今回(5/6) | 変化 |\n|------|---------|---------|------|\n| フォロワー | 37 | 37 | 0 (7週停滞) |\n| API記事数 | 40 | 42 | +2 |\n| APIスキ合計 | 187 | 188 | +1 |\n| avg_likes | 4.68 | 4.48 | -0.20 DOWN (-4.3%) |\n| Profileスキ | 349 | 349 | 0 |\n\n### 分析\n\n**avg_likes 低下の原因:**\n- 5/2公開: MonoBehaviourアーキテクチャ記事 → 0スキ\n- 5/3公開: ScriptableObject5パターン記事 → 0スキ\n- 0スキ記事追加で分母が拡大した一時的低下\n\n**改善見込み（今後2-3週間）:**\n\n```text\n5/8  uLoopMCP記事 (HIGH)\n5/9  C#初心者の罠5選 (入門×N選)\n5/15 NGO入門 (入門×N選)\n5/22 ECS入門 (入門×N選)\n5/23 Input System入門 (入門×N選 CRITICAL)\n```\n\n### 実施内容\n\n| ファイル | 変更 |\n|---------|------|\n| memory/metrics.json | profile/okr_snapshot/key_insight_2026_05_06 更新 |\n| memory/state.json | mode: create → improve, iteration 10 |\n| memory/hot/2026-05-06-analyze.md | 実行ログ新規作成 |\n| data/metrics.json + data/state.json | コミット済み |\n\n### モード遷移\n\n```text\ncreate (iter10) → analyze (今回) → improve (次回)\n```\n\n**LAST_ACTION**: `analyze: 2026-05-06 KPI計測（フォロワー37停滞7週/avg_likes 4.48 DOWN -4.3%/API記事42本/5月高ROI記事5本queue確認）`",
+  "last_action_result": "コミット完了 (`3aa1344`)。`articles/` に変更なしのため push はスキップ。\n\n---\n\n## iter10_improve 完了\n\n```text\n┌─────────────────────────────────────────────────────────────┐\n│ iter10_improve 完了 / commit: 3aa1344 (no push)             │\n└─────────────────────────────────────────────────────────────┘\n```\n\n### 実施内容\n\n| ファイル | 変更 |\n|---------|------|\n| memory/insights.md | テーマキュー #22-#26 追記 + 最終更新 2026-05-07 |\n| memory/state.json | mode: improve → rewrite 遷移 |\n| data/metrics.json | 2026-05-07 履歴エントリ追加 |\n| data/state.json | タイムスタンプ更新 |\n\n### 補充テーマキュー (#22-#26)\n\n| # | テーマ | 優先度 | 根拠 |\n|---|--------|--------|------|\n| #22 | Unity AI MCP Server入門 | CRITICAL | 2026/05 MCP公式対応・Zennブルーオーシャン |\n| #23 | Unity AI エディタ内AIエージェント入門 | HIGH | OpenBeta直後・競合ほぼゼロ |\n| #24 | Gemini 2.5 × Unity Vibe Coding入門 | HIGH | avg22実績・Gemini特化未開拓 |\n| #25 | Unity CLI Loop入門 | HIGH | uLoopMCPシナジー・実用性高 |\n| #26 | Android XR × Unity 6入門 | MEDIUM | Galaxy XR ローンチ直後・先行者利益 |\n\n### KPI改善根拠\n\n- **#22 CRITICAL が最優先**: Unity AIのMCP Server公式対応は2026/05発表直後。Zennに日本語記事がほぼなく、今週中に作成すれば先行者利益を取れる\n- **Vibe Coding (#24) でフォロワー獲得**: 競合avg22スキの実績テーマ。拡散しやすい「やってみた」型で新規フォロワー流入を狙う\n\n### モード遷移\n\n```text\nanalyze (iter10) → improve (今回) → rewrite (次回)\n```\n\n次回サイクルは `rewrite` モード: 0スキ記事2本リライト + テーマキュー #22 (Unity AI MCP Server入門) から新規記事作成。",
   "forbidden_actions": [
     "create: 2026-04-13-unity-scriptableobject-5-patterns（N選×設計パターン、0スキ問題対策）",
     "analyze: 2026-04-17 metrics更新（47記事・フォロワー37・0スキ根本原因特定: 重複記事問題）",
@@ -221,6 +221,6 @@
   "last_learn_at": "2026-05-01T16:08:04Z",
   "cycle_count": 1,
   "last_assess_result": "no_improve",
-  "last_assess_at": "2026-05-05T16:06:26Z",
-  "no_improve_count": 14
+  "last_assess_at": "2026-05-06T16:06:01Z",
+  "no_improve_count": 15
 }
