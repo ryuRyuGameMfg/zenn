@@ -182,9 +182,11 @@
       "filename": "2026-04-18-uloopmcp-claude-code-unity-auto-loop.md",
       "title": "uLoopMCP + Claude Code で Unity 自律開発サイクルを実現する方法",
       "scheduled_at": "2026-05-08T08:00:00.000Z",
-      "status": "queued",
+      "status": "published",
       "queued_at": "2026-04-17T17:00:02.096Z",
-      "priority": 11
+      "priority": 11,
+      "published_at": "2026-05-08T08:15:19.637Z",
+      "published_url": "https://zenn.dev/ryuRyuGameMfg/articles/2026-04-18-uloopmcp-claude-code-unity-auto-loop"
     },
     {
       "filepath": "articles/2026-04-19-unity-csharp-beginner-traps-5.md",
