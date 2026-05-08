@@ -3,7 +3,7 @@ title: "uLoopMCP + Claude Code で Unity 自律開発サイクルを実現する
 emoji: "🔄"
 type: "tech"
 topics: ["unity", "claudecode", "mcp", "自動化", "ゲーム開発"]
-published: false
+published: true
 ---
 
 Unity開発でコードを書くたびに「コンパイル待ち → エディタ確認 → 修正 → また待ち」という繰り返しに時間を取られていた。このループをClaude Code + uLoopMCPに丸ごと任せてみたところ、実装速度が体感で3倍近く上がった。この記事では、その構築手順と実際に使って気づいたポイントを書いていく。
