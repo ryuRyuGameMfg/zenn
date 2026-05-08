@@ -1,24 +1,24 @@
 {
-  "last_updated": "2026-05-06",
-  "collected_at": "2026-05-06T10:00:00+09:00",
+  "last_updated": "2026-05-09",
+  "collected_at": "2026-05-09T10:00:00+09:00",
   "profile": {
     "username": "ryuryu_game",
     "follower_count": 37,
     "following_count": 0,
-    "articles_count_profile": 42,
-    "articles_count_api": 42,
+    "articles_count_profile": 43,
+    "articles_count_api": 43,
     "books_count": 1,
     "total_liked_count_profile": 349,
     "total_liked_count_api": 188,
-    "diff_note": "プロファイル349はunpublish分含む累計。API 188 / 42記事 = avg 4.48。前回比（187/40=4.68）からavgが低下：5/2・5/3公開記事が0スキのため"
+    "diff_note": "プロファイル349はunpublish分含む累計。API 188 / 43記事 = avg 4.37。前回比（188/42=4.476）からavgが低下：5/8公開uLoopMCP記事が0スキで分母拡大のため"
   },
   "okr_snapshot": {
     "o1_followers": {
       "target": 100,
       "current": 37,
       "progress_pct": 37.0,
-      "stagnation_weeks": 7,
-      "note": "5/02→5/06: フォロワー変化なし。7週間停滞継続。0スキ記事の順次公開が続いており新規流入なし"
+      "stagnation_weeks": 8,
+      "note": "5/06→5/09: フォロワー変化なし。8週間停滞継続。2026年公開記事26本全て0スキのため新規流入なし"
     },
     "o2_monthly_pv": {
       "target": 10000,
@@ -29,13 +29,41 @@
       "target_pct": 5.0,
       "total_likes_profile": 349,
       "total_likes_api": 188,
-      "published_articles_api": 42,
-      "avg_likes_api_basis": 4.476,
+      "published_articles_api": 43,
+      "avg_likes_api_basis": 4.372,
       "avg_likes_trend": "DOWN",
-      "avg_likes_prev": 4.68,
-      "avg_likes_delta": -0.20,
-      "note": "avg 4.68→4.48（-4.3%）。5/2・5/3公開の0スキ記事2本追加で分母拡大。5/8〜5/23に入門×N選高ROI記事5本公開予定で改善見込み"
+      "avg_likes_prev": 4.476,
+      "avg_likes_delta": -0.104,
+      "note": "avg 4.476→4.37（-2.4%）。5/8公開のuLoopMCP記事が0スキで分母拡大。5/9〜5/30に入門×N選高ROI記事4本公開予定で改善見込み"
     }
+  },
+  "key_insight_2026_05_09": {
+    "critical": "2026年公開記事26本全て0スキ継続。avg_likes 4.476→4.37（-2.4%）：5/8公開uLoopMCP記事が0スキで分母拡大。フォロワー8週間停滞。",
+    "observation": {
+      "2026_zero_likes_count": 26,
+      "2025_articles_avg": 10.44,
+      "2026_articles_avg": 0.0,
+      "gap_analysis": "2025年18本avg10.44スキ vs 2026年26本avg0スキの格差が拡大。2025年記事はUnity C#設計パターン系でSEO検索流入が継続。2026年記事はAI/MCP/Claude Code系で読者層がまだ定着していない可能性。",
+      "new_published_2026_05_08": {
+        "slug": "2026-04-18-uloopmcp-claude-code-unity-auto-loop",
+        "title": "uLoopMCP + Claude Code で Unity 自律開発サイクルを実現する方法",
+        "likes": 0,
+        "days_since_publish": 1
+      },
+      "upcoming_high_roi_articles": [
+        {"slug": "2026-04-19-unity-csharp-beginner-traps-5", "scheduled": "2026-05-09", "pattern": "入門×N選", "note": "本日公開予定"},
+        {"slug": "2026-04-26-netcode-for-gameobjects-unity-online-5steps", "scheduled": "2026-05-15", "pattern": "入門×N選"},
+        {"slug": "2026-04-27-unity-ecs-beginner-5steps", "scheduled": "2026-05-22", "pattern": "入門×N選"},
+        {"slug": "2026-05-01-unity-input-system-beginner-5steps", "scheduled": "2026-05-23", "pattern": "入門×N選 CRITICAL"},
+        {"slug": "2026-04-27-claude-code-unity-uxml-auto-generate", "scheduled": "2026-05-29", "pattern": "claudecode"},
+        {"slug": "2026-04-27-figma-mcp-unity-ui-toolkit-auto-convert", "scheduled": "2026-05-30", "pattern": "claudecode"},
+        {"slug": "2026-04-23-claude-code-git-worktree-unity-parallel-dev", "scheduled": "2026-06-05", "pattern": "claudecode"}
+      ],
+      "theme_queue_remaining": 4,
+      "follower_stagnation_weeks": 8
+    },
+    "forecast": "5/9〜5/23に入門×N選4本が連続公開されると、avg_likes は 5.0〜6.0以上に改善見込み。ただし2026年記事の0スキ継続は根本的なSEO/タイトル問題の可能性あり。improveモードでの深掘り分析が必要。",
+    "next_action": "improve: テーマキュー#23以降消費計画確認 + 0スキ記事のタイトル/topics見直し分析（特に2026年記事のSEO弱点特定）"
   },
   "key_insight_2026_05_06": {
     "critical": "avg_likes 4.68→4.48（-4.3%）: 5/2・5/3公開の0スキ記事2本追加が原因。一時的な低下。",
@@ -57,18 +85,6 @@
     "forecast": "5/8〜5/23に入門×N選5本が連続公開されると、avg_likes は 5.0〜6.0以上に改善見込み。フォロワー獲得には継続的な露出増加が必要。",
     "next_action": "improve: theme-queue#22以降の消費計画確認 + 0スキ記事救済策の再評価（フォロワー獲得施策との優先度整理）"
   },
-  "key_insight_2026_04_17": {
-    "critical": "2026年0スキ問題の主因は「2025年記事の重複投稿」",
-    "detail": "2026年にスラッグを変えて再公開した記事（e.g. 2026-02-25-8-solid-unity-csharp-game）が2025年オリジナル記事（f294464adfa94f: 11スキ）と競合。Zennの重複コンテンツにより検索流入なし。",
-    "genuine_0_like_articles": [
-      "2026-03-26-unity-claude-code-auto-test-generation",
-      "2026-03-28-univrm-lipsync-implementation",
-      "2026-03-30-claude-code-launchd-autonomous-agent",
-      "indie-dev-requirements-mermaid-design",
-      "ai-driven-narrative-design-llm-dynamic-story"
-    ],
-    "action": "improve モードで重複記事の削除またはリライト方針を策定"
-  },
   "key_insight_2026_04_24": {
     "critical": "前回 improve (unpublish 12本) は API 側で正しく反映。101スキ分が API 集計から除外され、avg_likes 4.95→5.9 (+19%) に改善",
     "observation": {
@@ -80,49 +96,7 @@
     "next_action_candidates": [
       "improve: API非表示7本の特定と unpublish/リライト戦略策定（重複ペナルティ継続の可能性）",
       "improve: 2026年0スキ19本の救済戦略 - タイトル刷新、既存高スキ記事との相互リンク追加",
-      "improve: テーマキュー点検・高PV確度の高い新トピック補充（Unity Memory Profiler #2、Netcode #10、ECS実装 #13等の優先度再評価）"
-    ]
-  },
-  "key_insight_2026_05_02": {
-    "critical": "queue スケジュール問題: 最高ROI記事（入門×N選）が数ヶ月後に予約されている",
-    "queue_status_summary": {
-      "total_queued": 10,
-      "priority_articles_delayed": [
-        {"slug": "2026-05-01-unity-input-system-beginner-5steps", "scheduled": "2026-10-23", "pattern": "入門×N選 avg15.7スキ", "urgency": "CRITICAL"},
-        {"slug": "2026-04-23-claude-code-git-worktree-unity-parallel-dev", "scheduled": "2026-06-26", "pattern": "claudecodeタグ", "urgency": "HIGH"},
-        {"slug": "2026-04-27-claude-code-unity-uxml-auto-generate", "scheduled": "2026-10-16", "urgency": "HIGH"},
-        {"slug": "2026-04-27-figma-mcp-unity-ui-toolkit-auto-convert", "scheduled": "2026-10-17", "urgency": "HIGH"}
-      ],
-      "immediate_queue": [
-        {"slug": "2026-04-03-unity-architecture-ai-code-instruction", "scheduled": "2026-05-02", "priority": "LOW"},
-        {"slug": "2026-04-13-unity-scriptableobject-5-patterns", "scheduled": "2026-05-03", "priority": "MEDIUM"},
-        {"slug": "2026-04-18-uloopmcp-claude-code-unity-auto-loop", "scheduled": "2026-05-08", "priority": "HIGH"},
-        {"slug": "2026-04-19-unity-csharp-beginner-traps-5", "scheduled": "2026-05-09", "priority": "HIGH"},
-        {"slug": "2026-04-26-netcode-for-gameobjects-unity-online-5steps", "scheduled": "2026-05-15", "priority": "HIGH"},
-        {"slug": "2026-04-27-unity-ecs-beginner-5steps", "scheduled": "2026-05-22", "priority": "HIGH"}
-      ]
-    },
-    "root_cause_avg_drop": "queue が 0スキ旧ドラフト（2026-03-28〜2026-04-03 作成記事）を週2本ペースで公開しており、avg_likes が 5.9→4.68（-21%）に低下。高品質な新規記事（入門×N選パターン）は Oct まで遅延予約されているため即効性なし",
-    "action_required": "improve モードで queue スケジュールを最適化: Input System（Oct23→早期枠）+ Oct16/17の2本を前倒し"
-  },
-  "key_insight_2026_04_19": {
-    "critical": "rewriteサイクルでの重複記事unpublishが不完全。12本が published: true のまま残存し、auto-queueが4/17〜4/19に3本を順次公開（全て0スキ、オリジナル15/5/10スキ）",
-    "root_cause": "前回rewriteで処理された重複は6本のみ。articles/ 内の 2026-02-25-*.md 12本が未処理のまま残存している",
-    "kpi_impact": "全体avg_likes 4.95（2025年のみ10.44）。重複記事を全てunpublishすれば avg_likes = 188/(38-3)=5.37 まで改善可能",
-    "action_required": "improveモードで12本の一括unpublish方針を策定、rewriteモードで実行",
-    "duplicate_published_true_remaining": [
-      "2026-02-25-unity-csharp-efficiency-up-5",
-      "2026-02-25-unity-csharp-gizmos-3d-tech",
-      "2026-02-25-unity-csharp-implementation-design",
-      "2026-02-25-unity-csharp-rpg-management-linq-method",
-      "2026-02-25-unity-csharp-struct-performance",
-      "2026-02-25-unity-csharp",
-      "2026-02-25-unity-cursor-ai-design-monobehaviour",
-      "2026-02-25-unity-dev-efficiency-method",
-      "2026-02-25-unity-editor-extension-dev-efficiency",
-      "2026-02-25-unity-fluent-interface-development",
-      "2026-02-25-unity-observer-pattern-system",
-      "2026-02-25-unity-rigidbody-collider-optimization"
+      "improve: テーマキュー点検・高PV確度の高い新トピック補充"
     ]
   },
   "competitor_trends": {
@@ -152,86 +126,52 @@
         "trend": "安定",
         "notes": "公式情報まとめ系。LTSロードマップ・DOTS推奨"
       }
-    ],
-    "notable_articles": [
-      {
-        "title": "uLoopMCP x Claude Code Unity自走検証",
-        "likes": 26,
-        "date": "2026-02",
-        "url": "https://zenn.dev/unsoluble_sugar/articles/cd8d59be7b8f85"
-      },
-      {
-        "title": "Geminiだけでカードゲームを作った話",
-        "likes": 33,
-        "date": "2025-12",
-        "url": "https://zenn.dev/tomotomobile/articles/b5cf31891b77e2"
-      },
-      {
-        "title": "Unite 2025 ロードマップまとめ",
-        "likes": 18,
-        "date": "2025-11",
-        "url": "https://zenn.dev/m_hatayama/articles/ba4990c542a47c"
-      },
-      {
-        "title": "Unity+MCP(Claude) Vibeコーディング",
-        "likes": 18,
-        "date": "2025-03",
-        "url": "https://zenn.dev/bamboohouse/articles/d8df41a995f818"
-      }
     ]
   },
   "rewrite_candidates": [
     {
       "slug": "indie-dev-requirements-mermaid-design",
-      "title": "個人開発の要件定義を30分で終わらせるMermaid設計術",
+      "title": "Claude Code × Mermaid で個人開発の要件定義を30分に短縮する5つの設計術",
       "likes": 0,
       "published_at": "2026-02-21",
-      "reason": "0スキ・公開30日以上・非重複記事。タイトルを「N選」形式に変換で改善余地あり",
+      "reason": "0スキ・公開30日以上・非重複記事。タイトル刷新済みだが依然0スキ。コンテンツの深さ見直しが必要",
       "priority": 1
     },
     {
       "slug": "ai-driven-narrative-design-llm-dynamic-story",
-      "title": "AIドリブンなナラティブデザイン - LLMで動的ストーリーを実装する",
+      "title": "LLMで動的ストーリーを実装する4つのナラティブ設計パターン【Unity/UE対応】",
       "likes": 0,
       "published_at": "2026-03-08",
-      "reason": "0スキ・公開30日以上・非重複記事。コードサンプル不足の可能性",
+      "reason": "0スキ・公開30日以上・非重複記事。タイトル刷新済みだが依然0スキ。Unity/UEコードサンプル追加が改善策",
       "priority": 2
     }
   ],
   "articles": [
-    {"slug": "2026-02-25-unity-csharp-implementation-design", "title": "関数型デザインパターン: Unity C#で実装する柔軟なコード設計の秘訣（重複）", "likes": 0, "published_at": "2026-04-19", "note": "重複: de962e6675c9d8(10スキ)の再公開。rewrite対象"},
-    {"slug": "2026-02-25-unity-csharp-gizmos-3d-tech", "title": "【Unity C#】Gizmosで3D空間を徹底デバッグ!?隠れた不具合を見える化する技術（重複）", "likes": 0, "published_at": "2026-04-18", "note": "重複: c885e7524d553b(5スキ)の再公開。rewrite対象"},
-    {"slug": "2026-02-25-unity-csharp-efficiency-up-5", "title": "Unity初心者必見！C#で効率UPする5つの小技（重複）", "likes": 0, "published_at": "2026-04-17", "note": "重複: ef64c64f1d5f56(15スキ)の再公開。rewrite対象"},
-    {"slug": "2026-04-13-unity-scriptableobject-5-patterns", "title": "ScriptableObjectで変わるゲームデータ設計5パターン【Unity】", "likes": 0, "published_at": "draft", "note": "queue: 2026-05-23公開予定"},
-    {"slug": "2026-02-25-unity-csharp-5-game-system", "title": "Unity C#で実践！デザインパターン5選で作る堅牢かつ拡張性の高いゲームシステム", "likes": 0, "published_at": "2026-04-13", "note": "重複: e452464931b0ce(32スキ)の再公開"},
-    {"slug": "2026-02-25-unity-awake-start", "title": "Unityの `Awake()` と `Start()` をどう使い分ける？迷ったらこう使え初期化の極意", "likes": 0, "published_at": "2026-04-11", "note": "重複: 291ce3a3bf95ee(11スキ)の再公開"},
-    {"slug": "2026-02-25-trycatchfinally-unity-csharp-game", "title": "信頼性向上のためのtry/catch/finallyの活用 ― Unity C#で信頼性の高いゲームロジックを構築する", "likes": 0, "published_at": "2026-04-10", "note": "重複: af16977920f361(3スキ)の再公開"},
-    {"slug": "2026-02-25-design-unity-csharp", "title": "【純粋なロジック設計】Unity C#で実践する副作用のないプログラミング", "likes": 0, "published_at": "2026-04-07", "note": "重複: 4fd68ec72cb406(9スキ)の再公開"},
-    {"slug": "2026-02-25-8-solid-unity-csharp-game", "title": "【8原則】SOLID実践で目指すUnity C#堅牢ゲームアーキテクチャ", "likes": 0, "published_at": "2026-04-04", "note": "重複: f294464adfa94f(11スキ)の再公開"},
-    {"slug": "2026-02-25-7-unity-csharp", "title": "【7ルール】Unity C#による柔軟なロジック分離テクニック", "likes": 0, "published_at": "2026-04-03", "note": "重複: 178944d61e0fae(12スキ)の再公開"},
+    {"slug": "2026-04-18-uloopmcp-claude-code-unity-auto-loop", "title": "uLoopMCP + Claude Code で Unity 自律開発サイクルを実現する方法", "likes": 0, "published_at": "2026-05-08", "note": "5/8公開。入門×N選ではなくHIGHパターン。公開1日目"},
+    {"slug": "2026-04-13-unity-scriptableobject-5-patterns", "title": "ScriptableObjectで変わるゲームデータ設計5パターン【Unity】", "likes": 0, "published_at": "2026-05-03", "note": "入門×N選パターン"},
+    {"slug": "2026-04-03-unity-architecture-ai-code-instruction", "title": "MonoBehaviourベタ書きを卒業したい人へ：AIに設計パターンを指示してUnityコードを整理する方法", "likes": 0, "published_at": "2026-05-02"},
+    {"slug": "2026-04-02-gmail-calendar-mcp-ai-secretary", "title": "Claude Code × Gmail/Calendar MCP でAI秘書を実現する", "likes": 0, "published_at": "2026-04-26"},
+    {"slug": "2026-04-01-claude-md-ascii-diagram-output", "title": "Claude Codeの出力が読めない問題をCLAUDE.mdのASCII図ルールで解決した", "likes": 0, "published_at": "2026-04-24"},
+    {"slug": "2026-03-31-why-humans-dislike-ai-design", "title": "なぜ人間はAIデザインを嫌うのか：バイアスと実質的傾向の2方向分析【Unity UI実装例付き】", "likes": 0, "published_at": "2026-04-23"},
+    {"slug": "2026-03-30-claude-code-launchd-autonomous-agent", "title": "OpenClawのAPI料金に疲れた人へ：Claude Code × macOS launchd で月額固定の自律AIエージェントを自作する", "likes": 0, "published_at": "2026-04-21"},
     {"slug": "2026-03-28-zenn-github-actions-auto-deploy", "title": "Zenn × GitHub Actions で自動デプロイを設定する方法【textlint + PR プレビュー対応】", "likes": 0, "published_at": "2026-03-29"},
     {"slug": "2026-03-28-univrm-lipsync-implementation", "title": "UniVRM 2.0 で口パク（リップシンク）を実装する方法【VRM 1.0対応】", "likes": 0, "published_at": "2026-03-28"},
     {"slug": "2026-03-26-unity-claude-code-auto-test-generation", "title": "Unity × Claude Code で自動テスト生成を実装する方法", "likes": 0, "published_at": "2026-03-27"},
-    {"slug": "claude-code-skill-display-order", "title": "Claude Codeで自作スキルを上位表示させる方法", "likes": 0, "published_at": "2026-03-15"},
-    {"slug": "ai-game-animation-revolution-2days-to-1hour", "title": "AIがゲームアニメーション制作を2日→1時間に変える", "likes": 0, "published_at": "2026-03-14"},
-    {"slug": "ai-character-7-use-cases-2026", "title": "AIキャラクターは何に使われてる? 7事例を徹底調査してみた", "likes": 0, "published_at": "2026-03-11"},
-    {"slug": "claude-beginner-full-automation-guide", "title": "Claudeって何？AIで仕事が楽になるって本当？完全自動化ガイド", "likes": 0, "published_at": "2026-03-10"},
-    {"slug": "ai-driven-narrative-design-llm-dynamic-story", "title": "AIドリブンなナラティブデザイン - LLMで動的ストーリーを実装する", "likes": 0, "published_at": "2026-03-08"},
-    {"slug": "indie-dev-requirements-mermaid-design", "title": "個人開発の要件定義を30分で終わらせるMermaid設計術", "likes": 0, "published_at": "2026-02-21"},
-    {"slug": "2026-01-23-unity-ai-3d-model-generation", "title": "Unity AIで3Dモデル生成を試した結果、開発時間が3時間短縮された話", "likes": 0, "published_at": "2026-02-18"},
-    {"slug": "2026-01-23-gpu-resident-drawer-unity6", "title": "Unity 6 GPU Resident Drawerで実現する高速レンダリング", "likes": 0, "published_at": "2026-02-18"},
+    {"slug": "claude-code-skill-display-order", "title": "Claude Codeで自作スキルを上位表示する4つのコツ【配置例付き】", "likes": 0, "published_at": "2026-03-15"},
+    {"slug": "ai-game-animation-revolution-2days-to-1hour", "title": "AIがゲームアニメーション制作を48倍速にする6つのツールと実践パイプライン", "likes": 0, "published_at": "2026-03-14"},
+    {"slug": "ai-character-7-use-cases-2026", "title": "AIキャラクターの活用事例7選｜2026年の収益化・業務効率化を徹底分析", "likes": 0, "published_at": "2026-03-11"},
+    {"slug": "claude-beginner-full-automation-guide", "title": "Claude完全ガイド｜AI自動化で業務を5倍速にする5つの実例【初心者向け】", "likes": 0, "published_at": "2026-03-10"},
+    {"slug": "ai-driven-narrative-design-llm-dynamic-story", "title": "LLMで動的ストーリーを実装する4つのナラティブ設計パターン【Unity/UE対応】", "likes": 0, "published_at": "2026-03-08"},
+    {"slug": "claude-code-security-5-defense-layers", "title": "Claude Codeの機密情報漏洩を防ぐ5つのHooksセキュリティ設計", "likes": 0, "published_at": "2026-03-06"},
+    {"slug": "indie-dev-requirements-mermaid-design", "title": "Claude Code × Mermaid で個人開発の要件定義を30分に短縮する5つの設計術", "likes": 0, "published_at": "2026-02-21"},
+    {"slug": "2026-01-23-unity-ai-3d-model-generation", "title": "Unity AI Betaで3Dモデル生成｜開発時間3時間短縮の実践フローと活用シーン3選", "likes": 0, "published_at": "2026-02-18"},
+    {"slug": "2026-01-23-gpu-resident-drawer-unity6", "title": "Unity 6 GPU Resident DrawerでDrawCall 99.7%削減｜URP/HDRP設定と計測結果", "likes": 0, "published_at": "2026-02-18"},
     {"slug": "4aa2919b625181", "title": "Claude Code上限に悩まない！実践的なコンテキストエンジニアリング", "likes": 0, "published_at": "2026-01-24"},
-    {"slug": "2026-01-24-claude-code", "title": "Claude Code上限に悩まない！実践的なコンテキストエンジニアリング（重複）", "likes": 0, "published_at": "2026-01-24"},
     {"slug": "dd7322dde7fecd", "title": "タスクを「管理しない」という選択 ― ClaudeCodeが変える仕事の常識", "likes": 0, "published_at": "2026-01-23"},
-    {"slug": "2026-01-23-management-claude-code", "title": "タスクを「管理しない」という選択（重複）", "likes": 0, "published_at": "2026-01-23"},
     {"slug": "01f28742eef652", "title": "Claude活用10倍に。記事も日報も経理も『全自動化する戦略会議室システム』", "likes": 0, "published_at": "2026-01-13"},
-    {"slug": "2026-01-13-claude-10-article-automation", "title": "Claude活用10倍に（重複）", "likes": 0, "published_at": "2026-01-13"},
     {"slug": "276c96a9938958", "title": "Claude Code: スキルを/検索から非表示にする方法", "likes": 0, "published_at": "2026-01-10"},
-    {"slug": "2026-01-10-claude-code-method", "title": "Claude Code: スキルを/検索から非表示にする方法（重複）", "likes": 0, "published_at": "2026-01-10"},
     {"slug": "8d3c6d659f2293", "title": "UnityにおけるMonoBehaviourとPureC#の違い｜AI開発時代の必須知識", "likes": 0, "published_at": "2026-01-08"},
-    {"slug": "2026-01-08-unity-monobehaviour-csharp", "title": "UnityにおけるMonoBehaviourとPureC#の違い（重複）", "likes": 0, "published_at": "2026-01-08"},
     {"slug": "183b5fb40301d5", "title": "AI組織化でMainとSubが協働する3層設計｜全ての開発をコマンド経由で実行してみる", "likes": 0, "published_at": "2026-01-05"},
-    {"slug": "2026-01-05-ai-m-ai-n-sub-3-design-development", "title": "AI組織化（重複）", "likes": 0, "published_at": "2026-01-05"},
     {"slug": "4fd68ec72cb406", "title": "【純粋なロジック設計】Unity C#で実践する副作用のないプログラミング", "likes": 9, "published_at": "2025-03-22"},
     {"slug": "de962e6675c9d8", "title": "関数型デザインパターン: Unity C#で実装する柔軟なコード設計の秘訣", "likes": 10, "published_at": "2025-03-19"},
     {"slug": "af16977920f361", "title": "信頼性向上のためのtry/catch/finallyの活用 ― Unity C#で信頼性の高いゲームロジックを構築する", "likes": 3, "published_at": "2025-03-18"},

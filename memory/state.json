@@ -1,13 +1,13 @@
 {
   "version": "1.0.0",
   "iteration": 11,
-  "mode": "analyze",
-  "last_updated": "2026-05-08T01:00:00.000Z",
+  "mode": "improve",
+  "last_updated": "2026-05-09T10:00:00.000Z",
   "consecutive_errors": 0,
   "current_article": {
     "slug": "",
     "title": "",
     "topic": ""
   },
-  "last_action": "rewrite: 2026-05-08 テーマキュー#22消費・新規記事作成（unity-ai-mcp-server-claude-code-5steps、入門×N選パターン・CRITICAL優先・mcp/claudecode/unity、published:false）+ analyze遷移・iteration10→11"
+  "last_action": "analyze: 2026-05-09 KPI計測（フォロワー37/API記事43/avg_likes 4.37）+ 2026年公開26本全0スキ継続・8週間フォロワー停滞確認 + improve遷移"
 }
