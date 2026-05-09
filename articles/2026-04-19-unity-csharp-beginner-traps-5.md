@@ -3,7 +3,7 @@ title: "Unity C#でやりがちな「初心者の罠」5選 ― ファイル名�
 emoji: "🪤"
 type: "tech"
 topics: ["unity", "csharp", "beginner", "gamedev", "tips"]
-published: false
+published: true
 ---
 
 Unity学習2週間〜3ヶ月の人がハマりやすい5つの罠を実コードで解説します。コンパイルエラーの原因、NullReferenceException、原因不明のパフォーマンス低下——これらに心当たりがある人は、この記事を読めば同種のトラブルを3割以上減らせるはずです。
