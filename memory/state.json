@@ -1,13 +1,13 @@
 {
   "version": "1.0.0",
   "iteration": 11,
-  "mode": "improve",
-  "last_updated": "2026-05-09T10:00:00.000Z",
+  "mode": "rewrite",
+  "last_updated": "2026-05-10T01:00:00.000Z",
   "consecutive_errors": 0,
   "current_article": {
     "slug": "",
     "title": "",
     "topic": ""
   },
-  "last_action": "analyze: 2026-05-09 KPI計測（フォロワー37/API記事43/avg_likes 4.37）+ 2026年公開26本全0スキ継続・8週間フォロワー停滞確認 + improve遷移"
+  "last_action": "improve: 2026-05-10 テーマキュー5件補充(#27 ShaderGraph/#28 Addressables/#29 Claude Code×テスト/#30 Timeline/#31 UI Toolkit) + queue.json failed記事(beginner-traps-5)をpublished修正 + rewrite遷移"
 }

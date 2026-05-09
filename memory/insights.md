@@ -51,3 +51,33 @@
 - 根拠: Samsung Galaxy XR 2026ローンチ。Unity公式サポート発表済み。先行者利益あり
 - topics: unity, xr, game-development, android
 - 参考: https://unity3d.jp/news/android-xr-support/
+
+### #27 - Unity Shader Graph入門 [HIGH]
+- タイトル案: `Unity Shader Graph入門：コードゼロでPBRシェーダーを自作する5ステップ`
+- 根拠: 入門×N選パターン。Shader Graph検索ボリューム大・初心者が躓くポイントを実装付きで解説。競合少ない日本語記事。
+- topics: unity, csharp, game-development, shader
+- 参考: https://docs.unity3d.com/Manual/shader-graph.html
+
+### #28 - Unity Addressables入門 [HIGH]
+- タイトル案: `Unity Addressables入門：Resourcesを卒業してアセット管理を5倍効率化する方法`
+- 根拠: 入門×N選パターン。Resourcesからの移行ニーズが高く、Zennで実装付き記事が少ない。モバイルゲーム開発者に需要大。
+- topics: unity, csharp, game-development
+- 参考: https://docs.unity3d.com/Packages/com.unity.addressables@2.3/manual/index.html
+
+### #29 - Claude Code × Unity テスト自動生成入門 [HIGH]
+- タイトル案: `Claude Code × Unity：AIにPlayModeテストを自動生成させてバグを撲滅する実装ガイド`
+- 根拠: claudecode×unity実装系。uLoopMCPとの相乗効果期待。テスト自動化はCI/CD文脈でエンジニア需要高。Zenn未開拓ニッチ。
+- topics: unity, claudecode, csharp, game-development
+- 参考: https://docs.unity3d.com/Manual/testing-editortestsrunner.html
+
+### #30 - Unity Timeline入門 [HIGH]
+- タイトル案: `Unity Timeline入門：アニメーション・カットシーン・演出を5ステップで実装する方法`
+- 根拠: 入門×N選パターン。Timeline系の実装記事は少なく、ゲーム演出担当の初心者に刺さる。検索需要安定。
+- topics: unity, csharp, game-development
+- 参考: https://docs.unity3d.com/Packages/com.unity.timeline@1.8/manual/index.html
+
+### #31 - Unity UI Toolkit入門 [HIGH]
+- タイトル案: `Unity UI Toolkit入門：uGUIを卒業してランタイムUI開発を近代化する5ステップ`
+- 根拠: 入門×N選パターン。Unity 6でUI Toolkit推奨方針。uGUI→UI Toolkit移行需要が急増中。実装コード付き解説が少ない。
+- topics: unity, csharp, game-development
+- 参考: https://docs.unity3d.com/Manual/UIElements.html

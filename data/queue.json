@@ -193,10 +193,11 @@
       "filename": "2026-04-19-unity-csharp-beginner-traps-5.md",
       "title": "Unity C#でやりがちな「初心者の罠」5選 ― ファイル名・ライフサイクル・null参照を完全解説",
       "scheduled_at": "2026-05-09T08:00:00.000Z",
-      "status": "failed",
+      "status": "published",
       "queued_at": "2026-04-18T17:00:05.104Z",
       "priority": 18,
-      "last_publish_error": "git commit failed with exit code 1: "
+      "published_at": "2026-05-09T08:00:00.000Z",
+      "published_url": "https://zenn.dev/ryuryu_game/articles/2026-04-19-unity-csharp-beginner-traps-5"
     },
     {
       "filepath": "articles/2026-02-25-unity-csharp-efficiency-up-5.md",
