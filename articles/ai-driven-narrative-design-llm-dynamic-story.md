@@ -2,7 +2,7 @@
 title: "LLMで動的ストーリーを実装する4つのナラティブ設計パターン【Unity/UE対応】"
 emoji: "📖"
 type: "tech"
-topics: ["claudecode", "mcp", "unity", "ai", "llm"]
+topics: ["unity", "game-development", "ai", "llm", "csharp"]
 published: true
 published_at: 2026-03-08 18:00
 ---
@@ -93,22 +93,110 @@ GameObject（Collider必須）
 
 ### C# からの手動起動
 
-```csharp:NarrativeTriggerExample.cs
-using Convai.Scripts.Runtime.Features;
+Convai以外のアプローチとして、OpenAI APIを直接Unityから呼び出す実装例を示す。動的変数の注入パターンは先述のNarrative Graphと同じ考え方だ。
+
+```csharp:LLMNarrativeController.cs
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Networking;
+using System.Text;
 
-public class NarrativeTriggerExample : MonoBehaviour
+/// <summary>
+/// UnityからLLM APIを呼び出してNPCのダイアログを動的生成するコントローラー
+/// </summary>
+public class LLMNarrativeController : MonoBehaviour
 {
-    [SerializeField] private ConvaiNPC targetNPC;
+    [Header("API設定")]
+    [SerializeField] private string apiEndpoint = "https://api.openai.com/v1/chat/completions";
+    [SerializeField] private string apiKey; // Inspector で設定（本番はSecrets管理推奨）
 
-    // クエスト完了時などにスクリプトから呼び出す
-    public void TriggerQuestComplete()
+    [Header("NPCキャラクター設定")]
+    [SerializeField] private string characterName = "商人エルドン";
+    [SerializeField, TextArea] private string characterPersonality =
+        "あなたは冒険者に友好的な年老いた商人です。" +
+        "地元の伝説をよく知っており、アドバイスを与えます。";
+
+    [Header("動的変数")]
+    [SerializeField] private string playerName = "勇者";
+    [SerializeField] private string timeOfDay = "夕暮れ";
+
+    // プレイヤーの入力を受け取ってNPCの応答を返す
+    public void GetNPCResponse(string playerInput, System.Action<string> onResponse)
     {
-        // NPCのNarrative Design Managerから
-        // 指定のトリガーを手動起動する
-        targetNPC.GetComponent<NarrativeDesignManager>()
-                 .InvokeSelectedTrigger();
+        StartCoroutine(CallLLMAPI(playerInput, onResponse));
     }
+
+    private IEnumerator CallLLMAPI(string playerInput, System.Action<string> onResponse)
+    {
+        // システムプロンプトに動的変数を注入
+        string systemPrompt = $@"
+{characterPersonality}
+
+現在の状況:
+- 時間帯: {timeOfDay}
+- プレイヤー名: {playerName}
+- キャラクター名: {characterName}
+
+プレイヤーの発言に対して、キャラクターとして自然に応答してください。
+日本語で2〜3文で返答してください。";
+
+        // OpenAI API リクエストボディ
+        string jsonBody = JsonUtility.ToJson(new ChatRequest
+        {
+            model = "gpt-4o-mini",
+            messages = new[]
+            {
+                new Message { role = "system", content = systemPrompt },
+                new Message { role = "user", content = playerInput }
+            }
+        });
+
+        using var request = new UnityWebRequest(apiEndpoint, "POST");
+        request.uploadHandler = new UploadHandlerRaw(Encoding.UTF8.GetBytes(jsonBody));
+        request.downloadHandler = new DownloadHandlerBuffer();
+        request.SetRequestHeader("Content-Type", "application/json");
+        request.SetRequestHeader("Authorization", $"Bearer {apiKey}");
+
+        yield return request.SendWebRequest();
+
+        if (request.result == UnityWebRequest.Result.Success)
+        {
+            var response = JsonUtility.FromJson<ChatResponse>(request.downloadHandler.text);
+            onResponse?.Invoke(response.choices[0].message.content);
+        }
+        else
+        {
+            Debug.LogError($"LLM API呼び出し失敗: {request.error}");
+            onResponse?.Invoke("（応答生成に失敗しました）");
+        }
+    }
+}
+
+// APIリクエスト/レスポンスのデータクラス
+[System.Serializable]
+public class ChatRequest
+{
+    public string model;
+    public Message[] messages;
+}
+
+[System.Serializable]
+public class Message
+{
+    public string role;
+    public string content;
+}
+
+[System.Serializable]
+public class ChatResponse
+{
+    public Choice[] choices;
+}
+
+[System.Serializable]
+public class Choice
+{
+    public Message message;
 }
 ```
 

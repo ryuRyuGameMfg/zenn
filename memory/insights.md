@@ -28,7 +28,9 @@
 - 作成済み: `2026-05-08-unity-ai-mcp-server-claude-code-5steps.md`
 - queue: 2026-06-20公開予定 (priority 69)
 
-### #23 - Unity AI エディタ内AIエージェント入門 [HIGH]
+### #23 - Unity AI エディタ内AIエージェント入門 [DONE: 2026-05-11]
+- 作成済み: `2026-05-11-unity-ai-assistant-5ways.md`
+- queue: 2026-06-27公開予定 (priority 70)
 - タイトル案: `Unity AI入門：エディタ内AIエージェントでゲーム開発を10倍速にする5つの使い方`
 - 根拠: 2026/05 OpenBeta開始直後、日本語Zenn記事がほぼゼロのブルーオーシャン
 - topics: unity, ai, game-development, csharp

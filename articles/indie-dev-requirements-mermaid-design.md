@@ -179,6 +179,72 @@ VS Code拡張「Mermaid Preview」をインストールすれば、エディタ�
 
 Mermaidの記法を忘れたときは、公式ドキュメント（mermaid.js.org）を参照してください。
 
+## Claude Code × Mermaid の実践ワークフロー
+
+「CLAUDE.mdにルールを書けばいい」と言っても、実際どう書くのか分からない人が多い。具体的に見せます。
+
+### ステップ1: CLAUDE.mdにMermaid生成ルールを追加
+
+プロジェクトルートの `CLAUDE.md` に以下を追記します。
+
+```markdown:CLAUDE.md
+## 図解出力ルール
+
+ドキュメントで図解が必要な場合、必ずMermaid記法を使用する。
+
+| 内容 | Mermaid図 |
+|------|----------|
+| 処理フロー・手順 | flowchart LR |
+| 画面遷移・ステータス | stateDiagram-v2 |
+| データ構造・DB設計 | erDiagram |
+| API通信・シーケンス | sequenceDiagram |
+
+- 1つの図のノード数は10個以内に収める
+- 図が複雑になる場合は機能単位で分割する
+```
+
+### ステップ2: Claude Codeへの指示
+
+CLAUDE.mdを設定した後は、自然言語で指示するだけです。
+
+```text
+# 実際の指示例
+「以下のPRDからER図とシーケンス図を生成して」
+「このデータフローを画面遷移図に変換して」
+「APIエンドポイント一覧からsequenceDiagramを作って」
+```
+
+### ステップ3: 生成されたMermaid図をそのままドキュメントに貼る
+
+Claude Codeが返すMermaidコードはZennに直接貼り付けられます。たとえばプロンプト「このPRDのデータ構造からerDiagramを作って」に対して、以下のような出力が返ってきます。
+
+```mermaid
+erDiagram
+    USER ||--o{ ORDER : places
+    ORDER ||--|{ ITEM : contains
+    USER {
+        int id PK
+        string name
+        string email
+    }
+    ORDER {
+        int id PK
+        string status
+        int user_id FK
+    }
+    ITEM {
+        int id PK
+        string product_name
+        int quantity
+    }
+```
+
+**このワークフローの利点は「設計変更が即座にドキュメントに反映される」点です**。コードとドキュメントの乖離が起きません。PRDを更新するたびに、Claude Codeに「図を更新して」と指示するだけで済みます。
+
+:::message
+**実務での使い方**: PRDテンプレートと一緒にMermaid生成ルールをCLAUDE.mdに書いておくと、プロジェクトごとに設定する手間がなくなります。新しいプロジェクトを始めるたびに、このCLAUDE.mdをコピーするだけです。
+:::
+
 ## 実践例: タスク管理アプリの要件定義
 
 ここまでの5つのドキュメントを使って、実際にタスク管理アプリの要件定義を行ってみます。

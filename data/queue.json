@@ -719,6 +719,16 @@
       "queued_at": "2026-05-08T01:00:00.000Z",
       "priority": 69,
       "promoted_reason": "CRITICAL: Unity AI MCP Server公式対応(2026/05)直後。入門×N選パターン(期待avg15.7)。claudecode/mcp/unityクラスタ強化。Zennブルーオーシャン先行記事。"
+    },
+    {
+      "filepath": "articles/2026-05-11-unity-ai-assistant-5ways.md",
+      "filename": "2026-05-11-unity-ai-assistant-5ways.md",
+      "title": "Unity AI入門：エディタ内AIアシスタントでゲーム開発を効率化する5つの使い方",
+      "scheduled_at": "2026-06-27T08:00:00.000Z",
+      "status": "pending",
+      "queued_at": "2026-05-11T01:00:00.000Z",
+      "priority": 70,
+      "theme_queue_ref": "#23"
     }
   ],
   "schedule": {

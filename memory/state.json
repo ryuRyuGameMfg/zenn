@@ -1,13 +1,13 @@
 {
   "version": "1.0.0",
-  "iteration": 11,
-  "mode": "rewrite",
-  "last_updated": "2026-05-10T01:00:00.000Z",
+  "iteration": 12,
+  "mode": "create",
+  "last_updated": "2026-05-11T01:00:00.000Z",
   "consecutive_errors": 0,
   "current_article": {
     "slug": "",
     "title": "",
     "topic": ""
   },
-  "last_action": "improve: 2026-05-10 テーマキュー5件補充(#27 ShaderGraph/#28 Addressables/#29 Claude Code×テスト/#30 Timeline/#31 UI Toolkit) + queue.json failed記事(beginner-traps-5)をpublished修正 + rewrite遷移"
+  "last_action": "rewrite: 2026-05-11 indie-dev-mermaid記事にClaudeCode実践ワークフロー追加 + ai-narrative記事のtopics修正(claudecode/mcp削除→game-development/csharp) + LLMNarrativeController.cs追加 + 新規記事2026-05-11-unity-ai-assistant-5ways作成(Theme #23消費) + create遷移"
 }
