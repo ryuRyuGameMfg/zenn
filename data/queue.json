@@ -729,6 +729,16 @@
       "queued_at": "2026-05-11T01:00:00.000Z",
       "priority": 70,
       "theme_queue_ref": "#23"
+    },
+    {
+      "filepath": "articles/2026-05-12-gemini-unity-vibe-coding-intro.md",
+      "filename": "2026-05-12-gemini-unity-vibe-coding-intro.md",
+      "title": "Gemini 2.5でUnity 3Dゲームをゼロコードで作る",
+      "scheduled_at": "2026-07-04T08:00:00.000Z",
+      "status": "pending",
+      "queued_at": "2026-05-12T01:00:00.000Z",
+      "priority": 71,
+      "theme_queue_ref": "#24"
     }
   ],
   "schedule": {

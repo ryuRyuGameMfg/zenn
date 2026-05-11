@@ -1,13 +1,13 @@
 {
   "version": "1.0.0",
   "iteration": 12,
-  "mode": "create",
-  "last_updated": "2026-05-11T01:00:00.000Z",
+  "mode": "analyze",
+  "last_updated": "2026-05-12T01:00:00.000Z",
   "consecutive_errors": 0,
   "current_article": {
     "slug": "",
     "title": "",
     "topic": ""
   },
-  "last_action": "rewrite: 2026-05-11 indie-dev-mermaid記事にClaudeCode実践ワークフロー追加 + ai-narrative記事のtopics修正(claudecode/mcp削除→game-development/csharp) + LLMNarrativeController.cs追加 + 新規記事2026-05-11-unity-ai-assistant-5ways作成(Theme #23消費) + create遷移"
+  "last_action": "create: 2026-05-12 gemini-unity-vibe-coding-intro作成(Theme #24消費, Gemini 2.5×Unity Vibe Coding入門, Firebase AI Logic SDK実装, 落とし穴3選, Mermaid1/codeblock4/h2=5) + analyze遷移"
 }

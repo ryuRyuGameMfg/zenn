@@ -20,7 +20,7 @@
 - Unity新バージョン速報（6.4〜ECS標準化・CoreCLR）は競合少なく参入余地大
 
 ---
-最終更新: 2026-05-07
+最終更新: 2026-05-12
 
 ## テーマキュー（未消費）
 
@@ -36,11 +36,9 @@
 - topics: unity, ai, game-development, csharp
 - 参考: https://gamemakers.jp/article/2026_05_05_136667/
 
-### #24 - Gemini 2.5 × Unity Vibe Coding入門 [HIGH]
-- タイトル案: `Gemini 2.5 × Unity Vibe Coding入門：自然言語だけで3Dゲームを作る方法`
-- 根拠: Google I/O 2026でGemini×ゲーム開発注目。Vibe Coding avg22スキ実績。Gemini特化は未開拓
-- topics: unity, ai, game-development, vibe-coding
-- 参考: https://medium.com/@slrender2008/i-built-a-unity-asset-using-gemini-ai-vibe-coding-heres-what-i-learned-0fe9c3bca909
+### #24 - Gemini 2.5 × Unity Vibe Coding入門 [DONE: 2026-05-12]
+- 作成済み: `2026-05-12-gemini-unity-vibe-coding-intro.md`
+- queue: 2026-07-04公開予定 (priority 71)
 
 ### #25 - Unity CLI Loop × AIエージェント入門 [HIGH]
 - タイトル案: `Unity CLI Loop入門：AIエージェントにUnityエディタを自動操縦させる実装ガイド`
