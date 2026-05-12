@@ -739,6 +739,15 @@
       "queued_at": "2026-05-12T01:00:00.000Z",
       "priority": 71,
       "promoted_reason": "Vibe Coding高ROI(avg22スキ実績)。Gemini 2.5×Unity 3D日本語記事ブルーオーシャン。Google I/O 2026直後タイムリー。"
+    },
+    {
+      "filepath": "articles/2026-05-13-unity-shader-graph-pbr-5steps.md",
+      "filename": "2026-05-13-unity-shader-graph-pbr-5steps.md",
+      "title": "Unity Shader Graph入門：コードゼロで始めるPBRシェーダー5ステップ",
+      "scheduled_at": "2026-07-10T08:00:00.000Z",
+      "status": "queued",
+      "queued_at": "2026-05-12T17:00:04.470Z",
+      "priority": 72
     }
   ],
   "schedule": {
@@ -750,6 +759,6 @@
     "time": "17:00",
     "timezone": "Asia/Tokyo"
   },
-  "last_scan": "2026-05-04T17:00:05.098Z",
+  "last_scan": "2026-05-12T17:00:04.470Z",
   "last_publish": "2026-04-17T08:26:28.427Z"
 }
