@@ -725,20 +725,20 @@
       "filename": "2026-05-11-unity-ai-assistant-5ways.md",
       "title": "Unity AI入門：エディタ内AIアシスタントでゲーム開発を効率化する5つの使い方",
       "scheduled_at": "2026-06-27T08:00:00.000Z",
-      "status": "pending",
+      "status": "queued",
       "queued_at": "2026-05-11T01:00:00.000Z",
       "priority": 70,
-      "theme_queue_ref": "#23"
+      "promoted_reason": "入門×N選パターン(期待avg15.7)。Unity AIアシスタントは2026年5月Unity公式AI機能強化に合わせたタイムリーテーマ。"
     },
     {
       "filepath": "articles/2026-05-12-gemini-unity-vibe-coding-intro.md",
       "filename": "2026-05-12-gemini-unity-vibe-coding-intro.md",
       "title": "Gemini 2.5でUnity 3Dゲームをゼロコードで作る",
       "scheduled_at": "2026-07-04T08:00:00.000Z",
-      "status": "pending",
+      "status": "queued",
       "queued_at": "2026-05-12T01:00:00.000Z",
       "priority": 71,
-      "theme_queue_ref": "#24"
+      "promoted_reason": "Vibe Coding高ROI(avg22スキ実績)。Gemini 2.5×Unity 3D日本語記事ブルーオーシャン。Google I/O 2026直後タイムリー。"
     }
   ],
   "schedule": {

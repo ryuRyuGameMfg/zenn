@@ -3,7 +3,7 @@
   "likes": 349,
   "articles_count": 44,
   "monthly_increase": 0,
-  "last_updated": "2026-05-12",
+  "last_updated": "2026-05-13",
   "history": [
     {
       "date": "2026-04-21",
@@ -154,6 +154,12 @@
     },
     {
       "date": "2026-05-12",
+      "followers": 37,
+      "likes": 349,
+      "articles": 44
+    },
+    {
+      "date": "2026-05-13",
       "followers": 37,
       "likes": 349,
       "articles": 44

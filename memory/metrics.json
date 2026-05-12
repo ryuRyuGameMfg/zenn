@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-05-09",
-  "collected_at": "2026-05-09T10:00:00+09:00",
+  "last_updated": "2026-05-13",
+  "collected_at": "2026-05-13T10:00:00+09:00",
   "profile": {
     "username": "ryuryu_game",
     "follower_count": 37,
     "following_count": 0,
-    "articles_count_profile": 43,
-    "articles_count_api": 43,
+    "articles_count_profile": 44,
+    "articles_count_api": 44,
     "books_count": 1,
     "total_liked_count_profile": 349,
     "total_liked_count_api": 188,
@@ -17,8 +17,8 @@
       "target": 100,
       "current": 37,
       "progress_pct": 37.0,
-      "stagnation_weeks": 8,
-      "note": "5/06→5/09: フォロワー変化なし。8週間停滞継続。2026年公開記事26本全て0スキのため新規流入なし"
+      "stagnation_weeks": 9,
+      "note": "5/09→5/13: フォロワー変化なし。9週間停滞継続。"
     },
     "o2_monthly_pv": {
       "target": 10000,
@@ -29,13 +29,35 @@
       "target_pct": 5.0,
       "total_likes_profile": 349,
       "total_likes_api": 188,
-      "published_articles_api": 43,
-      "avg_likes_api_basis": 4.372,
+      "published_articles_api": 44,
+      "avg_likes_api_basis": 4.27,
       "avg_likes_trend": "DOWN",
-      "avg_likes_prev": 4.476,
-      "avg_likes_delta": -0.104,
-      "note": "avg 4.476→4.37（-2.4%）。5/8公開のuLoopMCP記事が0スキで分母拡大。5/9〜5/30に入門×N選高ROI記事4本公開予定で改善見込み"
+      "avg_likes_prev": 4.37,
+      "avg_likes_delta": -0.10,
+      "note": "avg 4.37→4.27（-2.3%）。5/11公開のunity-csharp-beginner-traps-5が0スキで分母拡大。5/15のNetcode(入門×N選)が転換点になるか注目。"
     }
+  },
+  "key_insight_2026_05_13": {
+    "critical": "avg_likes 4.37→4.27（-2.3%）。9週間フォロワー停滞継続。5/11公開unity-csharp-beginner-traps-5が0スキ。2026年全28本0スキ継続。",
+    "observation": {
+      "new_published_2026_05_11": {
+        "slug": "2026-04-19-unity-csharp-beginner-traps-5",
+        "title": "Unity C#でやりがちな「初心者の罠」5選",
+        "likes": 0,
+        "days_since_publish": 2
+      },
+      "upcoming_high_roi_articles": [
+        {"slug": "2026-04-26-netcode-for-gameobjects-unity-online-5steps", "scheduled": "2026-05-15", "pattern": "入門×N選", "note": "2日後公開 CRITICAL"},
+        {"slug": "2026-04-27-unity-ecs-beginner-5steps", "scheduled": "2026-05-22", "pattern": "入門×N選"},
+        {"slug": "2026-05-01-unity-input-system-beginner-5steps", "scheduled": "2026-05-23", "pattern": "入門×N選 CRITICAL"},
+        {"slug": "2026-04-27-claude-code-unity-uxml-auto-generate", "scheduled": "2026-05-29", "pattern": "claudecode"},
+        {"slug": "2026-04-27-figma-mcp-unity-ui-toolkit-auto-convert", "scheduled": "2026-05-30", "pattern": "claudecode"}
+      ],
+      "pending_articles_count": 2,
+      "theme_queue_remaining": 7
+    },
+    "forecast": "5/15 Netcode記事（入門×N選）が初の2026年スキ獲得のテストケース。avg_likesは188/44=4.27まで低下中だが、5/15〜5/23に入門×N選3本が連続公開されれば5.5〜6.0に回復見込み。",
+    "next_action": "improve: pending記事2本(unity-ai-assistant/gemini-vibe-coding)をqueuedに昇格 + rewrite候補の再評価"
   },
   "key_insight_2026_05_09": {
     "critical": "2026年公開記事26本全て0スキ継続。avg_likes 4.476→4.37（-2.4%）：5/8公開uLoopMCP記事が0スキで分母拡大。フォロワー8週間停滞。",

@@ -1,13 +1,13 @@
 {
   "version": "1.0.0",
   "iteration": 12,
-  "mode": "analyze",
-  "last_updated": "2026-05-12T01:00:00.000Z",
+  "mode": "rewrite",
+  "last_updated": "2026-05-13T01:30:00.000Z",
   "consecutive_errors": 0,
   "current_article": {
     "slug": "",
     "title": "",
     "topic": ""
   },
-  "last_action": "create: 2026-05-12 gemini-unity-vibe-coding-intro作成(Theme #24消費, Gemini 2.5×Unity Vibe Coding入門, Firebase AI Logic SDK実装, 落とし穴3選, Mermaid1/codeblock4/h2=5) + analyze遷移"
+  "last_action": "analyze: 2026-05-13 KPI計測(フォロワー37/avg_likes 4.37→4.27/articles 43→44) + improve: pending2本queued昇格(unity-ai-assistant→06-27/gemini-vibe-coding→07-04) + rewrite遷移"
 }
