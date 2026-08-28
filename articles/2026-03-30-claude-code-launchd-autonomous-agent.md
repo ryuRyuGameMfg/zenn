@@ -86,7 +86,7 @@ https://platform.claude.com/docs/ja/about-claude/pricing
 <key>ProgramArguments</key>
 <array>
   <string>/bin/bash</string>
-  <string>/Users/yourname/repository/zenn-agent/zenn-agent.sh</string>
+  <string>/Users/yourname/agents/zenn_agent/zenn-agent.sh</string>
 </array>
 <key>StartCalendarInterval</key>
 <array>
@@ -125,7 +125,7 @@ echo "$prompt" | claude -p --allowedTools "Read,Write,Edit,Bash,Glob,Grep"
 ```markdown
 <!-- CLAUDE.md の例 -->
 ## 操作制約
-- 操作可能範囲: ~/repository/zenn-agent/ 内のみ
+- 操作可能範囲: ~/agents/zenn_agent/ 内のみ
 - articles/ 内の既存ファイルは削除禁止
 - git push は articles/ への変更がある場合のみ実行
 ```

@@ -7,18 +7,18 @@
     <key>ProgramArguments</key>
     <array>
         <string>/usr/local/bin/node</string>
-        <string>/Users/okamotoryuya/repository/zenn-agent/scripts/publish-daemon.mjs</string>
+        <string>/Users/okamotoryuya/agents/zenn_agent/scripts/publish-daemon.mjs</string>
     </array>
     <key>WorkingDirectory</key>
-    <string>/Users/okamotoryuya/repository/zenn-agent</string>
+    <string>/Users/okamotoryuya/agents/zenn_agent</string>
     <key>KeepAlive</key>
     <true/>
     <key>RunAtLoad</key>
     <true/>
     <key>StandardOutPath</key>
-    <string>/Users/okamotoryuya/repository/zenn-agent/logs/publish-daemon-stdout.log</string>
+    <string>/Users/okamotoryuya/agents/zenn_agent/logs/publish-daemon-stdout.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/okamotoryuya/repository/zenn-agent/logs/publish-daemon-stderr.log</string>
+    <string>/Users/okamotoryuya/agents/zenn_agent/logs/publish-daemon-stderr.log</string>
     <key>EnvironmentVariables</key>
     <dict>
         <key>PATH</key>

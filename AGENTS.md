@@ -17,5 +17,6 @@ Zenn記事リポジトリ。記事執筆には `/zenn` スキルを使用。
 ## 禁止事項
 
 - articles/ 内の既存記事の削除
+- レポートではHTMLテーブルを使用しない（Markdown表を使用する）
 - 新規記事を `published: true` で即公開（必ず `data/queue.json` 経由）
 - git push は articles/ への変更がある場合のみ

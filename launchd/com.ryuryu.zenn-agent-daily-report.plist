@@ -16,9 +16,9 @@
         <key>Minute</key><integer>0</integer>
     </dict>
     <key>StandardOutPath</key>
-    <string>/Users/okamotoryuya/repository/zenn-agent/logs/daily-report-stdout.log</string>
+    <string>/Users/okamotoryuya/agents/zenn_agent/logs/daily-report-stdout.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/okamotoryuya/repository/zenn-agent/logs/daily-report-stderr.log</string>
+    <string>/Users/okamotoryuya/agents/zenn_agent/logs/daily-report-stderr.log</string>
     <key>RunAtLoad</key>
     <false/>
     <key>EnvironmentVariables</key>

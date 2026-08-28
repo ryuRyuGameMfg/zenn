@@ -9,7 +9,7 @@
 
 ## 作業ディレクトリ
 
-~/repository/zenn-agent/
+~/agents/zenn_agent/
 
 ## 実行手順
 

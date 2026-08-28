@@ -11,16 +11,16 @@
         <string>/Users/okamotoryuya/.claude/bots/zenn-agent/config.sh</string>
     </array>
     <key>WorkingDirectory</key>
-    <string>/Users/okamotoryuya/repository/zenn-agent</string>
+    <string>/Users/okamotoryuya/agents/zenn_agent</string>
     <key>StartCalendarInterval</key>
     <dict>
         <key>Hour</key><integer>1</integer>
         <key>Minute</key><integer>0</integer>
     </dict>
     <key>StandardOutPath</key>
-    <string>/Users/okamotoryuya/repository/zenn-agent/logs/launchd-stdout.log</string>
+    <string>/Users/okamotoryuya/agents/zenn_agent/logs/launchd-stdout.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/okamotoryuya/repository/zenn-agent/logs/launchd-stderr.log</string>
+    <string>/Users/okamotoryuya/agents/zenn_agent/logs/launchd-stderr.log</string>
     <key>RunAtLoad</key>
     <false/>
     <key>EnvironmentVariables</key>

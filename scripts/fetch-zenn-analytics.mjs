@@ -6,7 +6,7 @@ import { chromium } from 'playwright';
 import fs from 'fs/promises';
 import path from 'path';
 
-const WORK_DIR = process.env.HOME + '/repository/zenn-agent';
+const WORK_DIR = process.env.HOME + '/agents/zenn_agent';
 const METRICS_FILE = path.join(WORK_DIR, 'memory/metrics.json');
 const SCREENSHOT_PATH = '/tmp/zenn-dashboard.png';
 

@@ -20,7 +20,7 @@
 
 | 領域 | パス | git管理 | 編集方針 |
 |------|------|---------|---------|
-| A: zenn-agent本体 | ~/repository/zenn-agent/ | あり（このリポジトリ） | 自由に編集 |
+| A: zenn-agent本体 | ~/agents/zenn_agent/ | あり（このリポジトリ） | 自由に編集 |
 | B: bot共通ライブラリ | ~/.claude/bots/lib/ | 他リポジトリ | 他bot影響ありのため原則編集禁止 |
 | C: zenn-agent設定 | ~/.claude/bots/zenn-agent/ | 他リポジトリ | 本bot専用のため編集可 |
 

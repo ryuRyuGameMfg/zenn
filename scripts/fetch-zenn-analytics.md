@@ -146,19 +146,19 @@ async function extractMetrics(screenshotPath) {
 ### 手動テスト
 ```bash
 # 1. スクリプト実行
-node ~/repository/zenn-agent/scripts/fetch-zenn-analytics.js
+node ~/agents/zenn_agent/scripts/fetch-zenn-analytics.js
 
 # 2. スクリーンショット確認
 open /tmp/zenn-dashboard.png
 
 # 3. metrics.json確認
-cat ~/repository/zenn-agent/memory/metrics.json | jq
+cat ~/agents/zenn_agent/memory/metrics.json | jq
 ```
 
 ### 自動テスト（土曜17:00）
 ```bash
 # zenn-agent.sh の analyze モードで実行
-bash ~/repository/zenn-agent/zenn-agent.sh --dry-run
+bash ~/agents/zenn_agent/zenn-agent.sh --dry-run
 ```
 
 ## 次のステップ

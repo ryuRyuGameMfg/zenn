@@ -72,7 +72,7 @@ export ZENN_EMAIL="your-github-email@example.com"
 export ZENN_PASSWORD="your-github-password"
 
 # 2. スクリプト実行
-cd ~/repository/zenn-agent/scripts
+cd ~/agents/zenn_agent/scripts
 node fetch-zenn-analytics.mjs
 
 # 3. スクリーンショット確認
@@ -147,7 +147,7 @@ Cannot find module 'playwright'
 
 **解決策**:
 ```bash
-cd ~/repository/zenn-agent
+cd ~/agents/zenn_agent
 npm install playwright
 ```
 

@@ -7,10 +7,10 @@
     <key>ProgramArguments</key>
     <array>
         <string>/usr/local/bin/node</string>
-        <string>/Users/okamotoryuya/repository/zenn-agent/scripts/auto-queue.mjs</string>
+        <string>/Users/okamotoryuya/agents/zenn_agent/scripts/auto-queue.mjs</string>
     </array>
     <key>WorkingDirectory</key>
-    <string>/Users/okamotoryuya/repository/zenn-agent</string>
+    <string>/Users/okamotoryuya/agents/zenn_agent</string>
     <key>StartCalendarInterval</key>
     <dict>
         <key>Hour</key>
@@ -19,9 +19,9 @@
         <integer>0</integer>
     </dict>
     <key>StandardOutPath</key>
-    <string>/Users/okamotoryuya/repository/zenn-agent/logs/auto-queue-stdout.log</string>
+    <string>/Users/okamotoryuya/agents/zenn_agent/logs/auto-queue-stdout.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/okamotoryuya/repository/zenn-agent/logs/auto-queue-stderr.log</string>
+    <string>/Users/okamotoryuya/agents/zenn_agent/logs/auto-queue-stderr.log</string>
     <key>EnvironmentVariables</key>
     <dict>
         <key>PATH</key>

@@ -15,8 +15,8 @@
   <key>RunAtLoad</key>
   <true/>
   <key>StandardOutPath</key>
-  <string>/Users/okamotoryuya/repository/zenn-agent/telegram/runtime/daemon.log</string>
+  <string>/Users/okamotoryuya/agents/zenn_agent/telegram/runtime/daemon.log</string>
   <key>StandardErrorPath</key>
-  <string>/Users/okamotoryuya/repository/zenn-agent/telegram/runtime/daemon.log</string>
+  <string>/Users/okamotoryuya/agents/zenn_agent/telegram/runtime/daemon.log</string>
 </dict>
 </plist>
